@@ -25,10 +25,10 @@ if ($pp["FTP"] -ne $null -and $pp["FTP"] -ne '') {
   Write-Verbose "HTTP Last Modified  : $lastModified"
 
   if ($lastModified -ne $packageVersionLastModified) {
-    Write-Warning "A newer version has been published to $primaryDownloadUrl, falling back to FTP for stable (but slower) URL"
+    Write-Warning "The download available at $primaryDownloadUrl has changed from what this package was expecting. Falling back to FTP for version-specific URL"
     $url = $secondaryDownloadUrl
   } else {
-    Write-host "Primary URL matches package version"
+    Write-Verbose "Primary URL matches package expectation"
     $url = $primaryDownloadUrl
   }
 }
