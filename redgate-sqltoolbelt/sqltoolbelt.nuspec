@@ -1,95 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
-<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
-<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
-
-<!--
-This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
-
-* the package xmlns schema url may cause issues with nuget.exe
-* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces 
-* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements 
--->
-<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
-<!-- * If you are an organization making private packages, you probably have no issues here -->
-<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <!-- == PACKAGE SPECIFIC SECTION == -->
-    <!-- This section is about this package, although id and version have ties back to the software -->
-    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
-    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
     <id>sqltoolbelt</id>
-    <!-- version should MATCH as closely as possible with the underlying software -->
-    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
-    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>1.0.0</version>
+    <version>1.8.3.1022</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/redgate-sqltoolbelt</packageSourceUrl>
-    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
-    <owners>kscelfo flcdrg</owners>
-    <!-- ============================== -->
-
-    <!-- == SOFTWARE SPECIFIC SECTION == -->
-    <!-- This section is about the software itself -->
-    <title>SQL Toolbelt (Install)</title>
+    <owners>kscelfo, flcdrg</owners>
+    <title>SQL Toolbelt</title>
     <authors>Red Gate Software Ltd</authors>
     <projectUrl>http://www.red-gate.com/products/sql-development/sql-toolbelt/</projectUrl>
-    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/sqltoolbelt.png</iconUrl>-->
-    <!-- copyright is usually years and software vendor, but not required for internal feeds -->
-    <copyright>2017 Red Gate</copyright>
+    <iconUrl>http://cdn.rawgit.com/flcdrg/au-packages/master/redgate-sqltoolbelt/icons/redgate.png</iconUrl>
+    <copyright>2017 Red Gate Software Ltd</copyright>
     <licenseUrl>http://www.red-gate.com/assets/purchase/assets/license.pdf</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <!--<projectSourceUrl>Software Source Location - is the software source code available somewhere? Link to it with this</projectSourceUrl>-->
     <docsUrl>https://documentation.red-gate.com/dashboard.action</docsUrl>
     <mailingListUrl>https://forum.red-gate.com/categories/sql-tools</mailingListUrl>
     <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <tags>SQL Server Tools</tags>
+    <tags>SQL Server Tools trial admin</tags>
     <summary>Everything you need to work with SQL Server</summary>
-    <description>Tools in the SQL Toolbelt:
-  SQL Source ControlSQL Source Control - Connect your databases to your version control system
-  SQL CompareSQL Compare Pro - Compare and synchronize database schema
-  SQL Data Compare Pro - Compare and synchronize database contents
-  SQL Prompt - Write, refactor, and explore SQL effortlessly
-  SQL Data Generator - Generate realistic test data fast, based on column and table names
-  SQL Dependency Tracker - Explore object dependencies and visualize complex databases simply
-  SQL Backup Pro - Compress, securely encrypt and strengthen backups - fast
-  SQL Monitor - SQL Server performance monitoring and alerting
-  SQL Search - Search your database quickly in SQL Server Management Studio
-  SQL Doc - Automatically generate database documentation
-  SQL Packager - Package databases as an .exe for deployment or update
-  SQL Multi Script Unlimited - Deploy multiple scripts to multiple servers with just one click
-  SQL Connect - Develop databases in Visual Studio alongside application code
-  SQL Test - Write and run unit tests in SQL Server Management Studio
-  SQL Comparison SDK - Automate comparison and synchronization tasks
-  SQL Object Level Recovery Native - Recover database objects from SQL Server backups </description>
+    <description>Redgate's SQL Toolbelt contains the industry-standard products for SQL Server development, deployment, backup, and monitoring. Together, they make you productive, your team agile, and your data safe.
+
+Thousands of SQL Server professionals rely on the SQL Toolbelt every day, because it’s reliable, easy to use, and plugs in to the tools they already use for application development.
+
+Tools in the SQL Toolbelt:
+
+-  SQL Compare Pro - Compare and synchronize database schema
+-  SQL Data Compare Pro - Compare and synchronize database contents
+-  SQL Source Control - Connect your databases to your version control system
+-  SQL Prompt - Write, refactor, and explore SQL effortlessly
+-  SQL Search - Search your database quickly in SQL Server Management Studio
+-  SQL Data Generator - Generate realistic test data fast, based on column and table names
+-  SQL Doc - Automatically generate database documentation
+-  SQL Test - Write and run unit tests in SQL Server Management Studio
+-  DLM Dashboard - tracks your database schemas and alerts you when they change.
+- DLM Automation - Continuous integration and automated deployments for your SQL Server database
+- SQL Multi Script - Deploy multiple scripts to multiple servers with just one click
+- SQL Dependency Tracker - Explore object dependencies and visualize complex databases simply
+- SQL Comparison SDK - Automate comparison and synchronization tasks
+- ReadyRoll - Develop and deploy databases in Visual Studio with migration scripts
+- SQL Monitor - SQL Server performance monitoring and alerting
+- SQL Backup Pro - Compress, securely encrypt and strengthen backups - fast
+
+#### Package Download Checksum Note
+This package is automatically updated when a new version is detected. Because the download URL is fixed, there may be a short period of when the checksum is invalid until the revised package is approved.
+</description>
     <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
-    <!-- =============================== -->  
-
-    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
-    <!--<dependencies>
-      <dependency id="" version="__MINIMUM_VERSION__" />
-      <dependency id="" version="[__EXACT_VERSION__]" />
-      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
-      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
-      <dependency id="" />
-      <dependency id="chocolatey-core.extension" version="1.1.0" />
-    </dependencies>-->
-    <!-- chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension
-         - You want to use Get-UninstallRegistryKey on less than 0.9.10 (in chocolateyUninstall.ps1)
-         - You want to use Get-PackageParameters and on less than 0.11.0
-         - You want to take advantage of other functions in the core community maintainer's team extension package
-         - You can download this extension and host it locally with choco download chocolatey-core.extension --source https://chocolatey.org/api/v2/
-    -->
-
-    <!--<provides>NOT YET IMPLEMENTED</provides>-->
-    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
-    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
   </metadata>
   <files>
     <!-- this section controls what actually gets packaged into the Chocolatey package -->
     <file src="tools\**" target="tools" />
-    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
   </files>
 </package>
