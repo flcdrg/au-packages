@@ -41,10 +41,24 @@ Tools in the SQL Toolbelt:
 - SQL Monitor - SQL Server performance monitoring and alerting
 - SQL Backup Pro - Compress, securely encrypt and strengthen backups - fast
 
-#### Package Download Checksum Note
-This package is automatically updated when a new version is detected. Because the download URL is fixed, there may be a short period of when the checksum is invalid until the revised package is approved.
+#### Package Download Fallback
+This package will fallback to the Red Gate FTP site once the main fixed URL no longer matches the version for which this package was created. This is to ensure
+that a specific version of the Chocolatey package continues to work even after Red Gate releases newer versions.
+
+When a newer version of the package is published, it will then revert to using the primary https download URL.
+
+#### Package Parameters
+The following package parameters can be set:
+
+ * `/FTP` - Force using the FTP download URL
+
+These parameters can be passed to the installer with the use of `--params`.
+For example: `--params "'/FTP'"`.
 </description>
     <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
+  <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.1.0" />
+  </dependencies>
   </metadata>
   <files>
     <!-- this section controls what actually gets packaged into the Chocolatey package -->
