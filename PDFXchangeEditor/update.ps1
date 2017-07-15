@@ -1,18 +1,9 @@
 import-module au
 
-function ParseReleaseNotes($html)
+function ParseReleaseNotes($version)
 {
-    $ul = $html.getElementById("bh-history");
-
-    # summary
-    $ul.children[0].children[0].innerText;
-    ""
-
-    # version from <a class="active" name="6.0.317.1" href="PDFXE_history.html#6.0.317.1">
-    $version = $ul.children[0].children[0].name
-
-    # 
-    $subUl = $html.getElementById("changes-$version").children[0]
+    $doc = Invoke-WebRequest ("https://www.tracker-software.com/product/pdf-xchange-editor/history?version=" + $version)
+    $subUl = $doc.ParsedHtml.body.firstChild
 
     $newlyAdded = New-Object System.Collections.ArrayList
     $bugFixed = New-Object System.Collections.ArrayList
@@ -20,18 +11,18 @@ function ParseReleaseNotes($html)
 
     $allowedTags = @('#text', 'a')
 
-    foreach ($child in $subUl.children)
+    foreach ($child in $subUl.ChildNodes)
     {
         
-        $type = $child.children[0].title
+        $type = $child.ChildNodes[0].title
 
         # remove unwanted tags
-        [void] ($child.childNodes | Where-Object { $allowedTags -notcontains $_.nodeName } | % { $child.removeChild($_) } )
+        [void] ($child.ChildNodes | Where-Object { $allowedTags -notcontains $_.nodeName } | % { $child.removeChild($_) } )
 
         # convert links
 
-        [void] ($child.childNodes | Where-Object { $_.nodeName -eq 'A' } | % { 
-                $textNode = $ie.Document.createTextNode("[$($_.innerText)]($($_.href))")
+        [void] ($child.ChildNodes | Where-Object { $_.nodeName -eq 'A' } | % { 
+                $textNode = $subUl.OwnerDocument.createTextNode("[$($_.innerText)]($($_.href))")
                 $child.replaceChild($textNode, $_)
             } 
             
@@ -103,11 +94,17 @@ function global:au_GetLatest {
 
         $pdfxeditorNode = $xml.SelectSingleNode("//t:bundle[@id='PDFXEditor']", $xmlNameSpace)
 
+        $x32update = $pdfxeditorNode.SelectSingleNode("./t:update[@platform='x32']", $xmlNameSpace)
+        $version = $x32update.version
+        $date = $x32update.startMaintenance
+
+        $releaseNotes = (,"Requires maintenance through $date") + (ParseReleaseNotes $version)
+
         $Latest = @{ 
-            Version = $pdfxeditorNode.update[0].version
-            Checksum32 = $pdfxeditorNode.SelectSingleNode("./t:update[@platform='x32']", $xmlNameSpace).hash
+            Version = $version
+            Checksum32 = $x32update.hash
             Checksum64 = $pdfxeditorNode.SelectSingleNode("./t:update[@platform='x64']", $xmlNameSpace).hash
-            ReleaseNotes = ""
+            ReleaseNotes = $releaseNotes -join "`r`n"
         }
     }
     catch {
