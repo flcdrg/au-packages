@@ -17,11 +17,11 @@ function ParseReleaseNotes($version)
         $type = $child.ChildNodes[0].title
 
         # remove unwanted tags
-        [void] ($child.ChildNodes | Where-Object { $allowedTags -notcontains $_.nodeName } | % { $child.removeChild($_) } )
+        [void] ($child.ChildNodes | Where-Object { $allowedTags -notcontains $_.nodeName } | ForEach-Object { $child.removeChild($_) } )
 
         # convert links
 
-        [void] ($child.ChildNodes | Where-Object { $_.nodeName -eq 'A' } | % { 
+        [void] ($child.ChildNodes | Where-Object { $_.nodeName -eq 'A' } | ForEach-Object { 
                 $textNode = $subUl.OwnerDocument.createTextNode("[$($_.innerText)]($($_.href))")
                 $child.replaceChild($textNode, $_)
             } 
@@ -51,7 +51,7 @@ function ParseReleaseNotes($version)
     {
         "#### Newly added feature"
         ""
-        $newlyAdded | % { "* " + $_ }
+        $newlyAdded | ForEach-Object { "* " + $_ }
         ""
     }
 
@@ -59,7 +59,7 @@ function ParseReleaseNotes($version)
     {
         "#### A reported error or bug was fixed"
         ""
-        $bugFixed | % { "* " + $_ }
+        $bugFixed | ForEach-Object { "* " + $_ }
         ""
     }
 
@@ -68,15 +68,20 @@ function ParseReleaseNotes($version)
         "#### Changed, reviewed, modified feature"
         ""
 
-        $changed | % { "* " + $_ }
+        $changed | ForEach-Object { "* " + $_ }
     }
 }
 
 function global:au_SearchReplace {
+    $d32 = [DateTimeOffset] $Latest.LastModified32
+    $d64 = [DateTimeOffset] $Latest.LastModified64
+
     @{
         'tools\chocolateyInstall.ps1' = @{
             "(^[$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
             "(^[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+            "(^[$]lastModified32\s*=\s*)(.*)(\s+\#)" = "`$1New-Object -TypeName DateTimeOffset $($d32.Year), $($d32.Month), $($d32.Day), $($d32.Hour), $($d32.Minute), $($d32.Second), 0`$3"
+            "(^[$]lastModified64\s*=\s*)(.*)(\s+\#)" = "`$1New-Object -TypeName DateTimeOffset $($d64.Year), $($d64.Month), $($d64.Day), $($d64.Hour), $($d64.Minute), $($d64.Second), 0`$3"
         }
      }
 }
@@ -100,11 +105,21 @@ function global:au_GetLatest {
 
         $releaseNotes = (,"Requires maintenance through $date") + (ParseReleaseNotes $version)
 
+        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/EditorV6.x86.msi" -Method Head
+        $lastModifiedHeader = $response.Headers.'Last-Modified'
+        $x86lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
+
+        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/EditorV6.x64.msi" -Method Head
+        $lastModifiedHeader = $response.Headers.'Last-Modified'
+        $x64lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
+
         $Latest = @{ 
             Version = $version
             Checksum32 = $x32update.hash
             Checksum64 = $pdfxeditorNode.SelectSingleNode("./t:update[@platform='x64']", $xmlNameSpace).hash
             ReleaseNotes = $releaseNotes -join "`r`n"
+            LastModified32 = $x86lastModified
+            LastModified64 = $x64lastModified
         }
     }
     catch {
@@ -114,11 +129,10 @@ function global:au_GetLatest {
     return $Latest
 }
 
-
 function global:au_AfterUpdate
 { 
     $nuspecFileName = $Latest.PackageName + ".nuspec"
-    $nu = gc $nuspecFileName -Raw -Encoding UTF8
+    $nu = Get-Content $nuspecFileName -Raw -Encoding UTF8
     $nu = $nu -replace "(?smi)(\<releaseNotes\>).*?(\</releaseNotes\>)", "`${1}$($Latest.ReleaseNotes)`$2"
 
     $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($False)

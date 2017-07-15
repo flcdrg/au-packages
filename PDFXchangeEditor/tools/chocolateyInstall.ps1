@@ -2,10 +2,38 @@
 $packageName = 'PDFXchangeEditor' 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $version    = $env:ChocolateyPackageVersion
+$primaryDownloadUrl = "http://downloads.pdf-xchange.com/EditorV6.x86.msi"
+$primaryDownloadUrl64 = "http://downloads.pdf-xchange.com/EditorV6.x64.msi"
 $url        = "http://www.docu-track.co.uk/builds/$version/EditorV6.x86.msi"
 $url64      = "http://www.docu-track.co.uk/builds/$version/EditorV6.x64.msi"
 $checksum   = '9CF01DFE107BB7DD362078E1F603AE4DD5AE006BB246ABD671AD9DED286B395E'
 $checksum64 = '3B951FC0E3C20504BA7CB00570D17F3898F20CBFDFB3B1C3E0AAAE18FE821CD7'
+$lastModified32 = New-Object -TypeName DateTimeOffset 2017, 5, 11, 9, 49, 50, 0 # Last modified time corresponding to this package version
+$lastModified64 = New-Object -TypeName DateTimeOffset 2017, 5, 11, 9, 49, 50, 0 # Last modified time corresponding to this package version
+
+# Tracker Software have fixed download URLs, but if the binary changes we can fall back to their alternate (but slower) download site
+# so the package doesn't break.
+function CheckDownload($url, $primaryDownloadUrl, [DateTimeOffset] $packageVersionLastModified)
+{
+    $headers = Get-WebHeaders -url $primaryDownloadUrl
+    $lastModifiedHeader = $headers.'Last-Modified'
+
+    $lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
+
+    Write-Verbose "Package LastModified: $packageVersionLastModified"
+    Write-Verbose "HTTP Last Modified  : $lastModified"
+
+    if ($lastModified -ne $packageVersionLastModified) {
+        Write-Warning "The download available at $primaryDownloadUrl has changed from what this package was expecting. Falling back to FTP for version-specific URL"
+        $url
+    } else {
+        Write-Verbose "Primary URL matches package expectation"
+        $primaryDownloadUrl
+    }
+}
+
+$url = CheckDownload $url $primaryDownloadUrl $lastModified32
+$url64 = CheckDownload $url64 $primaryDownloadUrl64 $lastModified64
 
 $packageArgs = @{
   packageName   = $packageName
@@ -35,7 +63,7 @@ if ($packageParameters) {
 
     if ($packageParameters -match $match_pattern ){
         $results = $packageParameters | Select-String $match_pattern -AllMatches
-        $results.matches | % {
+        $results.matches | ForEach-Object {
         $arguments.Add(
             $_.Groups[$option_name].Value.Trim(),
             $_.Groups[$value_name].Value.Trim())
@@ -79,7 +107,7 @@ if ($packageParameters) {
 }
 
 if ($customArguments.Count) { 
-    $packageArgs.silentArgs += " " + (($customArguments.GetEnumerator() | % { "$($_.Name)=$($_.Value)" } ) -join " ")
+    $packageArgs.silentArgs += " " + (($customArguments.GetEnumerator() | ForEach-Object { "$($_.Name)=$($_.Value)" } ) -join " ")
 }
 
 Install-ChocolateyPackage @packageArgs
