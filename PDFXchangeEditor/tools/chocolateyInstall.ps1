@@ -1,9 +1,11 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $packageName = 'PDFXchangeEditor' 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$version    = '6.0.321.0'
+$version    = $env:ChocolateyPackageVersion
 $url        = "http://www.docu-track.co.uk/builds/$version/EditorV6.x86.msi"
 $url64      = "http://www.docu-track.co.uk/builds/$version/EditorV6.x64.msi"
+$checksum   = '9CF01DFE107BB7DD362078E1F603AE4DD5AE006BB246ABD671AD9DED286B395E'
+$checksum64 = '3B951FC0E3C20504BA7CB00570D17F3898F20CBFDFB3B1C3E0AAAE18FE821CD7'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -16,9 +18,9 @@ $packageArgs = @{
 
   softwareName  = 'PDF-XChange Editor'
 
-  checksum = '9CF01DFE107BB7DD362078E1F603AE4DD5AE006BB246ABD671AD9DED286B395E'
+  checksum = $checksum
   checksumType  = 'sha256' 
-  checksum64 = '3B951FC0E3C20504BA7CB00570D17F3898F20CBFDFB3B1C3E0AAAE18FE821CD7'
+  checksum64 = $checksum64
   checksumType64= 'sha256' 
 }
 
