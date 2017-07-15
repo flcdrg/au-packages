@@ -10,7 +10,7 @@
     <authors>Tracker Software</authors>
     <projectUrl>https://www.tracker-software.com/product/pdf-xchange-editor</projectUrl>
     <iconUrl>https://cdn.rawgit.com/flcdrg/chocolatey-pdfxchangeeditor/master/icons/pdfxchangeeditor.png</iconUrl>
-    <copyright>1997-2016 Tracker Software Products</copyright>
+    <copyright>1997-2017 Tracker Software Products</copyright>
     <licenseUrl>https://www.tracker-software.com/licensing</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <docsUrl>http://help.tracker-software.com/EUM/default.aspx?pageid=Welcome</docsUrl>
@@ -56,9 +56,6 @@ Requires maintenance through 06-03-2017
 * Fixed an issue with storing certificates chain in digital signatures.
 * Fixed an issue with preserving DPI settings on chaning Page Layout Mode. (T# 3819)
 </releaseNotes>
-    <!--<dependencies>
-      <dependency id="" version="" />
-    </dependencies>-->
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
