@@ -41,4 +41,7 @@ function global:au_AfterUpdate
     [System.IO.File]::WriteAllText($NuPath, $nu, $Utf8NoBomEncoding)
 }
 
-update
+if ($MyInvocation.InvocationName -ne '.') {
+
+  update -ChecksumFor 32
+}
