@@ -32,4 +32,16 @@ function global:au_BeforeUpdate {
   Copy-Item "$PSScriptRoot\..\ubiquiti-unifi-controller\tools" "$PSScriptRoot" -Force -Recurse
 }
 
+function global:au_SearchReplace {
+    @{
+        'tools\chocolateyInstall.ps1' = @{
+            "(^[$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
+            "(^[$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+        }
+        "$($Latest.PackageName)-5.4.x.nuspec" = @{
+            "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
+        }
+     }
+}
+
 update -ChecksumFor none
