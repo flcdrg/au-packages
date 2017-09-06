@@ -6,17 +6,17 @@
     <version>1.7.2</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/keepass-rpc</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Keepass RPC</title>
+    <title>KeePass RPC Plugin</title>
     <authors>luckyrat</authors>
     <projectUrl>https://github.com/kee-org/keepassrpc</projectUrl>
-    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/keepass-rpc.png</iconUrl>-->
+    <iconUrl>http://cdn.rawgit.com/dtgm/chocolatey-packages/master/icons/keepass.png</iconUrl>
     <copyright>2017 Chris Tomlinson</copyright>
     <licenseUrl>https://raw.githubusercontent.com/kee-org/keepassrpc/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/kee-org/keepassrpc</projectSourceUrl>
     <docsUrl>https://github.com/kee-org/KeeFox/wiki/en-|-Development</docsUrl>
     <bugTrackerUrl>https://github.com/kee-org/keepassrpc/issues</bugTrackerUrl>
-    <tags>keepass keefox</tags>
+    <tags>keepass keefox keepassrpc plugin</tags>
     <summary>KeePassRPC plugin that needs to be installed inside KeePass in order for KeeFox to be able to connect your browser to your passwords</summary>
     <description>KeePassRPC plugin that needs to be installed inside KeePass in order for KeeFox to be able to connect your browser to your passwords </description>
     <releaseNotes>Essential upgrade for KeeFox version 2.0.
