@@ -15,7 +15,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <docsUrl>http://www.ldapbrowser.com/forum/</docsUrl>
     <mailingListUrl>http://www.ldapbrowser.com/forum/</mailingListUrl>
-    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <bugTrackerUrl>http://www.ldapbrowser.com/support_request.htm</bugTrackerUrl>
     <tags>ldap browser directory admin</tags>
     <summary>Browse LDAP directories</summary>
     <description>Softerra LDAP Browser is a lightweight version of Softerra LDAP Administrator. It supports read-only operations that do not modify LDAP directory data, e.g. browsing, search, export, etc. For complete, fully functional management of LDAP directories you need Softerra LDAP Administrator.</description>

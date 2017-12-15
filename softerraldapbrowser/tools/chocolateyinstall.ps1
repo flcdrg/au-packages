@@ -11,7 +11,7 @@ $packageArgs = @{
   url           = $url
   url64bit      = $url64
 
-  softwareName  = 'softerraldapbrowser*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
+  softwareName  = 'Softerra LDAP Browser*'
 
   checksum      = '705296402ffbd0cc0593d95cc49fc33ceeb96ab0'
   checksumType  = 'sha1'
