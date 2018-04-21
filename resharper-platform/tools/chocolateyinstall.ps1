@@ -16,7 +16,7 @@ $packageArgs = @{
   checksumType  = 'sha256'
 }
 
-Get-ChocolateyWebFile @packageArgs $installPath $url
+Get-ChocolateyWebFile @packageArgs
 
 # Exclude from shimming
 $files = get-childitem $packagePath -include *.exe -recurse

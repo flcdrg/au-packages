@@ -19,6 +19,6 @@
     Each ReSharper Ultimate license allows a single developer to use ReSharper, ReSharper C++, dotCover, dotTrace and dotMemory.</description>
   </metadata>
   <files>
-    <file src="tools\chocolateyinstall.ps1" />
+    <file src="tools\**" target="tools" />
   </files>
 </package>
