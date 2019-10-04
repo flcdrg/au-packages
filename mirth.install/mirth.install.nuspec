@@ -2,11 +2,11 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>mirth</id>
+    <id>mirth.install</id>
     <version>3.8.0</version>
-    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/mirth</packageSourceUrl>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/mirth.install</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Mirth</title>
+    <title>NextGen Connect (Mirth)</title>
     <authors>Nextgen Healthcare</authors>
     <projectUrl>https://www.nextgen.com/products-and-services/integration-engine</projectUrl>
     <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/mirth.png</iconUrl>-->
@@ -23,10 +23,12 @@
     <description>The ability to standardize and exchange health information and patient data is critical for healthcare organizations. NextGen Connect (formerly Mirth Connect) has been powering healthcare organizations for more than a decade. Designed for seamless healthcare message integration, this solution is easily configurable, easily deployed, and scalable. </description>
     <releaseNotes>http://www.mirthcorp.com/community/wiki/pages/viewpage.action?pageId=24709204</releaseNotes>
     <dependencies>
-      <dependency id="mirth.install" version="[3.8.0]" />
+      <dependency id="openjdk" version="11.0" />
     </dependencies>
   </metadata>
   <files>
-    <!-- <file src="tools\**" target="tools" /> -->
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
   </files>
 </package>
