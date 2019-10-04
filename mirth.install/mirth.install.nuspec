@@ -9,7 +9,7 @@
     <title>NextGen Connect (Mirth)</title>
     <authors>Nextgen Healthcare</authors>
     <projectUrl>https://www.nextgen.com/products-and-services/integration-engine</projectUrl>
-    <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/mirth.png</iconUrl>-->
+    <iconUrl>http://raw.githubusercontent.com/flcdrg/au-packages/master/mirth/icons/mirth.png</iconUrl>
     <copyright>2019 Software Vendor</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
     <licenseUrl>https://raw.githubusercontent.com/nextgenhealthcare/connect/development/server/docs/LICENSE.txt</licenseUrl>
