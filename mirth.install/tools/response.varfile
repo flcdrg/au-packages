@@ -1,6 +1,6 @@
 # install4j response file for Mirth Connect 3.8.0.b2464
-dir.appdata=C\:\\ProgramData\\Mirth Connect\\appdata
-dir.logs=C\:\\ProgramData\\Mirth Connect\\logs
+dir.appdata=C\:\\Program Files\\Mirth Connect\\appdata
+dir.logs=C\:\\Program Files\\Mirth Connect\\logs
 executeLauncherAction$Boolean=false
 http.port$Long=8080
 https.port$Long=8443

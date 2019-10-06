@@ -8,3 +8,5 @@
 #  the currently installed version, not from the new upgraded package version.
 
 Get-Service "Mirth Connect Service" -ErrorAction SilentlyContinue | Stop-Service
+
+Get-Process mcmanager -ErrorAction SilentlyContinue | Stop-Process
