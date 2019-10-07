@@ -6,7 +6,7 @@
     <version>3.8.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/mirth.install</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Mirth Connect</title>
+    <title>Mirth Connect (Install)</title>
     <authors>Nextgen Healthcare</authors>
     <projectUrl>https://www.nextgen.com/products-and-services/integration-engine</projectUrl>
     <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/fc9ff5df6b2acfdceeed214affc76335e88749f8/mirth/icons/teams-logo.png</iconUrl>
