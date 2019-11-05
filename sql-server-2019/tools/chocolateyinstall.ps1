@@ -2,11 +2,14 @@
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url        = 'https://download.microsoft.com/download/7/c/1/7c14e92e-bdcb-4f89-b7cf-93543e7112d1/SQLServer2019-x64-ENU-Dev.iso'
 
-. .\Get-PendingReboot.ps1
+. $toolsDir\Get-PendingReboot.ps1
 
 if ((Get-PendingReboot).RebootPending) {
   Write-Error "A system reboot is pending. You must restart Windows first before installing SQL Server"
 }
+
+
+# TODO - Check Windows OS is compatible
 
 $pp = Get-PackageParameters
 
