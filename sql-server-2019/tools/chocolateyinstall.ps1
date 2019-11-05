@@ -1,8 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://download.microsoft.com/download/E/F/2/EF23C21D-7860-4F05-88CE-39AA114B014B/SQLServer2017-x64-ENU-Dev.iso'
-
-# Inspired by @riezebosch's SQL Server packages at https://github.com/riezebosch/BoxstarterPackages/tree/master/sql-server
+$url        = 'https://download.microsoft.com/download/7/c/1/7c14e92e-bdcb-4f89-b7cf-93543e7112d1/SQLServer2019-x64-ENU-Dev.iso'
 
 . .\Get-PendingReboot.ps1
 
@@ -27,8 +25,8 @@ $packageArgs = @{
   fileType      = 'EXE'
   url           = $url
 
-  softwareName  = 'Microsoft SQL Server 2017 (64-bit)'
-  checksum      = '315D88E0211DB6B5087848A6D12ECD32FB530F8B58F185100502626EF2E32E74'
+  softwareName  = 'Microsoft SQL Server 2019 (64-bit)'
+  checksum      = '575D5F32BCE655CF6FA3C3A0F5A525ADFCAB3A5469107EF8F05BF92C43741218'
   checksumType  = 'sha256'
 
   silentArgs   = "/IAcceptSqlServerLicenseTerms /Q "
@@ -49,7 +47,7 @@ if (!$pp['IsoPath']) {
     [System.IO.Directory]::CreateDirectory($tempDir) | Out-Null
   }
 
-  $fileFullPath = Join-Path $tempDir "SQLServer2017-x64-ENU-Dev.iso"
+  $fileFullPath = Join-Path $tempDir "SQLServer2019-x64-ENU-Dev.iso"
   Get-ChocolateyWebFile @packageArgs -FileFullPath $fileFullPath
 } else {
   $fileFullPath = $pp['IsoPath']
