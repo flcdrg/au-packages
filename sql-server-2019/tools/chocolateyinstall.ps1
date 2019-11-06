@@ -60,10 +60,13 @@ if (!$pp['IsoPath']) {
 # append remaining package parameters
 $packageArgs.silentArgs += ($pp.GetEnumerator() | ForEach-Object { "/$($_.name)=`"$($_.value)`"" }) -join " "
 
-$MountResult = Mount-DiskImage -ImagePath $fileFullPath -StorageType ISO -PassThru
-$MountVolume = $MountResult | Get-Volume
-$MountLocation = "$($MountVolume.DriveLetter):"
-
-Install-ChocolateyInstallPackage @packageArgs -File "$($MountLocation)\setup.exe"
-
-Dismount-DiskImage -ImagePath $fileFullPath
+try {
+  $MountResult = Mount-DiskImage -ImagePath $fileFullPath -StorageType ISO -PassThru
+  $MountVolume = $MountResult | Get-Volume
+  $MountLocation = "$($MountVolume.DriveLetter):"
+  
+  Install-ChocolateyInstallPackage @packageArgs -File "$($MountLocation)\setup.exe"  
+}
+finally {
+  Dismount-DiskImage -ImagePath $fileFullPath  
+}

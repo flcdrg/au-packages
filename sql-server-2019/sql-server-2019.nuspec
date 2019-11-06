@@ -55,7 +55,7 @@ To pass parameters, use `--params "''"` (e.g. `choco install sql-server-2019 [ot
 
 Example using /IsoPath to use previously downloaded SQL Server .iso
 ```
-choco install sql-server-2019 --params="'/IsoPath:c:\downloads\en_sql_server_2019_developer_x64_dvd_11296168.iso'"
+choco install sql-server-2019 --params="'/IsoPath:c:\downloads\SQLServer2019-x64-ENU-Dev.iso'"
 
 #### Chocolatey Pro / Business users
 
