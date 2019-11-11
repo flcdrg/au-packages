@@ -59,6 +59,7 @@ Future plans include better support for non-default instances (including uninsta
 Note that the install script makes use of `Mount-DiskImage` as the minimum OS requirements for SQL Server include this cmdlet.
 
 #### Package Parameters
+
 The following package parameters can be set:
 
  * `/IsoPath:` - path to a local copy of the .iso file - if not supplied then .iso is downloaded
@@ -75,14 +76,14 @@ See https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install
 To pass parameters, use `--params "''"` (e.g. `choco install sql-server-2019 [other options] --params="'/ITEM:value /ITEM2:value2'"`).
 
 Example using /IsoPath to use previously downloaded SQL Server .iso
+
 ```
 choco install sql-server-2019 --params="'/IsoPath:c:\downloads\SQLServer2019-x64-ENU-Dev.iso'"
+```
 
 #### Chocolatey Pro / Business users
 
-If you allow the package to download the ISO file, it is suggested you run Chocolatey with the `--skip-virus-check` parameter, as the online virus scanner doesn't 
-handle files over 500MB. You should use alternate methods of scanning in this case.
-```
+If you allow the package to download the ISO file, it is suggested you run Chocolatey with the `--skip-virus-check` parameter, as the online virus scanner doesn't handle files over 500MB. You should use alternate methods of scanning in this case.
     </description>
     <releaseNotes>https://docs.microsoft.com/en-au/sql/sql-server/sql-server-version-15-release-notes?view=sql-server-ver15</releaseNotes>
     <dependencies>
