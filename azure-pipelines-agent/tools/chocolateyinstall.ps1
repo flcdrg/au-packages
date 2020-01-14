@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$url = 'https://vstsagentpackage.azureedge.net/agent/2.162.0/vsts-agent-win-x86-2.162.0.zip'
-$url64 = 'https://vstsagentpackage.azureedge.net/agent/2.162.0/vsts-agent-win-x64-2.162.0.zip'
-$checksum = '5560fb356e65680c0f77066b001aa3abbc0dccb831628b6a412eee94bb2e83f6'
-$checksum64 = 'eadee90d59aee8d783375a6ae0b158ab68f6875a7ca43e61d0d4d6c4697140b2'
+$url = 'https://vstsagentpackage.azureedge.net/agent/2.164.3/vsts-agent-win-x86-2.164.3.zip'
+$url64 = 'https://vstsagentpackage.azureedge.net/agent/2.164.3/vsts-agent-win-x64-2.164.3.zip'
+$checksum = '7f57c2b527d8c1e34e9cedcecd5dd26f0b36fe2f11f21a27d2e1b38d1d7f86d2'
+$checksum64 = 'b84dcf93bea1b984eda029f9d8c8103faef57ac41e034c9b2710169c5b9a5db8'
 
 $pp = Get-PackageParameters
 
@@ -61,6 +61,10 @@ if ($pp['Url']) {
         $configOpts += @("--pool", $pp['Pool'])
     }
     
+    if ($pp['CollectionName']) {
+        $configOpts += @('--collectionname', $pp['CollectionName'])
+    }
+
     # AutoLogon(interactive) or as a service
     if ($pp['AutoLogon']) {
         $configOpts += @('--runAsAutoLogon', '--noRestart')
