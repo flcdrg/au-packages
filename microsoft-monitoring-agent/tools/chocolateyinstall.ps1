@@ -18,6 +18,10 @@ if ($pp['WorkspaceId'] -and $pp['WorkspaceKey']) {
   Write-Host "Installing agent, but configuration will need to be done via Control Panel app"
 }
 
+if ($pp['ProxyURL']) {
+  $azureArgs += "OPINSIGHTS_PROXY_URL=$($pp['ProxyURL'])"
+}
+
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   softwareName  = 'Microsoft Monitoring Agent'
