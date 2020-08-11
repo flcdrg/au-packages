@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>upsource</id>
+    <version>2020.1.1802</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/master/upsource</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>JetBrains Upsource</title>
+    <authors>JetBrains</authors>
+    <projectUrl>https://www.jetbrains.com/upsource</projectUrl>
+    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/upsource.png</iconUrl>-->
+    <copyright>Copyright © 2000-2020 JetBrains s.r.o</copyright>
+    <licenseUrl>https://www.jetbrains.com/upsource/buy/license.html</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://www.jetbrains.com/help/upsource/</docsUrl>
+    <tags>Upsource Code Review JetBrains</tags>
+    <summary>Improve your code, project, and process</summary>
+    <description>Improve your code, project, and process
+Perform efficient code reviews
+
+Automate your workflow – let Upsource analyze your code and track the progress, while you focus on improvements.
+
+Review changes from IDE
+
+Participate in discussions and manage your reviews without leaving the comfort of your IDE.
+
+Keep up with updates
+
+Explore new changes in the browser with IDE-like navigation, reply by email, and never miss an important change.
+
+Discover design flaws
+
+Spot parts of your project in need of a developers’ attention, such as hotspots and abandoned files.
+
+Detect project-wide risks
+
+Spread responsibilities and make sure no part of the code is “owned” by a sole developer.
+
+Onboard faster
+
+New team members can quickly learn how the project has evolved and discover the responsibility scopes of other team members.
+
+Have fun building awesome software together!
+
+Discuss changes, @mention others, react to comments, and unlock achievements as you discover new features and help your teammates!
+
+Integrate Upsource into your environment
+
+Easily make Upsource part of your process: integrate it with issue trackers, CI servers, and sync with GitHub.
+
+Scale it
+
+Don’t worry about outgrowing Upsource! No matter how large your team becomes or how many projects you have, Upsource can handle it.
+
+### Package Specific
+
+Upsource is installed into a folder in c:\ using with a version in the directory. eg. `c:\upsource-2020.1.1802`
+</description>
+    <releaseNotes>https://youtrack.jetbrains.com/releaseNotes/up?q=Planned%20for:%202020.1.1802&amp;title=Upsource%202020.1.1802&amp;_ga=2.16016063.824377589.1597142538-1426034634.1564888228</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

@@ -1,0 +1,1 @@
+﻿c:\upsource-2020.1.1802\bin\upsource.bat stop
