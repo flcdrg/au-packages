@@ -4,12 +4,12 @@
   <metadata>
     <id>upsource</id>
     <version>2020.1.1802</version>
-    <packageSourceUrl>https://github.com/flcdrg/au-packages/master/upsource</packageSourceUrl>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/upsource</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>JetBrains Upsource</title>
     <authors>JetBrains</authors>
     <projectUrl>https://www.jetbrains.com/upsource</projectUrl>
-    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/upsource.png</iconUrl>-->
+    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/b752fcb9e78cdc71e5793c554fc628a81df3ca08/upsource/icons/upsource.png</iconUrl>
     <copyright>Copyright © 2000-2020 JetBrains s.r.o</copyright>
     <licenseUrl>https://www.jetbrains.com/upsource/buy/license.html</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
