@@ -18,11 +18,11 @@ function global:au_GetLatest {
     $stream = $latest.Streams['Release']
     # https://download.jetbrains.com/resharper/JetBrains.ReSharper.CommandLineTools.2018.1.1.zip.sha256
     $versionMarketingStringDotted = $stream.VersionMarketingStringDotted
-    $url = "https://download.jetbrains.com/resharper/ReSharperUltimate.$versionMarketingStringDotted/JetBrains.ReSharper.CommandLineTools.$versionMarketingStringDotted.zip.sha256"
+    $url = "https://download.jetbrains.com/resharper/dotUltimate.$versionMarketingStringDotted/JetBrains.ReSharper.CommandLineTools.$versionMarketingStringDotted.zip.sha256"
     ($hashcode, $filename) = (Invoke-RestMethod -Uri $url).Split(([string[]] ," *"), [System.StringSplitOptions]::RemoveEmptyEntries)
 
     $stream.Checksum32 = $hashcode
-    $stream.Url32 = "https://download.jetbrains.com/resharper/ReSharperUltimate.$versionMarketingStringDotted/JetBrains.ReSharper.CommandLineTools.$versionMarketingStringDotted.zip"
+    $stream.Url32 = "https://download.jetbrains.com/resharper/dotUltimate.$versionMarketingStringDotted/JetBrains.ReSharper.CommandLineTools.$versionMarketingStringDotted.zip"
 
     # https://download.jetbrains.com/resharper/dotUltimate.2020.2.EAP7/JetBrains.ReSharper.CommandLineTools.2020.2.EAP7.Checked.zip
     $stream = $latest.Streams['Release-Eap']

@@ -2,13 +2,13 @@ $urls = @{
     "Release" = @{
         Version = "https://download-cf.jetbrains.com/resharper/resharper-version.json"
         Updates = "https://download-cf.jetbrains.com/resharper/resharper-updates.json"
-        Hash = "https://download.jetbrains.com/resharper/ReSharperUltimate.VERSIONMARKETINGSTRING/JetBrains.ReSharperUltimate.VERSIONMARKETINGSTRING.exe.sha256"
+        Hash = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.exe.sha256"
 
-        # https://download.jetbrains.com/resharper/ReSharperUltimate.2018.2/JetBrains.ReSharperUltimate.2018.2.exe.sha256
-        # https://download.jetbrains.com/resharper/ReSharperUltimate.2018.2/JetBrains.ReSharperUltimate.2018.2.exe
-        # https://download-cf.jetbrains.com/resharper/ReSharperUltimate.2018.2/JetBrains.ReSharperUltimate.2018.2.exe
+        # https://download.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe.sha256
+        # https://download.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe
+        # https://download-cf.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe
 
-        Url = "https://download.jetbrains.com/resharper/ReSharperUltimate.VERSIONMARKETINGSTRING/JetBrains.ReSharperUltimate.VERSIONMARKETINGSTRING.exe"
+        Url = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.exe"
     }
     "Release-EAP" = @{
         Version = "https://download.jetbrains.com/resharper/resharper-version-eap.json"
@@ -33,7 +33,7 @@ function GetJetbrainsReSharperPlatformLatestRelease($release) {
     $versionMarketingStringSemVer = $versionMarketingString -replace " EAP ", "-EAP"
     $versionMarketingStringDotted = $versionMarketingString -replace " EAP ", ".EAP"
 
-    #$filename = "JetBrains.ReSharperUltimate.$($versionMarketingStringUpdated).exe"
+    #$filename = "JetBrains.dotUltimate.$($versionMarketingStringUpdated).exe"
     $url = $urls[$release].Hash -replace "VERSIONMARKETINGSTRING", $versionMarketingStringDotted
     $data = Invoke-RestMethod -Uri $url
     ($hashcode, $filename) = $data -split "\s\*" #.Split(([string[]] ," *"), [System.StringSplitOptions]::RemoveEmptyEntries)
