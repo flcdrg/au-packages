@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dellcommandupdate-uwp</id>
-    <version>3.1.2</version>
+    <version>3.1.3</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dellcommandupdate-uwp</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Dell Command | Update (UWP)</title>
@@ -13,7 +13,7 @@
     <copyright>Copyright © 2018 Dell Inc. All rights reserved</copyright>
     <licenseUrl>http://www.dell.com/learn/us/en/solutions/software-license-agreements?s=corp</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <docsUrl>https://www.dell.com/support/manuals/au/en/aubsd1/command-update/dellcommandupdate_3.1.1_ug/dell-command-update-overview?guid=guid-05f6585f-2f8f-430f-83ef-11246ceb2677</docsUrl>
+    <docsUrl>https://www.dell.com/support/manuals/au/en/audhs1/command-update/dellcommandupdate_3.1.1_rn/dell-command-update-version-313?guid=guid-bd50e78b-d328-4ff8-a5bd-09f495fd3207</docsUrl>
     <tags>dell command update admin uwp windows10</tags>
     <summary>Dell utility that allows you to automate driver, BIOS and firmware updates on your system for Windows 10</summary>
     <description>You can use Dell Command | Update to update a Dell system with the latest drivers, BIOS, firmware, and Dell software applications.
@@ -29,7 +29,7 @@ This UWP package provides the Dell Command | Update Application and is supported
 
 *Note that this is not an upgrade to the non-UWP version. You will need to manually uninstall older versions of Dell Command | Update before installing this Windows 10/UWP version.*
  </description>
- <releaseNotes>https://www.dell.com/support/home/au/en/aubsd1/drivers/DriversDetails?driverId=Y2PJJ</releaseNotes>
+ <releaseNotes>https://www.dell.com/support/article/en-au/sln311129/dell-command-update?lang=en</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
