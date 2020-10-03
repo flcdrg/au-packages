@@ -56,26 +56,9 @@ $packageArgs = @{
 
 $arguments = @{}
 
-$packageParameters = $env:chocolateyPackageParameters
+$packageParameters = Get-PackageParameters
 
 if ($packageParameters) {
-    $match_pattern = "\/(?<option>([a-zA-Z]+)):(?<value>([`"'])?([a-zA-Z0-9- _\\:\.]+)([`"'])?)|\/(?<option>([a-zA-Z]+))"
-    $option_name = 'option'
-    $value_name = 'value'
-
-    if ($packageParameters -match $match_pattern ){
-        $results = $packageParameters | Select-String $match_pattern -AllMatches
-        $results.matches | ForEach-Object {
-        $arguments.Add(
-            $_.Groups[$option_name].Value.Trim(),
-            $_.Groups[$value_name].Value.Trim())
-    }
-    }
-    else
-    {
-        Throw "Package Parameters were found but were invalid (REGEX Failure)"
-    }
-
     # http://help.tracker-software.com/EUM/default.aspx?pageid=PDFXEdit3:switches_for_msi_installers
     $customArguments = @{}
 
