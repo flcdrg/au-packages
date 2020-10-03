@@ -8,10 +8,10 @@ $primaryDownloadUrl = "http://downloads.pdf-xchange.com/$filename"
 $primaryDownloadUrl64 = "http://downloads.pdf-xchange.com/$filename64"
 $url        = "http://www.docu-track.co.uk/builds/$version/$filename"
 $url64      = "http://www.docu-track.co.uk/builds/$version/$filename64"
-$checksum   = '65CB3B5C8BD77E019F22EDA85F69BB46C4DDC3FB1ABBFC03067667105FD144F2'
-$checksum64 = 'A58C7453FA2E5290A54C7939BA7B32F040A9201BADEE871A1159F2E45584375A'
-$lastModified32 = New-Object -TypeName DateTimeOffset 2020, 7, 29, 1, 4, 24, 0 # Last modified time corresponding to this package version
-$lastModified64 = New-Object -TypeName DateTimeOffset 2020, 7, 29, 1, 4, 23, 0 # Last modified time corresponding to this package version
+$checksum   = '7071CBF6774C8EF198E3B3DD99F553B015472A18BC286992A54182F1AC7A6571'
+$checksum64 = '5846206399520B841342C26257C4591078382ECF11B75294F1B6E7B38A742809'
+$lastModified32 = New-Object -TypeName DateTimeOffset 2020, 8, 12, 22, 49, 50, 0 # Last modified time corresponding to this package version
+$lastModified64 = New-Object -TypeName DateTimeOffset 2020, 8, 12, 22, 49, 32, 0 # Last modified time corresponding to this package version
 
 # Tracker Software have fixed download URLs, but if the binary changes we can fall back to their alternate (but slower) download site
 # so the package doesn't break.
