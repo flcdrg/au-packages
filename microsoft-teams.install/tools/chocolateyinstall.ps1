@@ -25,4 +25,14 @@ $packageArgs = @{
   validExitCodes= @(0, 3010, 1641)
 }
 
+$pp = Get-PackageParameters
+
+if ($pp['NoAutoStart']) {
+  $packageArgs.silentArgs += ' OPTIONS="noAutoStart=true"'
+}
+
+if ($pp['AllUsers']) {
+  $packageArgs.silentArgs += ' ALLUSERS=1'
+}
+
 Install-ChocolateyPackage @packageArgs
