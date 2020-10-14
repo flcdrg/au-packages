@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>obs-move-transition</id>
+    <version>1.7.8</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/obs-move-transition</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>OBS Move Transition plugin</title>
+    <authors>Exeldro</authors>
+    <projectUrl>https://obsproject.com/forum/resources/move-transition.913/</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/aeliussaionji/chocopkgs@979a823c98cedde055c6004aebfc6d8a7bdef796/icons/obs-studio.png</iconUrl>
+    <!-- copyright is usually years and software vendor, but not required for internal feeds -->
+    <copyright>2020 Exeldro</copyright>
+    <licenseUrl>https://github.com/exeldro/obs-move-transition/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/exeldro/obs-move-transition</projectSourceUrl>
+    <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
+    <!--<mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://github.com/exeldro/obs-move-transition/issues</bugTrackerUrl>
+    <tags>obs obs-studio plugin</tags>
+    <summary>Plugin for OBS Studio to move sources to a new position during scene transition</summary>
+    <description>Plugin for OBS Studio to move sources to a new position during scene transition. If the 2 scenes contain a source with similar name (configured with settings) it will do the move the position and size between the 2 positions.</description>
+    <releaseNotes>https://obsproject.com/forum/resources/move-transition.913/updates</releaseNotes>
+
+    <dependencies>
+      <dependency id="obs-studio" version="25.0" />
+      <dependency id="vcredist140" version="14.27.29112" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
