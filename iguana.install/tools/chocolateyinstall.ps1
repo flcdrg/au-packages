@@ -46,6 +46,9 @@ if ($pp) {
     Write-Debug "No Package Parameters Passed in"
 }
 
+if (-not [System.IO.Path]::IsPathRooted($installationPath)) {
+    Write-Error "Installation path '$installationPath' must be absolute, not relative"
+}
 <# 
  /DIRECTORY="path" - Install in this directory (default is C:\Program Files\iNTERFACEWARE)
  /CHAMELEON=1 - Install Chameleon
