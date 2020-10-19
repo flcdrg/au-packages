@@ -25,5 +25,5 @@ function global:au_GetLatest {
 }
 
 if ($MyInvocation.InvocationName -ne '.') { # run the update only if script is not sourced
-    update -ChecksumFor 64 -Force
+    update -ChecksumFor 64
 }

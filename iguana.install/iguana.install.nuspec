@@ -3,18 +3,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>iguana.install</id>
-    <version>6.1.3.20201019</version>
+    <version>6.1.3</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Interfaceware Iguana (Install)</title>
     <authors>iNTERFACEWARE Inc.</authors>
     <projectUrl>https://www.interfaceware.com/iguana.html</projectUrl>
-    <iconUrl>http://raw.githubusercontent.com/flcdrg/chocolatey-interfaceware/master/icons/iguana.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/tree/master/iguana/icons/iguana.png</iconUrl>
     <copyright>2017 iNTERFACEWARE Inc.</copyright>
-    <licenseUrl>https://www.interfaceware.com/termsandconditions.html</licenseUrl>
+    <licenseUrl>https://www.interfaceware.com/eula</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <docsUrl>http://www.interfaceware.com/manual/index.html</docsUrl>
-    <mailingListUrl>http://help.interfaceware.com/forums</mailingListUrl>
+    <docsUrl>https://help.interfaceware.com/v6</docsUrl>
+    <mailingListUrl>https://help.interfaceware.com/forums</mailingListUrl>
     <tags>iguana admin trial EHR HL7 chameleon healthcare integration</tags>
     <summary>Iguana interface engine</summary>
     <description>The Iguana interface engine allows you to integrate with EHRs, Billing Systems, HIEs and any other healthcare application.
