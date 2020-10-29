@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url32      = 'https://download.microsoft.com/download/A/E/7/AE709F7E-37F5-473F-A615-42D6F66AE32F/MMASetup-i386.exe'
-$checksum32 = '2986B39E819E2C16F524DB2AF318779E0E8EAC72819592227090C1BB4C8381CE'
-$url64      = 'https://download.microsoft.com/download/7/3/7/7371c415-6f85-486a-9bcb-8378295b7963/MMASetup-AMD64.exe'
-$checksum64 = '72BF8403D35F559FBE8A2CADCCFA6B1B5AF51AEDE9B250C9603F1D6C02BCD23C'
+$url32      = 'https://download.microsoft.com/download/e/5/f/e5f902ff-7718-4b47-bc54-b1f9cbe3054f/MMASetup-i386.exe'
+$checksum32 = '7073FD568A1CBC565DAAC89407259B03E36022BA68F882C97B6F1D88761A6CEC'
+$url64      = 'https://download.microsoft.com/download/3/c/d/3cd6f5b3-3fbe-43c0-88e0-8256d02db5b7/MMASetup-AMD64.exe'
+$checksum64 = '6EF939A9CF03533B371D0B4FF8DC76615E1A12C740ACE9F30D887CEBB9C5DE4D'
 
 # package parameters
 $pp = Get-PackageParameters
