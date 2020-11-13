@@ -16,7 +16,7 @@ if ($pp['SSMSExePath'])
       packageName   = $packageName
       unzipLocation = $toolsDir
       fileType      = $fileType
-      file          = $params['SSMSExePath']
+      file          = $pp['SSMSExePath']
       silentArgs    = $args
       validExitCodes= $exitCodes
       softwareName  = $softwareName
