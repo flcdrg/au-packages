@@ -11,7 +11,7 @@
     <projectUrl>https://www.dell.com/support/article/en-au/sln311129/dell-command-update?lang=en</projectUrl>
     <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/359437f27e4f72676411967fe222e27cf1d94a27/dellcommandupdate/icons/dellcommandupdate.png</iconUrl>
     <copyright>Copyright © 2020 Dell Inc. All rights reserved</copyright>
-    <licenseUrl>http://www.dell.com/learn/us/en/solutions/software-license-agreements?s=corp</licenseUrl>
+    <licenseUrl>https://www.dell.com/learn/us/en/uscorp1/terms-of-sale-consumer-license-agreements</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <docsUrl>https://www.dell.com/support/manuals/en-au/command-update/dellcommandupdate_ug/dell-command--update?guid=guid-3527787d-8c0c-4306-ba9f-0e258caf9faa&amp;lang=en-us</docsUrl>
     <tags>dell command update admin uwp windows10</tags>
