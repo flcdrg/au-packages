@@ -23,6 +23,8 @@ graphical tools with a number of rich script editors to provide developers and a
 
 The SSMS 18.x installation does not upgrade or replace SSMS versions 17.x or earlier. SSMS 18.x installs side by side with previous versions so both versions are available for use.
 
+Beginning with SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is automatically installed alongside SSMS. As a consequence of this, uninstalling this package will impact azure-data-studio if you had that package installed previously.
+
 #### Version Number
 
 This package is versioned using the published build number. The corresponding 'release number' is included in the package title.
@@ -44,7 +46,20 @@ This release of SSMS supports the following 64-bit platforms when used with the 
 
 \* Requires version 1607 (10.0.14939) or later
 
+### Package Specific
+
+#### Package Parameters
+
+- `SSMSExePath:PathToFile` - Use this installer exe instead of downloading
+
+To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
+To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
+
+Example:
+`choco install sql-server-management-studio --params "'/SSMSExePath:c:\Downloads\SSMS-Setup-ENU.exe'"`
+
 #### Package Updates
+
 This package is automatically updated based on the same data source that SSMS itself uses to determine when updates are available. This may mean that there may sometimes be a delay between
 Microsoft releasing a new version and when they 'advertise' it as being generally available for SSMS to update.
 </description>
@@ -54,7 +69,6 @@ If you have a preview versions of SSMS 18.0 installed, uninstall it and reboot b
     <dependencies>
       <dependency id="KB2919355" version="1.0.20160915" />
       <dependency id="dotnet4.6.1" version="4.6.01055.20170308" />
-      <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>
   </metadata>
   <files>
