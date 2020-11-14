@@ -3,14 +3,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dellcommandupdate</id>
-    <version>3.1.3</version>
+    <version>4.0.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dellcommandupdate</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Dell Command | Update</title>
     <authors>Dell Inc</authors>
     <projectUrl>https://www.dell.com/support/article/en-au/sln311129/dell-command-update?lang=en</projectUrl>
     <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/359437f27e4f72676411967fe222e27cf1d94a27/dellcommandupdate/icons/dellcommandupdate.png</iconUrl>
-    <copyright>Copyright © 2018 Dell Inc. All rights reserved</copyright>
+    <copyright>Copyright © 2020 Dell Inc. All rights reserved</copyright>
     <licenseUrl>https://www.dell.com/learn/us/en/uscorp1/terms-of-sale-consumer-license-agreements</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <docsUrl>https://www.dell.com/support/manuals/au/en/aubsd1/command-update/dellcommandupdate_3.1.1_ug/dell-command-update-overview?guid=guid-05f6585f-2f8f-430f-83ef-11246ceb2677</docsUrl>
@@ -28,6 +28,7 @@ Dell Command | Update provides the following new features:
 Supported on OptiPlex, Venue Pro Tablet, Precision, XPS Notebook and Latitude models that are running the following Windows operating systems: Windows 7,Windows 8, Windows 8.1 and Windows 10.
 
 ### Package updates
+
 This package is updated automatically by querying the Dell Version Control Catalog. There can sometimes be a short delay between the time new software version is released and when it is added to the catalog (which is also used by Dell applications to auto-update)
  </description>
  <releaseNotes>http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=5P2R9</releaseNotes>
