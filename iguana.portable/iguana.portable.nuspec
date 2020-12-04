@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>iguana.portable</id>
-    <version>6.1.3</version>
+    <version>6.1.4</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Interfaceware Iguana (Portable)</title>
