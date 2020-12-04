@@ -2,8 +2,8 @@
 
 $packageName= 'iguana.install'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64      = 'http://dl.interfaceware.com/iguana/windows/6_1_3/iguana_6_1_3_windows_x64.zip'
-$checksum64 = '81c784eae9b54fb0b6132e6492dac7a9130af2dd4e7f28d4e6b8ca0001c42e15'
+$url64      = 'http://dl.interfaceware.com/iguana/windows/6_1_4/iguana_6_1_4_windows_x64.zip'
+$checksum64 = '848af4a03b5ae38650d4e9ef58c2a41912b2076ac79e27c3c58ba3927f8d9fc2'
 
 $pp = Get-PackageParameters
 
