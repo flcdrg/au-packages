@@ -4,8 +4,8 @@ $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $version    = $env:ChocolateyPackageVersion
 $filename   = 'ProV8.x86.msi'
 $filename64 = 'ProV8.x64.msi'
-$primaryDownloadUrl = "http://downloads.pdf-xchange.com/$filename"
-$primaryDownloadUrl64 = "http://downloads.pdf-xchange.com/$filename64"
+$primaryDownloadUrl = "https://downloads.pdf-xchange.com/$filename"
+$primaryDownloadUrl64 = "https://downloads.pdf-xchange.com/$filename64"
 $url        = "http://www.docu-track.co.uk/builds/$version/$filename"
 $url64      = "http://www.docu-track.co.uk/builds/$version/$filename64"
 $checksum   = 'D56BDFD76E98486BD245ED8DD53953DACC98F044587D6877A28D12973AA4E16F'
@@ -54,45 +54,44 @@ $packageArgs = @{
   checksumType64= 'sha256' 
 }
 
-$arguments = @{}
-
 $packageParameters = Get-PackageParameters
+
+$customArguments = @{}
 
 if ($packageParameters) {
     # http://help.tracker-software.com/EUM/default.aspx?pageid=PDFXEdit3:switches_for_msi_installers
-    $customArguments = @{}
 
-    if ($arguments.ContainsKey("NoDesktopShortcuts")) {
+    if ($packageParameters.ContainsKey("NoDesktopShortcuts")) {
         Write-Host "You want NoDesktopShortcuts"
         $customArguments.Add("DESKTOP_SHORTCUTS", "0")
     }
 
-    if ($arguments.ContainsKey("NoUpdater")) {
+    if ($packageParameters.ContainsKey("NoUpdater")) {
         Write-Host "You want NoUpdater"
         $customArguments.Add("NOUPDATER", "1")
     }
 
-    if ($arguments.ContainsKey("NoViewInBrowsers")) {
+    if ($packageParameters.ContainsKey("NoViewInBrowsers")) {
         Write-Host "You want NoViewInBrowsers"
         $customArguments.Add("VIEW_IN_BROWSERS", "0")
     }
 
-    if ($arguments.ContainsKey("NoSetAsDefault")) {
+    if ($packageParameters.ContainsKey("NoSetAsDefault")) {
         Write-Host "You want NoSetAsDefault"
         $customArguments.Add("SET_AS_DEFAULT", "0")
     }
 
-    if ($arguments.ContainsKey("NoProgramsMenuShortcuts")) {
+    if ($packageParameters.ContainsKey("NoProgramsMenuShortcuts")) {
         Write-Host "You want NoProgramsMenuShortcuts"
         $customArguments.Add("PROGRAMSMENU_SHORTCUTS", "0")
     }
 
-    if ($arguments.ContainsKey("KeyFile")) {
-        if ($arguments["KeyFile"] -eq "") {
+    if ($packageParameters.ContainsKey("KeyFile")) {
+        if ($packageParameters["KeyFile"] -eq "") {
           Throw 'KeyFile needs a colon-separated argument; try something like this: --params "/KeyFile:C:\Users\foo\Temp\PDFXChangeEditor.xcvault".'
         } else {
-          Write-Host "You want a KeyFile named $($arguments["KeyFile"])"
-          $customArguments.Add("KEYFILE", $arguments["KeyFile"])
+          Write-Host "You want a KeyFile named $($packageParameters["KeyFile"])"
+          $customArguments.Add("KEYFILE", $packageParameters["KeyFile"])
         }
     }
 
