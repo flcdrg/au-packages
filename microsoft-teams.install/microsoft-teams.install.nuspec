@@ -36,8 +36,9 @@ See https://docs.microsoft.com/en-us/MicrosoftTeams/msi-deployment for more info
 #### Package Parameters
 The following package parameters can be set:
 
+ * `/AllUser` - When you set this parameter, Teams Machine-Wide Installer appears in Programs and Features in Control Panel and in Apps &amp; Machine-wide installer for VDI/WVD sessionhost.
  * `/AllUsers` - When you set this parameter, Teams Machine-Wide Installer appears in Programs and Features in Control Panel and in Apps &amp; features in Windows Settings for all users of the computer. All users can then uninstall Teams if they have admin credentials on the computer.
- * `/NoAutoStart` - When a user logs in to Windows, Teams is installed with the MSI and a shortcut to start Teams is added to the user's desktop. Teams won't start until the user manually starts Teams. After the user manually starts Teams, Teams automatically starts whenever the user logs in.
+  * `/NoAutoStart` - When a user logs in to Windows, Teams is installed with the MSI and a shortcut to start Teams is added to the user's desktop. Teams won't start until the user manually starts Teams. After the user manually starts Teams, Teams automatically starts whenever the user logs in.
 
 To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
 
