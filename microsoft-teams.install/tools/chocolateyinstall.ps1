@@ -35,4 +35,9 @@ if ($pp['AllUsers']) {
   $packageArgs.silentArgs += ' ALLUSERS=1'
 }
 
+#Machine Wide installaer VDI/WVD
+if ($pp['AllUser']) {
+  $packageArgs.silentArgs += ' ALLUSER=1'
+}
+
 Install-ChocolateyPackage @packageArgs
