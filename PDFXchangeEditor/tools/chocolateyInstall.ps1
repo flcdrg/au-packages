@@ -2,16 +2,16 @@
 $packageName = 'PDFXchangeEditor' 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $version    = $env:ChocolateyPackageVersion
-$filename   = 'EditorV8.x86.msi'
-$filename64 = 'EditorV8.x64.msi'
+$filename   = 'EditorV9.x86.msi'
+$filename64 = 'EditorV9.x64.msi'
 $primaryDownloadUrl = "https://downloads.pdf-xchange.com/$filename"
 $primaryDownloadUrl64 = "https://downloads.pdf-xchange.com/$filename64"
 $url        = "http://www.docu-track.co.uk/builds/$version/$filename"
 $url64      = "http://www.docu-track.co.uk/builds/$version/$filename64"
-$checksum   = '1859A95BE389AE0927810813A10B27970C854C7B9B2A034593C60490DFF94337'
-$checksum64 = '2121F8D7C35EA3E1AC5A688A39E1033B262A8B78F7E6E2DB31EE0E962B787C8A'
-$lastModified32 = New-Object -TypeName DateTimeOffset 2020, 11, 19, 0, 23, 52, 0 # Last modified time corresponding to this package version
-$lastModified64 = New-Object -TypeName DateTimeOffset 2020, 11, 19, 0, 23, 38, 0 # Last modified time corresponding to this package version
+$checksum   = 'A706028F4288D5AAE5EC1D56E4F321B86849BE99B0431351A3530A957DB76C0D'
+$checksum64 = 'A682AFBD026837B17D97D8615B4C160B5AD5FD5CD5A460A3E37EBAF3B87B5BCF'
+$lastModified32 = New-Object -TypeName DateTimeOffset 2021, 1, 14, 20, 43, 12, 0 # Last modified time corresponding to this package version
+$lastModified64 = New-Object -TypeName DateTimeOffset 2021, 1, 14, 20, 44, 36, 0 # Last modified time corresponding to this package version
 
 # Tracker Software have fixed download URLs, but if the binary changes we can fall back to their alternate (but slower) download site
 # so the package doesn't break.
