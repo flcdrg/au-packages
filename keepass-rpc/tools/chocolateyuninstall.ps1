@@ -1,13 +1,12 @@
 ﻿$ErrorActionPreference = 'Stop';
+$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-if (Test-Path env:"ProgramFiles(x86)")
-{
-  $fileFullPath = ${env:ProgramFiles(x86)}
-} else {
-  $fileFullPath = $env:ProgramFiles
-}
+. "${toolsDir}\common.ps1"
 
-$fileFullPath = [IO.Path]::Combine($fileFullPath, "KeePass Password Safe 2\Plugins\KeePassRPC.plgx")
+
+$fileFullPath = Get-KeePassPluginsPath
+
+$fileFullPath = [IO.Path]::Combine($fileFullPath, "KeePassRPC.plgx")
 
 if (Test-Path $fileFullPath) {
   Remove-Item $fileFullPath -Force
