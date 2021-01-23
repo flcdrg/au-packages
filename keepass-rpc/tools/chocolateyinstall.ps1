@@ -1,6 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
+. "${toolsDir}\common.ps1"
+
 $url           = 'https://github.com/kee-org/keepassrpc/releases/download/v1.14.0/KeePassRPC.plgx'
 $checksum      = '1c410cc93c0252e7cfdb02507b8172c13e18d12c97f08630b721d897dc9b8b24'
 
@@ -18,14 +20,7 @@ $packageArgs = @{
 Get-ChocolateyWebFile @packageArgs
 
 # Now copy the plugin into the KeePass plugins directory
-if (Test-Path env:"ProgramFiles(x86)")
-{
-  $fileFullPath = ${env:ProgramFiles(x86)}
-} else {
-  $fileFullPath = $env:ProgramFiles
-}
-
-$fileFullPath = [IO.Path]::Combine($fileFullPath, "KeePass Password Safe 2\Plugins\")
+$fileFullPath = Get-KeePassPluginsPath
 
 if (-not (Test-Path $fileFullPath)) {
   New-Item -ItemType Directory $fileFullPath | Out-Null
