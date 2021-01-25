@@ -36,8 +36,10 @@ function global:au_GetLatest {
 
     $assetsJson = Invoke-RestMethod -Method Get -Uri $assets[0].browser_download_url -Headers $headers
 
-    $asset32 = $assetsJson | Where-Object { $_.platform -eq "win-x86" }
-    $asset64 = $assetsJson | Where-Object { $_.platform -eq "win-x64" }
+    # Note at some point we may want to offer the non-node installers as well, which use 'pipeline-agent' as a prefix
+    # See https://github.com/microsoft/azure-pipelines-agent/pull/3170 for more context
+    $asset32 = $assetsJson | Where-Object { $_.platform -eq "win-x86" -and $_.name.StartsWith("vsts-agent") }
+    $asset64 = $assetsJson | Where-Object { $_.platform -eq "win-x64" -and $_.name.StartsWith("vsts-agent") }
     $Latest = @{
         Url32 = $asset32.downloadUrl
         Url64 = $asset64.downloadUrl
