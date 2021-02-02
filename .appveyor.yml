@@ -103,7 +103,7 @@ build_script:
     }
 
     # first pass
-    ./update_all.ps1 -Name resharper-platform,teamcity,resharper-clt,*.portable,*.install
+    ./update_all.ps1 -Name resharper-platform,teamcity,*.portable,*.install
 
     # second pass (remainder)
     ./update_all.ps1 -ForcedPackages $forced
