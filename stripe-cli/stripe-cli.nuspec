@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>stripe-cli</id>
+    <version>1.5.7</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/stripe-cli</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>Stripe CLI</title>
+    <authors>Stripe</authors>
+    <projectUrl>https://stripe.com/docs/cli</projectUrl>
+    <copyright>(c) 2020 Stripe</copyright>
+    <licenseUrl>https://raw.githubusercontent.com/stripe/stripe-cli/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/stripe/stripe-cli</projectSourceUrl>
+    <docsUrl>https://github.com/stripe/stripe-cli</docsUrl>
+    <mailingListUrl>https://github.com/stripe/stripe-cli/discussions</mailingListUrl>
+    <bugTrackerUrl>https://github.com/stripe/stripe-cli/issues</bugTrackerUrl>
+    <tags>stripe payments cli</tags>
+    <summary>A command-line tool for Stripe</summary>
+    <description>The Stripe CLI helps you build, test, and manage your Stripe integration right from the terminal.
+
+With the CLI, you can:
+
+- Securely test webhooks without relying on 3rd party software
+- Trigger webhook events or resend events for easy testing
+- Tail your API request logs in real-time
+- Create, retrieve, update, or delete API objects.</description>
+
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
