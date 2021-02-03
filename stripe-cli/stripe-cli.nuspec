@@ -4,13 +4,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>stripe-cli</id>
-    <version>1.5.7</version>
+    <version>1.5.8</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/stripe-cli</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Stripe CLI</title>
     <authors>Stripe</authors>
     <projectUrl>https://stripe.com/docs/cli</projectUrl>
-    <copyright>(c) 2020 Stripe</copyright>
+    <copyright>(c) 2021 Stripe</copyright>
     <licenseUrl>https://raw.githubusercontent.com/stripe/stripe-cli/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/stripe/stripe-cli</projectSourceUrl>

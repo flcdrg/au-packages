@@ -1,0 +1,9 @@
+﻿VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+ 
+1. Go to https://github.com/stripe/stripe-cli/releases
+2. Locate the matching release version
+3. Download file ending in 'windows_x86_64.zip'
+4. Unzip this file
+5. Use `Get-FileHash stripe.exe` to calculate checksum and compare against embedded stripe.exe
