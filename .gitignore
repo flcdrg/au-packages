@@ -7,3 +7,4 @@ update_info.xml
 api_key
 *.vsix
 /packages
+/Example
