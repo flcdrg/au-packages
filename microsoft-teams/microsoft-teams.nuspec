@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>microsoft-teams</id>
-    <version>1.4.00.2781</version>
+    <version>1.4.00.2879</version>
     <owners>flcdrg</owners>
     <title>Microsoft Teams Desktop App</title>
     <authors>Microsoft Corporation</authors>
