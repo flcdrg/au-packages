@@ -3,7 +3,7 @@ $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $url        = 'https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB4577194-x64.exe'
 $checksum   = 'a92dbe0a85ba9f2ebea6dba76afe7b30ca689bdea841be44af16feebcb44f1b2'
-$softwareName = 'Hotfix 4073 for SQL Server 2019*(KB4577194)*'
+$softwareName = 'Hotfix 4102 for SQL Server 2019*(KB4577194)*'
 
 [bool] $runningAU = (Test-Path Function:\au_GetLatest)
 
