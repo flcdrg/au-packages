@@ -4,7 +4,7 @@ $platformPackageName = 'resharper-platform'
 $packageName = 'ReSharper-Ultimate-All'
 $scriptPath = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 $commonPath = $(Split-Path -parent $(Split-Path -parent $scriptPath))
-$filename = 'JetBrains.dotUltimate.2021.1.EAP4.Checked.exe'
+$filename = 'JetBrains.dotUltimate.2020.3.3.exe'
 $installPath = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
 $packageParameters = Get-PackageParameters
 
