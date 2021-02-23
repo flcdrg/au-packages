@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$filename = 'JetBrains.dotUltimate.2021.1.EAP4.Checked.exe'
-$checksum = '7d301448d316c8aa97a7de77f4055755613431adb8d8a7062b2d310d95daed29'
+$filename = 'JetBrains.dotUltimate.2020.3.3.exe'
+$checksum = 'd460fde4e1c22a7d3b02f8c308961f6e3cf96e7e98cd18de2ecfeb321c9fae81'
 
-$url = 'https://download.jetbrains.com/resharper/dotUltimate.2021.1.EAP4/JetBrains.dotUltimate.2021.1.EAP4.Checked.exe'
+$url = 'https://download.jetbrains.com/resharper/dotUltimate.2020.3.3/JetBrains.dotUltimate.2020.3.3.exe'
 $packagePath = $(Split-Path -parent $toolsDir)
 $installPath = Join-Path $packagePath $filename
 
