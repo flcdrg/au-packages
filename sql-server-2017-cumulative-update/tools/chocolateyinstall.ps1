@@ -5,6 +5,7 @@ $url        = 'https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-
 $checksum   = 'c20313b4f39afb8aaf14d6b100da8bb04295029116a7ce76b8f7c30b0499b154'
 $softwareName = 'Hotfix 3381 for SQL Server 2017*(KB4577467)*'
 
+[bool] $runningAU = (Test-Path Function:\au_GetLatest)
 $filename = [IO.Path]::GetFileName($url)
 
 # Download like Install-ChocolateyPackage (so we can restart from cached download)
@@ -26,6 +27,10 @@ $packageArgs = @{
 }
 
 $filePath = Get-ChocolateyWebFile @packageArgs
+
+if (Test-Path Function:\au_GetLatest) {
+  exit
+}
 
 # Copy into tools to keep for uninstall
 Copy-Item $filePath -Destination $fullFilePath
