@@ -43,7 +43,7 @@ $packageArgs = @{
 $filePath = Get-ChocolateyWebFile @packageArgs
 
 if (Test-Path Function:\au_GetLatest) {
-  exit
+  return
 }
 
 # Copy into tools to keep for uninstall

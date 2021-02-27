@@ -56,4 +56,4 @@ function global:au_AfterUpdate
     [System.IO.File]::WriteAllText($NuPath, $nu, $Utf8NoBomEncoding)
 }
 
-update
+update -ChecksumFor 64
