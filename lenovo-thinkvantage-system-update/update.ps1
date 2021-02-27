@@ -1,5 +1,7 @@
 import-module au
 
+. ../_scripts/common.ps1
+
 function global:au_SearchReplace {
     @{
         'tools\chocolateyInstall.ps1' = @{
@@ -22,6 +24,15 @@ function global:au_GetLatest {
         ReleaseNotes = "$buildDate release - https://download.lenovo.com/pccbbs/thinkvantage_en/system_update_$($version).txt"
         Version = $version 
     }
+
+    # Sometimes the version might be wrong, so check first
+    try {
+        Get-redirectedUri $Latest.URL32
+    }
+    catch {
+        return 'ignore'
+    }
+
     return $Latest
 }
 
