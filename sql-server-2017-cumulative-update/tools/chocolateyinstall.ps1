@@ -14,7 +14,7 @@ $tempDir = Join-Path $chocTempDir "$($env:chocolateyPackageName)"
 if ($env:chocolateyPackageVersion -ne $null) { $tempDir = Join-Path $tempDir "$($env:chocolateyPackageVersion)"; }
 $tempDir = $tempDir -replace '\\chocolatey\\chocolatey\\', '\chocolatey\'
 if (![System.IO.Directory]::Exists($tempDir)) { [System.IO.Directory]::CreateDirectory($tempDir) | Out-Null }
-$downloadFilePath = Join-Path $tempDir "$($packageName)Install.$fileType"
+$downloadFilePath = Join-Path $tempDir ([System.IO.Path]::GetFileName($url))
 
 $fullFilePath = Join-Path $toolsDir $filename
 
@@ -28,8 +28,9 @@ $packageArgs = @{
 
 $filePath = Get-ChocolateyWebFile @packageArgs
 
+
 if (Test-Path Function:\au_GetLatest) {
-  exit
+  return
 }
 
 # Copy into tools to keep for uninstall
