@@ -56,9 +56,4 @@ function global:au_AfterUpdate
     [System.IO.File]::WriteAllText($NuPath, $nu, $Utf8NoBomEncoding)
 }
 
-# function global:au_BeforeUpdate() {
-#     # Not sure why, but au isn't getting checksum from chocolateyInstall
-#     $Latest.Checksum64 = Get-RemoteChecksum $Latest.Url64
-#  }
-
-update -force -ChecksumFor 64
+update -ChecksumFor 64
