@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>dell-system-update</id>
+    <version>1.9.0</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dell-system-update</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>Dell EMC System Update</title>
+    <authors>Dell Inc</authors>
+    <projectUrl>https://www.dell.com/support/home/en-au/drivers/driversdetails?driverid=8ctk7</projectUrl>
+    <copyright>(c) Dell 2020</copyright>
+    <licenseUrl>https://www.dell.com/learn/us/en/uscorp1/terms-of-sale-consumer-license-agreements</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://www.dell.com/support/home/product-support/product/system-update/docs</docsUrl>
+    <tags>dell servers emc system</tags>
+    <summary>DELL EMC System Update (DSU) is a software designed to facilitate the application of updates on various Dell systems.</summary>
+    <description>DELL EMC System Update (DSU) is a software designed to facilitate the application of updates on various Dell systems. Using DSU you can:
+
+1. Identify the available updates, select the relevant updates, and deploy the updates on multiple systems.
+2. Maintain consistency in terms of interface and versions across Operating Systems, Repositories, and Systems.
+
+Dell EMC System Update (DSU) is a script optimized update deployment tool for applying Dell Update Packages (DUP) to Dell EMC PowerEdge servers.
+
+### Features
+
+- Robust set of Command Line (CLI) attributes
+- Both Linux and Windows versions with the same features and functionality
+- DSU for Windows and Linux works with the Dell Enterprise Catalog (or a custom catalog created using Dell Repository Manager)
+- Option to create a custom bootable ISO
+- DSU is the technology used by Dell EMC Repository Manager for the Smart Bootable ISO and Smart Deployment Scrip features.
+- DSU User Guide contains a complete list of CLI attributes and sample scripts.
+
+Once DSU is installed on a system it will:
+
+- Inventory the PowerEdge server and determine what updateable components are installed
+- Determine which components have new updates available
+- Apply those updates
+
+### Supported Operating Systems
+
+#### Microsoft Windows
+
+- Microsoft Windows Server 2012 R2 (x86_64)
+- Microsoft Windows Server 2016 (x86_64)
+- Microsoft Windows Server 2019 (x86_64)
+
+Supported Platforms: Dell EMC PowerEdge 12G and greater Servers.</description>
+    <releaseNotes>https://www.dell.com/support/manuals/en-au/system-update/dsu_1.9_rn/release-type-and-definition?guid=guid-45967d0c-6c12-4c19-b05b-d9029a4e6c7a&amp;lang=en-us</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
