@@ -53,7 +53,7 @@ All other package parameters are passed through to SQL Server Setup, allowing yo
 The following are set by default:
 
 - `/ConfigurationFile:` - The path to a configurationfile.ini - defaults to the supplied tools\configurationfile.ini
-- `/SQLSYSADMINACCOUNTS:` - The usernames to add to the SQL SysAdmin role - defaults to current user
+- `/SQLSYSADMINACCOUNTS:` - A username or group to add to the SQL SysAdmin role - defaults to current user. This option is only set if configurationfile.ini does not contain 'SQLSYSADMINACCOUNTS=' at the start of a line. 
 
 See https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt#Install for the full list of parameters supported by SQL Server.
 

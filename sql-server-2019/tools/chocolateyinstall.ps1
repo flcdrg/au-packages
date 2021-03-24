@@ -30,7 +30,10 @@ if (!$pp['CONFIGURATIONFILE']) {
 }
 
 if (!$pp['SQLSYSADMINACCOUNTS']) {
-  $pp['SQLSYSADMINACCOUNTS'] = "$env:USERDOMAIN\$env:USERNAME"
+  # Test for presence of "^SQLSYSADMINACCOUNTS=" in the ini - add the default only if not present
+  if (-not ((Get-Content -Path $($pp['CONFIGURATIONFILE'])) -match "^SQLSYSADMINACCOUNTS=")) {
+    $pp['SQLSYSADMINACCOUNTS'] = "$env:USERDOMAIN\$env:USERNAME"
+  }
 }
 
 $packageArgs = @{
