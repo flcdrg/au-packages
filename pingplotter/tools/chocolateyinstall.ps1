@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$checksum     = '7bd4825de6f90c8f75c2c71630513012a3a9383ab5824657fd155fb73fcc7f1a'
+$checksum     = '5088755d2f3361e36191607dd8a2402643b234f7279b85d528aa46c4e7df6301'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
