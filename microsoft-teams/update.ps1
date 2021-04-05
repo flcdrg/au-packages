@@ -17,11 +17,11 @@ function global:au_GetLatest {
     # 32bit
     $download_page = Invoke-WebRequest -Uri "https://teams.microsoft.com/downloads/DesktopUrl?env=production&plat=windows"
 
-    #https://statics.teams.microsoft.com/production-windows/1.0.00.10951/Teams_windows.exe
+    #https://statics.teams.cdn.office.net/production-windows/1.4.00.7174/TeamsSetup.exe
     
     $url32 = $download_page.Content.Trim()
 
-    $url32 -match ".*\/(?<version>\d+\.\d+\.\d+\.\d+)\/Teams_windows\.exe"
+    $url32 -match ".*\/(?<version>\d+\.\d+\.\d+\.\d+)\/TeamsSetup\.exe"
 
     $version = $Matches.version
 
