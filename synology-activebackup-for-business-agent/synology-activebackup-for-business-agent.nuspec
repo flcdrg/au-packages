@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>synology-activebackup-for-business-agent</id>
+    <title>Synology ActiveBackup for Business Agent</title>
+    <version>2.1.1.1125</version>
+    <authors>Synology Inc.</authors>
+    <owners>flcdrg</owners>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/synology-activebackup-for-business-agent</packageSourceUrl>
+    <projectUrl>https://www.synology.com/en-us/dsm/feature/active_backup_business</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/itigoag/chocolatey.synology-activebackup-for-business-agent@master/icon/synology-activebackup-for-business-agent.png</iconUrl>
+    <tags>Synology ActiveBackup for Business Agent</tags>
+    <copyright>Synology Inc.</copyright> 
+    <licenseUrl>https://www.synology.com/en-global/company/legal/terms_EULA</licenseUrl> 
+    <requireLicenseAcceptance>false</requireLicenseAcceptance> 
+    <summary>ActiveBackup for Business Agent</summary>
+    <description><![CDATA[
+Active Backup for Business is the all-in-one backup solution, designed for streamlining and enhancing data protection in businesses' diverse IT environments. Before protecting and backing up data stored on personal computers as well as physical Windows Servers, this Active Backup Agent is required to be installed on the target device to carry out the designed backup tasks and store the backed up data. As the management is centralized on the server end, most of the actions require either DSM or device's administrative privilege.
+
+### Package Specific
+
+#### Package Parameters
+
+- `/Address:` The hostname or IP address of the Synology NAS.
+- `/Username:` The username for accessing the Synology NAS.
+- `/Password:` The password for accessing the Synology NAS.
+- `/RemoveShortcut` Removes shortcut from Synology ActiveBackup for Business Agent.
+- `/ProxyAddress:` Proxy address only when your Synology NAS is required to be accessed via proxy.
+- `/ProxyPort:` Proxy port only when your Synology NAS is required to be accessed via proxy.
+- `/ProxyUsername:` Proxy username only when your Synology NAS is required to be accessed via proxy.
+- `/ProxyPassword:` Proxy password only when your Synology NAS is required to be accessed via proxy.
+
+Example installation with parameters:
+
+```powershell
+ choco install synology-activebackup-for-business-agent --params="'/Address:192.168.1.1 /Username:Synology /Password:MyPassword /RemoveShortcut'"
+```
+
+]]></description>
+  <releaseNotes>https://www.synology.com/en-us/releaseNote/ActiveBackupBusinessAgent</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools/**" target="tools"/>
+  </files>
+</package>
