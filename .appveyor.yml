@@ -50,6 +50,10 @@ environment:
   api_key:
     secure: cGKnExzBjZmYPLqMSvydRjwR+jmNG8DqR4JxYcUtCABsCK2vXNj04sHRB26EcYjs
 
+  # VirusTotal API key
+  VT_APIKEY:
+    secure: K9odDHGJ6VKghxpcBUe3Kl+9HWJVx7Vhily9zNei8YtsanyxrguGf3U/FBQILfIvKws0isRbt/9GWYcb6/LepybApl9ZyUePDj+SLe7KL5s=
+
 init:
 - git config --global user.email "david@gardiner.net.au"
 - git config --global user.name "flcdrg"
@@ -59,7 +63,8 @@ install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
 - git --version
-- choco upgrade chocolatey
+- # choco upgrade chocolatey
+- choco install vt-cli -y
 - nuget install -excludeversion
 - ps: |
     git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
