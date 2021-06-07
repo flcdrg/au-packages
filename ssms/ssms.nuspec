@@ -21,7 +21,7 @@
 SQL Server Management Studio (SSMS) is an integrated environment for accessing, configuring, managing, administering, and developing all components of SQL Server. SSMS combines a broad group of 
 graphical tools with a number of rich script editors to provide developers and administrators of all skill levels access to SQL Server. 
 
-This package is an alias to the [sql-server-management-studio](https://chocolatey.org/packages/sql-server-management-studio) package.
+This package is an alias to the [sql-server-management-studio](https://community.chocolatey.org/packages/sql-server-management-studio) package.
 </description>
     <releaseNotes>https://docs.microsoft.com/en-au/sql/ssms/release-notes-ssms
     

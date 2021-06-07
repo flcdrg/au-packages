@@ -28,7 +28,7 @@ Holders of active ReSharper Ultimate and ReSharper Ultimate+Rider licenses will 
 
 ### Package Specific
 
-If don't want C++ or TeamCity then there are parameters to exclude either or both of those.
+If you don't want C++ or TeamCity then there are parameters to exclude either or both of those.
 
 #### Package Parameters
 The following package parameters can be set:

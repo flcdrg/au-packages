@@ -44,7 +44,7 @@ Features include:
 
 #### Supported versions
 
-This package supports Visual Studio 2012, 2013 and 2015. Use the [OzCode-vs2017](https://chocolatey.org/packages/ozcode-vs2017) package for Visual Studio 2017+.
+This package supports Visual Studio 2012, 2013 and 2015. Use the [OzCode-vs2017](https://community.chocolatey.org/packages/ozcode-vs2017) package for Visual Studio 2017+.
 </description>
     <releaseNotes>http://ozcode.userecho.com/topics/641-version-history/</releaseNotes>
     <dependencies>

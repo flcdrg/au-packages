@@ -26,13 +26,13 @@ If don't want C++ or TeamCity then there are parameters to exclude either or bot
 
 If you just want to install specific JetBrains applications then consider using one or more of the other individual Chocolatey packages:
 
-- [ReSharper](https://chocolatey.org/packages/resharper)
-- [dotCover](https://chocolatey.org/packages/dotCover)
-- [dotMemory](https://chocolatey.org/packages/dotMemory)
-- [dotPeek](https://chocolatey.org/packages/dotPeek)
-- [dotTrace](https://chocolatey.org/packages/dotTrace)
-- [ReSharper C++](https://chocolatey.org/packages/ReSharperCpp)
-- [TeamCity Addin](https://chocolatey.org/packages/TeamCityAddin)
+- [ReSharper](https://community.chocolatey.org/packages/resharper)
+- [dotCover](https://community.chocolatey.org/packages/dotCover)
+- [dotMemory](https://community.chocolatey.org/packages/dotMemory)
+- [dotPeek](https://community.chocolatey.org/packages/dotPeek)
+- [dotTrace](https://community.chocolatey.org/packages/dotTrace)
+- [ReSharper C++](https://community.chocolatey.org/packages/ReSharperCpp)
+- [TeamCity Addin](https://community.chocolatey.org/packages/TeamCityAddin)
 
 ### Package Specific
 

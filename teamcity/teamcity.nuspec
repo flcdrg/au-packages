@@ -26,8 +26,8 @@ Professional edition of TeamCity is free forever and provides access to all prod
 
 This package just downloads the TeamCity tar.gz file. Use one of the following related packages to install/upgrade TeamCity
 
-* [TeamCity-OpenJDK8](https://chocolatey.org/packages/TeamCity-OpenJDK8) - TeamCity with the latest OpenJDK8 Java (as a Chocolatey package dependency)
-* [TeamCity-PreinstalledJRE](https://chocolatey.org/packages/TeamCity-PreinstalledJRE) - TeamCity with an existing JRE already installed.
+* [TeamCity-OpenJDK8](https://community.chocolatey.org/packages/TeamCity-OpenJDK8) - TeamCity with the latest OpenJDK8 Java (as a Chocolatey package dependency)
+* [TeamCity-PreinstalledJRE](https://community.chocolatey.org/packages/TeamCity-PreinstalledJRE) - TeamCity with an existing JRE already installed.
 
 Earlier versions of this package depended on the Server-JRE8 package, but due to recent Java licensing changes that package is no longer working.
     </description>

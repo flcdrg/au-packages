@@ -46,7 +46,7 @@ Features include:
 
 #### Supported versions
 
-This package supports Visual Studio 2017 and 2019. Use the [OzCode](https://chocolatey.org/packages/ozcode) package for Visual Studio 2012, 2013 and 2015.
+This package supports Visual Studio 2017 and 2019. Use the [OzCode](https://community.chocolatey.org/packages/ozcode) package for Visual Studio 2012, 2013 and 2015.
 
 The install script will install OzCode into all suitable instances of Visual Studio 2017 and 2019.
 </description>
