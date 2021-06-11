@@ -28,12 +28,19 @@ Holders of active ReSharper Ultimate and ReSharper Ultimate+Rider licenses will 
 
 ### Package Specific
 
-If you don't want C++ or TeamCity then there are parameters to exclude either or both of those.
+By default all components are installed. You can pass in parameters to de-select specific components.
 
 #### Package Parameters
+
 The following package parameters can be set:
 
  * `/PerMachine` - install machine-wide (instead of per-user)
+ * `/NoResharper` - don't install ReSharper
+ * `/NoDotTrace` - don't install dotTrace
+ * `/NoDotMemory` - don't install dotMemory
+ * `/NoDotCover` - don't install dotCover
+ * `/NoDotPeek` - don't install dotPeek
+ * `/NoRider` - don't install Rider
  * `/NoCpp` - don't install ReSharper C++
  * `/NoTeamCityAddin` - don't install TeamCity Addin
 
