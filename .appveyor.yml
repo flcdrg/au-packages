@@ -27,7 +27,7 @@ environment:
   # Github token to commit pushed packages to repository
   github_user_repo: flcdrg/au-packages
   github_api_key:
-    secure: PzBUYjw+jaRYgLlN4Fm4rEAf+EjcPUvT/tf+LoJQ70Z6kTlcYYqS/KN7KB0RR4Lt
+    secure: KBbFWoCLz/Gufse7sQzvXbV6arVLUFTOQrigrC+mNWP43MiU4ufXPoo6kpJY+FB2
 
 
   # Mail credentials - for error notifications
