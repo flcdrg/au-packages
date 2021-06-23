@@ -2,8 +2,8 @@
 
 $packageName  = 'dellcommandupdate'
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://downloads.dell.com/FOLDER07336585M/2/Dell-Command-Update-Application_MJ3C3_WIN_4.2.0_A00.EXE'
-$checksum = 'bd751c178d32f88b75ad4fe8454a46ab'
+$url = 'https://downloads.dell.com/FOLDER07414743M/1/Dell-Command-Update-Application_XM3K1_WIN_4.2.1_A00.EXE'
+$checksum = '677bacd2255e7374c892c6001bba873a'
 
 $packageArgs = @{
   packageName   = $packageName
