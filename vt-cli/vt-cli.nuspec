@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>vt-cli</id>
+    <version>0.9.6</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/vt-cli</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>VirusTotal CLI</title>
+    <authors>VirusTotal</authors>
+    <projectUrl>https://github.com/VirusTotal/vt-cli</projectUrl>
+    <iconUrl>https://cdn.statically.io/gh/zverev-iv/choco-vt-cli/b4d8bf3c/logo.png</iconUrl>
+    <copyright>2019 VirusTotal</copyright>
+    <licenseUrl>https://github.com/VirusTotal/vt-cli/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://github.com/VirusTotal/vt-cli/blob/master/README.md</docsUrl>
+    <bugTrackerUrl>https://github.com/VirusTotal/vt-cli/issues</bugTrackerUrl>
+    <tags>vt-cli antivirus virustotal cli tools</tags>
+    <summary>Welcome to the VirusTotal CLI, a tool designed for those who love both VirusTotal and command-line interfaces</summary>
+    <description>Welcome to the VirusTotal CLI, a tool designed for those who love both VirusTotal and command-line interfaces. With this tool you can do everything you'd normally do using the VirusTotal's web page, including:
+
+* Retrieve information about a file, URL, domain name, IP address, etc.
+* Search for files using VirusTotal Intelligence query syntax.
+* Download files.
+* Manage your Malware Hunting YARA rules.
+* Launch Retrohunt jobs and get their results.</description>
+    <releaseNotes>https://github.com/VirusTotal/vt-cli/releases</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
