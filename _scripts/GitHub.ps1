@@ -44,7 +44,9 @@ function Get-ReleaseVersion($release, [string] $prefix) {
         }
 
         $release.name.Substring($prefix.Length)
-    } else {
+    } elseif ($release.name) {
         $release.name
+    } elseif ($release.tag_name) {
+        $release.tag_name
     }
 }
