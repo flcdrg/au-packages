@@ -12,7 +12,8 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $response = Invoke-WebRequest -Uri "https://www.microsoft.com/en-us/download/confirmation.aspx?id=56128" -ErrorAction Ignore
+    $downloadId = "56128"
+    $response = Invoke-WebRequest -Uri "https://www.microsoft.com/en-us/download/confirmation.aspx?id=$downloadId" -ErrorAction Ignore
 
     $url = $response.Content | Select-String -AllMatches -Pattern "(http|ftp|https)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?" | % { $_.Matches.Value } | Select-string "\.exe$" | Select-Object -First 1
     
@@ -24,7 +25,7 @@ function global:au_GetLatest {
         return @{}
     }
 
-    $response = Invoke-WebRequest -Uri "https://www.microsoft.com/en-us/download/details.aspx?id=56128"
+    $response = Invoke-WebRequest -Uri "https://www.microsoft.com/en-us/download/details.aspx?id=$downloadId"
 
     if ($response.Content -match "\d+\.\d+\.\d+\.\d+") {
         $version = $Matches[0]
@@ -40,20 +41,28 @@ function global:au_GetLatest {
         CU = $cu
         Build = $v.Build
     }
+
+    # We can't do this from global:au_BeforeUpdate, because the checksum stuff has already been run (and updated the chocolateyinstall.ps1 script)
+    $toolsContent = Get-Content .\tools\chocolateyinstall.ps1 -Encoding utf8
+
+    $matched = ($toolsContent -match "(^[$]url\s*=\s*)('.*')") | Select-Object -First 1
+
+    if ($matched -match "(^[$]url\s*=\s*)'(.*)'") {
+        $script:previousUrl = $Matches[2]
+    }
     return $Latest
 }
 
-function global:au_AfterUpdate
-{ 
-    $nuspecFileName = $Latest.PackageName + ".nuspec"
-    $nu = Get-Content $nuspecFileName -Raw -Encoding UTF8
-    $nu = $nu -replace "(?smi)(\<releaseNotes\>).*?(\</releaseNotes\>)", "`${1}http://support.microsoft.com/help/$($Latest.KB)`$2"
+function global:au_AfterUpdate ($Package) {
 
-    $nu = $nu -replace "(?smi)(\<title\>).*?(\</title\>)", "`${1}Microsoft SQL Server 2017 Cumulative Update $($Latest.CU)`$2"
-    
-    $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($False)
-    $NuPath = (Resolve-Path $NuspecFileName)
-    [System.IO.File]::WriteAllText($NuPath, $nu, $Utf8NoBomEncoding)
+    if (($Package.RemoteVersion -ne $Package.NuspecVersion) -and ($script:previousUrl -eq $Latest.URL64)) {
+        # URL didn't change, game over!
+        throw "New version $($Package.NuspecVersion) but URL ($($script:previousUrl)) didn't change"
+    }
+
+    $Package.NuspecXml.package.metadata.releaseNotes = "https://support.microsoft.com/help/$($Latest.KB)"
+    $Package.NuspecXml.package.metadata.title = "Microsoft SQL Server 2017 Cumulative Update $($Latest.CU)"
+    $Package.SaveNuspec()
 }
 
 update -ChecksumFor 64
