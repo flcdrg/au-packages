@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>rode-central</id>
+    <version>1.1.3</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/rode-central</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>RØDE Central</title>
+    <authors>RØDE Microphones</authors>
+    <projectUrl>https://rode.com/microphones/wireless/wirelessgoii_2#module_8</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/4b1e2d6d9764ff0a993c9624eef7fc7c10cda675/rode-central/icons/rode-central.png</iconUrl>
+    <copyright>(c) 2021 RØDE Microphones</copyright>
+    <!-- <licenseUrl>tools/LICENSE.txt</licenseUrl> -->
+    <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
+    <docsUrl>https://rode.com/wirelessgoii/learning-hub#module_22</docsUrl>
+    <tags>Wireless GO II</tags>
+    <summary>RØDE Central is a companion app for the Wireless GO II that allows you to set up device preferences, access, optimise and export recordings, activate and deactivate functions, and update your firmware</summary>
+    <description>Unlock advanced features for the Wireless GO II with RØDE Central! This easy-to-use companion app lets you set up your device preferences, access, optimise and export recordings, activate and deactivate functions, and update your firmware. It’s free to download for Mac and Windows.
+
+### More Features. More Flexibility
+
+Connecting your Wireless GO II to RØDE Central allows you to access a host of handy features, including a safety channel, which records a second track at -20dB in case your main audio clips, a mute lock so you never accidentally mute your transmitters, and a fine gain control which expands the three-stage pad to a 10-stage pad.
+
+### On-Board Recording
+
+Each Wireless GO II transmitter has on-board recording capabilities, with enough internal memory to store over 40 hours of compressed audio and seven hours of uncompressed audio. When active, recording will begin as soon as the transmitters are connected to the receiver, so you will always have a backup of your recording in case you experience dropouts or other audio issues.
+
+When you load your files in RØDE Central, you’ll even be able to see exactly where any dropouts occurred, so you can pinpoint exactly what audio you need. Welcome to worry-free recording.
+
+### Firmware
+
+This version of RØDE Central updates your Wireless GO II devices to firmware version v1.6.8
+
+</description>
+  </metadata>
+
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
