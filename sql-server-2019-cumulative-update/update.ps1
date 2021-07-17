@@ -1,5 +1,7 @@
 import-module au
 
+. ..\_scripts\Submit-VirusTotal.ps1
+
 function global:au_SearchReplace {
     @{
         #   softwareName  = 'Hotfix 3026 for Microsoft SQL Server*(KB4229789)*'
@@ -63,6 +65,8 @@ function global:au_AfterUpdate ($Package) {
     $Package.NuspecXml.package.metadata.releaseNotes = "https://support.microsoft.com/help/$($Latest.KB)"
     $Package.NuspecXml.package.metadata.title = "Microsoft SQL Server 2019 Cumulative Update $($Latest.CU)"
     $Package.SaveNuspec()
+
+    VirusTotal_AfterUpdate $Package
 }
 
 update -ChecksumFor 64
