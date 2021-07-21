@@ -10,8 +10,8 @@ $url        = "http://www.docu-track.co.uk/builds/$version/$filename"
 $url64      = "http://www.docu-track.co.uk/builds/$version/$filename64"
 $checksum   = '246EFF09AAE4B4D49F57F6FAE499F12CA9B0AF1A836965B74C808F7658604EF0'
 $checksum64 = '4D9936656FFA9826B4B1B2279DF7D722D10DD77DE10D8C89D8BDA329C4529EC0'
-$lastModified32 = New-Object -TypeName DateTimeOffset 2021, 7, 20, 3, 17, 20, 0 # Last modified time corresponding to this package version
-$lastModified64 = New-Object -TypeName DateTimeOffset 2021, 7, 20, 3, 15, 50, 0 # Last modified time corresponding to this package version
+$lastModified32 = New-Object -TypeName DateTimeOffset 2021, 7, 20, 1, 56, 54, 0 # Last modified time corresponding to this package version
+$lastModified64 = New-Object -TypeName DateTimeOffset 2021, 7, 20, 1, 57, 36, 0 # Last modified time corresponding to this package version
 
 # Tracker Software have fixed download URLs, but if the binary changes we can fall back to their alternate (but slower) download site
 # so the package doesn't break.
