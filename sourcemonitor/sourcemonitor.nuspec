@@ -9,7 +9,7 @@
     <title>SourceMonitor</title>
     <authors>Campwood Software LLC</authors>
     <projectUrl>https://www.campwoodsw.com/sourcemonitor.html</projectUrl>
-    <iconUrl>http://raw.githubusercontent.com/flcdrg/au-packages/master/sourcemonitor/icons/sourcemonitor.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/aeb6f434aa9fe49c32b22c124a4815adcb790eb7/sourcemonitor/icons/SourceMonitor.png</iconUrl>
     <copyright>2021 Campwood Software LLC. All Rights Reserved.</copyright>
     <licenseUrl>https://www.campwoodsw.com/smlicense.html</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
