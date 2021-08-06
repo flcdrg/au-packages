@@ -6,6 +6,12 @@
 #>
 function VirusTotal_AfterUpdate ($Package)  {
 
+    if (-not (Test-Path env:VT_APIKEY))
+    {
+        Write-Warning "VT_APIKEY not set, skipping submission"
+        return
+    }
+    
     if ($Package.RemoteVersion -ne $Package.NuspecVersion) {
 
         Get-RemoteFiles -NoSuffix
