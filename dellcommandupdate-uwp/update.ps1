@@ -63,7 +63,7 @@ function global:au_GetLatest {
 
                     $componentID = $e.Element("SupportedDevices").Element("Device").Attribute("componentID").Value
 
-                    if ($componentID -eq "23400") # This is the magic number for Dell Command Update
+                    if ($componentID -eq "107175") # This is the magic number for Dell Command Update
                     {
                         $newVersion = $e.Attribute("vendorVersion").Value
                         if ($compareVersion -lt ([version] $newVersion)) {

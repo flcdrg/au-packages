@@ -2,13 +2,14 @@ import-module au
 
 . ..\_scripts\Submit-VirusTotal.ps1
 
+
 Add-Type -AssemblyName System.Xml.Linq
 
 function global:au_SearchReplace {
     @{
         'tools\chocolateyInstall.ps1' = @{
-            "(^[$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
-            "(^[$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+            "(^[$]url64\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
+            "(^[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
         }
         "$($Latest.PackageName).nuspec" = @{
             "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
@@ -17,16 +18,28 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    # http://ftp.dell.com/catalog/CatalogPC.cab
-
     $downloadedFile = [IO.Path]::GetTempFileName()
 
     $client = new-object System.Net.WebClient
-    $client.DownloadFile("https://downloads.dell.com/catalog/CatalogPC.cab", $downloadedFile)
+
+    # https://www.dell.com/support/kbdoc/en-au/000132986/dell-emc-catalog-links-for-poweredge-servers
+    $client.DownloadFile("https://downloads.dell.com/catalog/Catalog.xml.gz", $downloadedFile)
 
     $xmlFile = [io.Path]::Combine([IO.Path]::GetTempPath(), "CatalogPC.xml")
 
-    & expand $downloadedFile $xmlFile
+    try
+    {
+        $srcFileStream = New-Object System.IO.FileStream($downloadedFile,([IO.FileMode]::Open),([IO.FileAccess]::Read),([IO.FileShare]::Read))
+        $dstFileStream = New-Object System.IO.FileStream($xmlFile,([IO.FileMode]::Create),([IO.FileAccess]::Write),([IO.FileShare]::None))
+        $gzip = New-Object System.IO.Compression.GZipStream($srcFileStream,[System.IO.Compression.CompressionMode]::Decompress)
+        $gzip.CopyTo($dstFileStream)
+    }
+    finally
+    {
+        $gzip.Dispose()
+        $srcFileStream.Dispose()
+        $dstFileStream.Dispose()
+    }
 
 #   <SoftwareComponent schemaVersion="2.0" identifier="5abea4d5-82fb-4d78-bf55-ac022ed3af20" packageID="DDVDP" releaseID="DDVDP" hashMD5="bd2a08db415991ab2b9605737d26a187" path="FOLDER05055451M/1/Dell-Command-Update_DDVDP_WIN_2.4.0_A00.EXE" dateTime="2018-06-27T18:26:44+00:00" releaseDate="June 27, 2018" vendorVersion="2.4.0" dellVersion="A00" packageType="LWXP" rebootRequired="false" size="99823472">
 #     <Name>
@@ -63,7 +76,7 @@ function global:au_GetLatest {
 
                     $componentID = $e.Element("SupportedDevices").Element("Device").Attribute("componentID").Value
 
-                    if ($componentID -eq "23400") # This is the magic number for Dell Command Update
+                    if ($componentID -eq "105861") # This is the magic number for Dell Command Update
                     {
                         $newVersion = $e.Attribute("vendorVersion").Value
                         if ($compareVersion -lt ([version] $newVersion)) {
@@ -84,9 +97,9 @@ function global:au_GetLatest {
     $f.Dispose()
     
     $Latest = @{ 
-        URL32 = $url
+        URL64 = $url
         Version = $version
-        Checksum32 = $checksum
+        Checksum64 = $checksum
         Description = $description
         ReleaseNotes = $releaseNotes
     }
