@@ -17,7 +17,11 @@ function global:au_GetLatest {
     $downloadId = "100809"
     $response = Invoke-WebRequest -Uri "https://www.microsoft.com/en-us/download/confirmation.aspx?id=$downloadId" -ErrorAction Ignore
 
-    $url = $response.Content | Select-String -AllMatches -Pattern "(http|ftp|https)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?" | % { $_.Matches.Value } | Select-string "\.exe$" | Select-Object -First 1
+    $url = $response.Content | 
+        Select-String -AllMatches -Pattern "(http|ftp|https)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?" | 
+        ForEach-Object { $_.Matches.Value } | 
+        Select-string "\.exe$" | 
+        Select-Object -First 1 -ExpandProperty Line
     
     # <meta name="Description" content="Cumulative Update Package 7 for SQL Server 2017 - KB4229789" />
     if ($response.Content -match "<meta name=`"Description`" content=`"Cumulative Update Package (\d+) for SQL Server 2019 - KB(\d+)`" \/\>") {
