@@ -4,7 +4,7 @@ $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $version    = [version] $env:ChocolateyPackageVersion
 
 if ( $version.Revision -gt 20210101 ) {
-    $version = [version]::new($version.Major, $version.Minor, $version.Build, 0)
+    $version = New-Object version $version.Major, $version.Minor, $version.Build, 0
     Write-Warning "'Package fix version notation' detected. Assuming original build version was .0"
 }
 
