@@ -1,13 +1,19 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $packageName = 'PDFXchangePro' 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$version    = $env:ChocolateyPackageVersion
+$version    = [version] $env:ChocolateyPackageVersion
+
+if ( $version.Revision -gt 20210101 ) {
+    $version = [version]::new($version.Major, $version.Minor, $version.Build, 0)
+    Write-Warning "'Package fix version notation' detected. Assuming original build version was .0"
+}
+
 $filename   = 'ProV9.x86.msi'
 $filename64 = 'ProV9.x64.msi'
 $primaryDownloadUrl = "https://downloads.pdf-xchange.com/$filename"
 $primaryDownloadUrl64 = "https://downloads.pdf-xchange.com/$filename64"
-$url        = "http://www.docu-track.co.uk/builds/$version/$filename"
-$url64      = "http://www.docu-track.co.uk/builds/$version/$filename64"
+$url        = "https://builds-archive.tracker-software.com/$version/$filename"
+$url64      = "https://builds-archive.tracker-software.com/$version/$filename64"
 $checksum   = '7BEBD3EC1ADCE04B20332A7F898E89D57F493F45EF98FF3D893C2E1CFD33C855'
 $checksum64 = '99F587D16A73315EFB9B763365027A41BAE616DB89E77086F3198973D6E0A81A'
 $lastModified32 = New-Object -TypeName DateTimeOffset 2021, 7, 20, 3, 16, 21, 0 # Last modified time corresponding to this package version
