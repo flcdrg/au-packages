@@ -18,6 +18,9 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
+    try {
+        
+
     $downloadedFile = [IO.Path]::GetTempFileName()
 
     $client = new-object System.Net.WebClient
@@ -104,6 +107,10 @@ function global:au_GetLatest {
         ReleaseNotes = $releaseNotes
     }
     return $Latest
+}
+catch {
+    Write-Error $_.Exception
+}
 }
 
 function global:au_AfterUpdate ($Package) {
