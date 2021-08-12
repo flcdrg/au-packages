@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://dl.dell.com/FOLDER07414802M/1/Dell-Command-Update-Application-for-Windows-10_W1RMW_WIN_4.2.1_A00.EXE'
-$checksum = '9da13a47b7980e9236afd3e78f65fc61'
+$url = 'https://downloads.dell.com/FOLDER07582904M/1/Dell-Update-Application-for-Windows-10_KW3CF_WIN_4.3.0_A00.EXE'
+$checksum = '5b166a245cbbc4b570a3dce8f1fddc6a'
 
  # the /factoryinstall parameter makes installer return success instead of '2' (which Chocolatey doesn't like)
 $packageArgs = @{
