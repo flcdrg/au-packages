@@ -28,24 +28,28 @@ function global:au_GetLatest {
 
     & expand $downloadedFile $xmlFile
 
-#   <SoftwareComponent schemaVersion="2.0" identifier="5abea4d5-82fb-4d78-bf55-ac022ed3af20" packageID="DDVDP" releaseID="DDVDP" hashMD5="bd2a08db415991ab2b9605737d26a187" path="FOLDER05055451M/1/Dell-Command-Update_DDVDP_WIN_2.4.0_A00.EXE" dateTime="2018-06-27T18:26:44+00:00" releaseDate="June 27, 2018" vendorVersion="2.4.0" dellVersion="A00" packageType="LWXP" rebootRequired="false" size="99823472">
-#     <Name>
-#       <Display lang="en"><![CDATA[Dell Command | Update,2.4.0,A00]]></Display>
-#     </Name>
-#     <ComponentType value="APAC">
-#       <Display lang="en"><![CDATA[Application]]></Display>
-#     </ComponentType>
-#     <Description>
-#       <Display lang="en"><![CDATA[This Win 32 package provides the Dell Command | Update Application and is supported on OptiPlex, Venue Pro Tablet, Precision, XPS Notebook and Latitude models that are running the following Windows operating systems: Windows 7,Windows 8, Windows 8.1 and Windows 10.]]></Display>
-#     </Description>
-#     <Category value="SM">
-#       <Display lang="en"><![CDATA[OpenManage Systems Management]]></Display>
-#     </Category>
-#     <SupportedDevices>
-#       <Device componentID="23400" embedded="1">
-#         <Display lang="en"><![CDATA[Dell Command | Update]]></Display>
-#       </Device>
-#     </SupportedDevices>
+    # <SoftwareComponent schemaVersion="2.0" identifier="d0fcb1c2-8d94-46c5-8ca4-b0dac9356574" packageID="GRVPK" releaseID="GRVPK" hashMD5="c8f879a00b7dde248e52ad334962a80b" path="FOLDER07582763M/1/Dell-Command-Update-Application-for-Windows-10_GRVPK_WIN_4.3.0_A00.EXE" dateTime="2021-06-13T10:20:09Z" releaseDate="July 29, 2021" vendorVersion="4.3.0" dellVersion="A00" packageType="LWXP" size="29293632">
+    # <Name>
+    #   <Display lang="en"><![CDATA[Dell Command | Update Application for Windows 10,4.3.0,A00]]></Display>
+    # </Name>
+    # <ComponentType value="APAC">
+    #   <Display lang="en"><![CDATA[Application]]></Display>
+    # </ComponentType>cho
+    # <Description>
+    #   <Display lang="en"><![CDATA[This Universal Windows Platform (UWP) package contains the Dell Command Update for systems running the Windows 10 build 14393 (Redstone 1) or later. Dell Command Update is a stand-alone application for client systems, that provides updates for system software that is released by Dell. This application simplifies the BIOS, firmware, driver, and application update experience for Dell client hardware.]]></Display>
+    # </Description>
+    # <Category value="SM">
+    #   <Display lang="en"><![CDATA[Systems Management]]></Display>
+    # </Category>
+    # <SupportedDevices>
+    #   <Device componentID="107174" embedded="false">
+    #     <Display lang="en"><![CDATA[Dell Command | Update]]></Display>
+    #     <Dependency componentID="159" componentType="BIOS" prerequisite="6024a3d1-d256-409c-9a34-277afc5cb630" version="1.3.1" rebootToContinue="true">
+    #       <Display lang="en"><![CDATA[Dependent BIOS]]></Display>
+    #     </Dependency>
+    #   </Device>
+    # </SupportedDevices>
+
 
     $f = [System.Xml.XmlReader]::create($xmlFile)
 
@@ -63,7 +67,7 @@ function global:au_GetLatest {
 
                     $componentID = $e.Element("SupportedDevices").Element("Device").Attribute("componentID").Value
 
-                    if ($componentID -eq "107175") # This is the magic number for Dell Command Update
+                    if ($componentID -eq "107174") # This is the magic number for Dell Command Update
                     {
                         $newVersion = $e.Attribute("vendorVersion").Value
                         if ($compareVersion -lt ([version] $newVersion)) {
@@ -101,4 +105,4 @@ function global:au_AfterUpdate ($Package) {
     VirusTotal_AfterUpdate $Package
 }
 
-update -ChecksumFor none
+update -ChecksumFor none -Force
