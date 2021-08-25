@@ -105,4 +105,4 @@ function global:au_AfterUpdate ($Package) {
     VirusTotal_AfterUpdate $Package
 }
 
-update -ChecksumFor none -Force
+update -ChecksumFor none
