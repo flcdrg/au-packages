@@ -14,7 +14,7 @@ $packageArgs = @{
   
   validExitCodes= @(0)
   url           = "https://cdn1.rode.com/rodecentral_installation_file_windows.zip"
-  checksum      = 'C0C739C6066B47F60BDB23AA41CB8FBEF5A33F624F0F06EEE5A199DD6BA60E45'
+  checksum      = 'DD7A0888E5BACB1E693026C993758185451D4998D4FA420845D18C0B7F5ED805'
   checksumType  = 'sha256'
   UnzipLocation = $toolsDir
 }
@@ -28,7 +28,7 @@ $packageArgs = @{
   fileType      = 'msi'
   silentArgs    = '/q'
   validExitCodes= @(0)
-  file          = "$toolsDir\RODE Central 1.1.3.msi"
+  file          = "$toolsDir\RODE Central Windows (1.2.1).msi"
 }
 
 Install-ChocolateyInstallPackage @packageArgs
