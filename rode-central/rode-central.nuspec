@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>rode-central</id>
-    <version>1.1.3</version>
+    <version>1.2.1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/rode-central</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>RØDE Central</title>
@@ -14,7 +14,7 @@
     <!-- <licenseUrl>tools/LICENSE.txt</licenseUrl> -->
     <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
     <docsUrl>https://rode.com/wirelessgoii/learning-hub#module_22</docsUrl>
-    <tags>Wireless GO II</tags>
+    <tags>Wireless GO II RØDE Rode audio microphones</tags>
     <summary>RØDE Central is a companion app for the Wireless GO II that allows you to set up device preferences, access, optimise and export recordings, activate and deactivate functions, and update your firmware</summary>
     <description>Unlock advanced features for the Wireless GO II with RØDE Central! This easy-to-use companion app lets you set up your device preferences, access, optimise and export recordings, activate and deactivate functions, and update your firmware. It’s free to download for Mac and Windows.
 
@@ -30,7 +30,7 @@ When you load your files in RØDE Central, you’ll even be able to see exactly 
 
 ### Firmware
 
-This version of RØDE Central updates your Wireless GO II devices to firmware version v1.6.8
+This version of RØDE Central updates your Wireless GO II devices to firmware version v1.8.1
 
 </description>
   </metadata>
