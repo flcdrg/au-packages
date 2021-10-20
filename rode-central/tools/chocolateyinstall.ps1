@@ -28,7 +28,8 @@ $packageArgs = @{
   fileType      = 'msi'
   silentArgs    = '/q'
   validExitCodes= @(0)
-  file          = "$toolsDir\RODE Central Windows (1.2.1).msi"
+  # This seems like a bug. Maybe the brackets are confusing 7z or Chocolatey
+  file          = "$toolsDir\RODE Central Windows 1.2.1\RODE Central Windows (1.2.1).msi"
 }
 
 Install-ChocolateyInstallPackage @packageArgs
