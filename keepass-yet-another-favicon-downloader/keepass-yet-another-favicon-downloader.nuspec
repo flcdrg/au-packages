@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>keepass-yet-another-favicon-downloader</id>
-    <version>1.2.3.0</version>
+    <version>1.2.5.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/keepass-yet-another-favicon-downloader</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>KeePass Plugin Yet Another Favicon Downloader</title>
@@ -30,9 +30,21 @@
 - Linux support (_experimental_)
 - Proxy support (respects _KeePass_ settings)
     </description>
-    <releaseNotes>### Improvements
+    <releaseNotes>### New features
+- Adds `Name` and `Last Modification Time` for newly downloaded custom icons on KeePass 2.48+.
+(issue #61)
+- Resize large icons to sizes from 16px to 128px. (issue #60).
+- Adds Custom Download Provider option. (pull request #62, thanks @Henri-J-Norden).
 
-- Update `Last Modification Time` only for entries changed (issue #35).</releaseNotes>
+### Improvements
+- Use cookies between requests when download favicons from a website (pull request #54) (thanks @Eelke76).
+- When there is no icon in the specified URL, try looking at the root of the domain.
+- Improve retry logic in case of failures.
+- Adds support to TLS 1.3 if it's available.
+- Chocolatey installation instructions (pull request #63) (thanks @4-FLOSS-Free-Libre-Open-Source-Software)
+
+Please refer to [Settings: Maximum icon size](https://github.com/navossoc/KeePass-Yet-Another-Favicon-Downloader/wiki/Settings:-Maximum-icon-size) and [Settings: Custom download provider](https://github.com/navossoc/KeePass-Yet-Another-Favicon-Downloader/wiki/Settings:-Custom-download-provider) for more details.
+</releaseNotes>
     <dependencies>
       <dependency id="keepass" version="2.34" />
     </dependencies>
