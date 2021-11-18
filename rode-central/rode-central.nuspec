@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>rode-central</id>
-    <version>1.2.1.20211020</version>
+    <version>1.2.4</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/rode-central</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>RØDE Central</title>
@@ -30,7 +30,13 @@ When you load your files in RØDE Central, you’ll even be able to see exactly 
 
 ### Firmware
 
-This version of RØDE Central updates your Wireless GO II devices to firmware version v1.8.1
+This version of RØDE Central updates your Wireless GO II devices to firmware version v1.8.3
+
+### Package updates
+
+Rode use a 'static' download URL such that when they release a new version it will break older Chocolatey packages. Currently this package needs to be manually updated as Rode also keep changing the layout of the .zip file for each release. 
+
+If you notice the package isn't working please leave a comment, or even better submit a pull request in the [package source repository](https://github.com/flcdrg/au-packages/tree/master/rode-central).
 
 </description>
   </metadata>
