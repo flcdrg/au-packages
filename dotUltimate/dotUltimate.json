@@ -1,4 +1,4 @@
-{
-  "Release": "2021.2.2",
-  "Release-Eap": "2021.3-EAP10"
+﻿{
+    "Release":  "2021.3",
+    "Release-Eap":  "2021.3-EAP10"
 }
