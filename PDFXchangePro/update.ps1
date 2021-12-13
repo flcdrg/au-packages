@@ -27,12 +27,11 @@ function global:au_GetLatest {
         $xmlNameSpace = new-object System.Xml.XmlNamespaceManager($xml.NameTable)
         $xmlNameSpace.AddNamespace("t", "http://schemas.tracker-software.com/trackerupdate/tb/v1")
 
-        $x32update = $xml.SelectSingleNode("//t:bundle[@id='PDFPro.bundle.x32']/t:update", $xmlNameSpace)
+        $x32update = $xml.SelectNodes("//t:bundle[@id='Pro.x32']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property startMaintenance -Top 1
         $version = $x32update.version
-        $date = $x32update.startMaintenance
         $filename = $x32update.url
 
-        $x64update = $xml.SelectSingleNode("//t:bundle[@id='PDFPro.bundle.x64']/t:update", $xmlNameSpace)
+        $x64update = $xml.SelectNodes("//t:bundle[@id='Pro.x64']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property startMaintenance -Top 1
         $filename64 = $x64update.url
 
         $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename" -Method Head
