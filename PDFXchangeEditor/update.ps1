@@ -31,18 +31,20 @@ function global:au_GetLatest {
         # <update version="9.2.358.0" minVersionUpdate="5.5.308.0" type="msi" platform="x32" size="221208576" url="builds-archive/9.2.358.0/EditorV9.x86.msi" hash="66C2CFA622DE03EC82035E650BC7677A21D85EB8DE3BF6EC3B88CA2593D542B8" startMaintenance="2021-10-18" cmdLineSilent="/qb /norestart"/>
         # <update version="9.2.359.0" minVersionUpdate="5.5.308.0" type="msi" platform="x32" size="221298688" url="EditorV9.x86.msi" hash="51DF7E30E47AE312E181A6CEED871FDEB2C2E08A2F935A95CE92F15B4D6CC2F7" startMaintenance="2021-11-23" cmdLineSilent="/qb /norestart"/>
 
-        $x32update = $xml.SelectNodes("//t:bundle[@id='Editor.x32']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property startMaintenance -Top 1
+        $bundleId = "Editor.x32"
+        $x32update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property startMaintenance | Select-Object -First 1
         $version = $x32update.version
         $filename = $x32update.url
 
-        $x64update = $xml.SelectNodes("//t:bundle[@id='Editor.x64']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property startMaintenance -Top 1
+        $bundleId = "Editor.x64"
+        $x64update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property startMaintenance | Select-Object -First 1
         $filename64 = $x64update.url
 
-        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename" -Method Head
+        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename" -Method Head -UseBasicParsing
         $lastModifiedHeader = $response.Headers.'Last-Modified'
         $x86lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
 
-        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename64" -Method Head
+        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename64" -Method Head -UseBasicParsing
         $lastModifiedHeader = $response.Headers.'Last-Modified'
         $x64lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
 

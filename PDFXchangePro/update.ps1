@@ -27,18 +27,20 @@ function global:au_GetLatest {
         $xmlNameSpace = new-object System.Xml.XmlNamespaceManager($xml.NameTable)
         $xmlNameSpace.AddNamespace("t", "http://schemas.tracker-software.com/trackerupdate/tb/v1")
 
-        $x32update = $xml.SelectNodes("//t:bundle[@id='Pro.x32']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property startMaintenance -Top 1
+        $bundleId = "Pro.x32"
+        $x32update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property startMaintenance | Select-Object -First 1
         $version = $x32update.version
         $filename = $x32update.url
 
-        $x64update = $xml.SelectNodes("//t:bundle[@id='Pro.x64']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property startMaintenance -Top 1
+        $bundleId = "Pro.x64"
+        $x64update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property startMaintenance | Select-Object -First 1
         $filename64 = $x64update.url
 
-        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename" -Method Head
+        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename" -Method Head -UseBasicParsing
         $lastModifiedHeader = $response.Headers.'Last-Modified'
         $x86lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
 
-        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename64" -Method Head
+        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename64" -Method Head -UseBasicParsing
         $lastModifiedHeader = $response.Headers.'Last-Modified'
         $x64lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
 
