@@ -32,7 +32,7 @@ if ($pp['DISABLERESTARTWINRM']) {
   $arguments += ' RESTART_WINRM=0'
 }
 
-$arguments += '/l*v "{0}\{1}.{2}.MsiInstall.log"' -f $env:Temp, $packageName, $env:chocolateyPackageVersion
+$arguments += ' /l*v "{0}\{1}.{2}.MsiInstall.log"' -f $env:Temp, $packageName, $env:chocolateyPackageVersion
 
 # http://aka.ms/WACDownload
 $packageArgs = @{
