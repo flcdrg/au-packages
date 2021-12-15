@@ -35,7 +35,7 @@ The following package parameters can be set:
 
  * `/Port:` - determines what port to listen on. Defaults to 6516. (You may want to use 443 on Windows Server)
  * `/Thumbprint:` - Existing certificate thumbprint. If not specified, a self-signed certificate is generated (expires after 60 days)
- * `/DisableRestartWinrm:` -  If you are installing with an automation solution that would be broken by the WinRM service restarting, you can disable this by passing this parameter
+ * `/DisableRestartWinrm` -  If you are installing with an automation solution that would be broken by the WinRM service restarting, you can disable this by passing this parameter
 
 To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
