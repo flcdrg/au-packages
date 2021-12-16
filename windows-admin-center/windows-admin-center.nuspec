@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>windows-admin-center</id>
-    <version>1.3.44065.0</version>
+    <version>1.3.44065.20211216</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/windows-admin-center</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Windows Admin Center (2110)</title>
@@ -25,9 +25,10 @@ Windows Admin Center is the modern evolution of in-box management tools, like Se
 
 You can install Windows Admin Center on the following Windows operating systems:
 Version 	Installation Mode
-Windows 10 (1709) 	Desktop mode
-Windows Server, version 1709 	Gateway mode
-Windows Server 2016 	Gateway mode
+- Windows 10 	Local client
+- Windows Server Semi-Annual Channel 	Gateway sever, managed server, failover cluster
+- Windows Server 2016 	Gateway sever, managed server, failover cluster
+- Windows Server 2019   Gateway sever, managed server, failover cluster
 
 ### Package Specific
 #### Package Parameters
