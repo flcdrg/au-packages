@@ -109,7 +109,7 @@ if (Test-Path HKCU:\SOFTWARE\TortoiseSVN)
 }
 
 # Fork.dev for Windows
-$forkFolder = "$($env:USERPROFILE)\AppData\Local\Fork"
+$forkFolder = "$($env:LOCALAPPDATA)\Fork"
 if (Test-Path (Join-Path -Path $forkFolder "Fork.exe"))
 {
     $forkConfig = Join-Path -Path $forkFolder "settings.json"
@@ -120,15 +120,27 @@ if (Test-Path (Join-Path -Path $forkFolder "Fork.exe"))
 
         Copy-Item -Path $forkConfig -Destination $backupPath
         Write-Warning "Created backup of forkSettings.json at $backupPath"
+
+        # load forkSettings
+        $forkSettings = Get-Content $forkConfig | ConvertFrom-Json
     }
     else 
     {
         Write-Warning "Could not find existing file $forkConfig so no backup was taken"
-    }
 
-    # load forkSettings
-    $forkSettings = Get-Content $forkConfig | ConvertFrom-Json
-    
+        # New settings file as Fork has not been run yet.
+        $forkSettings = @{
+            MergeTool = @{
+                Type = ""
+                ApplicationPath = ""
+            }
+            ExternalDiffTool = @{
+                Type = ""
+                ApplicationPath = ""
+            }
+        }
+    }
+   
     # Update MergeTool and ExternalDiffTool if not already configured for Beyond Compare
     if ($forkSettings.MergeTool.Type -ne "BeyondCompare")
     {
