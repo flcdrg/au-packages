@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <id>beyondcompare-integration</id>
+    <version>1.0.1</version>
+    <packageSourceUrl>https://github.com/flcdrg/chocolatey-beyondcompare-integration</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>Beyond Compare Integration</title>
+    <authors>David Gardiner</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>https://github.com/flcdrg/chocolatey-beyondcompare-integration</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/dtgm/chocolatey-packages/df0375a1fab41e47eaef69f758e59591091f6cba/icons/beyondcompare.png</iconUrl>
+    <copyright>2016 David Gardiner</copyright>
+    <!-- If there is a license Url available, it is is required for the community feed -->
+    <licenseUrl>https://raw.githubusercontent.com/flcdrg/chocolatey-beyondcompare-integration/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/flcdrg/chocolatey-beyondcompare-integration</projectSourceUrl>
+    <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
+    <!--<mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://github.com/flcdrg/chocolatey-beyondcompare-integration/issues</bugTrackerUrl>
+    <tags>beyondcompare beyond compare admin</tags>
+    <summary>Integrate Beyond Compare as the default file comparison tool</summary>
+    <description>
+	Automatically configures various tools to use Beyond Compare for file comparisons.
+	
+	The script detects which tools you have installed and then configures them appropriately so that they will use Beyond Compare for diffing and merging files.
+	
+	Any old values are logged as warnings to the console, or if possible a backup copy of any modified files is made.
+	</description>
+    <releaseNotes>
+	Check location of bcomp.exe
+	</releaseNotes>
+    <!-- =============================== -->      
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <dependencies>
+      <dependency id="beyondcompare" version="4.0.0" />
+    </dependencies>
+
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
