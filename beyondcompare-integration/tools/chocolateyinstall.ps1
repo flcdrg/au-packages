@@ -43,7 +43,9 @@ if ($LASTEXITCODE -eq 0)
     {
         Copy-Item -Path $gitconfig -Destination $backupPath
         Write-Warning "Created backup of .gitconfig at $backupPath"
-    } else {
+    } 
+    else
+    {
         Write-Warning "Could not find existing file $gitconfig so no backup was taken"
     }
 
@@ -104,4 +106,43 @@ if (Test-Path HKCU:\SOFTWARE\TortoiseSVN)
     $r.SetValue("Merge", "`"$bcompPath`" %mine %theirs %base %merged /title1=%yname /title2=%tname /title3=%bname /title4=%mname", [Microsoft.Win32.RegistryValueKind]::String)
     $r.Close()
     $keySoftware.Close()
+}
+
+# Fork.dev for Windows
+$forkFolder = "$($env:USERPROFILE)\AppData\Local\Fork"
+if (Test-Path (Join-Path -Path $forkFolder "Fork.exe"))
+{
+    $forkConfig = Join-Path -Path $forkFolder "settings.json"
+
+    if (Test-Path $forkConfig)
+    {
+        $backupPath = Join-Path -Path "$forkFolder" ("settings.json." + [DateTime]::UtcNow.ToString("yyyyMMddHHmm"))
+
+        Copy-Item -Path $forkConfig -Destination $backupPath
+        Write-Warning "Created backup of forkSettings.json at $backupPath"
+    }
+    else 
+    {
+        Write-Warning "Could not find existing file $forkConfig so no backup was taken"
+    }
+
+    # load forkSettings
+    $forkSettings = Get-Content $forkConfig | ConvertFrom-Json
+    
+    # Update MergeTool and ExternalDiffTool if not already configured for Beyond Compare
+    if ($forkSettings.MergeTool.Type -ne "BeyondCompare")
+    {
+        Write-Host "merge tool"
+        $forkSettings.MergeTool.Type = "BeyondCompare"
+        $forkSettings.MergeTool.ApplicationPath = $bcompPath
+    }
+    
+    if ($forkSettings.ExternalDiffTool.Type -ne "BeyondCompare")
+    {
+        Write-Host "external diff tool"
+        $forkSettings.ExternalDiffTool.Type = "BeyondCompare"
+        $forkSettings.ExternalDiffTool.ApplicationPath = $bcompPath
+    }
+
+    $forkSettings | ConvertTo-Json -Depth 100 | Set-Content $forkConfig
 }
