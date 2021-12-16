@@ -12,7 +12,7 @@
     <iconUrl>https://raw.githubusercontent.com/flcdrg/au-packages/master/microsoft-monitoring-agent/icons/microsoft-monitoring-agent.png</iconUrl>
     <copyright>Microsoft Corp</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <docsUrl>https://docs.microsoft.com/en-us/azure/azure-monitor/learn/quick-collect-windows-computer</docsUrl>
+    <docsUrl>https://docs.microsoft.com/en-us/azure/azure-monitor/agents/agent-windows</docsUrl>
     <tags>Azure Microsoft Monitoring Agent</tags>
     <summary>For advanced monitoring where you need to do more than collect metrics and a subset of logs</summary>
     <description>For advanced monitoring where you need to do more than collect metrics and a subset of logs, the Log Analytics agent for Windows (also referred to as the Microsoft Monitoring Agent (MMA)) is required. 
