@@ -20,7 +20,7 @@ else {
   $certificateOption = 'generate'
 }
 
-$arguments = '/qn norestart'
+$arguments = '/qn /norestart'
 $arguments += ' SME_PORT={0}' -f $port
 $arguments += ' SSL_CERTIFICATE_OPTION={0}' -f $certificateOption
 
