@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>rode-central</id>
-    <version>1.3.5</version>
+    <version>1.3.5.20211224</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/rode-central</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>RØDE Central</title>
@@ -30,7 +30,7 @@ When you load your files in RØDE Central, you'll even be able to see exactly wh
 
 ### Firmware
 
-This version of RØDE Central updates your Wireless GO II devices to firmware version v1.8.3
+This version of RØDE Central updates your Wireless GO II devices to firmware version v1.8.9
 
 ### Package updates
 

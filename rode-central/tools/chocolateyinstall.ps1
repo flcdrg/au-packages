@@ -14,7 +14,7 @@ $packageArgs = @{
   
   validExitCodes= @(0)
   url           = "https://cdn1.rode.com/rodecentral_installation_file_windows.zip"
-  checksum      = '47331C73BE64B0655D4DB2AE52452A108D440B7BC7A6A7837B26BD50ECA4F17B'
+  checksum      = 'ED0E404DB45251DFEB4F6EF65B931D3CC2B95430912DA18A4DE2F7AE955B93A2'
   checksumType  = 'sha256'
   UnzipLocation = $toolsDir
 }
