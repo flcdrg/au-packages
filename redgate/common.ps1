@@ -38,33 +38,34 @@ function global:au_GetLatest {
             
             $client = new-object System.Net.WebClient
             $client.DownloadFile($downloadUrl, $downloadedFile)
-
-            if($readVersionFromInstaller.IsPresent) {
-                # SqlSearch has strange FileVersion, so use FileVersionRaw as that seems correct
-                $version = (get-item $downloadedFile).VersionInfo.FileVersionRaw
-            } else {
-                # Some of Redgate's installers are bundles of other installers. (The toolbelts and dev bundles)
-                # In that case, the version number embedded in the installer is irrelevant.
-                # So use the date the installer was released instead.
-                $version = $lastModified.ToString("yyyy.MM.dd")
-            }
-            Write-Verbose "$version"
-            $checksum = (Get-FileHash $downloadedFile -Algorithm SHA256).Hash
-            Write-Verbose "$checksum"
-
-            Remove-Item $downloadedFile
-
-            $Latest = @{ 
-                URL32 = $downloadUrl
-                Version = $version
-                Checksum32 = $checksum
-                LastModified = $lastModified
-            }
         }
         catch {
-            Write-Warning "Could not find file $downloadUrl"
-            $Latest = 'ignore'
+            Write-Warning "Could not find file $downloadUrl, $($_.Exception.InnerException.Message)"
+            return 'ignore'
         }
+
+        if ($readVersionFromInstaller.IsPresent) {
+            # SqlSearch has strange FileVersion, so use FileVersionRaw as that seems correct
+            $version = (get-item $downloadedFile).VersionInfo.FileVersionRaw
+        } else {
+            # Some of Redgate's installers are bundles of other installers. (The toolbelts and dev bundles)
+            # In that case, the version number embedded in the installer is irrelevant.
+            # So use the date the installer was released instead.
+            $version = $lastModified.ToString("yyyy.MM.dd")
+        }
+        Write-Verbose "$version"
+        $checksum = (Get-FileHash $downloadedFile -Algorithm SHA256).Hash
+        Write-Verbose "$checksum"
+
+        Remove-Item $downloadedFile
+
+        $Latest = @{ 
+            URL32 = $downloadUrl
+            Version = $version
+            Checksum32 = $checksum
+            LastModified = $lastModified
+        }
+
     } catch {
         Write-Error $_
 
