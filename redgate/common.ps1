@@ -40,7 +40,12 @@ function global:au_GetLatest {
             $client.DownloadFile($downloadUrl, $downloadedFile)
         }
         catch {
-            Write-Warning "Could not find file $downloadUrl, $($_.Exception.InnerException.Message)"
+            if ($_.Exception -and $_.Exception.InnerException -and $_.Exception.InnerException.Message) {
+                $msg = $_.Exception.InnerException.Message
+            } else {
+                $msg = $_
+            }
+            Write-Warning "Could not find file $downloadUrl, $msg"
             return 'ignore'
         }
 
