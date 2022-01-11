@@ -14,7 +14,7 @@ $packageArgs = @{
   
   validExitCodes= @(0)
   url           = "https://cdn1.rode.com/rodecentral_installation_file_windows.zip"
-  checksum      = 'ED0E404DB45251DFEB4F6EF65B931D3CC2B95430912DA18A4DE2F7AE955B93A2'
+  checksum      = 'BAE1AED9917557F0D7FEFEE4BC9CC39456C9B4AB7095779E2F0224B08E0FE731'
   checksumType  = 'sha256'
   UnzipLocation = $toolsDir
 }
@@ -29,7 +29,7 @@ $packageArgs = @{
   silentArgs    = '/q'
   validExitCodes= @(0)
   # This seems like a bug. Maybe the brackets are confusing 7z or Chocolatey
-  file          = "$toolsDir\RODE Central (1.3.5)_WINDOWS\RODE Central (1.3.5).msi"
+  file          = "$toolsDir\RODE Central Windows v1.3.6\RODE Central (1.3.6).msi"
 }
 
 Install-ChocolateyInstallPackage @packageArgs
