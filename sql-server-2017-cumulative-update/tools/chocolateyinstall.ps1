@@ -2,7 +2,7 @@
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $url        = 'https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB5008084-x64.exe'
-$checksum   = 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+$checksum   = 'a0ed9f87e16f83e9e9767a80293e5727b784e82154fced28d4df2936133b5976'
 $softwareName = 'Hotfix 3430 for SQL Server 2017*(KB5008084)*'
 
 [bool] $runningAU = (Test-Path Function:\au_GetLatest)
