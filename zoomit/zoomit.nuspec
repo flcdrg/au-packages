@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>zoomit</id>
     <title>ZoomIt</title>
-    <version>4.52.0.20200926</version>
+    <version>5.0</version>
     <authors>Mark Russinovich</authors>
     <owners>flcdrg</owners>
     <summary>Presentation utility for zooming and drawing on the screen</summary>
