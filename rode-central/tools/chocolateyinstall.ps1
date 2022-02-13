@@ -31,7 +31,7 @@ $packageArgs = @{
   fileType      = 'msi'
   silentArgs    = '/q'
   validExitCodes= @(0)
-  file          = "$toolsDir\$relativePath"
+  file          = [IO.Path]::Combine($toolsDir, $relativePath)
 }
 
 Install-ChocolateyInstallPackage @packageArgs
