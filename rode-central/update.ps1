@@ -29,7 +29,7 @@ function global:au_GetLatest {
     Get-ChocolateyUnzip -fileFullPath $zipfile -destination $unzipFolder
 
     Remove-Item -Path $zipfile -Force
-    
+
     $msiFile = Get-ChildItem -Recurse -Filter *.msi $unzipFolder | Select-Object -First 1 -ExpandProperty FullName
     $relativePath = $msiFile.Replace($unzipFolder.FullName, '').TrimStart('\')
     $version = (..\_scripts\Get-MSIInfo.ps1 -Path $msiFile -Property ProductVersion)[3]
@@ -68,4 +68,4 @@ function global:au_GetLatest {
     }
 }
 
-update -ChecksumFor none -NoCheckChocoVersion
+update -ChecksumFor none
