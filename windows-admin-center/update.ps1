@@ -31,7 +31,7 @@ function global:au_GetLatest {
 
         $client.DownloadFile($url, $downloadedFile)
 
-        $version = (.\Get-MSIInfo.ps1 -Path $downloadedFile -Property ProductVersion)[3]
+        $version = (..\_scripts\Get-MSIInfo.ps1 -Path $downloadedFile -Property ProductVersion)[3]
 
         Write-Verbose "$version"
         $checksum = (Get-FileHash $downloadedFile -Algorithm SHA256).Hash
