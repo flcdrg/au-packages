@@ -47,6 +47,7 @@ function global:au_GetLatest {
 
     if (Test-Path current.json) {
         $current = (Get-Content current.json) | ConvertFrom-Json
+        $current.lastModified = [System.DateTimeOffset] $current.lastModified
     } else {
         $current = @{ version = ''; lastModified  = [DateTimeOffset]::MinValue; eTag = '' }
     }
