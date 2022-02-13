@@ -10,8 +10,8 @@
     <projectUrl>https://products.office.com/en-us/microsoft-teams/group-chat-software</projectUrl>
     <iconUrl>http://raw.githubusercontent.com/flcdrg/au-packages/master/microsoft-teams/icons/teams-logo.png</iconUrl>
     <copyright>2017 Microsoft Corporation</copyright>
-    <licenseUrl>https://www.microsoft.com/online/legal/v2/?docid=13&amp;langid=en-us</licenseUrl>
-	<packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/microsoft-teams</packageSourceUrl>
+    <licenseUrl>https://support.microsoft.com/en-us/office/microsoft-teams-subscription-supplemental-notice-60cc09bf-b02a-4a26-8e4a-ad697194bebf?ui=en-us&amp;rs=en-us&amp;ad=us</licenseUrl>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/microsoft-teams</packageSourceUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <docsUrl>https://support.office.com/en-us/teams</docsUrl>
     <mailingListUrl>https://microsoftteams.uservoice.com</mailingListUrl>
