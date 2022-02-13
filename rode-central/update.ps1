@@ -47,18 +47,20 @@ function global:au_GetLatest {
 
     if (Test-Path current.json) {
         $current = (Get-Content current.json) | ConvertFrom-Json
-        $current.lastModified = [System.DateTimeOffset] $current.lastModified
+        if ($current.lastModified) {
+            $current.lastModified = [System.DateTimeOffset] $current.lastModified
+        } else {
+            $current.lastModified = [System.DateTimeOffset]::MinValue
+        }
     } else {
         $current = @{ version = ''; lastModified  = [DateTimeOffset]::MinValue; eTag = '' }
     }
 
-    if ($latest.version -eq $current.version -and ($latest.lastModified -gt $current.lastModified -or $latest.eTag -ne $current.eTag)) {
-        Write-Host "Same version but Last-Modified or ETag are different"
+    Write-Host $current.lastModified
+    Write-host $latest.lastModified
+    Write-Host ($latest.lastModified -gt $current.lastModified)
+    Write-Host ($latest.eTag -ne $current.eTag)
 
-        # package fix notation (assuming major.minor existing version)
-        $version += ".0." +  [DateTime]::Now.ToString("yyyyMMdd")
-        $latest.version = $version
-    }
     $json = $latest | ConvertTo-Json -Depth 1
     Set-Content -Path current.json -Value $json
 
