@@ -6,8 +6,9 @@ $packageArgs = @{
   fileType      = 'zip'
   
   validExitCodes= @(0)
-  url           = "https://obsproject.com/forum/resources/move-transition.913/version/2713/download?file=60710"
-  checksum      = '489C18EDA87B32F6815DF28417AC7AD8145AC318D3FCDEB190FE55FF0B0C297B'
+  # move-transition-2.5.8-windows-installer.zip
+  url           = "https://obsproject.com/forum/resources/move-transition.913/version/4040/download?file=80289"
+  checksum      = '891ABE7466FB039C833FBCE9759989ADBF0EFA93BA275392E3F0A291936607C3'
   checksumType  = 'sha256'
   destination   = $toolsDir
 }
