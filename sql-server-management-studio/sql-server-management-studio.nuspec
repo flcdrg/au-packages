@@ -29,22 +29,26 @@ Beginning with SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is au
 
 This package is versioned using the published build number. The corresponding 'release number' is included in the package title.
 
-#### Supported SQL Server versions
+#### Supported SQL offerings
 
-* This version of SSMS works with all [supported versions of SQL Server 2008 - SQL Server 2019 preview](https://support.microsoft.com/lifecycle?C2=1044) and provides the greatest level of support for working with the latest cloud features in Azure SQL Database and Azure SQL Data Warehouse.
-* Additionally, SSMS 18.x can be installed side by side with SSMS 17.x, SSMS 16.x, or SQL Server 2014 SSMS and earlier.
-* SQL Server Integration Services (SSIS) - SSMS version 17.x or later does not support connecting to the legacy SQL Server Integration Services service. To connect to an earlier version of the legacy Integration Services, use the version of SSMS aligned with the version of SQL Server. For example, use SSMS 16.x to connect to the legacy SQL Server 2016 Integration Services service. SSMS 17.x and SSMS 16.x can be installed side-by-side on the same computer. Since the release of SQL Server 2012, the SSIS Catalog database, SSISDB, is the recommended way to store, manage, run, and monitor Integration Services packages. For details, see [SSIS Catalog](https://docs.microsoft.com/en-us/sql/integration-services/catalog/ssis-catalog?view=sql-server-ver15).
+- This version of SSMS works with all [supported versions of SQL Server 2008 - SQL Server 2019 (15.x)](https://docs.microsoft.com/en-us/lifecycle/products/?products=sql-server.md) and provides the greatest level of support for working with the latest cloud features in Azure SQL Database and Azure Synapse Analytics.
+- Additionally, SSMS 18.x can be installed side by side with SSMS 17.x, SSMS 16.x, or SQL Server 2014 SSMS and earlier.
+- SQL Server Integration Services (SSIS) - SSMS version 17.x or later doesn't support connecting to the legacy SQL Server Integration Services service. To connect to an earlier version of the legacy Integration Services, use the version of SSMS aligned with the version of SQL Server. For example, use SSMS 16.x to connect to the legacy SQL Server 2016 Integration Services service. SSMS 17.x and SSMS 16.x can be installed side by side on the same computer. Since the release of SQL Server 2012, the SSIS Catalog database, SSISDB, is the recommended way to store, manage, run, and monitor Integration Services packages. For details, see [SSIS Catalog](https://docs.microsoft.com/en-us/sql/integration-services/catalog/ssis-catalog?view=sql-server-ver15).
+#### SSMS System Requirements
 
-#### Supported Operating systems
+The current release of SSMS supports the following 64-bit platforms when used with the latest available service pack:
 
-This release of SSMS supports the following 64-bit platforms when used with the latest available service pack:
-- Windows 10 (64-bit) *
-- Windows Server 2016 *
+Supported Operating Systems:
+
+- Windows 11 (64-bit)
+- Windows 10 (64-bit) version 1607 (10.0.14393) or later
+- Windows 8.1 (64-bit)
+- Windows Server 2022 (64-bit)
+- Windows Server 2019 (64-bit)
+- Windows Server 2016 (64-bit)
 - Windows Server 2012 R2 (64-bit)
 - Windows Server 2012 (64-bit)
 - Windows Server 2008 R2 (64-bit)
-
-\* Requires version 1607 (10.0.14939) or later
 
 ### Package Specific
 
