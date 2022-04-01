@@ -2,8 +2,8 @@
 
 $packageName= 'lenovo-thinkvantage-system-update'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://download.lenovo.com/pccbbs/thinkvantage_en/system_update_5.07.0131.exe'
-$checksum   = 'db956368548277beb850d3069c2a8ccef1091ea344b2e99dec1ad8a3d9d77cb4'
+$url        = 'https://download.lenovo.com/pccbbs/thinkvantage_en/system_update_5.07.0136.exe'
+$checksum   = '8ab744c35a346d43ddfff64d975467261638acf01c6a743ebfd4d52e56ca18d7'
 
 $packageArgs = @{
   packageName   = $packageName
