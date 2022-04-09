@@ -1,8 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://downloads.dell.com/FOLDER07870027M/1/Dell-Command-Update-Windows-Universal-Application_PWD0M_WIN_4.4.0_A00.EXE'
-$checksum = '26ea5c958306bd26358543864d7be660'
+$url = 'https://downloads.dell.com/FOLDER08334704M/2/Dell-Command-Update-Windows-Universal-Application_601KT_WIN_4.5.0_A00_01.EXE'
+$checksum = 'a032355d5ac396ed28903a72345744857e40b52faadf0b4f6dc9c81d4e5f535f'
+$checksumType = 'sha256'
 
 Write-Warning "Ensure that 'Dell Update for Windows 10' is not installed. Any errors from this can be ignored"
 # Package version 4.3.0 mistakenly installed "Dell Update" instead of "Dell Command Update", so we need to ensure that is uninstalled first
@@ -23,7 +24,7 @@ $packageArgs = @{
   validExitCodes= @(0)
   url           = $url
   checksum      = $checksum
-  checksumType  = 'md5'
+  checksumType  = $checksumType
   destination   = $toolsDir
 }
 
