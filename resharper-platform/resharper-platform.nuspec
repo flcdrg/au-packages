@@ -5,8 +5,8 @@
     <id>resharper-platform</id>
     <owners>JetBrains, flcdrg</owners>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/resharper-platform</packageSourceUrl>
-    <version>221.0.20220329.154011-eap09</version>
-    <title>JetBrains ReSharper Ultimate Platform Installer 2022.1-EAP9</title>
+    <version>221.0.20220411.93409-eap10</version>
+    <title>JetBrains ReSharper Ultimate Platform Installer 2022.1-EAP10</title>
     <authors>JetBrains</authors>
     <projectUrl>https://www.jetbrains.com/dotnet/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/jetbrains/chocolatey/master/ReSharper/logo.png</iconUrl>
