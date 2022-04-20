@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if “Ω” doesn't appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>microsoft-teams.install</id>
@@ -14,9 +14,9 @@
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/microsoft-teams.install</packageSourceUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <docsUrl>https://support.office.com/en-us/teams</docsUrl>
-    <mailingListUrl>https://microsoftteams.uservoice.com</mailingListUrl>
+    <mailingListUrl>https://techcommunity.microsoft.com/t5/microsoft-teams/bd-p/MicrosoftTeams</mailingListUrl>
     <tags>microsoft-teams teams office 365 chat collaboration slack admin</tags>
-    <summary>Microsoft Teams helps your team work better together. It’s one app that brings your team’s conversations, meetings, files and notes together into a single place for open and seamless collaboration.</summary>
+    <summary>Microsoft Teams helps your team work better together. It's one app that brings your team's conversations, meetings, files and notes together into a single place for open and seamless collaboration.</summary>
     <description>Microsoft Teams is a messaging app for teams where all conversations, meetings, files, and notes can be accessed by everyone, all in one place. It's a place for collaboration and work to happen in the open.
 
 Here's why you should use it:
