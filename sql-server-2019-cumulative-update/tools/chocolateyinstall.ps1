@@ -15,7 +15,7 @@ if (([Version] (Get-CimInstance Win32_OperatingSystem).Version -lt [version] "10
 
 $pp = Get-PackageParameters
 
-if ( (!$pp['IGNOREPENDINGREBOOT']) -and (Get-PendingReboot).RebootPending) {
+if ( (!$pp['IGNOREPENDINGREBOOT']) -and (Get-PendingReboot).RebootPending -and -not $runningAU) {
   Write-Error "A system reboot is pending. You must restart Windows first before installing SQL Server updates"
 }
 
