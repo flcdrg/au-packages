@@ -33,7 +33,7 @@ function CheckDownload($url, $primaryDownloadUrl, [DateTimeOffset] $packageVersi
     Write-Verbose "HTT P Last Modified  : $lastModified"
 
     if ($lastModified -ne $packageVersionLastModified) {
-        Write-Warning "The download available at $primaryDownloadUrl has changed from what this package was expecting. Falling back to FTP for version-specific URL"
+        Write-Warning "The download available at $primaryDownloadUrl has changed from what this package was expecting. Falling back to $url for version-specific URL"
         $url
     } else {
         Write-Verbose "Primary URL matches package expectation"
