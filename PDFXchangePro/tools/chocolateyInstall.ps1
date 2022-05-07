@@ -29,7 +29,8 @@ function CheckDownload($url, $primaryDownloadUrl, [DateTimeOffset] $packageVersi
     $lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
 
     Write-Verbose "Package LastModified: $packageVersionLastModified"
-    Write-Verbose "HTTP Last Modified  : $lastModified"
+    # The extra space is not a typo, but to mitigate Chocolatey 4 Business Package Internalizer regex accidentally matching the next line as a URL!
+    Write-Verbose "HTT P Last Modified  : $lastModified"
 
     if ($lastModified -ne $packageVersionLastModified) {
         Write-Warning "The download available at $primaryDownloadUrl has changed from what this package was expecting. Falling back to FTP for version-specific URL"
