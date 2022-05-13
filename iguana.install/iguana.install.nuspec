@@ -9,7 +9,7 @@
     <title>Interfaceware Iguana (Install)</title>
     <authors>iNTERFACEWARE Inc.</authors>
     <projectUrl>https://www.interfaceware.com/iguana.html</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/tree/master/iguana/icons/iguana.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/c1f067c1ba6ec4d7a391f89960fc70370d5b597a/iguana/icons/iguana.png</iconUrl>
     <copyright>2017 iNTERFACEWARE Inc.</copyright>
     <licenseUrl>https://www.interfaceware.com/eula</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
@@ -19,7 +19,7 @@
     <summary>Iguana interface engine</summary>
     <description>The Iguana interface engine allows you to integrate with EHRs, Billing Systems, HIEs and any other healthcare application.
 
-It’s the only integration engine you need to create any healthcare interface.
+It's the only integration engine you need to create any healthcare interface.
 
 Try out a fully functional, 30 day trial of Iguana for free!
 

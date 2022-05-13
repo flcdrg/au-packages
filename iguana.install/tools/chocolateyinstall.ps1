@@ -87,7 +87,11 @@ $packageArgs = @{
 
 Install-ChocolateyZipPackage @packageArgs
 
-$filename = Get-ChildItem -Path $toolsDir -Filter *.exe | Select-Object -First 1 -ExpandProperty FullName
+$filename = Get-ChildItem -Path $toolsDir -Recurse -Filter Iguana.exe | Select-Object -First 1 -ExpandProperty FullName
+
+if (-not $filename) {
+    Write-Error "Could not find iguana.exe under $toolsDir"
+}
 
 $packageArgs = @{
   packageName   = $packageName
