@@ -2,8 +2,8 @@
 
 $packageName= 'iguana.install'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64      = 'http://dl.interfaceware.com/iguana/windows/6_1_5/iguana_noinstaller_6_1_5_windows_x64.zip'
-$checksum64 = '20165b31a63c68b61d66445d46852f37715cfe33abd3bef34b02bded98447120'
+$url64      = 'https://dl.interfaceware.com/iguana/windows/6_1_5/iguana_6_1_5_windows_x64.zip'
+$checksum64 = 'BE4DA6E7814E4EA055B7E89E79D4F7D30C55358D58E8C3589811F0262640A6ED'
 
 $pp = Get-PackageParameters
 
@@ -87,11 +87,7 @@ $packageArgs = @{
 
 Install-ChocolateyZipPackage @packageArgs
 
-$filename = Get-ChildItem -Path $toolsDir -Recurse -Filter Iguana.exe | Select-Object -First 1 -ExpandProperty FullName
-
-if (-not $filename) {
-    Write-Error "Could not find iguana.exe under $toolsDir"
-}
+$filename = Get-ChildItem -Path $toolsDir -Filter *.exe | Select-Object -First 1 -ExpandProperty FullName
 
 $packageArgs = @{
   packageName   = $packageName
