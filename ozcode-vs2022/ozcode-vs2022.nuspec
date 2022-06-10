@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>ozcode-vs2022</id>
+    <version>4.0.0.22253</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/ozcode-vs2022</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>OzCode Debugging extension for Visual Studio 2022</title>
+    <authors>CodeValue LTD</authors>
+    <projectUrl>https://oz-code.com/debugging-redefined/</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/1984f3f79fabb91831a8634902b85d7804e265f0/ozcode/icons/ozcode.png</iconUrl>
+    <copyright>2022 CodeValue D.T LTD</copyright>
+    <licenseUrl>https://oz-code.com/eula/</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://oz-code.com/knowledge-base/visual-studio-extension</docsUrl>
+    <mailingListUrl>https://ozcode.userecho.com/</mailingListUrl>
+    <bugTrackerUrl>https://oz-code.com/Support</bugTrackerUrl>
+    <tags>Debugging Extension vsix trial vs2022</tags>
+    <summary>Extension for Visual Studio that enhances debugging</summary>
+    <description>Debug like a magician.
+
+Cut debugging time in half with the legendary Visual Studio extension for C#.
+
+Ozcode dramatically enhances your Visual Studio debugging experience enabling you to quickly find the root cause of bugs in .NET applications and fix them fast. With powerful tools that dissect your code and visualize it to the deepest levels, Ozcode makes debugging easier that you ever dared to imagine. Fix bugs fast, craft more code.
+
+Features include:
+
+* Linq Debugging
+* Export
+* Head-Up Display
+* Breakpoints
+* Exceptions
+* Trace
+* Quick Attach
+* Search
+* Foresee
+* Compare
+* Reveal
+* Custom Expressions
+* Filter Collections
+* Quick Actions
+* Show All Instances
+* Time travel debugging
+* Full integration with VS2022, including LiveShare
+
+#### Supported versions
+
+This package supports Visual Studio 2022.
+</description>
+    <releaseNotes>https://oz-code.com/knowledge-base/visual-studio-extension/release-notes</releaseNotes>
+  <dependencies>
+    <dependency id="chocolatey-visualstudio.extension" version="1.8.1" />
+  </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
