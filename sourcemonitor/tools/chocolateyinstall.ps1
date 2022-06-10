@@ -8,8 +8,8 @@ $packageArgs = @{
   silentArgs    = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-"
   
   validExitCodes= @(0)
-  url           = "https://www.campwoodsw.com/SM/SMSetupV3516.exe"
-  checksum      = 'CF242B8DFD90BDE704B34ADEBA7DD46B02685E62C98EBBACA8C6016A3CC41066'
+  url           = "https://www.derpaul.net/SourceMonitor/3.5.16.62/SMSetupV3516.exe"
+  checksum      = 'D9605621F277FD477A1A09F0980D1A7AD6D50CFDEA71D4DAD162DA4884913F29'
   checksumType  = 'sha256'
   destination   = $toolsDir
 }

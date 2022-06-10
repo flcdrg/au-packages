@@ -3,12 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sourcemonitor</id>
-    <version>3.5.16</version>
+    <version>3.5.16.62</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sourcemonitor</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>SourceMonitor</title>
     <authors>Campwood Software LLC</authors>
-    <projectUrl>https://www.campwoodsw.com/sourcemonitor.html</projectUrl>
+    <projectUrl>https://www.derpaul.net/SourceMonitor/</projectUrl>
+    <projectSourceUrl>https://github.com/SourceMonitor/SM-Info</projectSourceUrl>
     <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/aeb6f434aa9fe49c32b22c124a4815adcb790eb7/sourcemonitor/icons/SourceMonitor.png</iconUrl>
     <copyright>2021 Campwood Software LLC. All Rights Reserved.</copyright>
     <licenseUrl>https://www.campwoodsw.com/smlicense.html</licenseUrl>
