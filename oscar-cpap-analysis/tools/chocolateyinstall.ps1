@@ -3,17 +3,17 @@ $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
-  softwareName  = 'oscar-cpap-analysis*'
+  softwareName  = 'OSCAR'
   fileType      = 'exe'
 
   silentArgs   = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
   
   validExitCodes= @(0) #please insert other valid exit codes here
-  url           = "https://www.apneaboard.com/OSCAR/OSCAR-1.3.1-Win32.exe"
-  checksum      = 'E6CCD57729521B3452CAC6F10584DADEB29B9AF2F9D2A178897530F2A8DAC370'
+  url           = "https://www.apneaboard.com/OSCAR/OSCAR-1.4.0-Win64.exe"
+  checksum      = 'D8998239B5FBCC1E9A5A53CB6116368AD760F50C25ECC332196395772E038A98'
   checksumType  = 'sha256'
-  url64bit      = "https://www.apneaboard.com/OSCAR/OSCAR-1.3.1-Win64.exe"
-  checksum64    = '8F393F30C051B320E725F25EFEBB31D59F0ED3B0F35EE02BB480658CF3DF9A75'
+  url64bit      = "https://www.apneaboard.com/OSCAR/OSCAR-1.4.0-Win32.exe"
+  checksum64    = '169497C717FDC50C9A541E8C407AF33E61F34A379D184C61C3483815BAB8CBEC'
   checksumType64= 'sha256'
   destination   = $toolsDir
 }
