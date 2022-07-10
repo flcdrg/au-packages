@@ -32,6 +32,10 @@ Here's why you should use it:
 New versions of this package are published automatically via the `update.ps1` script (viewable in the package source on GitHub).
 	</description>
     <releaseNotes>https://support.office.com/en-us/article/Release-notes-for-Microsoft-Teams-d7092a6d-c896-424c-b362-a472d5f105de</releaseNotes>
+    <dependencies>
+      <!-- docs indicate .NET 4.5 is required, but since 1.5.00.14473 the installer depends on System.ValueTuple, Version=4.0.2.0, which seems to be in 4.7.2+ -->
+      <dependency id="netfx-4.7.2 " version="4.7.2.0" />
+    </dependencies>
   </metadata>
   <files>
     <!-- this section controls what actually gets packaged into the Chocolatey package -->
