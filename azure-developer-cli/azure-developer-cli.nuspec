@@ -6,7 +6,7 @@
     <version>0.1.0-beta2</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/azure-developer-cli</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>azure-developer-cli (Install)</title>
+    <title>Azure Developer CLI</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://github.com/Azure/azure-dev</projectUrl>
     <!--<iconUrl>http://rawcdn.githack.com/__REPLACE_YOUR_REPO__/master/icons/azure-developer-cli.png</iconUrl>-->
