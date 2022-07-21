@@ -14,7 +14,7 @@ $german = @(3079,1031,5127,4103,2055)
 $french = @(2060,11276,3084,9228,12300,1036,5132,13324,6156,14348,10252,4108,7180)
 $japanese = @(17, 1041)
 $chinese = @(2052)
-$version = '4.4.2.26348'
+$version = '4.4.3.26655'
 
 $packageArgs = @{
   packageName   = 'beyondcompare'
@@ -26,11 +26,11 @@ $packageArgs = @{
   checksumType  = 'sha256'
 }
 
-$checksumde = 'ff2b46c2621511fdd7088d7fddc9079ab43417d92a3ea272237a762886422708'
-$checksumfr = '72492caf69b11480c3e8261bb145d2cb25febeaecfb21e4f78b86b089126727a'
-$checksumjp = '065a91a0c46b2bc07c652ac3240e869b29aff60fd531b044ff7402775792cced'
-$checksumzh = '2430e38d541a60a287d72caa4ee6c01a7ac5260db0aab83c46a0989c0139ac5f'
-$checksum = 'e67bde9c9c551c83daef4bc36a274d69d8a25e1ca12b5ea61c8ea5cb7cb14c01'
+$checksumde = '77acdfcaf525a1758a47f827c1b1b0a7e3e3cd35d45165e0a2966599be51f599'
+$checksumfr = 'e9de96beb4b8eef7ded3f5f82e711d555408ce684273e4cec8a9fa81e26c488e'
+$checksumjp = 'a4da4c3b591d17b0fb50461b295d6c99c16d33e7bbc281ca95f6b4af2c92c1ec'
+$checksumzh = 'fec3d4b6f5a9785ba300dc85cd0c4d7c631d7d18b64c7becde7b56627039189c'
+$checksum = '405ef78708fa306949a9f5f853b208a8b4341ba3c9a18d197a10efbead823f73'
 
 if ($german -contains $LCID)
 {
