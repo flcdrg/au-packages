@@ -23,14 +23,20 @@ $urls = @{
 
 function GetJetbrainsReSharperPlatformLatestRelease($release) {
     # Prefer version from here, rather than from PackageMetadata.Version
-    $version = Invoke-RestMethod -Uri ($urls[$release].Version) # "https://download-cf.jetbrains.com/resharper/resharper-version.json"
+    # 222.0.20220727.110528-eap11
+    $version = (Invoke-RestMethod -Uri ($urls[$release].Version)) -replace "eap(\d)$", '-eap0$1' # "https://download-cf.jetbrains.com/resharper/resharper-version.json"
     $updates = Invoke-RestMethod -Uri ($urls[$release].Updates) #"https://download-cf.jetbrains.com/resharper/resharper-updates.json"
 
     $package = $updates.AllPackages.InstallablePackage | Where-Object { $_.PackageMetadata.Id -eq "JetBrains.ReSharper.src" }
     $productInfo =  $package.ProductInfo | ConvertFrom-Json
 
+    # "2022.2 EAP 11"
     $versionMarketingString = $productInfo.VersionMarketingString
-    $versionMarketingStringSemVer = $versionMarketingString -replace " EAP ", "-EAP"
+
+    # "2022.2-EAP11"
+    $versionMarketingStringSemVer = ($versionMarketingString -replace " EAP ", "-EAP") -replace "EAP(\d)$", '-EAP0$1'
+
+    # "2022.2.EAP11"
     $versionMarketingStringDotted = $versionMarketingString -replace " EAP ", ".EAP"
 
     #$filename = "JetBrains.dotUltimate.$($versionMarketingStringUpdated).exe"
@@ -44,7 +50,11 @@ function GetJetbrainsReSharperPlatformLatestRelease($release) {
         Filename = $filename.Trim()
         Checksum32 = $hashcode
         Version = $version
+
+        # Used in title
         MarketingVersion = $versionMarketingStringSemVer
+
+        # Used in URL
         VersionMarketingStringDotted = $versionMarketingStringDotted
         Url32 = $url
     }
