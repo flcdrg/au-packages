@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dotmemory-unit.portable</id>
-    <version>3.0.20171219.105559</version>
+    <version>3.2.20220510</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dotMemory-Unit</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>dotMemory Unit Standalone Launcher (Portable)</title>
@@ -11,7 +11,7 @@
     <projectUrl>https://www.jetbrains.com/dotmemory/unit/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/jetbrains/chocolatey/master/dotMemory/logo.png</iconUrl>
     <copyright>JetBrains s.r.o.</copyright>
-    <licenseUrl>https://www.jetbrains.com/legal/agreements/user.html</licenseUrl>
+    <licenseUrl>https://www.jetbrains.com/legal/docs/toolbox/user/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <docsUrl>https://www.jetbrains.com/help/dotmemory-unit/</docsUrl>
     <mailingListUrl>https://dotnettools-support.jetbrains.com/hc/en-us/community/topics/200379845-dotMemory</mailingListUrl>

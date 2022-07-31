@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$url = 'https://download.jetbrains.com/resharper/JetBrains.dotMemoryUnit.3.0.20171219.105559.zip'
-$checksum = '02b3463a99d922a431f5ecb3167d2e3473e73b086aed4cb7fb6a811ce5f50ace'
+$url = 'https://download.jetbrains.com/resharper/JetBrains.dotMemoryUnit.3.2.20220510.zip'
+$checksum = '6f85246c8828b7d874d21befa403b866fd87a4a51f1bff19ec5f3d559b55c1ab'
 
 $installPath  = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 
