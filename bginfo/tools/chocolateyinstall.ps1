@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$checksum = '65FCA57F9F8858DED4622936050BED16CF06A8450D0CF32783600DE72F4AC1E5'
+$checksum = 'E9AD4A9A8365C8B308BDD5AB408BD9039F175B83101C076F3912C1D2B59D4AAF'
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
