@@ -3,10 +3,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-2022</id>
-    <version>16.0.600.9-ctp2</version>
+    <version>16.0.700.4-ctp2-1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-2022</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Microsoft SQL Server 2022 Developer Edition CTP 2.0</title>
+    <title>Microsoft SQL Server 2022 Developer Edition CTP 2.1</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://www.microsoft.com/en-us/sql-server/sql-server-2022</projectUrl>
     <iconUrl>https://rawcdn.githack.com/ferventcoder/chocolatey-packages/59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
