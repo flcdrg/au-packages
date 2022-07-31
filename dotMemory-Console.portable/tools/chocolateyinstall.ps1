@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$url = 'https://download-cf.jetbrains.com/resharper/ReSharperUltimate.2019.2.1/JetBrains.dotMemoryConsole.2019.2.1.zip'
-$checksum = '8f5368cda7d48ef2b097a601622f76e9e3c9355f056299813f5cc2122d9f46f1'
+$url = 'https://download-cdn.jetbrains.com/resharper/dotUltimate.2022.1.2/JetBrains.dotMemory.Console.windows-x64.2022.1.2.zip'
+$checksum = '4be497788ff221f115ab9280190e4286a343eabb0d4f68f3a4e169ba8c4da6f4'
 
 $installPath  = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 

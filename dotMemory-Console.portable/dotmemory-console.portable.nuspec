@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dotmemory-console.portable</id>
-    <version>2019.2.1</version>
+    <version>2022.1.2</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dotMemory-Console.portable</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>JetBrains dotMemory Console Profiler (Portable)</title>

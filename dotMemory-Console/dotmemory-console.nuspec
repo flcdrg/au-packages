@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dotmemory-console</id>
-    <version>2019.2.1</version>
+    <version>2022.1.2</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dotMemory-Console</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>JetBrains dotMemory Console Profiler</title>
@@ -26,7 +26,7 @@ The tool automates collecting memory snapshots, which helps integrate memory pro
 </description>
     <releaseNotes>https://www.jetbrains.com/dotmemory/whatsnew/</releaseNotes>
     <dependencies>
-      <dependency id="dotMemory-Console.portable" version="[2019.2.1]" />
+      <dependency id="dotMemory-Console.portable" version="[2022.1.2]" />
     </dependencies>
   </metadata>
   <files>
