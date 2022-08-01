@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://azure-dev.azureedge.net/azd/standalone/release/0.1.0-beta.2/azd-windows-amd64.zip'
-$checksum      = '710E78224DCEBB52438C7C4938BFDFBB5EBAA2C965E52D5D2B0959FB611F3557'
+$url        = 'https://github.com/Azure/azure-dev/releases/download/azure-dev-cli_0.1.0-beta.3/azd-darwin-amd64.zip'
+$checksum      = '326c1893bcd98f6fa16edbbc229533829cd57a28d7d93714df5828afb8414762'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
