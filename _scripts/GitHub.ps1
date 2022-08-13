@@ -39,11 +39,14 @@ function Get-GitHubReleaseAssetsBrowserDownloadUrls($assets) {
 
 function Get-ReleaseVersion($release, [string] $prefix) {
     if ($prefix) {
-        if (-not $release.name.StartsWith($prefix)) {
+        if ($release.name -and $release.name.StartsWith($prefix)) {
+            $release.name.Substring($prefix.Length)
+        } elseif ($release.tag_name -and $release.tag_name.StartsWith($prefix)) {
+            $release.tag_name.Substring($prefix.Length)
+        } else {
             return $null
         }
 
-        $release.name.Substring($prefix.Length)
     } elseif ($release.name) {
         $release.name
     } elseif ($release.tag_name) {

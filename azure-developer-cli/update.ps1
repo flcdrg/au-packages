@@ -26,7 +26,7 @@ function global:au_GetLatest {
 
     $assets = Get-GitHubReleaseAssets $release
 
-    $asset32 = $assets | Where-Object { $_.name -eq "azd-darwin-amd64.zip" }
+    $asset32 = $assets | Where-Object { $_.name -eq "azd-windows-amd64.zip" }
 
     $Latest = @{
         Url32 = $asset32.browser_download_url
