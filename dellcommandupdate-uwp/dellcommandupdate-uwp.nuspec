@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dellcommandupdate-uwp</id>
-    <version>4.5.0</version>
+    <version>4.6.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dellcommandupdate-uwp</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Dell Command | Update for Windows 10 (UWP)</title>
@@ -28,8 +28,12 @@ Dell Command | Update provides the following new features:
 This UWP package provides the Dell Command | Update Application and is supported on OptiPlex, Venue Pro Tablet, Precision, XPS Notebook and Latitude models that are running the following Windows operating system: Windows 10 &gt; = RS1+ (build 14393) systems.
 
 *Note that this is not an upgrade to the non-UWP version. You will need to manually uninstall older versions of Dell Command | Update before installing this Windows 10/UWP version.*
+
+#### Package updates
+
+This package is automatically updated by referencing the data feed provided by Dell. Should it be outdated by more than a few days please leave a comment below.
  </description>
- <releaseNotes>https://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=601KT</releaseNotes>
+ <releaseNotes>https://www.dell.com/support/home/en-AU/drivers/DriversDetails?driverId=HG8CC</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
