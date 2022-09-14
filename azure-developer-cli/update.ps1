@@ -12,7 +12,8 @@ function global:au_SearchReplace {
 . ../_scripts/GitHub.ps1
 
 function global:au_GetLatest {
-    $release = Get-GitHubLatestRelease "Azure/azure-dev"
+    # This repo has releases for the cli tool as well as VS Code vsix
+    $release = Get-GitHubLatestRelease "Azure/azure-dev" "azure-dev-cli"
     
     $version = Get-ReleaseVersion -release $release -prefix "azure-dev-cli_"
 

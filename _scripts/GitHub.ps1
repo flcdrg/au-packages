@@ -13,7 +13,7 @@ $headers = @{}
     Output (if any)
 
 #>
-function Get-GitHubLatestRelease($project) {
+function Get-GitHubLatestRelease($project, $tagPrefix) {
 
     $token = $env:github_api_key
     $script:headers = @{
@@ -26,7 +26,14 @@ function Get-GitHubLatestRelease($project) {
     }
 
     $releasesUrl = "https://api.github.com/repos/$project/releases"
-    Invoke-RestMethod -Method Get -Uri "$releasesUrl/latest" -Headers $headers
+
+    if ($tagPrefix) {
+        $releases = Invoke-RestMethod -Method Get -Uri "$releasesUrl" -Headers $headers
+        $releases | Where-Object { $_.tag_name -and $_.tag_name.StartsWith($tagPrefix) } | Select-Object -First 1
+
+    } else {
+        Invoke-RestMethod -Method Get -Uri "$releasesUrl/latest" -Headers $headers
+    }
 }
 
 function Get-GitHubReleaseAssets($release) {
