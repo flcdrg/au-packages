@@ -53,10 +53,10 @@ function Get-ReleaseVersion($release, [string] $prefix) {
         } else {
             return $null
         }
-
-    } elseif ($release.name) {
-        $release.name
+    # Prefer tag_name
     } elseif ($release.tag_name) {
         $release.tag_name
+    } elseif ($release.name) {
+        $release.name
     }
 }
