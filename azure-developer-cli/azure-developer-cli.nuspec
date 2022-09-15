@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>azure-developer-cli</id>
-    <version>0.1.0-beta5</version>
+    <version>0.2.0-beta1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/azure-developer-cli</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Azure Developer CLI</title>
@@ -26,13 +26,21 @@ and the [Getting started](https://docs.microsoft.com/azure/developer/azure-devel
 
 ### Package notes
 This package installs and registers the `azd` command globally for all users. This contrasts with the original PowerShell script [https://aka.ms/install-azd.ps1](https://aka.ms/install-azd.ps1) that installs the CLI per-user.
-    </description>
-    <releaseNotes><![CDATA[### 0.1.0-beta.5 (2022-08-25)
+    </description><releaseNotes><![CDATA[### 0.2.0-beta.1 (2022-09-14)
 
-#### Bugs Fixed
+#### Features Added
 
-- [[#461]](https://github.com/Azure/azure-dev/pull/461) Fix for using a command output other than JSON.
-- [[#480]](https://github.com/Azure/azure-dev/pull/480) Fix deploy error when using an environment name with capital letters.]]></releaseNotes>
+- [[#172]](https://github.com/Azure/azure-dev/pull/172) Implement Infrastructure Provision Provider Model.
+- [[#573]](https://github.com/Azure/azure-dev/pull/573) Add support for Terraform for infrastructure as code (IaC).
+- [[#532]](https://github.com/Azure/azure-dev/pull/532) Add Terraform support for Python template.
+- [[#646]](https://github.com/Azure/azure-dev/pull/646) Add Terraform support for Node.js template.
+- [[#550]](https://github.com/Azure/azure-dev/pull/550) Add C## + Azure SQL template.
+
+#### Breaking Changes
+
+- [[#588]](https://github.com/Azure/azure-dev/pull/588) Update default view from `azd monitor` to overview dashboard.
+]]></releaseNotes>
+    
     <dependencies>
       <dependency id="git" version="2.37.1" />
       <dependency id="gh" version="2.3.0" />
