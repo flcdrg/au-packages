@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>azure-developer-cli</id>
-    <version>0.2.0-beta1</version>
+    <version>0.2.0-beta2</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/azure-developer-cli</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Azure Developer CLI</title>
@@ -26,19 +26,15 @@ and the [Getting started](https://docs.microsoft.com/azure/developer/azure-devel
 
 ### Package notes
 This package installs and registers the `azd` command globally for all users. This contrasts with the original PowerShell script [https://aka.ms/install-azd.ps1](https://aka.ms/install-azd.ps1) that installs the CLI per-user.
-    </description><releaseNotes><![CDATA[### 0.2.0-beta.1 (2022-09-14)
+    </description><releaseNotes><![CDATA[### 0.2.0-beta.2 (2022-09-21)
 
-#### Features Added
+#### Bugs Fixed
 
-- [[#172]](https://github.com/Azure/azure-dev/pull/172) Implement Infrastructure Provision Provider Model.
-- [[#573]](https://github.com/Azure/azure-dev/pull/573) Add support for Terraform for infrastructure as code (IaC).
-- [[#532]](https://github.com/Azure/azure-dev/pull/532) Add Terraform support for Python template.
-- [[#646]](https://github.com/Azure/azure-dev/pull/646) Add Terraform support for Node.js template.
-- [[#550]](https://github.com/Azure/azure-dev/pull/550) Add C## + Azure SQL template.
+- [[#724]](https://github.com/Azure/azure-dev/pull/724) Fix version check for supporting Docker CE / Moby schemes. 
 
-#### Breaking Changes
+#### Other Changes
 
-- [[#588]](https://github.com/Azure/azure-dev/pull/588) Update default view from `azd monitor` to overview dashboard.
+- [[#548]](https://github.com/Azure/azure-dev/pull/548) Refactor template bicep into modules.
 ]]></releaseNotes>
     
     <dependencies>
