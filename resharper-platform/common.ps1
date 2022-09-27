@@ -34,7 +34,7 @@ function GetJetbrainsReSharperPlatformLatestRelease($release) {
     $versionMarketingString = $productInfo.VersionMarketingString
 
     # "2022.2-EAP11"
-    $versionMarketingStringSemVer = ($versionMarketingString -replace " EAP ", "-EAP") -replace "EAP(\d)$", '-EAP0$1'
+    $versionMarketingStringSemVer = ($versionMarketingString -replace " EAP ", "-EAP") -replace "EAP(\d)$", 'EAP0$1'
 
     # "2022.2.EAP11"
     $versionMarketingStringDotted = $versionMarketingString -replace " EAP ", ".EAP"
