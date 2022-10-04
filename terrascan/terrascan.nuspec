@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>terrascan</id>
+    <version>1.15.2</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/terrascan</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>Terrascan</title>
+    <authors>Tenable, Inc.</authors>
+    <projectUrl>https://runterrascan.io/</projectUrl>
+    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/terrascan.png</iconUrl>-->
+    <copyright>2022 Tenable, Inc.</copyright>
+    <licenseUrl>https://github.com/tenable/terrascan/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/tenable/terrascan</projectSourceUrl>
+    <docsUrl>https://runterrascan.io/docs/</docsUrl>
+    <mailingListUrl>https://discord.gg/59vwVuGyGr</mailingListUrl>
+    <bugTrackerUrl>https://github.com/tenable/terrascan/issues</bugTrackerUrl>
+    <tags>Terraform Linter</tags>
+    <summary>Detect compliance and security violations across Infrastructure as Code to mitigate risk before provisioning cloud native infrastructure</summary>
+    <description>Terrascan is a static code analyzer for Infrastructure as Code. Terrascan allows you to:
+
+- Seamlessly scan infrastructure as code for misconfigurations.
+- Monitor provisioned cloud infrastructure for configuration changes that introduce posture drift, and enables reverting to a secure posture.
+- Detect security vulnerabilities and compliance violations.
+- Mitigate risks before provisioning cloud native infrastructure.
+- Offers flexibility to run locally or integrate with your CI\CD.</description>
+    <releaseNotes>
+- 00664bc Adding CFT support for new resources (#1293)
+- c729550 fixes: panic in case of zap logger init on windows os (#1283)
+- 3ee999a release/v1.15.2 (#1292)
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
