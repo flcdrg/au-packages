@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>terrascan</id>
-    <version>1.15.2</version>
+    <version>1.16.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/terrascan</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Terrascan</title>
@@ -25,12 +25,29 @@
 - Monitor provisioned cloud infrastructure for configuration changes that introduce posture drift, and enables reverting to a secure posture.
 - Detect security vulnerabilities and compliance violations.
 - Mitigate risks before provisioning cloud native infrastructure.
-- Offers flexibility to run locally or integrate with your CI\CD.</description>
-    <releaseNotes>
-- 00664bc Adding CFT support for new resources (#1293)
-- c729550 fixes: panic in case of zap logger init on windows os (#1283)
-- 3ee999a release/v1.15.2 (#1292)
-    </releaseNotes>
+- Offers flexibility to run locally or integrate with your CI\CD.</description><releaseNotes><![CDATA[### Changelog
+* 84f0888c Add github-actions to dependabot (#1365)
+* 752d2a0d Add iac providers endpoint (#1307)
+* 6da2dca1 Mention pre-requirements in the README (#1375)
+* 7c45879f Merge branch 'tenable:master' into master
+* 08934f48 Policy IDs update (#1396)
+* e289cc65 Update RDS Policies (#1424)
+* da754a75 Update README.md (#1265)
+* 3b428a50 Update README.md (#1409)
+* 8ae13452 adding PITR attribute mapping config for dyanmodb (#1340)
+* 849eef79 allow host policy update (#1400)
+* a9f115a2 container funcs to return dev friendly warnings (#1319)
+* 313ccf31 fix: build/Dockerfile to reduce vulnerabilities (#1315)
+* baf1dfd1 fixed typo of the function name (#1373)
+* 73c1d04b release/v1.16.0
+* 944087f8 release/v1.16.0 (#1427)
+* af10a246 update libraries (#1385)
+* 730c83fd update rds instance cft map (#1422)
+* 064c993c updated policy (#1288)
+* db3b7aef vuln tests (#1394)
+
+]]></releaseNotes>
+    
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
