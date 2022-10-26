@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>azure-developer-cli</id>
-    <version>0.3.0-beta3</version>
+    <version>0.3.0-beta4</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/azure-developer-cli</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Azure Developer CLI</title>
@@ -26,20 +26,11 @@ and the [Getting started](https://docs.microsoft.com/azure/developer/azure-devel
 
 ### Package notes
 This package installs and registers the `azd` command globally for all users. This contrasts with the original PowerShell script [https://aka.ms/install-azd.ps1](https://aka.ms/install-azd.ps1) that installs the CLI per-user.
-    </description><releaseNotes><![CDATA[### 0.3.0-beta.3 (2022-10-21)
-
-#### Features Added
-
-- [[#878]](https://github.com/Azure/azure-dev/pull/878) `azd down` supports purge of app configuration stores.
+    </description><releaseNotes><![CDATA[### 0.3.0-beta.4 (2022-10-25)
 
 #### Bugs Fixed
 
-- [[#925]](https://github.com/Azure/azure-dev/pull/925) Fix issues where running `azd infra create` with `--output==json` would emit invalid JSON.  As part of this change, we now no longer emit multiple objects to `stdout` as part of an operation. Instead, progress messages are streamed in a structured way to `stderr`.
-
-#### Other Changes
-
-- [[#691]](https://github.com/Azure/azure-dev/pull/691) Rearrange Terraform templates by extracting common resources and using these common modules.
-- [[#892]](https://github.com/Azure/azure-dev/pull/892) Simplify template bicep modules.
+- [[#979]](https://github.com/Azure/azure-dev/pull/979) Fix provisioning template with non string outputs.
 ]]></releaseNotes>
     
     <dependencies>
