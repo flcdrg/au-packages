@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>azure-developer-cli</id>
-    <version>0.3.0-beta4</version>
+    <version>0.3.0-beta5</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/azure-developer-cli</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Azure Developer CLI</title>
@@ -26,7 +26,7 @@ and the [Getting started](https://docs.microsoft.com/azure/developer/azure-devel
 
 ### Package notes
 This package installs and registers the `azd` command globally for all users. This contrasts with the original PowerShell script [https://aka.ms/install-azd.ps1](https://aka.ms/install-azd.ps1) that installs the CLI per-user.
-    </description><releaseNotes><![CDATA[### 0.3.0-beta.4 (2022-10-25)
+    </description><releaseNotes><![CDATA[### 0.3.0-beta.5 (2022-10-26)
 
 #### Bugs Fixed
 
