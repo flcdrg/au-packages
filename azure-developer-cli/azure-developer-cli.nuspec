@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>azure-developer-cli</id>
-    <version>0.3.0-beta5</version>
+    <version>0.4.0-beta1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/azure-developer-cli</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Azure Developer CLI</title>
@@ -26,12 +26,23 @@ and the [Getting started](https://docs.microsoft.com/azure/developer/azure-devel
 
 ### Package notes
 This package installs and registers the `azd` command globally for all users. This contrasts with the original PowerShell script [https://aka.ms/install-azd.ps1](https://aka.ms/install-azd.ps1) that installs the CLI per-user.
-    </description><releaseNotes><![CDATA[### 0.3.0-beta.5 (2022-10-26)
+    </description><releaseNotes><![CDATA[### 0.4.0-beta.1 (2022-11-02)
+
+#### Features Added
+
+- [[#773]](https://github.com/Azure/azure-dev/pull/773) Add support for Java with Maven.
+- [[#1026]](https://github.com/Azure/azure-dev/pull/1026), [[#1021]](https://github.com/Azure/azure-dev/pull/1021) New official templates: ToDo with Java on App Service, ToDo with Java on Azure Container Apps, ToDo with C## on Azure Functions
+- [[#967]](https://github.com/Azure/azure-dev/pull/967) New `azd config` command for managing default subscription and location selections.
+- [[#1035]](https://github.com/Azure/azure-dev/pull/1035) Add terraform support for Azure Pipelines created using `azd pipeline config`.
 
 #### Bugs Fixed
 
-- [[#979]](https://github.com/Azure/azure-dev/pull/979) Fix provisioning template with non string outputs.
-]]></releaseNotes>
+- [[#1060]](https://github.com/Azure/azure-dev/pull/1060) Fix color rendering on Windows.
+- [[#1011]](https://github.com/Azure/azure-dev/pull/1011) Improve error printout for deployment failures.
+- [[#991]](https://github.com/Azure/azure-dev/pull/991) Fix `devcontainers.json` to use non-deprecated syntax.
+- [[#996]](https://github.com/Azure/azure-dev/pull/996) ToDo templates:
+  - Fix cases where provisioning of app settings would succeed, but app settings configuration would not take place.
+  - Move resource naming to `main.bicep` and remove `resources.bicep` from templates.]]></releaseNotes>
     
     <dependencies>
       <dependency id="git" version="2.37.1" />
