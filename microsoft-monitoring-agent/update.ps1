@@ -12,9 +12,9 @@ function global:au_SearchReplace {
 }
 
 function GetDownloadInfo($url) {
-    $response = Invoke-WebRequest -Method Head -Uri $url -MaximumRedirection 0 -ErrorAction Ignore
+    $response = Invoke-WebRequest -Method Head -Uri $url -MaximumRedirection 0 -SkipHttpErrorCheck -ErrorAction Ignore
 
-    $url = $response.Headers.Location -replace "http:", "https:"
+    $url = $response.Headers.Location[0] -replace "http:", "https:"
 
     # https://download.microsoft.com/download/A/E/7/AE709F7E-37F5-473F-A615-42D6F66AE32F/MMASetup-i386.exe
 

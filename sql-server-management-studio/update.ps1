@@ -13,16 +13,16 @@ function global:au_SearchReplace {
 function Get-Download($url, $version)
 {
     # two levels of redirection
-    $request = Invoke-WebRequest -Method Head -Uri $url -MaximumRedirection 0 -ErrorAction Ignore
+    $request = Invoke-WebRequest -Method Head -Uri $url -MaximumRedirection 0 -SkipHttpErrorCheck -ErrorAction Ignore
 
-    $request = Invoke-WebRequest -Method Head -Uri $request.Headers.Location -ErrorAction Ignore -MaximumRedirection 0
+    $request = Invoke-WebRequest -Method Head -Uri $request.Headers.Location[0] -SkipHttpErrorCheck -ErrorAction Ignore -MaximumRedirection 0
     $r = @{}
 
     if($request.StatusCode -lt 400)
     {
         # $url        = 'http://download.microsoft.com/download/E/E/1/EE12CC0F-A1A5-4B55-9425-2AFBB2D63979/SSMS-Full-Setup.exe'
 
-        $location = [UriBuilder] $request.Headers.Location
+        $location = [UriBuilder] $request.Headers.Location[0]
 
         # Switch to https
         $location.Scheme = "https"

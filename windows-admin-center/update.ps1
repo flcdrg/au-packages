@@ -18,9 +18,9 @@ function global:au_GetLatest {
 
     try {
         # Get latest version from XML
-        $response = Invoke-WebRequest -Method Head -Uri "https://aka.ms/WACDownload" -MaximumRedirection 0 -ErrorAction Ignore
+        $response = Invoke-WebRequest -Method Head -Uri "https://aka.ms/WACDownload" -MaximumRedirection 0 -SkipHttpErrorCheck -ErrorAction Ignore
 
-        $url = $response.Headers.Location -replace "http:", "https:"
+        $url = $response.Headers.Location[0] -replace "http:", "https:"
 
         # https://download.microsoft.com/download/1/0/5/1059800B-F375-451C-B37E-758FFC7C8C8B/WindowsAdminCenter1809.msi
         $url -match "WindowsAdminCenter(?<version>\d+(\.\d+)?)\.msi$"
