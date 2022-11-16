@@ -111,6 +111,7 @@ build_script:
     ./update_all.ps1 -Name resharper-platform,teamcity,*.portable,*.install
 
     # second pass (remainder)
+    Write-Host $forced
     ./update_all.ps1 -ForcedPackages $forced
     7z a au_temp.zip $Env:TEMP\chocolatey\au\*
 
