@@ -38,6 +38,7 @@ if ($pp['AllUsers']) {
 #Machine Wide installaer VDI/WVD
 if ($pp['AllUser']) {
   $packageArgs.silentArgs += ' ALLUSER=1'
+  reg add "HKLM\SOFTWARE\Microsoft\Teams" /v IsWVDEnvironment /t REG_DWORD /d 1 /f
 }
 
 Install-ChocolateyPackage @packageArgs
