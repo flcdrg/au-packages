@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://download.microsoft.com/download/6/0/9/6093fe64-b7ec-4264-8892-3cc841e4e907/SQLServer2022-x64-ENU.iso'
+$url        = 'https://download.microsoft.com/download/3/8/d/38de7036-2433-4207-8eae-06e247e17b25/SQLServer2022-x64-ENU-Dev.iso'
 
 . $toolsDir\Get-PendingReboot.ps1
 
@@ -43,7 +43,7 @@ $packageArgs = @{
   url           = $url
 
   softwareName  = 'Microsoft SQL Server 2022 (64-bit)'
-  checksum      = 'F81D66BD4C36C1CF1F5A7D32341D62FD1C6336298881E2DB629DB62152E03161'
+  checksum      = '80D2CD75DD2B28098C0182F50AD86BD44F9B3A9F357C30FF617480A1497DAFFD'
   checksumType  = 'sha256'
 
   silentArgs   = "/IAcceptSqlServerLicenseTerms /Q "

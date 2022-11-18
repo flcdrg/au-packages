@@ -3,71 +3,74 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-2022</id>
-    <version>16.0.700.4-ctp2-1</version>
+    <!-- https://www.sqlserverversions.com/2021/07/sql-server-2022-versions.html -->
+    <version>16.0.1000.6</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-2022</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Microsoft SQL Server 2022 Developer Edition CTP 2.1</title>
+    <title>Microsoft SQL Server 2022 Developer Edition</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://www.microsoft.com/en-us/sql-server/sql-server-2022</projectUrl>
     <iconUrl>https://rawcdn.githack.com/ferventcoder/chocolatey-packages/59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
     <copyright>2022 Microsoft Corporation</copyright>
-    <licenseUrl>https://www.microsoft.com/en-us/sql-server/sql-server-2019-pricing</licenseUrl>
+    <licenseUrl>https://www.microsoft.com/en-us/sql-server/sql-server-2022-pricing</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <docsUrl>https://docs.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver16</docsUrl>
     <mailingListUrl>https://docs.microsoft.com/en-us/answers/products/sql-server</mailingListUrl>
     <bugTrackerUrl>https://feedback.azure.com/d365community/forum/04fe6ee0-3b25-ec11-b6e6-000d3a4f0da0</bugTrackerUrl>
     <tags>SQL tSQL Relational Data Database</tags>
-    <summary>SQL Server 2022 Preview is the most Azure-enabled release of SQL Server yet, with continued innovation in security, availability, and performance.</summary>
-    <description>SQL Server 2022 Preview is the most Azure-enabled release of SQL Server yet, with continued innovation in security, availability, and performance.
+    <summary>SQL Server 2022 is the most Azure-enabled release of SQL Server yet, with continued innovation in security, availability, and performance.</summary>
+    <description># Description
 
-### Overview
-
-SQL Server 2022 Preview integrates with Azure Synapse Link and Azure Purview to enable customers to drive deeper insights, predictions, and governance from their data at scale. Cloud integration is enhanced with disaster recovery to Azure SQL Managed Instance, along with no-ETL connections to cloud analytics, which allow database administrators to manage their data estates with greater flexibility and minimal impact to the end-user. Performance and scalability are automatically enhanced via built-in query intelligence. There is choice and flexibility across languages and platforms, including Linux, Windows, and Kubernetes.
-
-- Business continuity through Azure
-- Seamless analytics over on-prem operational data
-- Visibility over your entire data estate
-- Most secure over the last 10 years
-- Industry-leading performance and availability
-
-### Operating System requirements for SQL Server Developer
-
-- Windows 10 TH1 1507 or greater
-- Windows Server 2016 or greater
-
-### Package Specific
-
-#### Package notes
-
-This package will install SQL Server 2022 Developer Edition using an existing .iso file. If a path to an existing .iso is not supplied, it downloads the same .iso that can be obtained from the [SQL Server Basic Installer](https://go.microsoft.com/fwlink/?linkid=2162123&amp;clcid=0x409&amp;culture=en-us&amp;country=us)'s *Download Media* menu.
-
-#### Package Parameters
-
-The following package parameters can be set:
-
-- `/IsoPath:` - path to a local copy of the .iso file - if not supplied then .iso is downloaded
-- `/IgnorePendingReboot` - don't check for pending reboot (Warning, SQL Server installation may fail if reboots are pending)
-
-All other package parameters are passed through to SQL Server Setup, allowing you to customise the installation as necessary.
-
-The following are set by default:
-
-- `/ConfigurationFile:` - The path to a configurationfile.ini - defaults to the supplied tools\configurationfile.ini
-- `/SQLSYSADMINACCOUNTS:` - A username or group to add to the SQL SysAdmin role - defaults to current user. This option is only set if configurationfile.ini does not contain 'SQLSYSADMINACCOUNTS=' at the start of a line.
-
-See https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt#Install for the full list of parameters supported by SQL Server.
-
-To pass parameters, use `--params "''"` (e.g. `choco install sql-server-2022 [other options] --params="'/ITEM:value /ITEM2:value2'"`).
-
-Example using /IsoPath to use previously downloaded SQL Server .iso
-
-```powershell
-choco install sql-server-2022 --params="'/IsoPath:c:\downloads\SQLServer2022-x64-ENU-Dev.iso'"
-```
-
-#### Chocolatey Pro / Business users
-
-If you allow the package to download the ISO file, it is suggested you run Chocolatey with the `--skip-virus-check` parameter, as the online virus scanner doesn't handle files over 500MB. You should use alternate methods of scanning in this case.
+      SQL Server 2022 is the most Azure-enabled release yet, with continued performance, security, and availability innovation.
+      
+      ### Overview
+      
+      SQL Server 2022 integrates with Azure Synapse Link and Azure Purview to enable customers to drive deeper insights, predictions, and governance from their data at scale. Cloud integration is enhanced with disaster recovery to Azure SQL Managed Instance, along with no-ETL connections to cloud analytics, which allow database administrators to manage their data estates with greater flexibility and minimal impact to the end-user. Performance and scalability are automatically enhanced via built-in query intelligence. There is choice and flexibility across languages and platforms, including Linux, Windows, and Kubernetes.
+      
+      - Business continuity through Azure
+      - Seamless analytics over on-prem operational data
+      - Visibility over your entire data estate
+      - The most secure database over the last 10 years
+      - Industry-leading performance and availability
+      
+      ### Operating System requirements for SQL Server Developer
+      
+      - Windows 10 TH1 1507 or greater
+      - Windows Server 2016 or greater
+      
+      ### Package Specific
+      
+      #### Package notes
+      
+      This package will install SQL Server 2022 Developer Edition using an existing .iso file. If a path to an existing .iso is not supplied, it downloads the same .iso that can be obtained from the [SQL Server Basic Installer](https://go.microsoft.com/fwlink/p/?linkid=2215158)'s *Download Media* menu.
+      
+      #### Package Parameters
+      
+      The following package parameters can be set:
+      
+      - `/IsoPath:` - path to a local copy of the .iso file - if not supplied then .iso is downloaded
+      - `/IgnorePendingReboot` - don't check for pending reboot (Warning, SQL Server installation may fail if reboots are pending)
+      
+      All other package parameters are passed through to SQL Server Setup, allowing you to customise the installation as necessary.
+      
+      The following are set by default:
+      
+      - `/ConfigurationFile:` - The path to a configurationfile.ini - defaults to the supplied tools\configurationfile.ini
+      - `/SQLSYSADMINACCOUNTS:` - A username or group to add to the SQL SysAdmin role - defaults to current user. This option is only set if configurationfile.ini does not contain 'SQLSYSADMINACCOUNTS=' at the start of a line.
+      
+      See https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt#Install for the full list of parameters supported by SQL Server.
+      
+      To pass parameters, use `--params "''"` (e.g. `choco install sql-server-2022 [other options] --params="'/ITEM:value /ITEM2:value2'"`).
+      
+      Example using /IsoPath to use previously downloaded SQL Server .iso
+      
+      ```powershell
+      choco install sql-server-2022 --params="'/IsoPath:c:\downloads\SQLServer2022-x64-ENU-Dev.iso'"
+      ```
+      
+      #### Chocolatey Pro / Business users
+      
+      If you allow the package to download the ISO file, it is suggested you run Chocolatey with the `--skip-virus-check` parameter, as the online virus scanner doesn't handle files over 500MB. You should use alternate methods of scanning in this case.      
       </description>
     <releaseNotes>https://docs.microsoft.com/en-us/sql/sql-server/sql-server-2022-release-notes?view=sql-server-ver16</releaseNotes>
     <dependencies>

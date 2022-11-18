@@ -1,15 +1,15 @@
 ﻿# Description
 
-SQL Server 2022 Preview is the most Azure-enabled release of SQL Server yet, with continued innovation in security, availability, and performance.
+SQL Server 2022 is the most Azure-enabled release yet, with continued performance, security, and availability innovation.
 
 ### Overview
 
-SQL Server 2022 Preview integrates with Azure Synapse Link and Azure Purview to enable customers to drive deeper insights, predictions, and governance from their data at scale. Cloud integration is enhanced with disaster recovery to Azure SQL Managed Instance, along with no-ETL connections to cloud analytics, which allow database administrators to manage their data estates with greater flexibility and minimal impact to the end-user. Performance and scalability are automatically enhanced via built-in query intelligence. There is choice and flexibility across languages and platforms, including Linux, Windows, and Kubernetes.
+SQL Server 2022 integrates with Azure Synapse Link and Azure Purview to enable customers to drive deeper insights, predictions, and governance from their data at scale. Cloud integration is enhanced with disaster recovery to Azure SQL Managed Instance, along with no-ETL connections to cloud analytics, which allow database administrators to manage their data estates with greater flexibility and minimal impact to the end-user. Performance and scalability are automatically enhanced via built-in query intelligence. There is choice and flexibility across languages and platforms, including Linux, Windows, and Kubernetes.
 
 - Business continuity through Azure
 - Seamless analytics over on-prem operational data
 - Visibility over your entire data estate
-- Most secure over the last 10 years
+- The most secure database over the last 10 years
 - Industry-leading performance and availability
 
 ### Operating System requirements for SQL Server Developer
@@ -21,7 +21,7 @@ SQL Server 2022 Preview integrates with Azure Synapse Link and Azure Purview to 
 
 #### Package notes
 
-This package will install SQL Server 2022 Developer Edition using an existing .iso file. If a path to an existing .iso is not supplied, it downloads the same .iso that can be obtained from the [SQL Server Basic Installer](https://go.microsoft.com/fwlink/?linkid=2162123&clcid=0x409&culture=en-us&country=us)'s *Download Media* menu.
+This package will install SQL Server 2022 Developer Edition using an existing .iso file. If a path to an existing .iso is not supplied, it downloads the same .iso that can be obtained from the [SQL Server Basic Installer](https://go.microsoft.com/fwlink/p/?linkid=2215158)'s *Download Media* menu.
 
 #### Package Parameters
 
