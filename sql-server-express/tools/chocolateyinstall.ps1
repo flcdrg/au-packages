@@ -1,18 +1,21 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$packageName= 'sql-server-express'
-$url        = ''
-$url64      = 'https://download.microsoft.com/download/8/4/c/84c6c430-e0f5-476d-bf43-eaaa222a72e0/SQLEXPR_x64_ENU.exe'
-$checksum   = 'a0086387cd525be62f4d64af4654b2f4778bc98d'
+if ([Version] (Get-CimInstance Win32_OperatingSystem).Version -lt [version] "10.0.0.0") {
+    Write-Error "SQL Server 2022 requires a minimum of Windows 10 or Windows Server 2016"
+}
+
+$packageName= $env:ChocolateyPackageName
+$url64      = 'https://download.microsoft.com/download/3/8/d/38de7036-2433-4207-8eae-06e247e17b25/SQLEXPR_x64_ENU.exe'
+$checksum   = '2E61C8BBDE6021F9026C54AD9DB4BBB1227E68761D4C00A6A50A2C70FE7AFE05'
 $silentArgs = "/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCEID=SQLEXPRESS /INSTANCENAME=SQLEXPRESS /UPDATEENABLED=FALSE"
 
 $tempDir = Join-Path (Get-Item $env:TEMP).FullName "$packageName"
-if ($env:packageVersion -ne $null) {$tempDir = Join-Path $tempDir "$env:packageVersion"; }
+if ($null -ne $env:packageVersion) {$tempDir = Join-Path $tempDir "$env:packageVersion"; }
 
 if (![System.IO.Directory]::Exists($tempDir)) { [System.IO.Directory]::CreateDirectory($tempDir) | Out-Null }
 $fileFullPath = "$tempDir\SQLEXPR.exe"
 
-Get-ChocolateyWebFile -PackageName $packageName -FileFullPath $fileFullPath -Url $url -Url64bit $url64 -Checksum $checksum -ChecksumType 'sha1'
+Get-ChocolateyWebFile -PackageName $packageName -FileFullPath $fileFullPath -Url64bit $url64 -Checksum $checksum -ChecksumType 'sha256'
 
 Write-Host "Extracting..."
 $extractPath = "$tempDir\SQLEXPR"
