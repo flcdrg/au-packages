@@ -1,7 +1,15 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$packageName= 'sql-server-express'
-$silentArgs = ""
+$setupARPPath = ((Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft SQL Server SQL2022').UninstallString).Replace("`"", "")
 
-$setupPath = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft SQL Server SQL2019').UninstallString
-Uninstall-ChocolateyPackage $packageName "EXE" $silentArgs $setupPath -validExitCodes @(0, 3010)
+$setupPath = [IO.Path]::Combine([IO.Path]::GetDirectoryName([IO.Path]::GetDirectoryName($setupARPPath)), "setup.exe")
+
+$packageArgs = @{
+  packageName   = $env:ChocolateyPackageName
+  fileType      = 'EXE'
+  file          = $setupPath
+  silentArgs    = "/Q /ACTION=Uninstall /INSTANCENAME=SQLEXPRESS /FEATURES=SQLENGINE,REPLICATION,BROWSER,WRITER /SUPPRESSPRIVACYSTATEMENTNOTICE=True"
+  validExitCodes= @(0, 3010, 1605, 1614, 1641)
+}
+
+Uninstall-ChocolateyPackage @packageArgs
