@@ -1,0 +1,1 @@
+﻿Get-Service SQLEXPRESS -ErrorAction SilentlyContinue | Stop-Service
