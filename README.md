@@ -8,6 +8,8 @@ This repository contains my Chocolatey packages. Where possible I use [chocolate
 
 If there is no `update.ps1`, I haven't got around to creating one yet.
 
+Do you use these packages? [Show your appreciation by sponsoring me!](https://github.com/sponsors/flcdrg)
+
 ## Contributions
 
 If you have found a bug or have a suggestion, please feel free to raise an issue.
