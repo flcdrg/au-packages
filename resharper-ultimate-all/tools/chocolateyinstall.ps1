@@ -20,12 +20,11 @@ if ($null -eq $packageParameters["NoTeamCityAddin"]) {
 
 $silentArgs = "/Silent=True /SpecificProductNames=$products /VsVersion=*"
 
-Write-Verbose $silentArgs
-
 if ($packageParameters["PerMachine"]) {
   $silentArgs += " /PerMachine=True"
 }
 
+Write-Verbose $silentArgs
 
 $packageArgs = @{
   packageName   = $packageName
