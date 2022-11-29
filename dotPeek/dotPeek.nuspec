@@ -51,6 +51,12 @@ Whenever you put a caret on a symbol in the code view area, dotPeek offers a ple
 ### Navigate to related code
 
 dotPeek indexes all assemblies in your assembly list, as well as all assemblies that they reference, and provides features to quickly jump to specific code. For instance, Go to Everything allows searching for an assembly, namespace, type, member, or a recently opened file.
+
+#### Package Parameters
+
+The following package parameters can be set:
+
+ * `/PerMachine` - install machine-wide (instead of per-user)
     </description>
     <releaseNotes>https://www.jetbrains.com/decompiler/whatsnew/</releaseNotes>
     <dependencies>

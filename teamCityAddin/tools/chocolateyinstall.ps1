@@ -5,11 +5,21 @@ $commonPath = $(Split-Path -parent $(Split-Path -parent $scriptPath))
 $filename = 'JetBrains.dotUltimate.2022.3.EAP9.Checked.exe'
 
 $installPath = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
+$packageParameters = Get-PackageParameters
+
+$silentArgs = "/Silent=True /SpecificProductNames=$($env:ChocolateyPackageName) /VsVersion=*"
+
+if ($packageParameters["PerMachine"]) {
+  $silentArgs += " /PerMachine=True"
+}
+
+Write-Verbose $silentArgs
+
 $packageArgs = @{
   packageName   = $packageName
   fileType      = 'exe'
   file          = $installPath
-  silentArgs    = "/Silent=True /SpecificProductNames=teamCityAddin /VsVersion=*"
+  silentArgs    = $silentArgs
   validExitCodes= @(0)
   softwareName  = 'TeamCity Add-in'
 }

@@ -38,7 +38,13 @@ For in-depth analysis, dotMemory offers many different criteria to apply to memo
 
 ### Determine traffic
 
-Analyse memory traffic in a particular timeframe to know the cause of excessive allocations and garbage collections. Determine how objects were allocated and collected and what methods stay behind these allocations    
+Analyse memory traffic in a particular timeframe to know the cause of excessive allocations and garbage collections. Determine how objects were allocated and collected and what methods stay behind these allocations
+
+#### Package Parameters
+
+The following package parameters can be set:
+
+ * `/PerMachine` - install machine-wide (instead of per-user)
 </description>
 
     <releaseNotes>https://www.jetbrains.com/dotmemory/whatsnew/</releaseNotes>

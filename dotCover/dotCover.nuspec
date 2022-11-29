@@ -42,7 +42,13 @@ dotCover integrates with Visual Studio, giving you the advantage of analyzing an
 
 dotCover can figure out on-the-fly which unit tests are affected by your latest code changes, and automatically re-runs the affected tests for you.
 
-The continuous testing mode can be switched on for any unit test session: this way you can choose which tests you want to run continuously and which to run in a traditional way.    
+The continuous testing mode can be switched on for any unit test session: this way you can choose which tests you want to run continuously and which to run in a traditional way.
+
+#### Package Parameters
+
+The following package parameters can be set:
+
+ * `/PerMachine` - install machine-wide (instead of per-user)
     </description>
 
     <releaseNotes>https://www.jetbrains.com/dotcover/whatsnew/</releaseNotes>

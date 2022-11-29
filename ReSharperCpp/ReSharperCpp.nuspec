@@ -42,6 +42,12 @@ ReSharper C++ supports running Google Test and Boost.Test based unit tests in Vi
 ### Use a consistent code style
 
 Configure code formatting options and naming style, share settings with your teammates, and maintaining a consistent code style should never be a problem again.
+
+#### Package Parameters
+
+The following package parameters can be set:
+
+ * `/PerMachine` - install machine-wide (instead of per-user)
     </description>
     <releaseNotes>https://www.jetbrains.com/resharper-cpp/whatsnew/</releaseNotes>
     <dependencies>

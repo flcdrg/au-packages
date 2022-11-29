@@ -42,6 +42,12 @@ Multiple code editing helpers include extended IntelliSense, hundreds of instant
 ### Comply with coding standards
 
 Code style and formatting functionality with fine-grained, language-specific settings will help you get rid of unused code and create a common coding standard for your team.
+
+#### Package Parameters
+
+The following package parameters can be set:
+
+ * `/PerMachine` - install machine-wide (instead of per-user)
     </description>
     <releaseNotes>https://www.jetbrains.com/resharper/whatsnew/</releaseNotes>
     <dependencies>
