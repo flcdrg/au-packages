@@ -23,7 +23,13 @@
 
 You can get the most from TeamCity Add-in when working with centralized version control systems (VCS) (like Perforce, Subversion, or Team Foundation Server), where light feature branches are not a part of the workflow. For these VCSs, TeamCity Add-in provides the possibility to run personal builds so that you can test your local changes on your TeamCity server before you commit them to your VCS.
 
-The TeamCity Add-in is a free Visual Studio extension that seamlessly integrates with Visual Studio 2010, 2012, 2013, 2015, and 2017 and with other JetBrains .NET tools such as ReSharper and dotCover. 
+The TeamCity Add-in is a free Visual Studio extension that seamlessly integrates with Visual Studio 2010, 2012, 2013, 2015, and 2017 and with other JetBrains .NET tools such as ReSharper and dotCover.
+
+#### Package Parameters
+
+The following package parameters can be set:
+
+ * `/PerMachine` - install machine-wide (instead of per-user)
     </description>
     <releaseNotes>https://www.jetbrains.com/teamcity/whatsnew/</releaseNotes>
     <dependencies>

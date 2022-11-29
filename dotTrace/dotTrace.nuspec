@@ -41,6 +41,12 @@ If you employ unit testing in your project, dotTrace helps you profile any test 
 With dotTrace you can profile, view performance timelines, analyze call stacks, and perform many more profiling actions without leaving your IDE.
 
 You can even navigate to a method declaration from a hot spot in the call tree!
+
+#### Package Parameters
+
+The following package parameters can be set:
+
+ * `/PerMachine` - install machine-wide (instead of per-user)
 </description>
 
     <releaseNotes>https://www.jetbrains.com/profiler/whatsnew/</releaseNotes>
