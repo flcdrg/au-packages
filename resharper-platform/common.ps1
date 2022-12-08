@@ -42,7 +42,7 @@ function GetJetbrainsReSharperPlatformLatestRelease($release) {
     #$filename = "JetBrains.dotUltimate.$($versionMarketingStringUpdated).exe"
     $url = $urls[$release].Hash -replace "VERSIONMARKETINGSTRING", $versionMarketingStringDotted
     $data = Invoke-RestMethod -Uri $url
-    ($hashcode, $filename) = $data -split "\s\*" #.Split(([string[]] ," *"), [System.StringSplitOptions]::RemoveEmptyEntries)
+    ($hashcode, $filename) = $data.Trim() -split "\s\*" #.Split(([string[]] ," *"), [System.StringSplitOptions]::RemoveEmptyEntries)
 
     $url = $urls[$release].Url -replace "VERSIONMARKETINGSTRING", $versionMarketingStringDotted
 
