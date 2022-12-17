@@ -9,7 +9,17 @@
     <owners>flcdrg</owners>
     <summary>Installs SQL Server 2022 Express Advanced database engine.</summary>
     <description>
-      Experience the full feature set of SQL Server Express. This package contains the Database Engine, Reporting Services, and Full Text Search features.
+SQL Server 2022 Express is a free edition of SQL Server, ideal for development and production for desktop, web, and small server applications.
+
+SQL Server 2022 (16.x) Express edition is the entry-level, free database and is ideal for learning and building desktop and small server data-driven applications. It is the best choice for independent software vendors, developers, and hobbyists building client applications. If you need more advanced database features, SQL Server Express can be seamlessly upgraded to other higher end versions of SQL Server. SQL Server Express LocalDB is a lightweight version of Express that has all of its programmability features, runs in user mode and has a fast, zero-configuration installation and a short list of prerequisites.
+
+Experience the full feature set of SQL Server Express. This package contains the Database Engine, Reporting Services, and Full Text Search features.
+
+### Package Specific
+
+Be aware that the way SQL Express is installed by this package does not allow for upgrades between major versions of SQL Server.
+
+A workaround would be to uninstall the existing version and then install the latest version, then manually reattach any databases.
     </description>
     <projectUrl>https://www.microsoft.com/en-us/sql-server/sql-server-downloads</projectUrl>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-express-adv</packageSourceUrl>
@@ -18,7 +28,7 @@
     <copyright>2022 Microsoft Corporation</copyright>
     <licenseUrl>https://www.microsoft.com/en-us/sql-server/sql-server-2022-pricing</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/ferventcoder/chocolatey-packages/59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/ferventcoder/chocolatey-packages/59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
     <releaseNotes>https://learn.microsoft.com/en-us/sql/sql-server/sql-server-2022-release-notes?view=sql-server-ver16</releaseNotes>
   </metadata>
   <files>
