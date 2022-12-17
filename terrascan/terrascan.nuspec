@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>terrascan</id>
-    <version>1.17.0</version>
+    <version>1.17.1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/terrascan</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Terrascan</title>
@@ -28,30 +28,34 @@
 - Offers flexibility to run locally or integrate with your CI\CD.</description><releaseNotes><![CDATA[### Changelog
 * 84f0888c Add github-actions to dependabot (#1365)
 * 752d2a0d Add iac providers endpoint (#1307)
+* d9a7bf8f Bump github.com/hashicorp/go-getter from 1.5.11 to 1.6.2 (#1298)
 * 7cf9d3cf Include DirScanErrors info in SARIF file (#1398)
 * 6da2dca1 Mention pre-requirements in the README (#1375)
-* 67bdf147 Merge branch 'master' into release/v1.17.0
 * 08934f48 Policy IDs update (#1396)
 * e289cc65 Update RDS Policies (#1424)
 * da754a75 Update README.md (#1265)
 * 3b428a50 Update README.md (#1409)
 * b7719edf Update object.get first parameter (#1433)
+* d031a56f Update opa and cobra version (#1472)
 * 87cddb03 Update/release command (#1430)
+* 1a460703 added tar.gz archive for windows (#1474)
+* e4a4aec1 added terraform and provider version in resource config (#1469)
 * 8ae13452 adding PITR attribute mapping config for dyanmodb (#1340)
 * 849eef79 allow host policy update (#1400)
 * 7365ecf5 bump goformation from v6 to v7 (#1440)
 * a9f115a2 container funcs to return dev friendly warnings (#1319)
 * d2f87705 fix remote source url (#1437)
+* 48f78e34 fix vulns (#1486)
 * 313ccf31 fix: build/Dockerfile to reduce vulnerabilities (#1315)
 * baf1dfd1 fixed typo of the function name (#1373)
-* fee466b6 minor release 1.17.0
+* 94989ea9 ignored matching provider verson in tests (#1470)
 * fa11e0ee minor release 1.17.0 (#1459)
 * 0f53f055 refs resolution (#1445)
 * 944087f8 release/v1.16.0 (#1427)
+* cf348804 release/v1.17.1 (#1492)
 * 5a49729c update cft map for elb/s3 bucket (#1434)
 * af10a246 update libraries (#1385)
 * 730c83fd update rds instance cft map (#1422)
-* 42d07eba update version for sarif golden files
 * 5c9eaab3 updated deployment scripts (#1429)
 * 064c993c updated policy (#1288)
 * db3b7aef vuln tests (#1394)
