@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>pbi-tools</id>
+    <version>1.0.0-rc02</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/pbi-tools</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>pbi-tools</title>
+    <authors>Mathias Thierbach</authors>
+    <projectUrl>https://pbi.tools/</projectUrl>
+    <iconUrl>https://pbi.tools/images/company_logo.png</iconUrl>
+    <copyright>Mathias Thierbach</copyright>
+    <licenseUrl>https://raw.githubusercontent.com/pbi-tools/pbi-tools/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/pbi-tools/pbi-tools</projectSourceUrl>
+    <docsUrl>https://pbi.tools/cli/</docsUrl>
+    <bugTrackerUrl>https://github.com/pbi-tools/pbi-tools/issues</bugTrackerUrl>
+    <tags>power-bi business intelligence</tags>
+    <summary>a command-line tool bringing source-control features to Power BI. It works alongside Power BI Desktop and enables mature enterprise workflows for Power BI projects.</summary>
+    <description>`pbi-tools` is a command-line tool bringing source-control features to Power BI. It works alongside Power BI Desktop and enables mature enterprise workflows for Power BI projects.
+
+### Prerequisites
+
+- Windows 64-bit
+- Power BI Desktop 64-bit. Installer version (default location) and/or Windows Store version supported. Optionally, pbi-tools works with Power BI Desktop in a custom location, provided the path is specified in the `PBITOOLS_PbiInstallDir` environment variable.
+- .Net Framework Runtime 4.7.2 (Comes with Power BI Desktop)
+    </description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
