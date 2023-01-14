@@ -4,10 +4,12 @@
 
 $ZipFileName  = "obs-ndi-4.10.0-Windows.zip"
 
-$zipContentFile=(join-path $env:chocolateyPackageFolder $zipFileName) + "Install.txt"
+$folder = Get-ChocolateyPath -PathType 'PackagePath'
+
+$zipContentFile=(join-path $folder $zipFileName) + "Install.txt"
 
 if(-Not (Test-Path -Path $zipContentFile)) {
-  $zipContentFile=(Join-Path $env:chocolateyPackageFolder -ChildPath $zipFileName) + ".txt"
+  $zipContentFile=(Join-Path $folder -ChildPath $zipFileName) + ".txt"
 }
 
 if ((Test-Path -path $zipContentFile)) {
