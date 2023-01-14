@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>obs-ndi</id>
-    <version>4.9.0</version>
+    <version>4.10.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/obs-ndi</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>NewTek NDI integration for OBS Studio</title>
@@ -24,13 +24,9 @@
 - NDI Source : receive NDI video and audio in OBS
 - NDI Output : transmit video and audio from OBS to NDI
 - NDI Filter (a.k.a NDI Dedicated Output) : transmit a single source or scene to NDI</description>
-    <releaseNotes>Only use this release with OBS Studio v25 or above!
-Changes since 4.8.0
-
-    Improvements to the NDI Source (#459):
-        The Sync setting now defaults to Source</releaseNotes>
+    <releaseNotes>This release is for OBS 28.0.0 or above. It is not a feature release, it simply provides updated binaries to support the changes made in OBS 28</releaseNotes>
     <dependencies>
-      <dependency id="obs-studio" version="25.0" />
+      <dependency id="obs-studio" version="28.0" />
     </dependencies>
   </metadata>
   <files>

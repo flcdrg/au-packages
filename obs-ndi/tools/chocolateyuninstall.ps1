@@ -2,7 +2,7 @@
 
 # Would use Uninstall-ChocolateyZipPackage @packageArgs, but for https://github.com/chocolatey/choco/issues/2042
 
-$ZipFileName  = "obs-ndi-4.9.0-Windows.zip"
+$ZipFileName  = "obs-ndi-4.10.0-Windows.zip"
 
 $zipContentFile=(join-path $env:chocolateyPackageFolder $zipFileName) + "Install.txt"
 

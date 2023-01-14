@@ -29,8 +29,8 @@ if ($key) {
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
 
-  url           = "https://github.com/Palakis/obs-ndi/releases/download/4.9.0/obs-ndi-4.9.0-Windows.zip"
-  checksum      = '531642B5A21A9774AC818C0913E9A8740CDA3993E25EB459DD3A3B5A81177A77'
+  url           = "https://github.com/Palakis/obs-ndi/releases/download/dummy-tag-4.10.0/obs-ndi-4.10.0-Qt6-Windows.zip"
+  checksum      = 'ED52D0AF6E456D05173E90EF08B28BF87C1536A1D70A1791532EC054E7F4341F'
   checksumType  = 'sha256'
   UnzipLocation = $installPath
   file          = "$toolsDir\obs-ndi.zip"
