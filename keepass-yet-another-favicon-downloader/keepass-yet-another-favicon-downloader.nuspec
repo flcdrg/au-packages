@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>keepass-yet-another-favicon-downloader</id>
-    <version>1.2.5.0</version>
+    <version>1.2.5.20230114</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/keepass-yet-another-favicon-downloader</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>KeePass Plugin Yet Another Favicon Downloader</title>

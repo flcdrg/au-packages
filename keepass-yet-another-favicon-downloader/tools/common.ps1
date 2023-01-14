@@ -17,8 +17,8 @@ function Get-KeePassPluginsPath {
     $installPath = $regPath
 
     if (! $installPath) {
-        Write-Verbose "Searching $env:ChocolateyBinRoot for portable install..."
         $binRoot = Get-BinRoot
+        Write-Verbose "Searching $binRoot for portable install..."
         $portPath = Join-Path $binRoot "keepass"
         $installPath = Get-ChildItem -Directory $portPath* -ErrorAction SilentlyContinue
     }
@@ -39,9 +39,8 @@ function Get-KeePassPluginsPath {
     Write-Verbose "`t...found."
 
     Write-Verbose "Searching for plugin directory..."
-    $pluginPath = (Get-ChildItem -Directory $installPath\Plugin*).FullName
-    if ($pluginPath.Count -eq 0) {
-        $pluginPath = Join-Path $installPath "Plugins"
+    $pluginPath = Join-Path $installPath "Plugins"
+    if (-not (Test-Path $installPath\Plugins)) {
         [System.IO.Directory]::CreateDirectory($pluginPath)
     }
     return $pluginPath
