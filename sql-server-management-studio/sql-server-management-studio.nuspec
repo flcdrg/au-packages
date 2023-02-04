@@ -3,10 +3,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-management-studio</id>
-    <version>15.0.18424.0</version>
+    <version>19.0.20200.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-management-studio</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>SQL Server Management Studio 18.12.1</title>
+    <title>SQL Server Management Studio 19.0.1</title>
     <authors>Microsoft</authors>
     <projectUrl>https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms</projectUrl>
     <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/ed266b63ad6adb86d35c355a86ba1ca74fe674d2/sql-server-management-studio/icons/ssms-icon.png</iconUrl>
@@ -18,10 +18,9 @@
     <tags>sql server management studio ssms admin</tags>
     <summary>SQL Server Management Studio (SSMS) is an integrated environment for accessing, configuring, managing, administering, and developing all components of SQL Server</summary>
     <description>
-SQL Server Management Studio (SSMS) is an integrated environment for accessing, configuring, managing, administering, and developing all components of SQL Server. SSMS combines a broad group of 
-graphical tools with a number of rich script editors to provide developers and administrators of all skill levels access to SQL Server. 
+      SQL Server Management Studio (SSMS) is an integrated environment for managing any SQL infrastructure, from SQL Server to Azure SQL Database. SSMS provides tools to configure, monitor, and administer instances of SQL Server and databases. Use SSMS to deploy, monitor, and upgrade the data-tier components used by your applications and build queries and scripts.
 
-The SSMS 18.x installation does not upgrade or replace SSMS versions 17.x or earlier. SSMS 18.x installs side by side with previous versions so both versions are available for use.
+The SSMS 19.x installation doesn't upgrade or replace SSMS versions 18.x or earlier. SSMS 19.x installs alongside previous versions, so both versions are available for use.
 
 Beginning with SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is automatically installed alongside SSMS. As a consequence of this, uninstalling this package will impact azure-data-studio if you had that package installed previously.
 
@@ -31,8 +30,8 @@ This package is versioned using the published build number. The corresponding 'r
 
 #### Supported SQL offerings
 
-- This version of SSMS works with all [supported versions of SQL Server 2008 - SQL Server 2019 (15.x)](https://docs.microsoft.com/en-us/lifecycle/products/?products=sql-server.md) and provides the greatest level of support for working with the latest cloud features in Azure SQL Database and Azure Synapse Analytics.
-- Additionally, SSMS 18.x can be installed side by side with SSMS 17.x, SSMS 16.x, or SQL Server 2014 SSMS and earlier.
+- This version of SSMS works with SQL Server 2014 and higher and provides the most significant level of support for working with the latest cloud features in Azure SQL Database and Azure Synapse Analytics.
+- Additionally, SSMS 19.x can be installed alongside with SSMS 18.x, SSMS 17.x, SSMS 16.x.
 - SQL Server Integration Services (SSIS) - SSMS version 17.x or later doesn't support connecting to the legacy SQL Server Integration Services service. To connect to an earlier version of the legacy Integration Services, use the version of SSMS aligned with the version of SQL Server. For example, use SSMS 16.x to connect to the legacy SQL Server 2016 Integration Services service. SSMS 17.x and SSMS 16.x can be installed side by side on the same computer. Since the release of SQL Server 2012, the SSIS Catalog database, SSISDB, is the recommended way to store, manage, run, and monitor Integration Services packages. For details, see [SSIS Catalog](https://docs.microsoft.com/en-us/sql/integration-services/catalog/ssis-catalog?view=sql-server-ver15).
 #### SSMS System Requirements
 
@@ -42,15 +41,16 @@ Supported Operating Systems:
 
 - Windows 11 (64-bit)
 - Windows 10 (64-bit) version 1607 (10.0.14393) or later
-- Windows 8.1 (64-bit)
 - Windows Server 2022 (64-bit)
 - Windows Server 2019 (64-bit)
 - Windows Server 2016 (64-bit)
-- Windows Server 2012 R2 (64-bit)
-- Windows Server 2012 (64-bit)
-- Windows Server 2008 R2 (64-bit)
 
 ### Package Specific
+
+
+#### Upgrading from 18.x to 19.x
+
+As mentioned above, SSMS 19.x doesn't upgrade 18.x but will install side by side. If you don't wish to keep 18.x then you should run `choco uninstall sql-server-management-studio` prior to installing the latest version of this package.
 
 #### Package Parameters
 
@@ -64,14 +64,12 @@ Example:
 
 #### Package Updates
 
-This package is automatically updated based on the same data source that SSMS itself uses to determine when updates are available. This may mean that there may sometimes be a delay between
-Microsoft releasing a new version and when they 'advertise' it as being generally available for SSMS to update.
+This package is automatically updated based on the same data source that SSMS itself uses to determine when updates are available. This may mean that there may sometimes be a delay between Microsoft releasing a new version and when they 'advertise' it as being generally available for SSMS to update.
 </description>
     <releaseNotes>https://docs.microsoft.com/en-au/sql/ssms/release-notes-ssms
-    
+
 If you have a preview versions of SSMS 18.0 installed, uninstall it and reboot before installing SSMS 18.0 GA.</releaseNotes>
     <dependencies>
-      <dependency id="KB2919355" version="1.0.20160915" />
     </dependencies>
   </metadata>
   <files>
