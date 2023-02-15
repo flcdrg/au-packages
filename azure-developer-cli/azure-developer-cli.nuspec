@@ -3,13 +3,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>azure-developer-cli</id>
-    <version>0.6.0-beta2</version>
+    <version>0.6.0-beta3-20230215</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/azure-developer-cli</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Azure Developer CLI</title>
+    <title>[Deprecated] Azure Developer CLI</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://github.com/Azure/azure-dev</projectUrl>
-    <!--<iconUrl>http://rawcdn.githack.com/__REPLACE_YOUR_REPO__/master/icons/azure-developer-cli.png</iconUrl>-->
     <copyright>(c) Microsoft Corporation</copyright>
     <licenseUrl>https://raw.githubusercontent.com/Azure/azure-dev/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -19,30 +18,21 @@
     <bugTrackerUrl>https://github.com/Azure/azure-dev/issues</bugTrackerUrl>
     <tags>azure developer cli</tags>
     <summary>The Azure Developer CLI (azd) Preview is a developer-centric command-line tool for building cloud apps</summary>
-    <description>A new, open-source tool that accelerates the time it takes to get started on Azure. The Azure Developer CLI provides developer-friendly commands that map to key stages in your workflow: code, build, deploy, monitor, repeat.
+    <description>This package has been deprecated in favour of [https://community.chocolatey.org/packages/azd](https://community.chocolatey.org/packages/azd).
 
-Check out the blog post [Introducing the Azure Developer CLI: A faster way to build apps for the cloud](https://devblogs.microsoft.com/azure-sdk/introducing-the-azure-developer-cli-a-faster-way-to-build-apps-for-the-cloud/?WT.mc_id=DOP-MVP-5001655),
-and the [Getting started](https://docs.microsoft.com/azure/developer/azure-developer-cli/get-started?WT.mc_id=DOP-MVP-5001655) documentation to find out more.
+Because the `azd` package is using an MSI installer, rather than a PowerShell script, you're best off uninstalling this package and then installing the new one. eg.
 
-### Package notes
-This package installs and registers the `azd` command globally for all users. This contrasts with the original PowerShell script [https://aka.ms/install-azd.ps1](https://aka.ms/install-azd.ps1) that installs the CLI per-user.
-    </description><releaseNotes><![CDATA[### 0.6.0-beta.2 (2023-02-10)
-
-#### Bugs Fixed
-
-- [[#1527]](https://github.com/Azure/azure-dev/pull/1527) Fix running specific commands with `--output json`  causing stack overflow errors to occur.
-- [[#1534]](https://github.com/Azure/azure-dev/pull/1534) Fix running commands with `-e <environment name>` flag or with `AZURE_ENV_NAME` set not being respected. When running in CI environments, this caused prompting to occur, and failing if `--no-prompt` is specified.
-
-]]></releaseNotes>
-    
+```
+choco uninstall azure-developer-cli --pre
+choco install azd
+```
+    </description>
     <dependencies>
-      <dependency id="git" version="2.37.1" />
-      <dependency id="gh" version="2.3.0" />
-      <dependency id="azure-cli" version="2.38.0" />
+      <!-- No, we don't need this, but otherwise Chocolatey won't allow the package to be created without content or a dependency -->
+      <dependency id="autohotkey.portable" version="1.1.26" />
     </dependencies>
   </metadata>
   <files>
     <!-- this section controls what actually gets packaged into the Chocolatey package -->
-    <file src="tools\**" target="tools" />
   </files>
 </package>
