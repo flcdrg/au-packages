@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>lenovo-thinkvantage-system-update</id>
-    <version>5.08.01.0005</version>
+    <version>5.08.01.0009</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/lenovo-thinkvantage-system-update</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Lenovo System Update</title>
@@ -16,7 +16,7 @@
     <docsUrl>https://support.lenovo.com/au/en/solutions/ht003029</docsUrl>
     <tags>lenovo thinkvantage thinkpad thinkcenter thinkstation system update bios drivers admin</tags>
     <summary>ThinkVantage System Update</summary>
-    <description>#### ThinkVantage System Update
+    <description>#### Lenovo System Update
 
 System Update downloads software, driver and BIOS updates from a Lenovo server directly over the Internet without requiring specific user knowledge of where the package is located or if it is needed by the target system.
 
@@ -44,10 +44,9 @@ ThinkVantage System Update will support additional models as content is created 
 
 The following operating system are supported:
 
--    Microsoft Windows 10
--    Microsoft Windows 8.1
--    Microsoft Windows 8
--    Microsoft Windows 7
+- Microsoft Windows 11
+- Microsoft Windows 10
+- Microsoft Windows 7
 
 #### Package updates
 
