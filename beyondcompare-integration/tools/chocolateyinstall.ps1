@@ -2,7 +2,7 @@
 
 # See http://www.scootersoftware.com/support.php?zz=kb_vcs for suggested settings for various version control systems
 
-$backupFolder = $env:chocolateyPackageFolder
+$backupFolder = Get-ChocolateyPath -PathType 'PackagePath'
 
 if ($backupFolder -eq $null)
 {
