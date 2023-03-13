@@ -69,7 +69,7 @@ install:
 - pwsh: |
     git clone -q https://github.com/flcdrg/chocolatey-au.git $Env:TEMP/au
     Set-Location $Env:TEMP/au
-    . "./au/scripts/Install-AU.ps1" $Env:au_version
+    . "./scripts/Install-AU.ps1" $Env:au_version
 
 - pwsh: |
     "Build info"
