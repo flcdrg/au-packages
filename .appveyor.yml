@@ -60,8 +60,10 @@ init:
 - git config --global core.safecrlf false
 
 install:
-- pwsh: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
-- pwsh: $PSVersionTable
+- pwsh: |
+    Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version
+    $PSVersionTable
+    [System.Environment]::OSVersion
 - git --version
 - # choco upgrade chocolatey
 - choco install vt-cli -y
