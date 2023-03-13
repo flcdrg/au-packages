@@ -44,13 +44,15 @@ jobs:
           Get-InstalledModule | Select-Object Name, Version, InstalledLocation
         shell: pwsh
         env:
-          github_api_key: ${{ secrets.gh_api_key }}
+          github_api_key: ${{ secrets.GH_API_KEY }}
 
       - name: Update
         run: ./update_all.ps1 -Name resharper-platform,teamcity,*.portable,*.install
         shell: pwsh
         env:
-          github_api_key: ${{ secrets.gh_api_key }}
+          github_api_key: ${{ secrets.GH_API_KEY }} # GitHub API Key
+          api_key: ${{ secrets.API_KEY }} # Chocolatey API Key
+          VT_APIKEY: ${{ secrets.VT_APIKEY }} # VirusTotal API Key
           au_push: true
           gist_id: 7d00c69c2cde8309a8594abaa897a9a6
           github_user_repo: flcdrg/au-packages
