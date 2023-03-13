@@ -22,11 +22,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       # Runs a single command using the runners shell
       - name: Initialise
         run: |
           $PSVersionTable
+
+          git config --global user.email "david@gardiner.net.au"
+          git config --global user.name "flcdrg"
+          git config --global core.safecrlf false
 
           choco install vt-cli -y
 
@@ -38,13 +44,15 @@ jobs:
           Get-InstalledModule | Select-Object Name, Version, InstalledLocation
         shell: pwsh
         env:
-          github_api_key: ${{ secrets.api_key }}
+          github_api_key: ${{ secrets.gh_api_key }}
 
       - name: Update
         run: ./update_all.ps1 -Name resharper-platform,teamcity,*.portable,*.install
         shell: pwsh
         env:
-          github_api_key: ${{ secrets.api_key }}
-          au_push: false
+          github_api_key: ${{ secrets.gh_api_key }}
+          au_push: true
+          gist_id: 7d00c69c2cde8309a8594abaa897a9a6
+          github_user_repo: flcdrg/au-packages
         
       
