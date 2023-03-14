@@ -8,6 +8,8 @@ on:
   push:
     branches: [ "master" ]
 
+  schedule: "0 0 * * *"
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -60,5 +62,3 @@ jobs:
           au_push: true
           gist_id: 7d00c69c2cde8309a8594abaa897a9a6
           github_user_repo: flcdrg/au-packages
-        
-      
