@@ -10,7 +10,7 @@ $softwareName = 'Hotfix 4015 for SQL Server 2022*(KB5023127)*'
 . $toolsDir\Get-PendingReboot.ps1
 
 if (([Version] (Get-CimInstance Win32_OperatingSystem).Version -lt [version] "10.0.0.0") -and -not $runningAU) {
-  Write-Error "SQL Server 2019 requires a minimum of Windows 10 or Windows Server 2016"
+  Write-Error "SQL Server 2022 requires a minimum of Windows 10 or Windows Server 2016"
 }
 
 $pp = Get-PackageParameters
