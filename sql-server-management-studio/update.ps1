@@ -65,7 +65,7 @@ function global:au_GetLatest {
 
     try {
         # Get latest version from XML
-        $response = Invoke-RestMethod -Uri "https://go.microsoft.com/fwlink/?linkid=2021100"
+        $response = Invoke-RestMethod -Uri "https://go.microsoft.com/fwlink/?linkid=2155334"
         $version = $response.component.version
 
         $response = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MicrosoftDocs/sql-docs/live/docs/ssms/download-sql-server-management-studio-ssms.md"
