@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$url = 'https://vstsagentpackage.azureedge.net/agent/2.218.1/vsts-agent-win-x86-2.218.1.zip'
-$url64 = 'https://vstsagentpackage.azureedge.net/agent/2.218.1/vsts-agent-win-x64-2.218.1.zip'
-$checksum = '8f6aff2af3ebd80612e0199ae8709fd319e173a6b48ccbd640e75dd1531015da'
-$checksum64 = '6fb64aa12879cc3cd53dcf8492a5ca976f6b4496ce17dc0a5ab2c4bc4393b055'
+$url = 'https://vstsagentpackage.azureedge.net/agent/3.218.0/vsts-agent-win-x86-3.218.0.zip'
+$url64 = 'https://vstsagentpackage.azureedge.net/agent/3.218.0/vsts-agent-win-x64-3.218.0.zip'
+$checksum = '595fe6da2afd8f204d8487e52215cacbca9134e77a46266baac4c42a98690b52'
+$checksum64 = '869946c35f6740476a6d977a4f382b0cf56dbc28a4b0e6314107d5364bb1ee35'
 
 $pp = Get-PackageParameters
 
