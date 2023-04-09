@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>tflint</id>
-    <version>0.46.0</version>
+    <version>0.46.0.20230409</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/tflint</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>TFLint (Terraform linter)</title>
