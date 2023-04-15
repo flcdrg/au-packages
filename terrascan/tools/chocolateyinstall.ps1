@@ -5,11 +5,11 @@ $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   softwareName  = 'terrascan*'
   
-  url           = 'https://github.com/tenable/terrascan/releases/download/v1.18.0/terrascan_1.18.0_Windows_i386.zip'
-  checksum      = '7a5b845788076f671206f3dab2cef6d522aeb4e92a4880b3b5d3093729948db5'
+  url           = 'https://github.com/tenable/terrascan/releases/download/v1.18.1/terrascan_1.18.1_Windows_i386.zip'
+  checksum      = 'dd8b4d5b551e8ec77664dc33e556a618bc7378b3914f1d983adb81cfc1233205'
   checksumType  = 'sha256'
-  url64bit      = 'https://github.com/tenable/terrascan/releases/download/v1.18.0/terrascan_1.18.0_Windows_x86_64.zip'
-  checksum64    = '30e985763f284cec1db2c6bf41c66eff9127b687c2fe0a1e7fcd4c58b6300a83'
+  url64bit      = 'https://github.com/tenable/terrascan/releases/download/v1.18.1/terrascan_1.18.1_Windows_x86_64.zip'
+  checksum64    = '7ca5f5b78452e7cc29e51125f26630db87c25de54dc16876449f0e98e06365a3'
   checksumType64= 'sha256'
   destination   = $toolsDir
 }
