@@ -33,7 +33,7 @@ function global:au_GetLatest {
     }
 
     # Download links are in body, which is markdown
-    if ($response.body -match '\((https://[\w\/\.\-]+windows\.exe)\)') {
+    if ($response.body -match '\((https://[\w\/\.\-]+windows-x32\.exe)\)') {
         $latest.URL32 = $Matches[1]
     } else {
         # if no windows link, then not a release we care about
