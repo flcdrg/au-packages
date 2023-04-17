@@ -14,9 +14,9 @@
     <licenseUrl>https://raw.githubusercontent.com/nextgenhealthcare/connect/development/server/docs/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/nextgenhealthcare/connect</projectSourceUrl>
-    <docsUrl>http://www.mirthcorp.com/community/wiki/display/mirth/Home</docsUrl>
-    <mailingListUrl>http://www.mirthcorp.com/community/forums/</mailingListUrl>
-    <bugTrackerUrl>http://www.mirthcorp.com/community/issues/browse/MIRTH</bugTrackerUrl>
+    <docsUrl>https://docs.nextgen.com/</docsUrl>
+    <mailingListUrl>https://forums.mirthproject.io/</mailingListUrl>
+    <bugTrackerUrl>https://github.com/nextgenhealthcare/connect/issues</bugTrackerUrl>
     <tags>mirth nextgen</tags>
     <summary>NextGen® Connect Integration Engine</summary>
     <description>The ability to standardize and exchange health information and patient data is critical for healthcare organizations. NextGen Connect (formerly Mirth Connect) has been powering healthcare organizations for more than a decade. Designed for seamless healthcare message integration, this solution is easily configurable, easily deployed, and scalable. 
