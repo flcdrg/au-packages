@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>mirth.install</id>
-    <version>3.10.1</version>
+    <version>4.3.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/mirth.install</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Mirth Connect (Install)</title>
@@ -49,7 +49,7 @@ Our NextGen Connect fundamentals and advanced certification training courses ena
 
 This package installs Mirth Connect Server, Mirth Connect Server Manager and Mirth Connect CLI, but not the Mirth Connect Administrator Launcher
     </description>
-    <releaseNotes>https://github.com/nextgenhealthcare/connect/wiki/3.10.1---What&#39;s-New</releaseNotes>
+    <releaseNotes>https://github.com/nextgenhealthcare/connect/wiki/4.3.0---What&#39;s-New</releaseNotes>
     <dependencies>
       <dependency id="openjdk" version="11.0" />
     </dependencies>
