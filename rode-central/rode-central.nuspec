@@ -8,12 +8,12 @@
     <owners>flcdrg</owners>
     <title>RØDE Central</title>
     <authors>RØDE Microphones</authors>
-    <projectUrl>https://rode.com/microphones/wireless/wirelessgoii_2#module_8</projectUrl>
+    <projectUrl>hhttps://rode.com/en/microphones/wireless/wirelessgoii</projectUrl>
     <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/e076acef472529595d9a5064abbd1d3c6b10e37c/rode-central/icons/rode-central.png</iconUrl>
     <copyright>(c) 2021 RØDE Microphones</copyright>
     <!-- <licenseUrl>tools/LICENSE.txt</licenseUrl> -->
     <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
-    <docsUrl>https://rode.com/wirelessgoii/learning-hub#module_22</docsUrl>
+    <docsUrl>https://edge.rode.com/pdf/page/87/modules/8/wirelessgo_user_guide.pdf</docsUrl>
     <tags>Wireless GO II RØDE Rode audio microphones</tags>
     <summary>RØDE Central is a companion app for the Wireless GO II that allows you to set up device preferences, access, optimise and export recordings, activate and deactivate functions, and update your firmware</summary>
     <description>Unlock advanced features for the Wireless GO II with RØDE Central! This easy-to-use companion app lets you set up your device preferences, access, optimise and export recordings, activate and deactivate functions, and update your firmware. It's free to download for Mac and Windows.
