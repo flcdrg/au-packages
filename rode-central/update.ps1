@@ -13,9 +13,9 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $url = 'https://cdn1.rode.com/rodecentral_installation_file_windows.zip'
+    $url = 'https://update.rode.com/central/RODE_Central_WIN.zip'
    
-    $zipfile = "$PSScriptRoot\rodecentral_installation_file_windows.zip"
+    $zipfile = "$PSScriptRoot\RODE_Central_WIN.zip"
 
     Write-Host "Downloading zip file to find the version"
     $currentProgressPreference = $ProgressPreference
