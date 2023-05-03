@@ -9,7 +9,7 @@ $commonPath = $(Split-Path -parent $(Split-Path -parent $scriptPath))
 $installPath = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
 $packageParameters = Get-PackageParameters
 
-$silentArgs = "/Silent=True /SpecificProductNames=$($env:ChocolateyPackageName) /VsVersion=*"
+$silentArgs = "/Silent=True /SpecificProductNames=ReSharperCpp /VsVersion=*"
 
 if ($packageParameters["PerMachine"]) {
   $silentArgs += " /PerMachine=True"

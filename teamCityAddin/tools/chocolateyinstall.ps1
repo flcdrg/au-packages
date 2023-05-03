@@ -7,7 +7,7 @@ $filename = 'JetBrains.dotUltimate.2023.1.1.exe'
 $installPath = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
 $packageParameters = Get-PackageParameters
 
-$silentArgs = "/Silent=True /SpecificProductNames=$($env:ChocolateyPackageName) /VsVersion=*"
+$silentArgs = "/Silent=True /SpecificProductNames=teamCityAddin /VsVersion=*"
 
 if ($packageParameters["PerMachine"]) {
   $silentArgs += " /PerMachine=True"

@@ -10,7 +10,7 @@ $installPath = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
 
 $packageParameters = Get-PackageParameters
 
-$silentArgs = "/Silent=True /SpecificProductNames=$($env:ChocolateyPackageName) /VsVersion=*"
+$silentArgs = "/Silent=True /SpecificProductNames=dotMemory /VsVersion=*"
 
 if ($packageParameters["PerMachine"]) {
   $silentArgs += " /PerMachine=True"
