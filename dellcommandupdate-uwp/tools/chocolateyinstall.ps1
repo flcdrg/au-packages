@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://dl.dell.com/FOLDER09523714M/1/Dell-Command-Update-Windows-Universal-Application_6GMR6_WIN_4.8.0_A00.EXE'
-$checksum = '679f5f62984bbbafd9ae85efc468ff89e95a0afa18c8c73cb0d9f82a183b2d94'
+$url = 'https://downloads.dell.com/FOLDER10012409M/1/Dell-Command-Update-Windows-Universal-Application_J6PNP_WIN_4.9.0_A01.EXE'
+$checksum = '95d353d15b73c6fc73888de08efaa8e44544d3f61e27c12cd48bb1ef8110d9b6'
 $checksumType = 'sha256'
 
 Write-Warning "Ensure that 'Dell Update for Windows 10' is not installed. Any errors from this can be ignored"
