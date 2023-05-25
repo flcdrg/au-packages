@@ -6,7 +6,7 @@ Get-Process ZoomIt64 -ErrorAction SilentlyContinue | Stop-Process
 
 $packageName = 'zoomit'
 $url = 'https://download.sysinternals.com/files/ZoomIt.zip'
-$checksum = 'D94D48F2519D5F28EFCF7B9F2EACFAB3B25CB0175D0AD9A2383F3107BC56FC21'
+$checksum = '8D5674EF85573888724C032EBCCB2F72722AD565F9FB7D74E542C860E3432864'
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 Install-ChocolateyZipPackage -PackageName "$packageName" `
