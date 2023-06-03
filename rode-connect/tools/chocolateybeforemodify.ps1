@@ -1,0 +1,1 @@
+﻿Get-Process -ErrorAction Ignore "RODE Connect" | Stop-Process

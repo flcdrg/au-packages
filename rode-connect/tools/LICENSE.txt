@@ -1,0 +1,70 @@
+PLEASE READ CAREFULLY BEFORE INSTALLING THIS SOFTWARE: 
+This licence agreement (Licence) is a legal agreement between you (Licensee or you) and Freedman Electronics Pty Limited ABN 91 000 576 483 trading as RØDE Microphones of 107 Carnarvon Street NSW 2128 Australia (Licensor, us or we) for:
+RØDE Connect computer software (Software); and
+online documentation about the RØDE Connect (Documents). 
+We license use of the Software and Documents to you on the basis of this Licence. We do not sell the Software or Documents to you. We remain the owners of the Software and Documents at all times. 
+OPERATING SYSTEM REQUIREMENTS: The minimum operating systems requirements for this Software are set out at www.rode.com <http://www.rode.com>.  
+IMPORTANT NOTICE TO ALL USERS: 
+BY CLICKING ON THE “INSTALL”, “AGREE” or “ACCEPT” BUTTON AND CONTINUING WITH THE INSTALLATION OF THIS SOFTWARE, YOU AGREE TO THE TERMS OF THIS LICENCE WHICH WILL BIND YOU. THE TERMS OF THIS LICENCE INCLUDE, IN PARTICULAR, LIMITATIONS ON LIABILITY IN CLAUSE 5.
+IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENCE, WE WILL NOT LICENSE THE SOFTWARE AND DOCUMENTS TO YOU AND YOU MUST DISCONTINUE THE INSTALLATION PROCESS NOW BY CLICKING ON THE "CANCEL" BUTTON BELOW.  IN THIS CASE, THE INSTALLATION PROCESS WILL TERMINATE.
+You should print a copy of this Licence for future reference.
+1.	GRANT AND SCOPE OF LICENCE
+1.1	In consideration of you agreeing to abide by the terms of this Licence, we hereby grant to you a non-exclusive, non-transferable licence to use the Software and the Documents on the terms of this Licence.
+1.2	You may:
+(a)	download, install and use the Software for your personal purposes (if you are a consumer) or your internal business purposes (if you are a business);
+(b)	provided you comply with the provisions in clause 2, make a reasonable number of copies of the Software for back-up purposes; 
+(c)	receive and use any free supplementary software code or update of the Software incorporating "patches" and corrections of errors as may be provided by us from time to time; and
+(d)	use any Documents in support of the use permitted under this clause 1.2 and make copies of the Documents as are reasonably necessary for its lawful use.
+2.	RESTRICTIONS
+Except as expressly set out in this Licence or as permitted by any local law, you undertake:
+(a)	not to copy the Software or Documents except where such copying is incidental to normal use of the Software, or where it is necessary for the purpose of back-up or operational security;
+(b)	not to rent, lease, sub-license, loan, translate, merge, adapt, vary or modify the Software or Documents;
+(c)	not to make alterations to, or modifications of, the whole or any part of the Software, nor permit the Software or any part of it to be combined with, or become incorporated in, any programs other than the host applications specified as being compatible with the Software at www.rode.com <http://www.rode.com>;
+(d)	not to disassemble, decompile, reverse-engineer or create derivative works based on the whole or any part of the Software nor attempt to do any such thing except to the extent that such actions cannot be prohibited under applicable law.  If applicable law permits any such activity, you agree that the information obtained by you during such activities: 
+(i)	will be used only for the purpose of achieving inter-operability of the Software with another software program; and
+(ii)	will not be unnecessarily disclosed or communicated by you to any third party without our prior written consent; and
+(iii)	will not be used to create any software which is substantially similar to the Software;
+(e)	if you are a business, to supervise and control use of the Software and ensure that the Software is used by your employees and representatives in accordance with the terms of this Licence;
+(f)	to include our copyright notice on all entire and partial copies you make of the Software on any medium;
+(g)	not to provide or otherwise make available the Software in whole or in part (including but not limited to program listings, object and source program listings, object code and source code), in any form to any person (other than your employees) without prior written consent from us; and 
+(h)	to comply with all applicable technology control or export laws and regulations.
+3.	INTELLECTUAL PROPERTY RIGHTS
+3.1	You acknowledge that all intellectual property rights in the Software and the Documents anywhere in the world belong to us (or our licensors), that rights in the Software are licensed (not sold) to you, and that you have no rights in, or to, the Software or the Documents other than the right to use them in accordance with the terms of this Licence.
+3.2	You acknowledge that you have no right to have access to the Software in source code form.
+4.	WARRANTY DISCLAIMER
+4.1	You acknowledge that the Software has not been developed to meet your individual requirements, and that it is therefore your responsibility to ensure that the facilities and functions of the Software as described in the Documents meet your requirements.
+4.2	We provide the Software “as-is”. Except for the non-excludable rights you have as a consumer, we exclude all warranties and conditions, whether express, implied, or statutory, including the warranties of merchantability, fitness for a particular purpose, reliability, title, quiet enjoyment, accuracy, meeting your or any other requirements and non-infringement of third-party rights.  We exclude all warranties that the Software will be uninterrupted, free of viruses or other harmful code, timely, secure, or error-free.
+4.3	Our Software come with guarantees that cannot be excluded under the Australian Consumer Law. You are entitled to a replacement or refund for a major failure and compensation for any other reasonably foreseeable loss or damage. You are also entitled to have the Software repaired or replaced if the Software fails to be of acceptable quality and the failure does not amount to a major failure.
+5.	EXCLUSION AND LIMITATION OF LIABILITY
+5.1	Subject to the other terms of this clause 5, our maximum aggregate liability to you for any loss or damage or injury arising out of or in connection with the supply of Software and Documents under this Licence, including any breach by us of this Licence however arising, under any indemnity, in tort (including negligence), under any statute, custom, law or on any other basis, is limited to the greater of:
+(a)	A$10; and
+(b)	the actual charges paid by You under this Licence.
+5.2	Nothing in this Licence is intended to have the effect of excluding, restricting or modifying the application of all or any of the provisions of Part 5-4 of the Australian Consumer Law (as set out in Schedule 2 to the Competition and Consumer Act 2010 (Cth) (ACL), or the exercise of a right conferred by such a provision, or any of our liability in relation to a failure to comply with a guarantee that applies under Division 1 of Part 3-2 of the ACL to a supply of goods or services.
+5.3	If we are liable to you in relation to a failure to comply with a guarantee that applies under Division 1 of Part 3-2 of the ACL that cannot be excluded, our total liability to you for that failure is limited to, at our option:
+(a)	in the case of services, the resupply of the services or the payment of the cost of resupply; and
+(b)	in the case of goods, the replacement of the goods or the supply of equivalent goods, or the repair of the goods, or the payment of the cost of replacing the goods or of acquiring equivalent goods, or the payment of the cost of having the goods repaired.
+5.4	Subject to the other terms of this clause 5, we exclude any liability to you, whether in contract, tort (including negligence) or otherwise, for the following types of loss arising under or in connection with this Licence: special, indirect or consequential loss; loss of profits; loss of sales or business; loss of production; loss of agreements or contracts; loss of business opportunity; loss of anticipated savings; loss of or damage to goodwill; loss of reputation; and loss of use or corruption of software, data or information.
+5.5	Nothing in this Licence limits or excludes our liability:
+(a)	for death or personal injury caused by our negligence or wilful misconduct or that of our employees, as applicable;
+(b)	for fraud or fraudulent misrepresentation by us or our employees, as applicable;
+(c)	where liability cannot be limited or excluded by applicable law.
+6.	TERMINATION
+6.1	You may, at any time, terminate this Licence for any reason.  
+6.2	We may terminate this Licence immediately by written notice to you if you commit a material or persistent breach of this Licence which you fail to remedy (if remediable) within 14 days after the service of written notice requiring you to do so. 
+6.3	Upon termination for any reason:
+(a)	all rights granted to you under this Licence shall cease;
+(b)	you must immediately cease all activities authorised by this Licence; and
+(c)	you must immediately delete or remove the Software from all computer equipment in your possession.
+7.	COMMUNICATIONS BETWEEN US
+7.1	If you wish to contact us in writing, or if any clause in this Licence requires you to give us notice in writing, you can send this to us by e-mail to info@rode.com or by pre-paid post to Freedman Electronics Pty Limited trading as RØDE Microphones at 107 Carnarvon Street Silverwater NSW 2128 Australia. We will confirm receipt of this by contacting you in writing, normally by e-mail. 
+7.2	If we have to contact you or give you notice in writing, we will do so by e-mail or by pre-paid post to the address you provide to us in your order for the Software.
+7.3	Any personal information you supply to us in connection with this Licence will be used by us in accordance with the Privacy Act 1988 (Cth) and our Privacy Policy.
+8.	EVENTS OUTSIDE OUR CONTROL
+8.1	We will not be liable or responsible for any failure to perform, or delay in performance of, any of our obligations under this Licence that is caused by an any act or event beyond our reasonable control, including without limitation failure of public or private telecommunications networks.
+9.	OTHER IMPORTANT TERMS
+9.1	We may transfer our rights and obligations under this Licence to another organisation, but this will not affect your rights or our obligations under this Licence. 
+9.2	You may only transfer your rights or your obligations under this Licence to another person if we agree in writing.
+9.3	This Licence constitutes the entire agreement between us and supersedes and extinguishes all previous agreements, promises, assurances, warranties, representations and understandings between us, whether written or oral, relating to its subject matter. 
+9.4	If we fail to insist that you perform any of your obligations under this Licence, or if we do not enforce our rights against you, or if we delay in doing so, that will not mean that we have waived our rights against you and will not mean that you do not have to comply with those obligations. If we do waive a default by you, we will only do so in writing, and that will not mean that we will automatically waive any later default by you. 
+9.5	Each of the clauses of this Licence operates separately. If any court or competent authority decides that any of them are unlawful or unenforceable, the remaining clauses will remain in full force and effect. 
+9.6	This Licence is governed by the laws of New South Wales, Australia, and we both irrevocably agree to the exclusive jurisdiction of the courts having jurisdiction in New South Wales, Australia.

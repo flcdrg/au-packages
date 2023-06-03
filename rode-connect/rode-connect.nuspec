@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>rode-connect</id>
+    <version>1.3.24</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/rode-connect</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>RØDE Connect</title>
+    <authors>RØDE Microphones</authors>
+    <projectUrl>hhttps://rode.com/en/microphones/wireless/wirelessgoii</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/e076acef472529595d9a5064abbd1d3c6b10e37c/rode-connect/icons/rode-connect.png</iconUrl>
+    <copyright>(c) 2023 RØDE Microphones</copyright>
+    <!-- <licenseUrl>tools/LICENSE.txt</licenseUrl> -->
+    <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
+    <docsUrl>https://rode.com/en/user-guides/rodeconnect</docsUrl>
+    <tags>Wireless GO II RØDE Rode audio microphones podcasting</tags>
+    <summary>RØDE Connect Podcasting Software</summary>
+    <description>RØDE Connect is a simple and powerful software solution for podcasting and livestreaming with the NT-USB Mini, VideoMic NTG, AI-Micro, VideoMic GO II, Wireless GO II and the NT-USB+.
+
+Offering the ability to connect up to four guests to a single computer, RØDE Connect is perfect for anyone who wants to create professional-quality podcasts the easy way. With an intuitive recording interface inspired by the RØDECaster Pro featuring broadcast-style faders, level metering, sound pads, mute button, multi-channel recording and more, RØDE Connect gives you complete control over your podcast recording.
+
+RØDE Connect is also perfect for creators looking for a simple way to route audio to their livestreaming software. With easy integration of external audio sources like chat applications, program sound, mic audio and more; RØDE Connect is capable of taking a finished mix and outputting in realtime to livestreaming software.
+Key Features:
+
+* Connect up to four podcasters to a single computer with any combination of compatible microphone - no complex routing required
+* Completely free to download with versions for both Mac and Windows
+* Access powerful digital signal processing; including a noise gate, compressor and the legendary APHEX Aural Exciter and Big Bottom (NT-USB Mini, VideoMic NTG, VideoMic GO II, AI-Micro and NT-USB+ only)
+* Fully featured recording interface, complete with broadcast-style faders, level metering, mute buttons and more
+* Virtual channels for seamlessly connecting remote guests, integrating streaming applications, adding music beds and much more
+* Automatic mix-minus on every channel for crystal clear, echo-free audio
+* Fully equipped sound pads section with 3 separate playback styles and up to 8 banks of sound
+
+RØDE Connect is completely FREE to use. Plug in your compatible RØDE microphone, and get recording!
+
+### Package updates
+
+Rode use a 'static' download URL such that when they release a new version it will break older Chocolatey packages. Sometimes this package needs to be manually updated as Rode change the layout of the .zip file for each release. 
+
+If you notice the package isn't working please leave a comment, or even better submit a pull request in the [package source repository](https://github.com/flcdrg/au-packages/tree/master/rode-connect).
+
+</description>
+<releaseNotes>https://update.rode.com/notes/connect/</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
