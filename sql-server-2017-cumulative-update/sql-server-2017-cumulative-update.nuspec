@@ -14,8 +14,8 @@
     <licenseUrl>https://www.microsoft.com/en-au/sql-server/sql-server-2017-pricing</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <docsUrl>http://support.microsoft.com/help/4047329</docsUrl>
-    <mailingListUrl>https://social.technet.microsoft.com/Forums/sqlserver/en-us/home?category=sqlserver</mailingListUrl>
-    <bugTrackerUrl>https://feedback.azure.com/forums/908035-sql-server</bugTrackerUrl>
+    <mailingListUrl>https://learn.microsoft.com/en-us/answers/tags/191/sql-server</mailingListUrl>
+    <bugTrackerUrl>https://feedback.azure.com/d365community/forum/04fe6ee0-3b25-ec11-b6e6-000d3a4f0da0</bugTrackerUrl>
     <tags>SQL Server Cumulative Update 2017</tags>
     <summary>The latest Cumulative Update (CU) download is the most recent CU released for SQL Server 2017</summary>
     <description>The latest Cumulative Update (CU) download is the most recent CU released for SQL Server 2017 and contains all updates released since the release of SQL Server 2017 RTM.

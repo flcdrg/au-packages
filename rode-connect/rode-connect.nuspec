@@ -8,13 +8,13 @@
     <owners>flcdrg</owners>
     <title>RØDE Connect</title>
     <authors>RØDE Microphones</authors>
-    <projectUrl>hhttps://rode.com/en/microphones/wireless/wirelessgoii</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/e076acef472529595d9a5064abbd1d3c6b10e37c/rode-connect/icons/rode-connect.png</iconUrl>
+    <projectUrl>https://rode.com/en/software/rodeconnect</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/4d5d1c906e866b6b6ca5940ce2b5bc62e1e72eb1/rode-connect/icons/rode-connect.png</iconUrl>
     <copyright>(c) 2023 RØDE Microphones</copyright>
     <!-- <licenseUrl>tools/LICENSE.txt</licenseUrl> -->
     <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
     <docsUrl>https://rode.com/en/user-guides/rodeconnect</docsUrl>
-    <tags>Wireless GO II RØDE Rode audio microphones podcasting</tags>
+    <tags>RØDE Rode audio microphones podcasting</tags>
     <summary>RØDE Connect Podcasting Software</summary>
     <description>RØDE Connect is a simple and powerful software solution for podcasting and livestreaming with the NT-USB Mini, VideoMic NTG, AI-Micro, VideoMic GO II, Wireless GO II and the NT-USB+.
 

@@ -14,8 +14,8 @@
     <licenseUrl>https://www.microsoft.com/en-us/sql-server/sql-server-2019-pricing</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <docsUrl>https://docs.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver15</docsUrl>
-    <mailingListUrl>https://social.technet.microsoft.com/Forums/sqlserver/en-us/home?category=sqlserver</mailingListUrl>
-    <bugTrackerUrl>https://feedback.azure.com/forums/908035-sql-server</bugTrackerUrl>
+    <mailingListUrl>https://learn.microsoft.com/en-us/answers/tags/191/sql-server</mailingListUrl>
+    <bugTrackerUrl>https://feedback.azure.com/d365community/forum/04fe6ee0-3b25-ec11-b6e6-000d3a4f0da0</bugTrackerUrl>
     <tags>SQL tSQL Relational Data Database</tags>
     <summary>Apply intelligence across all your data with SQL Server 2019</summary>
     <description>Whether your data is structured or unstructured, query and analyze it using the data platform with industry-leading performance and security.
