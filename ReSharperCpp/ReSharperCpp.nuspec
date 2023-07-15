@@ -5,7 +5,7 @@
     <id>ReSharperCpp</id>
     <owners>JetBrains, flcdrg</owners>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/ReSharperCpp</packageSourceUrl>
-    <version>2023.2-EAP08</version>
+    <version>2023.2-EAP09</version>
     <title>JetBrains ReSharper C++</title>
     <authors>JetBrains</authors>
     <projectUrl>https://www.jetbrains.com/resharper-cpp</projectUrl>
@@ -51,7 +51,7 @@ The following package parameters can be set:
     </description>
     <releaseNotes>https://www.jetbrains.com/resharper-cpp/whatsnew/</releaseNotes>
     <dependencies>
-      <dependency id="resharper-platform" version="[232.0.20230707.74924-eap08]" />
+      <dependency id="resharper-platform" version="[232.0.20230713.102918-eap09]" />
       <dependency id="dotnet4.6.1" version="4.6.01055.20170308" />
     </dependencies>
   </metadata>
