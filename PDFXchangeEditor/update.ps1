@@ -32,12 +32,12 @@ function global:au_GetLatest {
         # <update version="9.2.359.0" minVersionUpdate="5.5.308.0" type="msi" platform="x32" size="221298688" url="EditorV9.x86.msi" hash="51DF7E30E47AE312E181A6CEED871FDEB2C2E08A2F935A95CE92F15B4D6CC2F7" startMaintenance="2021-11-23" cmdLineSilent="/qb /norestart"/>
 
         $bundleId = "Editor.x32"
-        $x32update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property version | Select-Object -First 1
+        $x32update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object @{expr={[version]$_.version}; desc=$true} | Select-Object -First 1
         $version = $x32update.version
         $filename = $x32update.url
 
         $bundleId = "Editor.x64"
-        $x64update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object -Descending -Property version | Select-Object -First 1
+        $x64update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object @{expr={[version]$_.version}; desc=$true} | Select-Object -First 1
         $filename64 = $x64update.url
 
         $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename" -Method Head -UseBasicParsing
