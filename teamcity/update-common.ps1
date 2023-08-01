@@ -23,6 +23,8 @@ function Get-TeamCityLatest([string] $minimumVersion = "2017.2") {
                 Version = $version
                 Checksum32 = $_.build.distribution.sha256
                 ReleaseNotes = $releaseNotes
+                Filename = "TeamCity-$version.tar.gz"
+                Url32 = "https://download.jetbrains.com/teamcity/TeamCity-$version.tar.gz"
             }
         )
     }
