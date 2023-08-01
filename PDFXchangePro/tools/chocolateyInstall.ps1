@@ -8,16 +8,16 @@ if ( $version.Revision -gt 20210101 ) {
     Write-Warning "'Package fix version notation' detected. Assuming original build version was .0"
 }
 
-$filename   = 'ProV9.x86.msi'
-$filename64 = 'ProV9.x64.msi'
+$filename   = 'ProV10.x86.msi'
+$filename64 = 'ProV10.x64.msi'
 $primaryDownloadUrl = "https://downloads.pdf-xchange.com/$filename"
 $primaryDownloadUrl64 = "https://downloads.pdf-xchange.com/$filename64"
 $url        = "https://builds-archive.tracker-software.com/$version/$filename"
 $url64      = "https://builds-archive.tracker-software.com/$version/$filename64"
-$checksum   = '034D5E5E29AA9C0D13FE7ACBCEC3E37948C1997CDB0B21BC734BA90553E39CE5'
-$checksum64 = '9098F4CB0DC280D732FEFC2A183302EFDC20D2F72FEB788E45A4322A7260225C'
-$lastModified32 = New-Object -TypeName DateTimeOffset 2023, 4, 6, 22, 30, 28, 0 # Last modified time corresponding to this package version
-$lastModified64 = New-Object -TypeName DateTimeOffset 2023, 4, 6, 22, 30, 46, 0 # Last modified time corresponding to this package version
+$checksum   = '09AB73793AF5534FE5795244B60C5EF8021F8FCC2344D43E67A245B4130103C2'
+$checksum64 = 'E768BE1BE57ADFDA0630375F130179B669C4B3BC6F59D95D8026EEE0A0BD2E2C'
+$lastModified32 = New-Object -TypeName DateTimeOffset 2023, 6, 29, 1, 26, 10, 0 # Last modified time corresponding to this package version
+$lastModified64 = New-Object -TypeName DateTimeOffset 2023, 6, 29, 1, 26, 38, 0 # Last modified time corresponding to this package version
 
 # Tracker Software have fixed download URLs, but if the binary changes we can fall back to their alternate (but slower) download site
 # so the package doesn't break.
