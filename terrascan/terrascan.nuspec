@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>terrascan</id>
-    <version>1.18.2</version>
+    <version>1.18.3</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/terrascan</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Terrascan</title>
@@ -26,13 +26,8 @@
 - Detect security vulnerabilities and compliance violations.
 - Mitigate risks before provisioning cloud native infrastructure.
 - Offers flexibility to run locally or integrate with your CI\CD.</description><releaseNotes><![CDATA[### Changelog
-* 13c4c8c7 Increased timeout for webhook test (#1591)
-* f7acf0c5 Releaser fixes for archives. (#1595)
-* cae77e2d Spelling (#1496)
-* 79055c13 fix openssl-libcrypto1.1@1.1.1u-r1 library vulnerability (#1592)
-* e76ef83d only high vulns detected by docker scan fixed (#1588)
-* 94dfb5d7 release/v1.18.2 (#1594)
-* ce41093a remove k8s admission log UI (#1556)
+* 659310cd release/v1.18.3 (#1598)
+* 597d9f75 update net deps to fix vuln (#1597)
 
 ]]></releaseNotes>
     
