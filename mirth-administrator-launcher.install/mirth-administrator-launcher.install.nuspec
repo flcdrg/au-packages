@@ -12,7 +12,7 @@
     <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/ce211e13b31785e6a8e06186f1a09c42002c7490/mirth/icons/mirth.png</iconUrl>
     <copyright>2019 Nextgen Healthcare</copyright>
     <!--<mailingListUrl></mailingListUrl>-->
-    <bugTrackerUrl>http://www.mirthcorp.com/community/issues/browse/MIRTH/component/12440/?selectedTab=com.atlassian.jira.jira-projects-plugin:component-summary-panel</bugTrackerUrl>
+    <bugTrackerUrl>https://github.com/nextgenhealthcare/connect/issues</bugTrackerUrl>
     <tags>mirth</tags>
     <summary>Mirth Administrator Launcher</summary>
     <description>This is a standalone application that you install on your local workstation, and allows you to remotely launch the Administrator GUI for any NextGen/Mirth Connect server you want</description>
