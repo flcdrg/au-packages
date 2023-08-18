@@ -3,8 +3,8 @@ $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 . "${toolsDir}\common.ps1"
 
-$url           = 'https://github.com/kee-org/keepassrpc/releases/download/v1.14.0/KeePassRPC.plgx'
-$checksum      = '1c410cc93c0252e7cfdb02507b8172c13e18d12c97f08630b721d897dc9b8b24'
+$url           = 'https://github.com/kee-org/keepassrpc/releases/download/v1.15.1/KeePassRPC.plgx'
+$checksum      = '9caf76b48e376c6b87dfc12dee195e18aebd21daa664380b7cd7e6a8295ab56b'
 
 $packagePath = $(Split-Path -parent $toolsDir)
 $downloadPath = Join-Path $packagePath "KeePassRPC.plgx"

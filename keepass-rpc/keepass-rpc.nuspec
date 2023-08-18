@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>keepass-rpc</id>
-    <version>1.14.0.20210127</version>
+    <version>1.15.1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/keepass-rpc</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>KeePass RPC Plugin</title>
@@ -19,9 +19,15 @@
     <tags>keepass keefox keepassrpc plugin</tags>
     <summary>KeePassRPC plugin that needs to be installed inside KeePass in order for KeeFox to be able to connect your browser to your passwords</summary>
     <description>KeePassRPC plugin that needs to be installed inside KeePass in order for KeeFox to be able to connect your browser to your passwords </description>
-    <releaseNotes>Adds support for the multiple entry editing feature in KeePass 2.46.
+    <releaseNotes>- Requires KeePass 2.48+
+- Add support for new custom config format in KeePass 2.54 (fixes being unable to manage existing client connections via the GUI)
+- Improve readability on Linux (mono) dark themes
+- Prevent accidental editing of dropdown select values
+- Fix crash when pressing Del on keyboard in Form field list box with no item selected
+- Fix crashes on Mono when trying to show a message
+- Stops KeePass menus growing too large when used over an RDP connection
 
-In situations where there are different KeePassRPC configurations for the entries that are selected for editing, we now show a message in the Kee tab. Earlier versions of KeePassRPC would show an error message explaining that the configuration string is invalid.</releaseNotes>
+**Full Changelog**: https://github.com/kee-org/keepassrpc/compare/v1.14.0...v1.15.1</releaseNotes>
     <dependencies>
       <dependency id="keepass" version="2.0" />
     </dependencies>
