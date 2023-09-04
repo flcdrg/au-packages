@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>tflint</id>
-    <version>0.47.0</version>
+    <version>0.48.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/tflint</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>TFLint (Terraform linter)</title>
@@ -24,42 +24,45 @@ TFLint is a framework and each feature is provided by plugins, the key features 
 - Find possible errors (like invalid instance types) for Major Cloud providers (AWS/Azure/GCP).
 - Warn about deprecated syntax, unused declarations.
 - Enforce best practices, naming conventions.      
-    </description><releaseNotes><![CDATA[### 0.47.0 (2023-06-18)
-
-This release introduces autofix feature. Running `tflint --fix` will automatically fix issues as possible. Note that not all rules support autofix. In order to support autofix, plugins must be built with SDK v0.17+ and implement autofix.
-
-The bundled Terraform ruleset has been updated to v0.4.0 with autofix support. In other words, for Terraform rules, you can use autofix as it is. See the [tflint-ruleset-terraform v0.4.0 changelog](https://github.com/terraform-linters/tflint-ruleset-terraform/releases/tag/v0.4.0) for details.
+    </description><releaseNotes><![CDATA[### What's Changed
 
 #### Breaking Changes
 
-- [#1749](https://github.com/terraform-linters/tflint/pull/1749): plugin: Drop support for plugin SDK v0.12/v0.13 ([@wata727](https://github.com/wata727))
-  - Plugins built using SDKs v0.12/v0.13 are no longer supported. If you get "SDK version is incompatible" error, you need to update the plugin to use SDK v0.14+.
-- [#1750](https://github.com/terraform-linters/tflint/pull/1750) [#1781](https://github.com/terraform-linters/tflint/pull/1781): Bump tflint-plugin-sdk and bundled terraform plugin
-  - The SDK has been updated to v0.17.0 and the bundled Terraform plugin to v0.4.0. Terraform ruleset v0.3.0 contains breaking changes. Check the [changelog](https://github.com/terraform-linters/tflint-ruleset-terraform/releases/tag/v0.3.0) for details.
-- [#1779](https://github.com/terraform-linters/tflint/pull/1779): cmd: Drop support for CLI arguments ([@wata727](https://github.com/wata727))
-  - Argument support has been removed based on the deprecation warning added in v0.46. As of v0.47, it returns an error instead of a warning. See https://github.com/terraform-linters/tflint/pull/1687 for details.
+* Bump tflint-plugin-sdk to v0.18.0 by @wata727 in https://github.com/terraform-linters/tflint/pull/1813
+  * This change causes the deprecated `IncludeNotCreated` option to be ignored. Most plugin users will not be affected.
 
-#### Enhancements
+#### BugFixes
 
-- [#1751](https://github.com/terraform-linters/tflint/pull/1751): plugin: support GitHub Enterprise Server as plugin source ([@bendrucker](https://github.com/bendrucker))
-- [#1755](https://github.com/terraform-linters/tflint/pull/1755): Introduce autofix ([@wata727](https://github.com/wata727))
-- [#1773](https://github.com/terraform-linters/tflint/pull/1773): build(deps): Bump github.com/hashicorp/hcl/v2 from 2.16.2 to 2.17.0
-  - TFLint v0.47 host server return `cty.Value` now supports refinemnet. This is a change that only affects plugin developers. See [HCL v2.17.0 changelog](https://github.com/hashicorp/hcl/releases/tag/v2.17.0) for details.
-- [#1780](https://github.com/terraform-linters/tflint/pull/1780): terraform: Add support for Terraform v1.5 ([@wata727](https://github.com/wata727))
-  - Added support for the `planttimestamp` and `strcontains` functions.
+* langserver: Trap os.Interrupt and syscall.SIGTERM by @wata727 in https://github.com/terraform-linters/tflint/pull/1809
+* Bump github.com/hashicorp/hcl to v2.18.0 by @wata727 in https://github.com/terraform-linters/tflint/pull/1833
+* tflint: Allow commas with spaces in annotations by @wata727 in https://github.com/terraform-linters/tflint/pull/1834
 
 #### Chores
 
-- [#1754](https://github.com/terraform-linters/tflint/pull/1754) [#1766](https://github.com/terraform-linters/tflint/pull/1766): build(deps): Bump sigstore/cosign-installer from 3.0.2 to 3.0.5
-- [#1759](https://github.com/terraform-linters/tflint/pull/1759): build(deps): Bump google.golang.org/grpc from 1.54.0 to 1.55.0
-- [#1762](https://github.com/terraform-linters/tflint/pull/1762): build(deps): Bump alpine from 3.17.3 to 3.18.0
-- [#1763](https://github.com/terraform-linters/tflint/pull/1763): build(deps): Bump golang.org/x/oauth2 from 0.7.0 to 0.8.0
-- [#1764](https://github.com/terraform-linters/tflint/pull/1764): build(deps): Bump golang.org/x/crypto from 0.8.0 to 0.9.0
-- [#1767](https://github.com/terraform-linters/tflint/pull/1767): build(deps): Bump github.com/zclconf/go-cty from 1.13.1 to 1.13.2
-- [#1771](https://github.com/terraform-linters/tflint/pull/1771): fix(install_linux): Update unzip arguments ([@alexjurkiewicz](https://github.com/alexjurkiewicz))
-- [#1772](https://github.com/terraform-linters/tflint/pull/1772) [#1775](https://github.com/terraform-linters/tflint/pull/1775): build(deps): Bump golangci/golangci-lint-action from 3.4.0 to 3.6.0
-- [#1774](https://github.com/terraform-linters/tflint/pull/1774): build(deps): Bump github.com/hashicorp/go-plugin from 1.4.9 to 1.4.10
-- [#1776](https://github.com/terraform-linters/tflint/pull/1776): build(deps): Bump golang.org/x/text from 0.9.0 to 0.10.0
+* build(deps): Bump alpine from 3.18.0 to 3.18.2 by @dependabot in https://github.com/terraform-linters/tflint/pull/1784
+* build(deps): Bump google.golang.org/grpc from 1.55.0 to 1.56.0 by @dependabot in https://github.com/terraform-linters/tflint/pull/1785
+* build(deps): Bump golang.org/x/oauth2 from 0.8.0 to 0.9.0 by @dependabot in https://github.com/terraform-linters/tflint/pull/1786
+* build(deps): Bump sigstore/cosign-installer from 3.0.5 to 3.1.0 by @dependabot in https://github.com/terraform-linters/tflint/pull/1792
+* build(deps): Bump google.golang.org/grpc from 1.56.0 to 1.56.1 by @dependabot in https://github.com/terraform-linters/tflint/pull/1793
+* build(deps): Bump sigstore/cosign-installer from 3.1.0 to 3.1.1 by @dependabot in https://github.com/terraform-linters/tflint/pull/1798
+* Remove hard-coded versions from integration tests by @wata727 in https://github.com/terraform-linters/tflint/pull/1799
+* build(deps): Bump golang.org/x/text from 0.10.0 to 0.11.0 by @dependabot in https://github.com/terraform-linters/tflint/pull/1806
+* build(deps): Bump golang.org/x/crypto from 0.10.0 to 0.11.0 by @dependabot in https://github.com/terraform-linters/tflint/pull/1804
+* build(deps): Bump golang.org/x/oauth2 from 0.9.0 to 0.10.0 by @dependabot in https://github.com/terraform-linters/tflint/pull/1803
+* build(deps): Bump google.golang.org/grpc from 1.56.1 to 1.56.2 by @dependabot in https://github.com/terraform-linters/tflint/pull/1805
+* Remove obsoleted PGP public key by @wata727 in https://github.com/terraform-linters/tflint/pull/1800
+* Add make release for release automation by @wata727 in https://github.com/terraform-linters/tflint/pull/1802
+* build(deps): Bump google.golang.org/grpc from 1.56.2 to 1.57.0 by @dependabot in https://github.com/terraform-linters/tflint/pull/1815
+* build(deps): Bump golang.org/x/crypto from 0.11.0 to 0.12.0 by @dependabot in https://github.com/terraform-linters/tflint/pull/1820
+* build(deps): Bump golang.org/x/text from 0.11.0 to 0.12.0 by @dependabot in https://github.com/terraform-linters/tflint/pull/1821
+* build(deps): Bump golang.org/x/oauth2 from 0.10.0 to 0.11.0 by @dependabot in https://github.com/terraform-linters/tflint/pull/1822
+* deps: upgrade to use go1.21 by @chenrui333 in https://github.com/terraform-linters/tflint/pull/1823
+* build(deps): Bump github.com/google/uuid from 1.3.0 to 1.3.1 by @dependabot in https://github.com/terraform-linters/tflint/pull/1829
+* build(deps): Bump golangci/golangci-lint-action from 3.6.0 to 3.7.0 by @dependabot in https://github.com/terraform-linters/tflint/pull/1830
+
+
+**Full Changelog**: https://github.com/terraform-linters/tflint/compare/v0.47.0...v0.48.0
+
 ]]></releaseNotes>
     
   </metadata>
