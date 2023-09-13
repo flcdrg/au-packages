@@ -9,11 +9,11 @@ $packageArgs = @{
   silentArgs   = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
   
   validExitCodes= @(0) #please insert other valid exit codes here
-  url           = "https://www.apneaboard.com/OSCAR/OSCAR-1.4.0-Win32.exe"
-  checksum      = 'D8998239B5FBCC1E9A5A53CB6116368AD760F50C25ECC332196395772E038A98'
+  url           = "https://www.apneaboard.com/OSCAR/OSCAR-1.5.0-Win32.exe"
+  checksum      = 'AE298A414E99E36F99991F661AE0E192454B3D03A8D1C71D2C733E11B2C4C8F1'
   checksumType  = 'sha256'
-  url64bit      = "https://www.apneaboard.com/OSCAR/OSCAR-1.4.0-Win64.exe"
-  checksum64    = '169497C717FDC50C9A541E8C407AF33E61F34A379D184C61C3483815BAB8CBEC'
+  url64bit      = "https://www.apneaboard.com/OSCAR/OSCAR-1.5.0-Win64.exe"
+  checksum64    = '72AC52F4F063948BB957FB7921E8A1A3C5BD11F8EECF9CC33B8D7384A927F7EB'
   checksumType64= 'sha256'
   destination   = $toolsDir
 }
