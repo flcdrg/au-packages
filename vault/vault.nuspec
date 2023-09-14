@@ -4,7 +4,7 @@
   <metadata>
     <id>vault</id>
     <title>Vault</title>
-    <version>1.14.2</version>
+    <version>1.14.3</version>
     <authors>Mitchell Hashimoto, HashiCorp</authors>
     <owners>flcdrg</owners>
     <projectUrl>https://www.vaultproject.io/</projectUrl>
@@ -32,7 +32,39 @@ The key features of Vault are:
 * **Revocation**: Vault has built-in support for secret revocation. Vault can revoke not only single secrets, but a tree of secrets, for example all secrets read by a specific user, or all secrets of a particular type. Revocation assists in key rolling as well as locking down systems in the case of an intrusion.
 
 For more information, see the [introduction section](https://www.vaultproject.io/intro) of the Vault website.
-    </description><releaseNotes><![CDATA[]]></releaseNotes>
+    </description><releaseNotes><![CDATA[### 1.14.3
+#### September 13, 2023
+
+SECURITY:
+
+* secrets/transit: fix a regression that was honoring nonces provided in non-convergent modes during encryption. [[GH-22852](https://github.com/hashicorp/vault/pull/22852)]
+
+CHANGES:
+
+* core: Bump Go version to 1.20.8.
+
+FEATURES:
+
+* ** Merkle Tree Corruption Detection (enterprise) **: Add a new endpoint to check merkle tree corruption.
+
+IMPROVEMENTS:
+
+* auth/ldap: improved login speed by adding concurrency to LDAP token group searches [[GH-22659](https://github.com/hashicorp/vault/pull/22659)]
+* core/quotas: Add configuration to allow skipping of expensive role calculations [[GH-22651](https://github.com/hashicorp/vault/pull/22651)]
+* kmip (enterprise): reduce latency of KMIP operation handling
+
+BUG FIXES:
+
+* cli: Fix the CLI failing to return wrapping information for KV PUT and PATCH operations when format is set to `table`. [[GH-22818](https://github.com/hashicorp/vault/pull/22818)]
+* core/quotas: Only perform ResolveRoleOperation for role-based quotas and lease creation. [[GH-22597](https://github.com/hashicorp/vault/pull/22597)]
+* core/quotas: Reduce overhead for role calculation when using cloud auth methods. [[GH-22583](https://github.com/hashicorp/vault/pull/22583)]
+* core/seal: add a workaround for potential connection [[hangs](https://github.com/Azure/azure-sdk-for-go/issues/21346)] in Azure autoseals. [[GH-22760](https://github.com/hashicorp/vault/pull/22760)]
+* core: All subloggers now reflect configured log level on reload. [[GH-22038](https://github.com/hashicorp/vault/pull/22038)]
+* kmip (enterprise): fix date handling error with some re-key operations
+* raft/autopilot: Add dr-token flag for raft autopilot cli commands [[GH-21165](https://github.com/hashicorp/vault/pull/21165)]
+* replication (enterprise): Fix discovery of bad primary cluster addresses to be more reliable
+* secrets/transit: fix panic when providing non-PEM formatted public key for import [[GH-22753](https://github.com/hashicorp/vault/pull/22753)]
+* ui: fixes long namespace names overflow in the sidebar]]></releaseNotes>
     
   </metadata>
   <files>
