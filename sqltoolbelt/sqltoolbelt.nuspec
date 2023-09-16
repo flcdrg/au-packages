@@ -5,7 +5,7 @@
     <id>sqltoolbelt</id>
     <version>2023.09.14</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sqltoolbelt</packageSourceUrl>
-    <owners>kscelfo, flcdrg</owners>
+    <owners>flcdrg</owners>
     <title>SQL Toolbelt</title>
     <authors>Red Gate Software Ltd</authors>
     <projectUrl>http://www.red-gate.com/products/sql-development/sql-toolbelt/</projectUrl>
