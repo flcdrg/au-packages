@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>PDFXchangeEditor</id>
-    <version>10.1.0.380</version>
+    <version>10.1.1.381</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/PDFXchangeEditor</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>PDF-XChange Editor</title>
