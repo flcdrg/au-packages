@@ -21,7 +21,7 @@
 
 Supported Platforms : Windows 7, Windows 8 and Windows 10
 
-Supported OBS Studio version : 25.0.0+
+Supported OBS Studio version : 25.x (26 and above have virtual camera support built in)
 
 #### Features
 
@@ -44,7 +44,7 @@ On the [OBS Project page for this plugin](https://obsproject.com/forum/resources
 - Added version information and descriptions to the dll files
 </releaseNotes>
     <dependencies>
-      <dependency id="obs-studio" version="[25.0,28.0)" />
+      <dependency id="obs-studio.install" version="[25.0,26.0)" />
     </dependencies>
   </metadata>
   <files>
