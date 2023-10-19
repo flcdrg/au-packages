@@ -21,7 +21,7 @@ $packageArgs = @{
   checksumType64= 'sha256'
 
   # OTHERS
-  silentArgs   = "-q -console -varfile $($toolsDir)\response.varfile"
+  silentArgs   = "-q -console -varfile `"$($toolsDir)\response.varfile`""
   validExitCodes= @(0)
 }
 
