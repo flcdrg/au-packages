@@ -5,7 +5,7 @@
     <id>microsoft-teams.install</id>
     <version>1.6.00.27573</version>
     <owners>flcdrg</owners>
-    <title>Microsoft Teams Desktop App (Machine-Wide Install)</title>
+    <title>Microsoft Teams Classic Desktop App (Machine-Wide Install)</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://products.office.com/en-us/microsoft-teams/group-chat-software</projectUrl>
     <iconUrl>http://raw.githubusercontent.com/flcdrg/au-packages/master/microsoft-teams/icons/teams-logo.png</iconUrl>
@@ -18,6 +18,11 @@
     <tags>microsoft-teams teams office 365 chat collaboration slack admin</tags>
     <summary>Microsoft Teams helps your team work better together. It's one app that brings your team's conversations, meetings, files and notes together into a single place for open and seamless collaboration.</summary>
     <description>Microsoft Teams is a messaging app for teams where all conversations, meetings, files, and notes can be accessed by everyone, all in one place. It's a place for collaboration and work to happen in the open.
+
+The installed software is named:
+
+- "Microsoft Teams classic" for Windows 10 and Mac devices.
+- "Micrsoft Teams classic (work or school)" for Windows 11 devices.
 
 Here's why you should use it:
 
