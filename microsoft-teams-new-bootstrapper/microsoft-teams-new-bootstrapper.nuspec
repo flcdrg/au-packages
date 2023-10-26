@@ -10,7 +10,7 @@
     <title>Microsoft Teams (new client) Bootstrapper (Machine-Wide Install)</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://learn.microsoft.com/en-us/microsoftteams/new-teams-bulk-install-client</projectUrl>
-    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/microsoft-teams-new-bootstrapper.png</iconUrl>-->
+    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/a441d3dd9b117e3e3c34fc6b06f070a382718ba6/microsoft-teams-new-bootstrapper/icons/teams-new.png</iconUrl>
     <copyright>2023</copyright>
     <licenseUrl>https://support.microsoft.com/en-us/office/microsoft-teams-subscription-supplemental-notice-60cc09bf-b02a-4a26-8e4a-ad697194bebf?ui=en-us&amp;rs=en-us&amp;ad=us</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -30,8 +30,9 @@ Users who have installed a different Teams version will have their version repla
 
 ### Package Specific
 
-Note that TeamsBootstrapper.exe will cause the the latest Teams MSIX package to be installed from Microsoft. Once Teams is installed it
-is self-updating. As such there's likely no need to install updates of this Chocolatey package.
+Note that TeamsBootstrapper.exe will cause the the latest Teams MSIX package to be installed from Microsoft. Once Teams is installed it is self-updating. As such there's likely no need to install updates of this Chocolatey package.
+
+The package version is based on the 'product version' property of TeamsBootstrapper.exe
 </description>
   </metadata>
   <files>
