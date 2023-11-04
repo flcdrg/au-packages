@@ -2,9 +2,9 @@
 
 $packageName  = 'dellcommandupdate'
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://downloads.dell.com/FOLDER10408469M/1/Dell-Command-Update-Application_HYR95_WIN_5.0.0_A00.EXE'
-$checksum = '583b82b67ecf573e9955fd2ed550d6f7'
-$checksumType = 'md5'
+$url = 'https://downloads.dell.com/FOLDER10791703M/1/Dell-Command-Update-Application_44TH5_WIN_5.1.0_A00.EXE'
+$checksum = 'd9de2d48c840ed121add5cd59308259cd229d29c66536136ddfad48371baa36a'
+$checksumType = 'sha256'
 
 $packageArgs = @{
   packageName   = $packageName
