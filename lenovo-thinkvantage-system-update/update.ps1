@@ -15,7 +15,7 @@ function global:au_GetLatest {
 
     # Unfortunately, they're including a Byte Order Mark, so we have to trim that off
     # I wonder if we should increment this number in the download each time we find an update?
-    $response = Invoke-RestMethod -Uri "https://download.lenovo.com/ibmdl/pub/pc/pccbbs/agent/SSClientCommon/HelloLevel_9_49_00.xml"
+    $response = Invoke-RestMethod -Uri "https://download.lenovo.com/ibmdl/pub/pc/pccbbs/agent/SSClientCommon/HelloLevel_9_59_00.xml"
     $xml = [xml] $response.Substring(3)
     $version = $xml.LevelDescriptor.Version
     $buildDate = $xml.LevelDescriptor.BuildDate
