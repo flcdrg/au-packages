@@ -1,5 +1,7 @@
 import-module au
 
+. ..\_scripts\Submit-VirusTotal.ps1
+
 function global:au_SearchReplace {
     @{
         'tools\chocolateyInstall.ps1' = @{
@@ -20,7 +22,7 @@ function GetStream($download, [version] $minVersion)
         Select-Object -Last 1 | 
         ForEach-Object {
         @{ 
-            URL32 = "https://www.ubnt.com" + $_.file_path
+            URL32 = $_.file_path
             Version = $_.version
             ReleaseNotes = $_.changelog
         }
@@ -29,15 +31,12 @@ function GetStream($download, [version] $minVersion)
 
 function global:au_GetLatest {
 
-    $headers = @{
-        "accept"="application/json"
-        "X-Requested-With"="XMLHttpRequest"
-    }
-
-    $response = Invoke-RestMethod -Uri "https://www.ubnt.com/download/?platform=unifi" -Headers $headers
+    $response = Invoke-RestMethod -Uri "https://download.svc.ui.com/v1/software-downloads"
 
     $download = $response.downloads | Where-Object {
-            $_.category__slug -eq "software" `
+            $_.platform -eq "Windows" `
+            -and $_.product_lines[0] -eq "unifi" `
+            -and $_.category.slug -eq "software" `
             -and $_.filename.EndsWith(".exe") `
             -and -not ($_.version.StartsWith("v")) `
         } |
@@ -48,7 +47,7 @@ function global:au_GetLatest {
         }
     }
 
-    $uniqueVersions = $download | % {  [Version] $_.Version; } | % { "$($_.Major).$($_.Minor)" } | Sort-Object -Unique -Descending
+    $uniqueVersions = $download | ForEach-Object {  [Version] $_.Version; } | ForEach-Object { "$($_.Major).$($_.Minor)" } | Sort-Object -Unique -Descending
 
     $uniqueVersions | ForEach-Object {
         $stream = GetStream $download "$_.0.0"
@@ -59,6 +58,10 @@ function global:au_GetLatest {
     }
 
     $latest
+}
+
+function global:au_AfterUpdate ($Package) {
+    VirusTotal_AfterUpdate $Package
 }
 
 update -ChecksumFor 32

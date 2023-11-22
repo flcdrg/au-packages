@@ -8,13 +8,13 @@
     <owners>flcdrg</owners>
     <title>Ubiquiti UniFI Controller</title>
     <authors>Ubiquiti Networks Inc</authors>
-    <projectUrl>https://www.ubnt.com/download/unifi</projectUrl>
+    <projectUrl>https://www.ui.com/download/releases/network-server</projectUrl>
     <iconUrl>http://raw.githubusercontent.com/flcdrg/chocolatey-ubiquiti/master/icons/ubiquiti.png</iconUrl>
     <copyright>2017 Ubiquiti Networks, Inc</copyright>
     <licenseUrl>https://www.ui.com/eula/</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <docsUrl>https://dl.ubnt.com/guides/UniFi/UniFi_Controller_V5_UG.pdf</docsUrl>
-    <mailingListUrl>https://community.ubnt.com/t5/custom/page/page-id/Forums</mailingListUrl>
+    <mailingListUrl>https://community.ui.com/timeline</mailingListUrl>
     <tags>unifi ubiquiti wifi network admin</tags>
     <summary>Ubiquiti device management software</summary>
     <description>UniFi Network Application - software for managing and controlling the following Ubiquiti products:
