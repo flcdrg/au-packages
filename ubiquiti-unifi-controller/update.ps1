@@ -24,7 +24,7 @@ function GetStream($download, [version] $minVersion)
         @{ 
             URL32 = $_.file_path
             Version = $_.version
-            ReleaseNotes = $_.changelog
+            ReleaseNotes = $_.release_notes_url
         }
     }
 }
@@ -61,6 +61,9 @@ function global:au_GetLatest {
 }
 
 function global:au_AfterUpdate ($Package) {
+    $Package.NuspecXml.package.metadata.releaseNotes = $Latest.ReleaseNotes
+    $Package.SaveNuspec()
+
     VirusTotal_AfterUpdate $Package
 }
 
