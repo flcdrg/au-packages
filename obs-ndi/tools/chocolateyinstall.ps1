@@ -1,41 +1,38 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
+# DO NOT CHANGE THESE MANUALLY, USE update.ps1
+$url      = 'https://github.com/obs-ndi/obs-ndi/releases/download/4.13.0/obs-ndi-4.13.0-windows-x64-Installer.exe'
+$checksum = '101DC8A7E4E84DCCF2F89D3A56EEB4C18B9FE83EFF54C3A23F2D104B3545E0C5'
+
 # First, install NDI Runtime
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
-  softwareName  = 'NDI 4 Runtime'
-  fileType      = 'exe'
-  silentArgs    = "/VERYSILENT /LOG /NORESTART /SUPPRESSMSGBOXES"
-
-  validExitCodes= @(0)
-  url           = "https://ndi.palakis.fr/runtime/ndi-runtime-4.5.1-Windows.exe"
-  checksum      = 'AB9E6FE27ABD44874DA02E4E4A335883A2812A05F5AF63065E5DD53CAF7E4F64'
+  unzipLocation = $toolsDir
+  fileType      = 'EXE'
+  url           = 'http://ndi.link/NDIRedistV5'
+  softwareName  = 'NDI 5 Runtime'
+  checksum      = 'C255860560C86EDFFD77697413EE0ABB33847809E811449F790D1D00A0771CBF'
   checksumType  = 'sha256'
-  destination   = $toolsDir
+  silentArgs    = '/VERYSILENT /LOG /NORESTART /SUPPRESSMSGBOXES'
+  validExitCodes= @(0)
 }
 
 Install-ChocolateyPackage @packageArgs
 
 # Now install obs-ndi
-
-# Find install location from registry, but fall back to ProgramFiles 
-$installPath = "$ENV:ProgramFiles\obs-studio"
-$key = (Get-ItemProperty -Path 'HKLM:\SOFTWARE\WOW6432Node\OBS Studio' -ErrorAction SilentlyContinue)
-if ($key) {
-  $installPath = $key.'(default)'
-}
-
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
-
-  url           = "https://github.com/Palakis/obs-ndi/releases/download/dummy-tag-4.10.0/obs-ndi-4.10.0-Qt6-Windows.zip"
-  checksum      = 'ED52D0AF6E456D05173E90EF08B28BF87C1536A1D70A1791532EC054E7F4341F'
+  unzipLocation = $toolsDir
+  fileType      = 'EXE'
+  url           = $url
+  softwareName  = 'obs-ndi*'
+  checksum      = $checksum
   checksumType  = 'sha256'
-  UnzipLocation = $installPath
-  file          = "$toolsDir\obs-ndi.zip"
+  silentArgs    = '/VERYSILENT /LOG /NORESTART /SUPPRESSMSGBOXES'
+  validExitCodes= @(0)
 }
 
-Install-ChocolateyZipPackage @packageArgs
+Install-ChocolateyPackage @packageArgs
 
 Write-Warning "You must reboot your computer to make a new or updated NDI Runtime installation effective"
