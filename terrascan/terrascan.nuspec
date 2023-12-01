@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>terrascan</id>
-    <version>1.18.4</version>
+    <version>1.18.5</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/terrascan</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Terrascan</title>
@@ -26,14 +26,7 @@
 - Detect security vulnerabilities and compliance violations.
 - Mitigate risks before provisioning cloud native infrastructure.
 - Offers flexibility to run locally or integrate with your CI\CD.</description><releaseNotes><![CDATA[### Changelog
-* 9e99f08e 1061: generate multi-architecture (amd64, arm64) docker image (#1568)
-* 1461ae0e Bump golang.org/x/net from 0.7.0 to 0.17.0 (#1625)
-* 2efa8e52 Bump google.golang.org/grpc from 1.51.0 to 1.56.3 (#1631)
-* 20293211 CICD patch for appid (#1637)
-* 7efbb9d5 changes to make docker push internal (#1636)
-* 8bec6007 cicd deployment update (#1630)
-* 7a3779a9 fix for crash in lambda function cft yaml if code key is not present (#1644)
-* 5a4c44a0 removed image tag to remove error of docker push (#1646)
+* 791983cd Bump up the binary version from the code (#1648)
 
 ]]></releaseNotes>
     
