@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dell-system-update</id>
-    <version>2.0.2.2</version>
+    <version>2.0.2.3</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dell-system-update</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Dell EMC System Update</title>
@@ -46,7 +46,7 @@ Once DSU is installed on a system it will:
 - Microsoft Windows Server 2019 (x86_64)
 
 Supported Platforms: Dell EMC PowerEdge 12G and greater Servers.</description>
-    <releaseNotes>https://www.dell.com/support/home/en-us/drivers/DriversDetails?driverId=GG4YM</releaseNotes>
+    <releaseNotes>https://www.dell.com/support/home/en-us/drivers/DriversDetails?driverId=RPW7K</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
