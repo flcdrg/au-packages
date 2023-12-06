@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>microsoft-teams-new-bootstrapper</id>
-    <version>1.0.2329602</version>
+    <version>1.0.2333437</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/microsoft-teams-new-bootstrapper</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Microsoft Teams (new client) Bootstrapper (Machine-Wide Install)</title>
