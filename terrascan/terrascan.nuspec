@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>terrascan</id>
-    <version>1.18.5</version>
+    <version>1.18.6</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/terrascan</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Terrascan</title>
@@ -26,7 +26,7 @@
 - Detect security vulnerabilities and compliance violations.
 - Mitigate risks before provisioning cloud native infrastructure.
 - Offers flexibility to run locally or integrate with your CI\CD.</description><releaseNotes><![CDATA[### Changelog
-* 791983cd Bump up the binary version from the code (#1648)
+* 575d95bd Added feature to implement SSM parameters (#1653)
 
 ]]></releaseNotes>
     
