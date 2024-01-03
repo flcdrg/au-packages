@@ -2,9 +2,9 @@
 
 $packageName = 'lenovo-thinkvantage-system-update'
 $softwareName = 'Lenovo System Update'
-$installerType = 'MSI' # Installed as .exe, but uninstall as .MSI!
+$installerType = 'EXE'
 
-$silentArgs = '/qn /norestart'
+$silentArgs = '/VERYSILENT'
 $validExitCodes = @(0, 3010, 1605, 1614, 1641)
 if ($installerType -ne 'MSI') {
 }
