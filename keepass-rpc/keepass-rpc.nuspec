@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>keepass-rpc</id>
-    <version>1.15.1</version>
+    <version>1.16</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/keepass-rpc</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>KeePass RPC Plugin</title>
@@ -19,15 +19,11 @@
     <tags>keepass keefox keepassrpc plugin</tags>
     <summary>KeePassRPC plugin that needs to be installed inside KeePass in order for KeeFox to be able to connect your browser to your passwords</summary>
     <description>KeePassRPC plugin that needs to be installed inside KeePass in order for KeeFox to be able to connect your browser to your passwords </description>
-    <releaseNotes>- Requires KeePass 2.48+
-- Add support for new custom config format in KeePass 2.54 (fixes being unable to manage existing client connections via the GUI)
-- Improve readability on Linux (mono) dark themes
-- Prevent accidental editing of dropdown select values
-- Fix crash when pressing Del on keyboard in Form field list box with no item selected
-- Fix crashes on Mono when trying to show a message
-- Stops KeePass menus growing too large when used over an RDP connection
-
-**Full Changelog**: https://github.com/kee-org/keepassrpc/compare/v1.14.0...v1.15.1</releaseNotes>
+    <releaseNotes>* Fix bug where Username fields sometimes changes to "radio" type
+* Remove defunct Priority text box
+* Remove the context menu shortcut that set Kee home group (but could not unset it)
+* Fix incorrect minimum version metadata in PLGX (2.48 is still the minimum KeePass version)
+</releaseNotes>
     <dependencies>
       <dependency id="keepass" version="2.0" />
     </dependencies>
