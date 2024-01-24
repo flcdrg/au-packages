@@ -38,6 +38,9 @@ Note that TeamsBootstrapper.exe will cause the the latest Teams MSIX package to 
 
 The package version is based on the 'product version' property of TeamsBootstrapper.exe
 </description>
+    <dependencies>
+      <dependency id="microsoft-teams-msix" version="23320.3021.2567.4799-pre" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

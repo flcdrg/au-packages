@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>microsoft-teams-msix</id>
-    <version>23320.3021.2567.4799-pre</version>
+    <version>23320.3021.2567.4800-pre</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/microsoft-teams-msix</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Microsoft Teams MSIX files</title>
