@@ -14,8 +14,8 @@ $primaryDownloadUrl = "https://downloads.pdf-xchange.com/$filename"
 $primaryDownloadUrl64 = "https://downloads.pdf-xchange.com/$filename64"
 $url        = "https://builds-archive.tracker-software.com/$version/$filename"
 $url64      = "https://builds-archive.tracker-software.com/$version/$filename64"
-$checksum   = 'D92B4BA082DFD0644360334F1ABAD0CAC7103F9315130AC9D774A531E4E63B12'
-$checksum64 = 'A5036FACCE0AF83EED6DE75BA51ABF1FF0CE020788AAABCAEF78D85B9CE4A318'
+$checksum   = '99575D900892C905EB3E98C40A94D28B81537795400BD916A6F86D7234A1D60B'
+$checksum64 = 'ACF1306E841B4890C7522D978C2D9CDB381256D42417711E3463732C53ADC1F8'
 $lastModified32 = New-Object -TypeName DateTimeOffset 2024, 1, 9, 0, 6, 29, 0 # Last modified time corresponding to this package version
 $lastModified64 = New-Object -TypeName DateTimeOffset 2024, 1, 9, 0, 5, 44, 0 # Last modified time corresponding to this package version
 
