@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dellcommandupdate</id>
-    <version>5.2.0</version>
+    <version>5.2.0.20240212</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dellcommandupdate</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Dell Command | Update</title>
