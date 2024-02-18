@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "master" ]
+    branches: ["master"]
 
   schedule:
     - cron: "0 0 * * *"
@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
 
   build:
-    name: Build 
+    name: Build
     runs-on: windows-latest
     env:
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
@@ -33,79 +33,81 @@ jobs:
       Configuration: Release
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        repository: 'flcdrg/au-dotnet'
-        path: 'autoupdate'
-        persist-credentials: false
-      
-    - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.200
+      - uses: actions/checkout@v4
+        with:
+          repository: "flcdrg/au-dotnet"
+          path: "autoupdate"
+          persist-credentials: false
 
-    - name: Cache dependencies
-      uses: actions/cache@v4
-      with:
-        path: ${{ github.workspace }}/.nuget/packages
-        key: ${{ runner.os }}-dotnet-${{ hashFiles('autoupdate/AutoUpdate/*.csproj') }}
-        restore-keys: |
-          ${{ runner.os }}-dotnet-
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.200
 
-    - name: Restore
-      run: dotnet restore
-      working-directory: autoupdate
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/.nuget/packages
+          key: ${{ runner.os }}-dotnet-${{ hashFiles('autoupdate/AutoUpdate/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-dotnet-
 
-    - name: Build
-      run: dotnet build --no-restore
-      working-directory: autoupdate
+      - name: Restore
+        run: dotnet restore
+        working-directory: autoupdate
 
-    - name: Test
-      run: dotnet test
-      working-directory: autoupdate
+      - name: Build
+        run: dotnet build --no-restore
+        working-directory: autoupdate
 
-    - uses: actions/checkout@v4
-      with:
-        repository: 'flcdrg/chocolatey-au'
-        path: 'chocolatey-au'
-        ref: 'fix-warnings'
-        persist-credentials: false
+      - name: Test
+        run: dotnet test
+        working-directory: autoupdate
 
-    - name: Install
-      run: |
-        ./install.ps1
+      - uses: actions/checkout@v4
+        with:
+          repository: "flcdrg/chocolatey-au"
+          path: "chocolatey-au"
+          ref: "fix-warnings"
+          persist-credentials: false
 
-        Get-InstalledModule | Select-Object Name, Version, InstalledLocation
+      - name: Install
+        run: |
+          ./install.ps1
 
-        choco install vt-cli -y
-      shell: pwsh
-      working-directory: chocolatey-au
+          Get-InstalledModule | Select-Object Name, Version, InstalledLocation
 
-    - uses: actions/checkout@v4
-      with:
-        path: 'packages'
+          choco install vt-cli -y
+        shell: pwsh
+        working-directory: chocolatey-au
 
-    - name: Configure Git
-      run: |
-        git config user.email "david@gardiner.net.au"
-        git config user.name "David Gardiner"
-      working-directory: packages
+      - uses: actions/checkout@v4
+        with:
+          path: "packages"
 
-    - name: Run
-      run: |
-        dotnet run
-      working-directory: autoupdate/AutoUpdate
-      env:
-        PACKAGES_REPO: '${{ github.workspace }}/packages'
-        github_api_key: ${{ secrets.GH_API_KEY }} # GitHub API Key
-        api_key: ${{ secrets.API_KEY }} # Chocolatey API Key
-        VT_APIKEY: ${{ secrets.VT_APIKEY }} # VirusTotal API Key
+      - name: Configure Git
+        run: |
+          git config user.email "david@gardiner.net.au"
+          git config user.name "David Gardiner"
+        working-directory: packages
 
-    - name: Status
-      run: |
-        git status
+      - name: Run
+        run: |
+          dotnet run
+        working-directory: autoupdate/AutoUpdate
+        env:
+          PACKAGES_REPO: "${{ github.workspace }}/packages"
+          github_api_key: ${{ secrets.GH_API_KEY }} # GitHub API Key
+          api_key: ${{ secrets.API_KEY }} # Chocolatey API Key
+          VT_APIKEY: ${{ secrets.VT_APIKEY }} # VirusTotal API Key
 
-        git log --max-count 2 --pretty=medium
+      - name: Status
+        run: |
+          git status
 
-        Get-ChildItem -Recurse *.nupkg | Select-Object -ExpandProperty FullName
-      working-directory: packages
+          git push -q --tags
+
+          git log --max-count 2 --pretty=medium
+
+          Get-ChildItem -Recurse *.nupkg | Select-Object -ExpandProperty FullName
+        working-directory: packages
