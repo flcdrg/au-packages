@@ -68,7 +68,7 @@ jobs:
         with:
           repository: "flcdrg/chocolatey-au"
           path: "chocolatey-au"
-          ref: "fix-warnings"
+          ref: "simplify"
           persist-credentials: false
 
       - name: Install
