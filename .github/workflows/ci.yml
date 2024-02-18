@@ -105,6 +105,7 @@ jobs:
         run: |
           git status
 
+          git push
           git push -q --tags
 
           git log --max-count 2 --pretty=medium
