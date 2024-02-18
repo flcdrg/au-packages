@@ -28,26 +28,10 @@ function Send-FileToVirusTotal {
 #>
 function VirusTotal_AfterUpdate ($Package)  {
     
-    if ($Package.RemoteVersion -ne $Package.NuspecVersion) {
+    if ($Package.RemoteVersion -ne $Package.NuspecVersion -and $Package.Files) {
 
-        Get-RemoteFiles -NoSuffix
-
-        if ($Latest.FileName32) {
-            $file = [IO.Path]::Combine("tools", $Latest.FileName32)
-
+        foreach ($file in $Package.Files) {
             Send-FileToVirusTotal $file
-
-            Remove-Item $file -ErrorAction Ignore
-            $Latest.Remove("FileName32")
-        }
-
-        if ($Latest.FileName64) {
-            $file = [IO.Path]::Combine("tools", $Latest.FileName64)
-
-            Send-FileToVirusTotal $file
-    
-            Remove-Item $file -ErrorAction Ignore
-            $Latest.Remove("FileName64")
         }
     }
 }

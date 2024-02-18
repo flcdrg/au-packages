@@ -33,8 +33,4 @@ function global:au_GetLatest {
   }
 }
 
-# run the update only if this script is not sourced by the virtual package
-if ($MyInvocation.InvocationName -ne '.') {
-  [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
-  Update-Package -NoCheckUrl -NoCheckChocoVersion -NoReadme -ChecksumFor none -Force:$Force
-}
+update

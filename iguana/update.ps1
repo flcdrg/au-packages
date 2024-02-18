@@ -1,4 +1,4 @@
-. $PSScriptRoot\..\iguana.install\update.ps1
+. ..\iguana.install\update.ps1
 
 function global:au_SearchReplace {
    @{
