@@ -77,7 +77,7 @@ jobs:
 
           Get-InstalledModule | Select-Object Name, Version, InstalledLocation
 
-          choco install vt-cli -y
+          choco install vt-cli chocolatey-community-validation.extension -y
         shell: pwsh
         working-directory: chocolatey-au
 
@@ -96,7 +96,7 @@ jobs:
           dotnet run
         working-directory: autoupdate/AutoUpdate
         env:
-          PACKAGES_REPO: "${{ github.workspace }}/packages"
+          PACKAGES_REPO: "${{ github.workspace }}\\packages"
           github_api_key: ${{ secrets.GH_API_KEY }} # GitHub API Key
           api_key: ${{ secrets.API_KEY }} # Chocolatey API Key
           VT_APIKEY: ${{ secrets.VT_APIKEY }} # VirusTotal API Key
