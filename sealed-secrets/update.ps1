@@ -1,3 +1,6 @@
+# Get-ChocolateyUnzip isn't imported by AU for this package
+Import-Module $env:ChocolateyInstall\helpers\chocolateyInstaller.psm1
+
 import-module au
 
 function global:au_SearchReplace {
