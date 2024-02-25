@@ -14,7 +14,7 @@ $packageArgs = @{
   url           = $url32
   url64bit      = $url64
 
-  softwareName  = 'microsoft-teams*'
+  softwareName  = 'Microsof Teams (work or school)'
 
   checksum      = $checksum32
   checksumType  = 'sha256'
