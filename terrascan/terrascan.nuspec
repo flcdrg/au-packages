@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>terrascan</id>
-    <version>1.18.11</version>
+    <version>1.18.12</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/terrascan</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Terrascan</title>
@@ -26,7 +26,7 @@
 - Detect security vulnerabilities and compliance violations.
 - Mitigate risks before provisioning cloud native infrastructure.
 - Offers flexibility to run locally or integrate with your CI\CD.</description><releaseNotes><![CDATA[### Changelog
-* 3bf466dd Fix type mismatch error in json unmarshal for float to struct (#1660)
+* 2e75f8fd Display line numbers for cft violations (#1671)
 
 ]]></releaseNotes>
     
