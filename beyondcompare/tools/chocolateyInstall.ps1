@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$urlBase = "https://www.scootersoftware.com"
+$urlBase = "https://www.scootersoftware.com/files"
 
 $pp = Get-PackageParameters
 

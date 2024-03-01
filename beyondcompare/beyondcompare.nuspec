@@ -2,17 +2,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>4.4.7.28397</version>
+    <version>4.4.7.20240301</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
     <owners>Miguel Madero, Brendan Forster, David Gardiner</owners>
-    <projectUrl>http://scootersoftware.com/download.php</projectUrl>
+    <projectUrl>http://scootersoftware.com/download</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/flcdrg/au-packages/master/beyondcompare/icons/beyondcompare.png</iconUrl>
-    <licenseUrl>http://www.scootersoftware.com/index.php?zz=kb_licensev4</licenseUrl>
-    <docsUrl>http://www.scootersoftware.com/v4help/</docsUrl>
-    <mailingListUrl>http://www.scootersoftware.com/vbulletin/</mailingListUrl>
+    <licenseUrl>https://www.scootersoftware.com/kb/licensev4</licenseUrl>
+    <docsUrl>https://www.scootersoftware.com/v4help/</docsUrl>
+    <mailingListUrl>https://forum.scootersoftware.com/</mailingListUrl>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/beyondcompare</packageSourceUrl>
-    <copyright>© 1996-2019 Scooter Software Inc</copyright>
+    <copyright>© 1996-2023 Scooter Software Inc</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>File comparison tool</summary>
     <description>Compare files and folders using simple, powerful commands that focus on the differences you're interested in and ignore those you're not.  Merge changes, synchronize files, and generate reports.
@@ -35,10 +35,7 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 
 </description>
     <tags>compare beyondcompare beyond file diff difference trial admin</tags>
-    <releaseNotes>https://www.scootersoftware.com/download.php?zz=v4changelog</releaseNotes>
-    <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.3.0" />
-    </dependencies>
+    <releaseNotes>https://www.scootersoftware.com/download/v4changelog</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
