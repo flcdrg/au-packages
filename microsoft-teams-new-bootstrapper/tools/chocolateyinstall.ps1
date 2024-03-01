@@ -25,15 +25,27 @@ $packageArgs = @{
 
 Get-ChocolateyWebFile @packageArgs
 
-$filename = 'MSTeams.msix'
+# Teams MSIX
 
-$platformPackageName = 'microsoft-teams-msix'
+$filename = "MSTeams.msix"
+$installPath = Join-Path $toolsDir $filename
 
-$toolsDir = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
-$commonPath = $(Split-Path -parent $(Split-Path -parent $toolsDir))
-$installPath = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
+$packageArgs = @{
+  packageName   = $env:ChocolateyPackageName
+  
+  # webView2Canary
+  url           = "https://statics.teams.microsoft.com/production-windows-x86/24004.1307.2669.7070/MSTeams-x86.msix"
+  checksum      = '623647219971370D3E08D703E0A3CE197B978C221E77B108089A2A1F9E28F800'
+  checksumType  = 'sha256'
+  url64bit      = "https://statics.teams.microsoft.com/production-windows-x64/24004.1307.2669.7070/MSTeams-x64.msix"
+  checksum64    = 'ABA78B34B5E0BFD29AED18A86A926427B17127D80457C829C1512534510E7CD2'
+  checksumType64= 'sha256'
+  fileFullPath  = $installPath
+}
 
-Write-Host "Installing $platformPackageName from $installPath"
+Get-ChocolateyWebFile @packageArgs
+
+Write-Host "Installing $downloadPath with $installPath"
 & $downloadPath -p -o "$installPath"
 
 if($pp['VDI']){
