@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>mirth-administrator-launcher</id>
-    <version>1.4.1</version>
+    <version>1.4.1.20240302</version>
 	  <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/mirth-administrator-launcher</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Mirth Administrator Launcher</title>
@@ -18,7 +18,7 @@
     <description>This is a standalone application that you install on your local workstation, and allows you to remotely launch the Administrator GUI for any NextGen/Mirth Connect server you want</description>
     <releaseNotes>http://www.mirthcorp.com/community/issues/browse/MIRTH-4366?jql=project%20%3D%20MIRTH%20AND%20fixVersion%20%3D%20%22AL%201.4.1%22%20AND%20component%20%3D%20%22Administrator%20Launcher%22</releaseNotes>
     <dependencies>
-      <dependency id="mirth-administrator-launcher.install" version="[1.4.1]" />
+      <dependency id="mirth-administrator-launcher.install" version="[1.4.1.20240302]" />
     </dependencies>
   </metadata>
   <files>

@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>mirth-administrator-launcher.install</id>
-    <version>1.4.1</version>
+    <version>1.4.1.20240302</version>
 	  <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/mirth-administrator-launcher.install</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Mirth Administrator Launcher (Install)</title>
