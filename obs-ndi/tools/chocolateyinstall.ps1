@@ -4,8 +4,8 @@ $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $ndiChecksum = 'BC666D409FA6B2D81FF8650A5B92481742F5E895E4994A1A414BAC423CD8448C'
 
 # DO NOT CHANGE THESE MANUALLY, USE update.ps1
-$url      = 'https://github.com/obs-ndi/obs-ndi/releases/download/4.13.0/obs-ndi-4.13.0-windows-x64-Installer.exe'
-$checksum = '101DC8A7E4E84DCCF2F89D3A56EEB4C18B9FE83EFF54C3A23F2D104B3545E0C5'
+$url      = 'https://github.com/obs-ndi/obs-ndi/releases/download/4.13.1/obs-ndi-4.13.1-windows-x64-Installer.exe'
+$checksum = 'a73f34baea9b3739fa501b7311cd00cd24ad243755e6081c24e7996141b671ea'
 
 # First, install NDI Runtime
 $packageArgs = @{
