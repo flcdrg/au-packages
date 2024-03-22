@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$release = '19.3'
-$fullUrl = 'https://download.microsoft.com/download/7/7/3/7738e337-ed99-40ea-b8ae-f639162c83c3/SSMS-Setup-ENU.exe'
-$fullChecksum = 'AFD3A8F6AABF903845BC7866D2650C83D47F659F480BB71453F74A8DED8010F7'
+$release = '20.0'
+$fullUrl = 'https://download.microsoft.com/download/1/b/c/1bc1f462-ac3a-402d-b872-c4cae745c539/SSMS-Setup-ENU.exe'
+$fullChecksum = 'FBC7C433ED9282772D2E9B2E9FCDB10509BBD82EB80359F6C0F8289D01B38C91'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
