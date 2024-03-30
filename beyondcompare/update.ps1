@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 
 $releases = 'https://www.scootersoftware.com/download'
 
