@@ -3,7 +3,7 @@ param(
     [switch] $readVersionFromInstaller
 )
 
-import-module au
+Import-Module chocolatey-au
 
 . ..\_scripts\Submit-VirusTotal.ps1
 
