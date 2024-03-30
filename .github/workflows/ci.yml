@@ -73,7 +73,13 @@ jobs:
 
       - name: Install
         run: |
-          ./install.ps1
+          $module_name = 'Chocolatey-AU'
+
+          $module_dst  = "$Env:ProgramFiles\PowerShell\Modules\$module_name"
+
+          New-Item -ItemType Directory "$module_dst" -ErrorAction Ignore | Out-Null
+
+          Copy-Item -Recurse -Force ./src/* $module_dst -Verbose
 
           Get-InstalledModule | Select-Object Name, Version, InstalledLocation
 
