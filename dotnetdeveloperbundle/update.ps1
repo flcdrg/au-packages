@@ -1,1 +1,1 @@
-..\redgate\common.ps1 "DotNETDeveloperBundle"
+..\redgate\common.ps1 "DotNETDeveloperBundle" "dotnetdeveloperbundle"

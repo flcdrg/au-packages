@@ -30,7 +30,7 @@ function VirusTotal_AfterUpdate ($Package)  {
     
     if ($Package.RemoteVersion -ne $Package.NuspecVersion -and $Package.Files) {
 
-        foreach ($file in $Package.Files) {
+        foreach ($file in ($Package.Files | Select-Object -Unique)) {
             Send-FileToVirusTotal $file
         }
     }

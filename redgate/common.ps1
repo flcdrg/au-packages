@@ -1,5 +1,6 @@
 param(
     [string] $name,
+    [string] $packageName,
     [switch] $readVersionFromInstaller
 )
 
@@ -65,7 +66,12 @@ function global:au_GetLatest {
         $checksum = (Get-FileHash $downloadedFile -Algorithm SHA256).Hash
         Write-Verbose "$checksum"
 
-        Remove-Item $downloadedFile
+        # move downloaded file to standard location
+        $ChocolateyPackageFolder = [System.IO.Path]::GetFullPath("$Env:TEMP\chocolatey\$packageName")
+        $pkg_path = Join-Path $ChocolateyPackageFolder $lastModified.ToString("yyyy.M.d") -AdditionalChildPath Chocolatey
+        New-Item -Type Directory -Force $pkg_path | Out-Null
+
+        Move-Item -Path $downloadedFile -Destination "$pkg_path\$name.exe" -Force
 
         $Latest = @{ 
             URL32 = $downloadUrl
@@ -87,4 +93,5 @@ function global:au_AfterUpdate ($Package)  {
     VirusTotal_AfterUpdate $Package
 }
 
-update -ChecksumFor none
+# If we pass '-ChecksumFor none' then the Files array doesn't get populated
+update
