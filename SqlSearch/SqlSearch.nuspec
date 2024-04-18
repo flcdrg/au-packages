@@ -13,11 +13,22 @@
         <docsUrl>https://documentation.red-gate.com/ss3</docsUrl>
         <bugTrackerUrl>https://github.com/sumo300/chocolatey-sqlsearch/issues</bugTrackerUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
-        <description>SQL Search is a free add-in for SQL Server Management Studio that lets you quickly search for SQL across your databases.</description>
+        <description>Find SQL fast in SQL Server Management Studio and Visual Studio
+
+- Find fragments of SQL in tables, views, stored procedures, functions, jobs, and more
+- Quickly navigate to objects wherever they happen to be on a server
+- Search across multiple object types and multiple databases
+- Find all references to an object
+- Search with booleans and wildcards
+        
+#### Package updates
+
+This package is automatically updated by referencing the Red Gate download site. Should it be outdated by more than a few days please leave a comment below.
+        </description>
         <summary>Find SQL fast in SQL Server Management Studio</summary>
         <releaseNotes>https://documentation.red-gate.com/ss3/release-notes-and-other-versions</releaseNotes>
         <language>en-US</language>
-        <tags>SQL search SSMS admin</tags>
+        <tags>SQL search SSMS Visual Studio admin</tags>
     </metadata>
     <files>
         <file src="tools\chocolateyInstall.ps1" target="tools\chocolateyInstall.ps1" />

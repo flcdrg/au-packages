@@ -1,1 +1,1 @@
-..\redgate\common.ps1 "SQL_Search" "SqlSearch"
+..\redgate\common.ps1 "SQLSearch" "SqlSearch"

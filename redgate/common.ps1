@@ -89,9 +89,5 @@ function global:au_GetLatest {
     return $Latest
 }
 
-function global:au_AfterUpdate ($Package)  {
-    VirusTotal_AfterUpdate $Package
-}
-
 # If we pass '-ChecksumFor none' then the Files array doesn't get populated
 update
