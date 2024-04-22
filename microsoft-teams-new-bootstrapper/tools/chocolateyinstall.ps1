@@ -7,7 +7,7 @@ if ([Version] $osVersion -lt [version] $minimumOsVersion) {
   Write-Error "Microsoft Teams New Client requires a minimum of Windows 10 20H1 version $minimumOsVersion. You have $osVersion"
 }
 
-$checksum32 = '0B815104A2275BEBDCF0D584247F2BD22DB8118AAD1DAC171F019274C3E1C555'
+$checksum32 = '93649851051AD5B46798D4F74232E34D5EE76D001DBE7E0EF6886B600314BBA4'
 
 $downloadPath = Join-Path $toolsDir "teamsbootstrapper.exe"
 
