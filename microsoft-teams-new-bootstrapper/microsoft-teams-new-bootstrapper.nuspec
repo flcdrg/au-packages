@@ -28,6 +28,10 @@ When TeamsBootstrapper is run on a computer:
 
 Users who have installed a different Teams version will have their version replaced with the provisioned version.
 
+### Package Parameters
+
+- `/VDI` - The package will install the Teams Meeting Add-in for all users
+
 ### Package Specific
 
 Note that TeamsBootstrapper.exe will cause the the latest Teams MSIX package to be installed from Microsoft. Once Teams is installed it is self-updating. As such there's likely no need to install updates of this Chocolatey package.

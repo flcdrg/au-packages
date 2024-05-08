@@ -8,8 +8,9 @@ if ([Version] $osVersion -lt [version] $minimumOsVersion) {
 }
 
 $checksum32 = '42DAC6D247B4138AD9ED858892FB608C3A8A2FD5F49E55D61E0C3D700AA3A369'
-
 $downloadPath = Join-Path $toolsDir "teamsbootstrapper.exe"
+
+$pp = Get-PackageParameters
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
@@ -25,3 +26,17 @@ $packageArgs = @{
 Get-ChocolateyWebFile @packageArgs
 
 & $downloadPath -p
+
+if($pp['VDI']){
+  $teamsVersion = Get-AppXPackage -Name "*msteams*" | Select-Object -ExpandProperty Version
+  $meetingInstaller = "$($env:ProgramFiles)\WINDOWSAPPS\MSTEAMS_$($teamsVersion)_X64__8WEKYB3D8BBWE\MICROSOFTTEAMSMEETINGADDININSTALLER.MSI"
+  $meetingVersion = (Get-AppLockerFileInformation -Path $meetingInstaller | Select-Object -ExpandProperty Publisher | Select-Object -ExpandProperty BinaryVersion).ToString()
+  $packageArgsMeeting =@{
+    packageName  = $env:ChocolateyPackageName +"_MeetingAddIn"
+    fileType     = "msi"
+    file         = $meetingInstaller
+    SilentArgs   = "/qn /norestart ALLUSERS=1  TARGETDIR=`"$($env:ProgramFiles)\Microsoft\TeamsMeetingAdd-in\$($meetingVersion)\`" /l*v `"$($env:TEMP)\$($packageName).meetingAddin_$($meetingVersion).MsiInstall.log`""
+  }
+
+  Install-ChocolateyInstallPackage @packageArgsMeeting 
+}
