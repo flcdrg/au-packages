@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>microsoft-teams-new-bootstrapper</id>
-    <version>1.0.2402201.24004-pre</version>
+    <version>1.0.2409502.24091-pre</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/microsoft-teams-new-bootstrapper</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Microsoft Teams (new client) Bootstrapper (Machine-Wide Install) with MSIX 24004.1307.2669.7070</title>
@@ -34,8 +34,8 @@ Users who have installed a different Teams version will have their version repla
 
 ### Package Specific
 
-Bootstrapper version: 1.0.2402201
-Teams MSIX client (MSIX) version: 24004.1307.2669.7070
+Bootstrapper version: 1.0.2409502
+Teams MSIX client (MSIX) version: 24091.214.2846.1452
 
 The package version is based on the 'product version' property of TeamsBootstrapper.exe and the first component of the MSIX version.
 

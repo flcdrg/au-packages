@@ -7,11 +7,11 @@ if ([Version] $osVersion -lt [version] $minimumOsVersion) {
   Write-Error "Microsoft Teams New Client requires a minimum of Windows 10 20H1 version $minimumOsVersion. You have $osVersion"
 }
 
-$bootstrapperChecksum32 = '42DAC6D247B4138AD9ED858892FB608C3A8A2FD5F49E55D61E0C3D700AA3A369'
-$msix64url = 'https://statics.teams.microsoft.com/production-windows-x64/24004.1307.2669.7070/MSTeams-x64.msix'
-$msix64checksum = 'ABA78B34B5E0BFD29AED18A86A926427B17127D80457C829C1512534510E7CD2'
-$msix86url = 'https://statics.teams.microsoft.com/production-windows-x86/24004.1307.2669.7070/MSTeams-x86.msix'
-$msix86checksum = '623647219971370D3E08D703E0A3CE197B978C221E77B108089A2A1F9E28F800'
+$bootstrapperChecksum32 = '92C41B13A22275690500353494834C9CCDEE7DD5CE6AC22193250C38208E77A6'
+$msix64url = 'https://statics.teams.cdn.office.net/production-windows-x64/24091.214.2846.1452/MSTeams-x64.msix'
+$msix64checksum = '0483DCA84E88B9BF6D5E609D821AE06C3B6126218F3483A10F9F5769F354887F'
+$msix86url = 'https://statics.teams.cdn.office.net/production-windows-x86/24091.214.2846.1452/MSTeams-x86.msix'
+$msix86checksum = '5D9C3E8AA031979C213B0F324EB5D243ACF976EDAF8F6B7296F984F3246F14ED'
 
 
 $downloadPath = Join-Path $toolsDir "teamsbootstrapper.exe"
