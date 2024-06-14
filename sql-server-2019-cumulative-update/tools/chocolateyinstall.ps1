@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB5035123-x64.exe'
-$checksum   = '284a8582369d896f0229e8639bf21a3eb0fa354367bc9e92330b4178408ebf5c'
-$softwareName = 'Hotfix 4365 for SQL Server 2019*(KB5035123)*'
+$url        = 'https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB5037331-x64.exe'
+$checksum   = '196ddc07628722ed996a801410e1019d109a6c8c7ce8ed5bc6736d897411f1ae'
+$softwareName = 'Hotfix 4375 for SQL Server 2019*(KB5037331)*'
 
 [bool] $runningAU = (Test-Path Function:\au_GetLatest)
 
