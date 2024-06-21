@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>keepass-rpc</id>
-    <version>2.0.0</version>
+    <version>2.0.2</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/keepass-rpc</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>KeePass RPC Plugin</title>
@@ -25,7 +25,9 @@ See the corresponding beta testing announcement for more details:
 
 https://forum.kee.pm/t/keepassrpc-version-2-is-now-available-for-beta-testing/4501
 
-As usual, we will be enabling the update notifications for this version at least a week or two after we have set this as the latest stable release.</releaseNotes>
+As usual, we will be enabling the update notifications for this version at least a week or two after we have set this as the latest stable release.
+
+Changes since v2.0.0: Fixes default placeholder fallback for entries so that database-wide placeholder enablement works again. Although we still don't recommend this approach in the long-term.</releaseNotes>
     <dependencies>
       <dependency id="keepass" version="2.0" />
     </dependencies>
