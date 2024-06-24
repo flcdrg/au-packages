@@ -3,7 +3,14 @@ Import-Module chocolatey-au
 . ../_scripts/GitHub.ps1
 
 function global:au_SearchReplace {
-    @{}
+    @{
+        'tools\chocolateyInstall.ps1' = @{
+            "(^\`$url_x86\s*=\s*)('.*')"      = "`$1'$($Latest.Url32)'"
+            "(^\`$url_x64\s*=\s*)('.*')"      = "`$1'$($Latest.Url64)'"
+            "(^\`$checksum_x86\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+            "(^\`$checksum_x64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+        }
+    }
 }
 
 function global:au_GetLatest {
