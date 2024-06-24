@@ -38,4 +38,4 @@ function global:au_GetLatest {
     return $Latest
 }
 
-update -Force
+update -Force -NoReadme

@@ -1,0 +1,1 @@
+This is not the official azure-functions-core-tools package. Rather, it exists just to automatically submit the binaries for new releases to VirusTotal.
