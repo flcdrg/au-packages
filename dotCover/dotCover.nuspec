@@ -5,7 +5,7 @@
     <id>dotCover</id>
     <owners>JetBrains, flcdrg</owners>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dotCover</packageSourceUrl>
-    <version>2024.1.4</version>
+    <version>2024.2-EAP04</version>
     <title>JetBrains dotCover</title>
     <authors>JetBrains</authors>
     <projectUrl>http://www.jetbrains.com/dotcover/</projectUrl>
@@ -53,7 +53,7 @@ The following package parameters can be set:
 
     <releaseNotes>https://www.jetbrains.com/dotcover/whatsnew/</releaseNotes>
     <dependencies>
-      <dependency id="resharper-platform" version="[241.0.20240621.55537]" />
+      <dependency id="resharper-platform" version="[242.0.20240619.112055-eap04]" />
       <dependency id="dotnet4.6.1" version="4.6.01055.20170308" />
     </dependencies>
   </metadata>
