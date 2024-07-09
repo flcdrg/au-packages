@@ -16,13 +16,19 @@ $japanese = @(17, 1041)
 $chinese = @(2052)
 $version = '5.0.0.29773'
 
+# Install for all users by default
+if ($pp["CurrentUser"]) {
+    $installMode = "/CURRENTUSER"
+} else {
+    $installMode = "/ALLUSERS"
+}
+
 $packageArgs = @{
   packageName   = 'beyondcompare'
   fileType      = 'exe'
-  url           = $url
-  silentArgs = '/SP- /VERYSILENT /NORESTART'
-
-  checksum      = ''
+  url           = '' # this gets set below
+  silentArgs = "/SP- /VERYSILENT /NORESTART $InstallMode"
+  checksum      = '' # this gets set below
   checksumType  = 'sha256'
 }
 
