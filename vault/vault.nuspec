@@ -4,7 +4,7 @@
   <metadata>
     <id>vault</id>
     <title>Vault</title>
-    <version>1.17.1</version>
+    <version>1.17.2</version>
     <authors>Mitchell Hashimoto, HashiCorp</authors>
     <owners>flcdrg</owners>
     <projectUrl>https://www.vaultproject.io/</projectUrl>
@@ -32,7 +32,31 @@ The key features of Vault are:
 * **Revocation**: Vault has built-in support for secret revocation. Vault can revoke not only single secrets, but a tree of secrets, for example all secrets read by a specific user, or all secrets of a particular type. Revocation assists in key rolling as well as locking down systems in the case of an intrusion.
 
 For more information, see the [introduction section](https://www.vaultproject.io/intro) of the Vault website.
-    </description><releaseNotes><![CDATA[]]></releaseNotes>
+    </description><releaseNotes><![CDATA[### 1.17.2
+#### July 10, 2024
+
+CHANGES:
+
+* core: Bump Go version to 1.22.5
+* secrets/azure: Update plugin to v0.19.2 [[GH-27652](https://github.com/hashicorp/vault/pull/27652)]
+
+FEATURES:
+
+* **AWS secrets engine STS session tags support**: Adds support for setting STS
+session tags when generating temporary credentials using the AWS secrets
+engine. [[GH-27620](https://github.com/hashicorp/vault/pull/27620)]
+
+BUG FIXES:
+
+* cli: Fixed issue with `vault hcp connect` where HCP resources with uppercase letters were inaccessible when entering the correct project name. [[GH-27694](https://github.com/hashicorp/vault/pull/27694)]
+* core (enterprise): Fix HTTP redirects in namespaces to use the correct path and (in the case of event subscriptions) the correct URI scheme. [[GH-27660](https://github.com/hashicorp/vault/pull/27660)]
+* core/config: fix issue when using `proxy_protocol_behavior` with `deny_unauthorized`, 
+which causes the Vault TCP listener to close after receiving an untrusted upstream proxy connection. [[GH-27589](https://github.com/hashicorp/vault/pull/27589)]
+* core: Fixed an issue with performance standbys not being able to handle rotate root requests. [[GH-27631](https://github.com/hashicorp/vault/pull/27631)]
+* secrets/transit (enterprise): Fix an issue that caused input data be returned as part of generated CMAC values.
+* ui: Display an error and force a timeout when TOTP passcode is incorrect [[GH-27574](https://github.com/hashicorp/vault/pull/27574)]
+* ui: Ensure token expired banner displays when batch token expires [[GH-27479](https://github.com/hashicorp/vault/pull/27479)]
+]]></releaseNotes>
     
   </metadata>
   <files>
