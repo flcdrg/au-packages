@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>beyondcompare-integration</id>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/beyondcompare-integration</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Beyond Compare Integration</title>
@@ -35,7 +35,7 @@
 	Check location of bcomp.exe
 	</releaseNotes>
     <dependencies>
-      <dependency id="beyondcompare" version="4.0.0" />
+      <dependency id="beyondcompare" version="[4.0.0,5.0)" />
     </dependencies>
 
   </metadata>
