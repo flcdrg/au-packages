@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>5.0.0.29773</version>
+    <version>5.0.1.29877</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
     <owners>flcdrg</owners>
