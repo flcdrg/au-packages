@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://s3.amazonaws.com/downloads.mirthcorp.com/connect/4.4.2.b326/mirthconnect-4.4.2.b326-windows-x32.exe'
-$url64      = 'https://s3.amazonaws.com/downloads.mirthcorp.com/connect/4.4.2.b326/mirthconnect-4.4.2.b326-windows-x64.exe'
-$checksum   = 'e01732bab9766e985156d05e38290dd3a6e3f5293e366d5878362c7e9ce2b5b0'
-$checksum64 = '415fc52948df4d64296bf3b89b47379ee4766fabc0fc2db357c9b1698a45a83d'
+$url        = 'https://s3.amazonaws.com/downloads.mirthcorp.com/connect/4.5.1.b332/mirthconnect-4.5.1.b332-windows-x32.exe'
+$url64      = 'https://s3.amazonaws.com/downloads.mirthcorp.com/connect/4.5.1.b332/mirthconnect-4.5.1.b332-windows-x64.exe'
+$checksum   = 'b07683ed590d831156733b75bfce2d3eeea5a3ce34d527e4145078d5e7ee5c81'
+$checksum64 = '09d6f4d42e3aab5b32a0ac6112f504dca5f0cf18f6eadaa375d1d3425ef1c13d'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
