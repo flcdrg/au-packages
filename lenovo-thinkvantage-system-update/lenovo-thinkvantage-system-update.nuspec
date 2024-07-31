@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>lenovo-thinkvantage-system-update</id>
-    <version>5.08.02.25</version>
+    <version>5.08.03.59</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/lenovo-thinkvantage-system-update</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Lenovo System Update</title>
@@ -52,7 +52,7 @@ The following operating system are supported:
 
 This package is automatically updated by referencing the data feed provided by Lenovo. Should it be outdated by more than a few days please leave a comment below.
 	</description>
-    <releaseNotes>12th Sep 2023 release - https://download.lenovo.com/pccbbs/thinkvantage_en/system_update_5.08.02.25.txt</releaseNotes>
+    <releaseNotes>30 Jul 2024 release - https://download.lenovo.com/pccbbs/thinkvantage_en/system_update_5.08.03.59.txt</releaseNotes>
     <dependencies>
       <dependency id="dotnet4.5.2" version="4.5.2.20140902" />
     </dependencies>
