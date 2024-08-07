@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dellcommandupdate-uwp</id>
-    <version>5.3.0</version>
+    <version>5.4.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dellcommandupdate-uwp</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Dell Command | Update for Windows 10 (UWP)</title>
@@ -33,7 +33,7 @@ This UWP package provides the Dell Command | Update Application and is supported
 
 This package is automatically updated by referencing the data feed provided by Dell. Should it be outdated by more than a few days please leave a comment below.
  </description>
- <releaseNotes>https://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=P83K5</releaseNotes>
+ <releaseNotes>https://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=9M35M</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
