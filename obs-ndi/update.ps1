@@ -7,7 +7,7 @@ param (
 
 $ErrorActionPreference = 'Stop'
 
-$obsNdiUrl = 'https://api.github.com/repos/obs-ndi/obs-ndi/releases/latest'
+$obsNdiUrl = 'https://api.github.com/repos/DistroAV/DistroAV/releases/latest'
 
 function global:au_BeforeUpdate {
   $Latest.Checksum32 = Get-RemoteChecksum -Url $Latest.Url32 -Algorithm 'SHA256'
