@@ -4,17 +4,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>obs-ndi</id>
-    <version>4.13.1</version>
+    <version>4.14.1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/obs-ndi</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>NewTek NDI integration for OBS Studio</title>
     <authors>Stéphane Lepin</authors>
-    <projectUrl>https://github.com/obs-ndi/obs-ndi</projectUrl>
+    <projectUrl>https://github.com/DistroAV/DistroAV</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/aeliussaionji/chocopkgs@979a823c98cedde055c6004aebfc6d8a7bdef796/icons/obs-studio.png</iconUrl>
-    <licenseUrl>https://raw.githubusercontent.com/obs-ndi/obs-ndi/master/LICENSE</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/DistroAV/DistroAV/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/obs-ndi/obs-ndi</projectSourceUrl>
-    <bugTrackerUrl>https://github.com/obs-ndi/obs-ndi/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/DistroAV/DistroAV</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/DistroAV/DistroAV/issues</bugTrackerUrl>
     <tags>obs obs-studio ndi newtek</tags>
     <summary>NewTek NDI integration for OBS Studio</summary>
     <description>Network A/V in OBS Studio with NewTek's NDI technology.
@@ -24,7 +24,7 @@
 - NDI Source : receive NDI video and audio in OBS
 - NDI Output : transmit video and audio from OBS to NDI
 - NDI Filter (a.k.a NDI Dedicated Output) : transmit a single source or scene to NDI</description>
-    <releaseNotes>This release is for OBS 30.0.0 or above. It is not a feature release, it simply provides updated binaries to support the changes made in OBS 30</releaseNotes>
+    <releaseNotes>https://github.com/DistroAV/DistroAV/releases/tag/4.14.1</releaseNotes>
     <dependencies>
       <dependency id="obs-studio" version="30.0" />
     </dependencies>

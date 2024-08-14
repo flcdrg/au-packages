@@ -1,19 +1,19 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$ndiChecksum = 'BC666D409FA6B2D81FF8650A5B92481742F5E895E4994A1A414BAC423CD8448C'
+$ndiChecksum = '93BAED79F27203C61A090093BD4A1BAFBB606C6A8E768D9DEA650AD23B7BDF71'
 
 # DO NOT CHANGE THESE MANUALLY, USE update.ps1
-$url      = 'https://github.com/obs-ndi/obs-ndi/releases/download/4.13.1/obs-ndi-4.13.1-windows-x64-Installer.exe'
-$checksum = 'a73f34baea9b3739fa501b7311cd00cd24ad243755e6081c24e7996141b671ea'
+$url      = 'https://github.com/DistroAV/DistroAV/releases/download/4.14.1/obs-ndi-4.14.1-windows-x64-Installer.exe'
+$checksum = 'df272bd6efc3dca9e87998a6506ed55bc650aafbf9b61ac67b71d97a54d559ab'
 
 # First, install NDI Runtime
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   unzipLocation = $toolsDir
   fileType      = 'EXE'
-  url           = 'http://ndi.link/NDIRedistV5'
-  softwareName  = 'NDI 5 Runtime'
+  url           = 'http://ndi.link/NDIRedistV6'
+  softwareName  = 'NDI 6 Runtime'
   checksum      = $ndiChecksum
   checksumType  = 'sha256'
   silentArgs    = '/VERYSILENT /LOG /NORESTART /SUPPRESSMSGBOXES'

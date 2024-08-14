@@ -1,9 +1,4 @@
-#Requires -Version 5.0
-#Requires -Modules AU
-[cmdletbinding()]
-param (
-  [switch]$Force
-)
+Import-Module chocolatey-au
 
 $ErrorActionPreference = 'Stop'
 
