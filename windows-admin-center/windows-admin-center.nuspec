@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>windows-admin-center</id>
-    <version>1.5.19713.0</version>
+    <version>1.5.24289.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/windows-admin-center</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Windows Admin Center (2311)</title>
