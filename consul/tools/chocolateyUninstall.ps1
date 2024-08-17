@@ -1,3 +1,7 @@
+if ($Env:CONSUL_HTTP_ADDR -ne "") {
+	Uninstall-ChocolateyEnvironmentVariable "CONSUL_HTTP_ADDR"
+}
+
 $service = Get-Service "consul" -ErrorAction SilentlyContinue
 
 if ($service) {

@@ -12,6 +12,10 @@ Get-ChocolateyUnzip `
   -fileFullPath64 $(Join-Path $binariesPath "consul_$($Env:ChocolateyPackageVersion)_windows_amd64.zip") `
   -destination "$toolsPath"
 
+if ($packageParameters["apiaddr"] -ne "") {
+  Install-ChocolateyEnvironmentVariable "CONSUL_HTTP_ADDR" $packageParameters["apiaddr"]
+}
+
 # Default to install with Windows service
 if (-not ($packageParameters["noservice"])) {
   $serviceName = "consul"
