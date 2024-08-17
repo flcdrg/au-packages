@@ -21,7 +21,7 @@ Uses NSSM as the service wrapper. More info at: https://nssm.cc/
 The package parameters can be set - 
 
  * `/noservice` - Disables installation of Windows service
- * `/apiaddr` - Sets environment variable `CONSUL_HTTP_ADDRESS` for easy execute commands on remote agent
+ * `/apiaddr` - Sets environment variable `CONSUL_HTTP_ADDR` for easy execute commands on remote agent
 
 These parameters can be passed to the installer with the use of `--params`.
 For example: `--params="'/noservice /apiaddr=http://10.0.0.1:8500'"`.

@@ -2,7 +2,7 @@
 $toolsPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $packageParameters = Get-PackageParameters
 
-# Download and unzip consul=
+# Download and unzip consul
 $package = @{
   PackageName   = 'consul'
   Url           = 'https://releases.hashicorp.com/consul/1.19.1/consul_1.19.1_windows_386.zip'
@@ -14,7 +14,7 @@ $package = @{
 }
 Install-ChocolateyZipPackage @package
 
-# Install Env CONSUL_HTTP_ADDR if specified
+# Install Env CONSUL_HTTP_ADDR
 if ($packageParameters["apiaddr"] -ne "") {
   Install-ChocolateyEnvironmentVariable "CONSUL_HTTP_ADDR" $packageParameters["apiaddr"]
 }

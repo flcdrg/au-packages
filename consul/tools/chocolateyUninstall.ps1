@@ -1,4 +1,4 @@
-if ($Env:CONSUL_HTTP_ADDR -ne "") {
+if (Test-Path env:CONSUL_HTTP_ADDR) {
 	Uninstall-ChocolateyEnvironmentVariable "CONSUL_HTTP_ADDR"
 }
 
