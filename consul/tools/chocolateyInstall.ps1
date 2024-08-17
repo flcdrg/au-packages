@@ -1,17 +1,20 @@
-if (Test-Path Function:\au_GetLatest) {
-  return
-}
-
-# Defaults
+﻿# Defaults
 $toolsPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $packageParameters = Get-PackageParameters
 
-# Unzip and move Consul
-Get-ChocolateyUnzip `
-  -fileFullPath $(Join-Path $binariesPath "consul_$($Env:ChocolateyPackageVersion)_windows_386.zip") `
-  -fileFullPath64 $(Join-Path $binariesPath "consul_$($Env:ChocolateyPackageVersion)_windows_amd64.zip") `
-  -destination "$toolsPath"
+# Download and unzip consul=
+$package = @{
+  PackageName   = 'consul'
+  Url           = 'https://releases.hashicorp.com/consul/1.19.1/consul_1.19.1_windows_386.zip'
+  Url64bit      = 'https://releases.hashicorp.com/consul/1.19.1/consul_1.19.1_windows_amd64.zip'
+  UnzipLocation = $toolsPath
+  Checksum      = '5e6cc24d3219c1c331f9b39ade2961b9948c86e254a214751b921b4027f168a5'
+  Checksum64    = 'a33bed52d6004c956b5b9a1fa6659477a32db14a07d37425f9ed96a6b1eaeae2'
+  ChecksumType  = 'sha256'
+}
+Install-ChocolateyZipPackage @package
 
+# Install Env CONSUL_HTTP_ADDR if specified
 if ($packageParameters["apiaddr"] -ne "") {
   Install-ChocolateyEnvironmentVariable "CONSUL_HTTP_ADDR" $packageParameters["apiaddr"]
 }
