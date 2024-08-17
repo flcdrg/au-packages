@@ -32,9 +32,9 @@ function global:au_GetLatest {
     }
 
     $Latest = @{
-        Version = $version
-        Url32 = "https://releases.hashicorp.com/consul/$version/consul_$($version)_windows_386.zip"
-        Url64 = "https://releases.hashicorp.com/consul/$version/consul_$($version)_windows_amd64.zip"
+        Version      = $version
+        Url32        = "https://releases.hashicorp.com/consul/$version/consul_$($version)_windows_386.zip"
+        Url64        = "https://releases.hashicorp.com/consul/$version/consul_$($version)_windows_amd64.zip"
         ReleaseNotes = $release.body.Replace("# ", "## ") # Increase heading levels
     }
     return $Latest

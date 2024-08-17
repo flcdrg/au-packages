@@ -60,13 +60,13 @@ if (-not ($packageParameters["noservice"])) {
   $service = Get-Service $serviceName -ErrorAction SilentlyContinue
   if ($service) {
     Write-Host "Uninstalling existing service"
-    if($service.Status -ne "Stopped" -and $service.Status -ne "Stopping") {
+    if ($service.Status -ne "Stopped" -and $service.Status -ne "Stopping") {
       Write-Host "Stopping consul process ..."
       $service.Stop();
     }
 
     $service.WaitForStatus("Stopped", (New-TimeSpan -Minutes 1));
-    if($service.Status -ne "Stopped") {
+    if ($service.Status -ne "Stopped") {
       throw "$serviceName could not be stopped within the allotted timespan.  Stop the service and try again."
     }
 
@@ -105,7 +105,7 @@ if (-not ($packageParameters["noservice"])) {
   Write-Verbose "Stop service"
   # Let this call to Get-Service throw if the service does not exist
   $service = Get-Service $serviceName
-  if($service.Status -ne "Stopped" -and $service.Status -ne "Stopping") {
+  if ($service.Status -ne "Stopped" -and $service.Status -ne "Stopping") {
     $service.Stop()
   }
 
