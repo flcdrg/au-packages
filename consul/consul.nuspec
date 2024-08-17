@@ -18,9 +18,18 @@ Consul is a tool for service discovery and configuration. Consul is distributed,
 Uses NSSM as the service wrapper. More info at: https://nssm.cc/
 
 #### Package Parameters
-The package parameters can be set - https://www.consul.io/docs/agent/options.html
-These parameters can be passed to the installer with the use of `-params`.
-For example: `-params '-config-file="%PROGRAMDATA%\consul\dsc-config\default.json"'`.
+The package parameters can be set - 
+
+ * `/noservice` - Disables installation of Windows service
+
+These parameters can be passed to the installer with the use of `--params`.
+For example: `--params="'/noservice'"`.
+
+#### Installer Arguments
+Consul agent runtime options can also be set via `--ia`: https://developer.hashicorp.com/consul/docs/agent/config/cli-flags
+
+For example: `--ia='-config-file ""%PROGRAMDATA%\consul\dsc-config\default.json/"" -client 10.0.0.1'`
+Or better, drop a `config.hcl` into `%PROGRAMDATA%\consul\config` with your configuration.
     </description><releaseNotes><![CDATA[### 1.19.1 (July 11, 2024)
 
 SECURITY:
