@@ -1,14 +1,17 @@
 Import-Module chocolatey-au
 
 function global:au_SearchReplace {
-    @{ }
+    @{
+        'tools\chocolateyinstall.ps1' = @{
+            "(\t*Url\s*=\s*)('.*')"        = "`$1'$($Latest.Url32)'"
+            "(\t*Url64bit\s*=\s*)('.*')"   = "`$1'$($Latest.Url64)'"
+            "(\t*Checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum32)'"
+            "(\t*Checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+        }
+    }
 }
 
 . ../_scripts/GitHub.ps1
-
-function global:au_BeforeUpdate() {
-    Get-RemoteFiles -Purge -NoSuffix
-}
 
 function global:au_GetLatest {
     # This repo has releases for the cli tool as well as VS Code vsix
@@ -25,9 +28,9 @@ function global:au_GetLatest {
     }
 
     $Latest = @{
-        Version = $version
-        Url32 = "https://releases.hashicorp.com/consul/$version/consul_$($version)_windows_386.zip"
-        Url64 = "https://releases.hashicorp.com/consul/$version/consul_$($version)_windows_amd64.zip"
+        Version      = $version
+        Url32        = "https://releases.hashicorp.com/consul/$version/consul_$($version)_windows_386.zip"
+        Url64        = "https://releases.hashicorp.com/consul/$version/consul_$($version)_windows_amd64.zip"
         ReleaseNotes = $release.body.Replace("# ", "## ") # Increase heading levels
     }
     return $Latest
