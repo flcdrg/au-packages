@@ -13,10 +13,6 @@ function global:au_SearchReplace {
 
 . ../_scripts/GitHub.ps1
 
-function global:au_BeforeUpdate() {
-
-}
-
 function global:au_GetLatest {
     # This repo has releases for the cli tool as well as VS Code vsix
     $release = Get-GitHubLatestRelease "hashicorp/consul"
