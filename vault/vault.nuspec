@@ -4,7 +4,7 @@
   <metadata>
     <id>vault</id>
     <title>Vault</title>
-    <version>1.17.4</version>
+    <version>1.17.5</version>
     <authors>Mitchell Hashimoto, HashiCorp</authors>
     <owners>flcdrg</owners>
     <projectUrl>https://www.vaultproject.io/</projectUrl>
@@ -32,33 +32,7 @@ The key features of Vault are:
 * **Revocation**: Vault has built-in support for secret revocation. Vault can revoke not only single secrets, but a tree of secrets, for example all secrets read by a specific user, or all secrets of a particular type. Revocation assists in key rolling as well as locking down systems in the case of an intrusion.
 
 For more information, see the [introduction section](https://www.vaultproject.io/intro) of the Vault website.
-    </description><releaseNotes><![CDATA[### 1.17.4
-#### August 29, 2024
-
-CHANGES:
-
-* activity (enterprise): filter all fields in client count responses by the request namespace [[GH-27790](https://github.com/hashicorp/vault/pull/27790)]
-* core: Bump Go version to 1.22.6
-* secrets/terraform: Update plugin to v0.9.0 [[GH-28016](https://github.com/hashicorp/vault/pull/28016)]
-
-IMPROVEMENTS:
-
-* activity log: Changes how new client counts in the current month are estimated, in order to return more
-visibly sensible totals. [[GH-27547](https://github.com/hashicorp/vault/pull/27547)]
-* activity: `/sys/internal/counters/activity` will now include a warning if the specified usage period contains estimated client counts. [[GH-28068](https://github.com/hashicorp/vault/pull/28068)]
-* audit: Adds TRACE logging to log request/response under certain circumstances, and further improvements to the audit subsystem. [[GH-28056](https://github.com/hashicorp/vault/pull/28056)]
-* cli: `vault operator usage` will now include a warning if the specified usage period contains estimated client counts. [[GH-28068](https://github.com/hashicorp/vault/pull/28068)]
-* core/activity: Ensure client count queries that include the current month return consistent results by sorting the clients before performing estimation [[GH-28062](https://github.com/hashicorp/vault/pull/28062)]
-* raft-snapshot (enterprise): add support for managed identity credentials for azure snapshots
-
-BUG FIXES:
-
-* activity: The sys/internal/counters/activity endpoint will return current month data when the end_date parameter is set to a future date. [[GH-28042](https://github.com/hashicorp/vault/pull/28042)]
-* auth/aws: fixes an issue where not supplying an external id was interpreted as an empty external id [[GH-27858](https://github.com/hashicorp/vault/pull/27858)]
-* command: The `vault secrets move` and `vault auth move` command will no longer attempt to write to storage on performance standby nodes. [[GH-28059](https://github.com/hashicorp/vault/pull/28059)]
-* core (enterprise): Fix deletion of MFA login-enforcement configurations on standby nodes
-* secrets/database: Skip connection verification on reading existing DB connection configuration [[GH-28139](https://github.com/hashicorp/vault/pull/28139)]
-* ui: fixes toast (flash) alert message saying "created" when deleting a kv v2 secret [[GH-28093](https://github.com/hashicorp/vault/pull/28093)]]]></releaseNotes>
+    </description><releaseNotes><![CDATA[]]></releaseNotes>
     
   </metadata>
   <files>
