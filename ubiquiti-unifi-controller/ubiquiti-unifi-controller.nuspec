@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>ubiquiti-unifi-controller</id>
-    <version>8.4.59</version>
+    <version>8.4.62</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/ubiquiti-unifi-controller</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Ubiquiti UniFI Controller</title>
@@ -29,7 +29,7 @@ From v7.3.76 onwards the software requires Java 11 (Java 12 and later are not ye
 
 Due to the way this package is generated, package versions prior to 7.3.76 but published after 18-Dec-2022 will also be affected by this change. Consult the release notes for your package to confirm which Java runtime version is required.
     </description>
-    <releaseNotes>https://community.ui.com/releases/r/network/8.4.59</releaseNotes>
+    <releaseNotes>https://community.ui.com/releases/r/network/8.4.62</releaseNotes>
     <dependencies>
       <dependency id="autohotkey.portable" version="1.1" />
     </dependencies>
