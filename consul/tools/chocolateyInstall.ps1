@@ -27,7 +27,6 @@ if (-not ($packageParameters["noservice"])) {
   $serviceLogDirectory = "$serviceInstallationDirectory\logs"
   $serviceConfigDirectory = "$serviceInstallationDirectory\config"
   $serviceDataDirectory = "$serviceInstallationDirectory\data"
-  $packageParameters = $env:chocolateyPackageParameters
 
   # Create Service Directories
   Write-Host "Creating $serviceLogDirectory"
@@ -71,9 +70,11 @@ if (-not ($packageParameters["noservice"])) {
     $service.delete() | Out-Null
   }
 
+  $serviceArgs = $packageParameters["agentargs"]
+  $serviceArgs = "agent -ui -config-dir=$serviceConfigDirectory -data-dir=$serviceDataDirectory $serviceArgs"
   Write-Host "Installing service: $serviceName"
   # Install the service
-  & $wrapperExe install $serviceName $(Join-Path $toolsPath "consul.exe") "agent -ui -config-dir=$serviceConfigDirectory -data-dir=$serviceDataDirectory $packageParameters" | Out-Null
+  & $wrapperExe install $serviceName $(Join-Path $toolsPath "consul.exe") $serviceArgs | Out-Null
   & $wrapperExe set $serviceName AppEnvironmentExtra GOMAXPROCS=$env:NUMBER_OF_PROCESSORS | Out-Null
   & $wrapperExe set $serviceName ObjectName NetworkService | Out-Null
   & $wrapperExe set $serviceName AppStdout "$serviceLogDirectory\consul-output.log" | Out-Null
