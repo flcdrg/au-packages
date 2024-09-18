@@ -18,3 +18,11 @@ $packageArgs = @{
 }
 
 Install-ChocolateyPackage @packageArgs
+
+# Remove desktop shortcut (unfortunately there is no way to disable desktop icon in installer)
+$pp = Get-PackageParameters
+
+if ($pp['RemoveDesktopShortcut']) {
+  $sharedDesktop = [System.Environment]::GetFolderPath([Environment+SpecialFolder]::CommonDesktopDirectory)
+  Remove-Item "$sharedDesktop\Dell Command Configure Wizard.lnk" -Force -ErrorAction SilentlyContinue
+}

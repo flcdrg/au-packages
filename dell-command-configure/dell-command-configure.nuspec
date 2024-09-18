@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dell-command-configure</id>
-    <version>4.12.0</version>
+    <version>4.12.0.20240918</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dell-command-configure</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Dell Command | Configure (Install)</title>
@@ -24,6 +24,12 @@ Dell Command | Configure supports the following Windows operating systems:
 - Windows 11
 - Windows 10
 - Windows Preinstallation Environment (Windows PE)
+
+#### Package parameters
+
+- '/RemoveDesktopShortcut' - Remove the desktop shortcut
+
+Example: `choco install dell-command-configure --params="'/RemoveDesktopShortcut'"`
 
 #### Package updates
 
