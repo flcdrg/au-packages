@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>PDFXchangePro</id>
-    <version>10.4.0.388</version>
+    <version>10.4.1.389</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/PDFXchangePro</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>PDF-XChange Pro</title>
