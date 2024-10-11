@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>microsoft-teams.install</id>
-    <version>1.7.00.26062</version>
+    <version>1.7.00.27757</version>
     <owners>flcdrg</owners>
     <title>Microsoft Teams Classic Desktop App (Machine-Wide Install)</title>
     <authors>Microsoft Corporation</authors>
