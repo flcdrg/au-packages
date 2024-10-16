@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>consul</id>
-    <version>1.19.2</version>
+    <version>1.20.0</version>
     <title>Consul</title>
     <authors>Mitchell Hashimoto, Armon Dadgar, HashiCorp</authors>
     <owners>cleung2010, flcdrg</owners>
@@ -30,19 +30,36 @@ For example:
  * `--params="'/agentargs=""-config-file %PROGRAMDATA%\consul\dsc-config\default.json -client 10.0.0.1""'"` (be cautious of quotes)
 
 For setting Consul agent CLI options, it is better dropping a `config.hcl` into `%PROGRAMDATA%\consul\config` instead of setting them with package parameters.
-    </description><releaseNotes><![CDATA[### 1.19.2 (August 26, 2024)
+    </description><releaseNotes><![CDATA[### 1.20.0 (October 14, 2024)
 
 SECURITY:
 
-* ui: Upgrade modules with d3-color as a dependency to address denial of service issue in d3-color < 3.1.0 [[GH-21588](https://github.com/hashicorp/consul/issues/21588)]
+* Explicitly set 'Content-Type' header to mitigate XSS vulnerability. [[GH-21704](https://github.com/hashicorp/consul/issues/21704)]
+* Implement HTML sanitization for user-generated content to prevent XSS attacks in the UI. [[GH-21711](https://github.com/hashicorp/consul/issues/21711)]
+* UI: Remove codemirror linting due to package dependency [[GH-21726](https://github.com/hashicorp/consul/issues/21726)]
+* Upgrade Go to use 1.22.7. This addresses CVE 
+[CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155) [[GH-21705](https://github.com/hashicorp/consul/issues/21705)]
+* Upgrade to support aws/aws-sdk-go `v1.55.5 or higher`. This resolves CVEs
+[CVE-2020-8911](https://nvd.nist.gov/vuln/detail/cve-2020-8911) and 
+[CVE-2020-8912](https://nvd.nist.gov/vuln/detail/cve-2020-8912). [[GH-21684](https://github.com/hashicorp/consul/issues/21684)]
+* ui: Pin a newer resolution of Braces [[GH-21710](https://github.com/hashicorp/consul/issues/21710)]
+* ui: Pin a newer resolution of Codemirror [[GH-21715](https://github.com/hashicorp/consul/issues/21715)]
+* ui: Pin a newer resolution of Markdown-it [[GH-21717](https://github.com/hashicorp/consul/issues/21717)]
+* ui: Pin a newer resolution of ansi-html [[GH-21735](https://github.com/hashicorp/consul/issues/21735)]
+
+FEATURES:
+
+* grafana: added the dashboards service-to-service dashboard, service dashboard, and consul dataplane dashboard [[GH-21806](https://github.com/hashicorp/consul/issues/21806)]
+* server: remove v2 tenancy, catalog, and mesh experiments [[GH-21592](https://github.com/hashicorp/consul/issues/21592)]
 
 IMPROVEMENTS:
 
-* Use Envoy's default for a route's validate_clusters option, which is false. This fixes a case where non-existent clusters could cause a route to no longer route to any of its backends, including existing ones. [[GH-21587](https://github.com/hashicorp/consul/issues/21587)]
+* security: upgrade ubi base image to 9.4 [[GH-21750](https://github.com/hashicorp/consul/issues/21750)]
+* connect: Add Envoy 1.31 and 1.30 to support matrix [[GH-21616](https://github.com/hashicorp/consul/issues/21616)]
 
 BUG FIXES:
 
-* api-gateway: **(Enterprise only)** ensure clusters are properly created for JWT providers with a remote URI for the JWKS endpoint [[GH-21604](https://github.com/hashicorp/consul/issues/21604)]
+* jwt-provider: change dns lookup family from the default of AUTO which would prefer ipv6 to ALL if LOGICAL_DNS is used or PREFER_IPV4 if STRICT_DNS is used to gracefully handle transitions to ipv6. [[GH-21703](https://github.com/hashicorp/consul/issues/21703)]
 
 ]]></releaseNotes>
     <summary>Consul is a tool for service discovery, monitoring and configuration.</summary>
