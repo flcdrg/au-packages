@@ -4,8 +4,8 @@ $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $ndiChecksum = '93BAED79F27203C61A090093BD4A1BAFBB606C6A8E768D9DEA650AD23B7BDF71'
 
 # DO NOT CHANGE THESE MANUALLY, USE update.ps1
-$url      = 'https://github.com/DistroAV/DistroAV/releases/download/4.14.1/obs-ndi-4.14.1-windows-x64-Installer.exe'
-$checksum = 'df272bd6efc3dca9e87998a6506ed55bc650aafbf9b61ac67b71d97a54d559ab'
+$url      = 'https://github.com/DistroAV/DistroAV/releases/download/6.0.0/distroav-6.0.0-windows-x64-Installer.exe'
+$checksum = '9a57af278fbffc348ade7659289ab9cb0a62c7233863bf5a29f6d2949df5f0f1'
 
 # First, install NDI Runtime
 $packageArgs = @{
