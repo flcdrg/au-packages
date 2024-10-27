@@ -4,7 +4,7 @@ $platformPackageName = 'resharper-platform'
 $packageName = 'dotUltimate'
 $scriptPath = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 $commonPath = $(Split-Path -parent $(Split-Path -parent $scriptPath))
-$filename = 'JetBrains.dotUltimate.2024.2.7.exe'
+$filename = 'JetBrains.dotUltimate.2024.3.EAP5.Checked.exe'
 $installPath = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
 
 $silentArgs = '/Silent=True /SpecificProductNamesToRemove=* /VsVersion=* /ReSharper9PlusMsi=True'
