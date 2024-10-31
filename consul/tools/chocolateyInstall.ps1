@@ -5,11 +5,11 @@ $packageParameters = Get-PackageParameters
 # Download and unzip consul
 $package = @{
   PackageName   = 'consul'
-  Url           = 'https://releases.hashicorp.com/consul/1.20.0/consul_1.20.0_windows_386.zip'
-  Url64bit      = 'https://releases.hashicorp.com/consul/1.20.0/consul_1.20.0_windows_amd64.zip'
+  Url           = 'https://releases.hashicorp.com/consul/1.20.1/consul_1.20.1_windows_386.zip'
+  Url64bit      = 'https://releases.hashicorp.com/consul/1.20.1/consul_1.20.1_windows_amd64.zip'
   UnzipLocation = $toolsPath
-  Checksum      = 'c450a44852c39091f8df2f20b26798883cb8f3c0badf44b6185c5810a0f38bef'
-  Checksum64    = '96249ae33372a76aed411afba52c1f228a102f8b9d72eae2a341c732856afacc'
+  Checksum      = 'b0a4f5bb78b4789e8a96222919c676397c8946d80f03c8349ef5e86786635bbf'
+  Checksum64    = '9b48a9404997d2b159ca5e5c6be257bfc5e8a46b0f157c50ae1d506782009024'
   ChecksumType  = 'sha256'
 }
 Install-ChocolateyZipPackage @package
