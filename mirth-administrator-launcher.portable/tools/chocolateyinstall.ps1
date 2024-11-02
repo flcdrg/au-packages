@@ -6,11 +6,11 @@ $packageArgs = @{
   fileType      = 'zip'
   
   validExitCodes= @(0)
-  url           = "https://s3.us-east-1.amazonaws.com/downloads.mirthcorp.com/connect-client-launcher/mirth-administrator-launcher-1.4.1-windows-x32.zip"
-  checksum      = '59A7DF44694F91943977D35AE0F3AF483A13F924A3EA77EF663B8D7343DED4FD'
+  url           = "https://s3.amazonaws.com/downloads.mirthcorp.com/connect-client-launcher/mirth-administrator-launcher-latest-windows.zip"
+  checksum      = '66D14EDD32BDF00BBB41AADB6798B8F2ECDAED8655F2E5A1EAFD540A24DE0123'
   checksumType  = 'sha256'
-  url64bit      = "https://s3.us-east-1.amazonaws.com/downloads.mirthcorp.com/connect-client-launcher/mirth-administrator-launcher-1.4.1-windows-x64.zip"
-  checksum64    = '23CCC489600CCEB321269614E910D46CE7574E33572DB73EBB12294B0E2E0B43'
+  url64bit      = "https://s3.amazonaws.com/downloads.mirthcorp.com/connect-client-launcher/mirth-administrator-launcher-latest-windows-x64.zip"
+  checksum64    = 'A68AB448CBFD212154BA7BCEADE79492EF0273453C4EF573FD126862D0082824'
   checksumType64= 'sha256'
   destination   = $toolsDir
 }
