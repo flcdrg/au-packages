@@ -8,7 +8,7 @@ $checksum64 = '376cf897930ecb7b6a2daed165fee3fd34240cad1fa1669341806be6d4802c45'
 
 $silentArgs = ""
 
-# https://www.synology.com/en-us/knowledgebase/DSM/tutorial/Backup/How_to_customize_Active_Backup_for_Business_Agent_installer_for_mass_deployment
+# https://kb.synology.com/en-global/DSM/tutorial/How_to_set_up_Active_Backup_for_Business_for_mass_deployment
 
 if ($PackageParameters['Address']) {
     $silentArgs += " ADDRESS=" + $PackageParameters['Address']
@@ -40,6 +40,10 @@ if ($PackageParameters['ProxyPassword']) {
 
 if ($PackageParameters.RemoveShortcut) {
     $silentArgs += " NO_SHORTCUT=1"
+}
+
+if ($PackageParameters['ALLOW_UNTRUST']) {
+    $silentArgs += " ALLOW_UNTRUST=1"
 }
 
 Write-Output $silentArgs

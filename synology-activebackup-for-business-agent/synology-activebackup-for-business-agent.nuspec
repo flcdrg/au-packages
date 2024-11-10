@@ -29,6 +29,7 @@ Active Backup for Business is the all-in-one backup solution, designed for strea
 - `/ProxyPort:` Proxy port only when your Synology NAS is required to be accessed via proxy.
 - `/ProxyUsername:` Proxy username only when your Synology NAS is required to be accessed via proxy.
 - `/ProxyPassword:` Proxy password only when your Synology NAS is required to be accessed via proxy.
+- `/AllowUntrust:` if you want to connect to the Synology NAS using an IP address instead of a domain or DDNS.
 
 Example installation with parameters:
 
