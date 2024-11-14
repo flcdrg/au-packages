@@ -29,7 +29,23 @@ Get-ChocolateyWebFile @packageArgs
 
 if($pp['VDI']){
   $teamsVersion = Get-AppXPackage -Name "*msteams*" | Select-Object -ExpandProperty Version
-  $meetingInstaller = "$($env:ProgramFiles)\WINDOWSAPPS\MSTEAMS_$($teamsVersion)_X64__8WEKYB3D8BBWE\MICROSOFTTEAMSMEETINGADDININSTALLER.MSI"
+  # Check if $teamsVersion is empty and attempt an alternative method if so
+  if (-not $teamsVersion) {
+      # Retrieve the newest Teams folder based on LastWriteTime
+      $teamsFolders = Get-ChildItem -Path "C:\Program Files\WindowsApps\" -Filter "MSTEAMS*" -Directory | Sort-Object LastWriteTime -Descending
+      if ($teamsFolders.Count -gt 0) {
+          $newestVersionFolder = $teamsFolders[0].FullName
+          $teamsVersion = ($newestVersionFolder -split "_")[1] # Extract version from folder name
+          $meetingInstaller = Join-Path -Path $newestVersionFolder -ChildPath "MICROSOFTTEAMSMEETINGADDININSTALLER.MSI"
+      } else {
+          Write-Error "Teams version could not be determined. Please check if Teams is installed."
+          return
+      }
+  } else {
+      # Construct meeting installer path using the AppX package version
+      $meetingInstaller = "$($env:ProgramFiles)\WINDOWSAPPS\MSTEAMS_$($teamsVersion)_X64__8WEKYB3D8BBWE\MICROSOFTTEAMSMEETINGADDININSTALLER.MSI"
+  }
+  
   $meetingVersion = (Get-AppLockerFileInformation -Path $meetingInstaller | Select-Object -ExpandProperty Publisher | Select-Object -ExpandProperty BinaryVersion).ToString()
   $packageArgsMeeting =@{
     packageName  = $env:ChocolateyPackageName +"_MeetingAddIn"
