@@ -4,13 +4,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>trusted-signing-client-tools</id>
-    <version>0.1.127</version>
-    <!-- <packageSourceUrl>Where is this Chocolatey package located (think GitHub)? packageSourceUrl is highly recommended for the community feed</packageSourceUrl>-->
+    <version>1.0.0</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/trusted-signing-client-tools</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Trusted Signing Client Tools (Install)</title>
+    <title>Trusted Signing Client Tools</title>
     <authors>Microsoft</authors>
     <projectUrl>https://learn.microsoft.com/en-us/azure/trusted-signing/how-to-signing-integrations?WT.mc_id=DOP-MVP-5001655</projectUrl>
-    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/trusted-signing-client-tools.png</iconUrl>-->
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@refs/heads/master/trusted-signing-client-tools/icons/trusted-signing-client-tools.png</iconUrl>
     <copyright>2024 Microsoft</copyright>
     <docsUrl>https://learn.microsoft.com/en-us/azure/trusted-signing/how-to-signing-integrations?WT.mc_id=DOP-MVP-5001655</docsUrl>
     <tags>SignTool Azure Trusted Signing</tags>
