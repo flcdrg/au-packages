@@ -9,7 +9,7 @@
     <title>JetBrains dotCover</title>
     <authors>JetBrains</authors>
     <projectUrl>http://www.jetbrains.com/dotcover/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/jetbrains/chocolatey/master/dotCover/logo.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/jetbrains/chocolatey@master/dotCover/logo.png</iconUrl>
     <copyright>JetBrains s.r.o.</copyright>
     <licenseUrl>https://www.jetbrains.com/resharper/buy/index.jsp?product=ultimate</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

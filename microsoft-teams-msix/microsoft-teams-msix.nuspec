@@ -9,7 +9,7 @@
     <title>Microsoft Teams MSIX files</title>
     <authors>Microsoft</authors>
     <projectUrl>https://learn.microsoft.com/en-us/microsoftteams/new-teams-bulk-install-client</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/a441d3dd9b117e3e3c34fc6b06f070a382718ba6/microsoft-teams-new-bootstrapper/icons/teams-new.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/microsoft-teams-new-bootstrapper/icons/teams-new.png</iconUrl>
     <copyright>2023 Microsoft Corporation</copyright>
     <licenseUrl>https://support.microsoft.com/en-us/office/microsoft-teams-subscription-supplemental-notice-60cc09bf-b02a-4a26-8e4a-ad697194bebf?ui=en-us&amp;rs=en-us&amp;ad=us</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

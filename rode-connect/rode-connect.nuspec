@@ -9,7 +9,7 @@
     <title>RØDE Connect</title>
     <authors>RØDE Microphones</authors>
     <projectUrl>https://rode.com/en/software/rodeconnect</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/4d5d1c906e866b6b6ca5940ce2b5bc62e1e72eb1/rode-connect/icons/rode-connect.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/rode-connect/icons/rode-connect.png</iconUrl>
     <copyright>(c) 2023 RØDE Microphones</copyright>
     <!-- <licenseUrl>tools/LICENSE.txt</licenseUrl> -->
     <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance> -->

@@ -9,7 +9,7 @@
     <title>RSS Builder</title>
     <authors>Wim Bokkers</authors>
     <projectUrl>https://sourceforge.net/p/rss-builder</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/flcdrg/au-packages/master/rss-builder/icons/rss-builder.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/rss-builder/icons/rss-builder.png</iconUrl>
     <copyright>2006 B!Soft</copyright>
     <licenseUrl>https://sourceforge.net/directory/license:gpl/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

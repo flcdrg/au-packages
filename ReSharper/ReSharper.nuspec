@@ -9,7 +9,7 @@
     <title>JetBrains ReSharper</title>
     <authors>JetBrains</authors>
     <projectUrl>https://www.jetbrains.com/resharper</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/jetbrains/chocolatey/master/ReSharper/logo.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/jetbrains/chocolatey@master/ReSharper/logo.png</iconUrl>
     <copyright>JetBrains s.r.o.</copyright>
     <licenseUrl>https://www.jetbrains.com/resharper/buy/index.jsp?product=ultimate</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

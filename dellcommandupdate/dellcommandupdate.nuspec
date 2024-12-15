@@ -9,7 +9,7 @@
     <title>Dell Command | Update</title>
     <authors>Dell Inc</authors>
     <projectUrl>https://www.dell.com/support/article/en-au/sln311129/dell-command-update?lang=en</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/359437f27e4f72676411967fe222e27cf1d94a27/dellcommandupdate/icons/dellcommandupdate.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/dellcommandupdate/icons/dellcommandupdate.png</iconUrl>
     <copyright>Copyright © 2020 Dell Inc. All rights reserved</copyright>
     <licenseUrl>https://www.dell.com/learn/us/en/uscorp1/terms-of-sale-consumer-license-agreements</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>

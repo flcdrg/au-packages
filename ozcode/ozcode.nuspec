@@ -11,7 +11,7 @@
     <title>OzCode Debugging extension for Visual Studio</title>
     <authors>CodeValue LTD</authors>
     <projectUrl>https://oz-code.com/debugging-redefined/</projectUrl>
-    <iconUrl>http://raw.githubusercontent.com/flcdrg/au-packages/master/ozcode/icons/ozcode.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/ozcode/icons/ozcode.png</iconUrl>
     <copyright>2017 CodeValue LTD</copyright>
     <licenseUrl>https://oz-code.com/eula/</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>

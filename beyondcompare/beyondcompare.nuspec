@@ -7,7 +7,7 @@
     <authors>Scooter Software</authors>
     <owners>flcdrg</owners>
     <projectUrl>http://scootersoftware.com/download</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/flcdrg/au-packages/master/beyondcompare/icons/beyondcompare.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/beyondcompare/icons/beyondcompare.png</iconUrl>
     <licenseUrl>https://www.scootersoftware.com/kb/licensev5</licenseUrl>
     <docsUrl>https://www.scootersoftware.com/v5help/</docsUrl>
     <mailingListUrl>https://forum.scootersoftware.com/</mailingListUrl>

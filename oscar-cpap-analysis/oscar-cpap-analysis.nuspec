@@ -9,7 +9,7 @@
     <title>OSCAR, the Open Source CPAP Analysis Reporter</title>
     <authors>Mark Watkins, The OSCAR Team</authors>
     <projectUrl>http://www.apneaboard.com/wiki/index.php?title=OSCAR_Help#Basic_OSCAR_organisation</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/3804dc7c4dba7e095ea45a81176202c63d666356/oscar-cpap-analysis/icons/oscar.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/oscar-cpap-analysis/icons/oscar.png</iconUrl>
     <copyright>(C) 2011-2018 Mark Watkins, 2019-2024 by The OSCAR Team</copyright>
     <licenseUrl>https://gitlab.com/pholy/OSCAR-code/-/raw/master/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

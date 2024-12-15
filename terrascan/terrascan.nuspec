@@ -9,7 +9,7 @@
     <title>Terrascan</title>
     <authors>Tenable, Inc.</authors>
     <projectUrl>https://runterrascan.io/</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/8bf7194b93c95904a686284b20249d935c700199/terrascan/icons/terrascan.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/terrascan/icons/terrascan.png</iconUrl>
     <copyright>2022 Tenable, Inc.</copyright>
     <licenseUrl>https://github.com/tenable/terrascan/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

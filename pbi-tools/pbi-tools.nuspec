@@ -9,7 +9,7 @@
     <title>pbi-tools</title>
     <authors>Mathias Thierbach</authors>
     <projectUrl>https://pbi.tools/</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/33ec628bb4b38f7af7616a47b2324de34c648998/pbi-tools/icons/pbi-tools.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/pbi-tools/icons/pbi-tools.png</iconUrl>
     <copyright>Mathias Thierbach</copyright>
     <licenseUrl>https://raw.githubusercontent.com/pbi-tools/pbi-tools/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
