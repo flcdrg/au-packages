@@ -10,7 +10,7 @@
     <title>Dell Command | Configure (Install)</title>
     <authors>Dell</authors>
     <projectUrl>https://www.dell.com/support/kbdoc/en-us/000178000/dell-command-configure</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/2b6dcde82644f1493ab4c66025d0503ff3d43636/dell-command-configure/icons/dell-command-configure.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/dell-command-configure/icons/dell-command-configure.png</iconUrl>
     <copyright>Copyright © 2024 Dell Inc</copyright>
     <licenseUrl>https://www.dell.com/learn/us/en/uscorp1/terms-of-sale-consumer-license-agreements</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>

@@ -9,7 +9,7 @@
     <title>Mirth Administrator Launcher</title>
     <authors>Nextgen Healthcare</authors>
     <projectUrl>https://www.nextgen.com/products-and-services/NextGen-Connect-Integration-Engine-Downloads</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/ce211e13b31785e6a8e06186f1a09c42002c7490/mirth/icons/mirth.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/mirth/icons/mirth.png</iconUrl>
     <copyright>2019 Nextgen Healthcare</copyright>
     <!--<mailingListUrl></mailingListUrl>-->
     <bugTrackerUrl>https://github.com/nextgenhealthcare/connect/issues</bugTrackerUrl>

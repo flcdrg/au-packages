@@ -9,7 +9,7 @@
     <title>Microsoft® SQL Server® 2012 Service Pack 3 Express LocalDB</title>
     <authors>Microsoft</authors>
     <projectUrl>https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/ferventcoder/chocolatey-packages/59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ferventcoder/chocolatey-packages@59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
     <copyright>Microsoft</copyright>
     <licenseUrl>https://www.microsoft.com/en-us/download/details.aspx?id=29693</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>

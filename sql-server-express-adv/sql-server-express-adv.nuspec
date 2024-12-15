@@ -28,7 +28,7 @@ A workaround would be to uninstall the existing version and then install the lat
     <copyright>2022 Microsoft Corporation</copyright>
     <licenseUrl>https://www.microsoft.com/en-us/sql-server/sql-server-2022-pricing</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://rawcdn.githack.com/ferventcoder/chocolatey-packages/59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ferventcoder/chocolatey-packages@59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
     <releaseNotes>https://learn.microsoft.com/en-us/sql/sql-server/sql-server-2022-release-notes?view=sql-server-ver16</releaseNotes>
   </metadata>
   <files>

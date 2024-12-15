@@ -9,7 +9,7 @@
     <title>OzCode Debugging extension for Visual Studio 2022</title>
     <authors>CodeValue LTD</authors>
     <projectUrl>https://oz-code.com/debugging-redefined/</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/1984f3f79fabb91831a8634902b85d7804e265f0/ozcode/icons/ozcode.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/ozcode/icons/ozcode.png</iconUrl>
     <copyright>2022 CodeValue D.T LTD</copyright>
     <licenseUrl>https://oz-code.com/eula/</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>

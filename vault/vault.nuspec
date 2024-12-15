@@ -16,7 +16,7 @@
     <copyright>HashiCorp 2015-2022</copyright>
     <licenseUrl>https://github.com/hashicorp/vault/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/d696612296f623411bf88731793ec3345f67715a/vault/icons/vault.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/vault/icons/vault.png</iconUrl>
     <summary>Vault is a tool for securely accessing secrets</summary>
     <description>
 Vault is a tool for securely accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, and more. Vault provides a unified interface to any secret, while providing tight access control and recording a detailed audit log.

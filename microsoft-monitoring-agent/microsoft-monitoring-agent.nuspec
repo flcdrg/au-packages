@@ -9,7 +9,7 @@
     <title>Microsoft Monitoring Agent</title>
     <authors>Microsoft</authors>
     <projectUrl>https://docs.microsoft.com/en-us/azure/azure-monitor/platform/log-analytics-agent</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/flcdrg/au-packages/master/microsoft-monitoring-agent/icons/microsoft-monitoring-agent.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/microsoft-monitoring-agent/icons/microsoft-monitoring-agent.png</iconUrl>
     <copyright>Microsoft Corp</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <docsUrl>https://docs.microsoft.com/en-us/azure/azure-monitor/agents/agent-windows</docsUrl>

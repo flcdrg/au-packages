@@ -10,7 +10,7 @@
     <authors>Campwood Software LLC</authors>
     <projectUrl>https://www.derpaul.net/SourceMonitor/</projectUrl>
     <projectSourceUrl>https://github.com/SourceMonitor/SM-Info</projectSourceUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/aeb6f434aa9fe49c32b22c124a4815adcb790eb7/sourcemonitor/icons/SourceMonitor.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/sourcemonitor/icons/SourceMonitor.png</iconUrl>
     <copyright>2021 Campwood Software LLC. All Rights Reserved.</copyright>
     <licenseUrl>https://www.campwoodsw.com/smlicense.html</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>

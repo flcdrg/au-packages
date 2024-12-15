@@ -12,7 +12,7 @@
     <licenseUrl>https://github.com/terraform-linters/tflint/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/terraform-linters/tflint/releases</projectSourceUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/0e44f5efd78e0549db2303d1daa98cbc9ade7ee9/tflint/icons/tflint.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/tflint/icons/tflint.png</iconUrl>
     <docsUrl>https://github.com/terraform-linters/tflint/tree/master/docs</docsUrl>
     <bugTrackerUrl>https://github.com/terraform-linters/tflint/issues</bugTrackerUrl>
     <tags>terraform tflint</tags>

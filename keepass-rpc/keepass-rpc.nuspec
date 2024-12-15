@@ -9,7 +9,7 @@
     <title>KeePass RPC Plugin</title>
     <authors>luckyrat</authors>
     <projectUrl>https://github.com/kee-org/keepassrpc</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/cdbc7f9343160f450ef59ec8ca7d297b46e2c9ca/keepass-rpc/icons/keepass.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/keepass-rpc/icons/keepass.png</iconUrl>
     <copyright>2017 Chris Tomlinson</copyright>
     <licenseUrl>https://raw.githubusercontent.com/kee-org/keepassrpc/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
