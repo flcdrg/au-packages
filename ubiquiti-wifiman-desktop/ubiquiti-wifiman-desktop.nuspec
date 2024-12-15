@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>ubiquiti-wifiman-desktop</id>
+    <version>1.1.0</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/ubiquiti-wifiman-desktop</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>Ubiquiti WiFiman Desktop (Install)</title>
+    <authors>Ubiquiti</authors>
+    <projectUrl>https://wifiman.com/</projectUrl>
+    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/ubiquiti-wifiman-desktop.png</iconUrl>-->
+    <copyright>2024 Ubiquiti Networks, Inc </copyright>
+    <licenseUrl>https://www.ui.com/eula/</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://help.ui.com/hc/en-us/articles/205204150-Using-WiFiman</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <tags>unifi ubiquiti wifi network</tags>
+    <summary>WiFiman is an intuitive app that will assist you in optimizing your network setup</summary>
+    <description>WiFiman is an intuitive app that will assist you in optimizing your network setup</description>
+  </metadata>
+  <!-- this section controls what actually gets packaged into the Chocolatey package -->
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
