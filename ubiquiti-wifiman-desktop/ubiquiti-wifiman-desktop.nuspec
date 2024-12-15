@@ -10,16 +10,29 @@
     <title>Ubiquiti WiFiman Desktop (Install)</title>
     <authors>Ubiquiti</authors>
     <projectUrl>https://wifiman.com/</projectUrl>
-    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/ubiquiti-wifiman-desktop.png</iconUrl>-->
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/ubiquiti-wifiman-desktop/icons/ubiquiti-wifiman-desktop.png</iconUrl>
     <copyright>2024 Ubiquiti Networks, Inc </copyright>
     <licenseUrl>https://www.ui.com/eula/</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <docsUrl>https://help.ui.com/hc/en-us/articles/205204150-Using-WiFiman</docsUrl>
-    <!--<mailingListUrl></mailingListUrl>-->
-    <!--<bugTrackerUrl></bugTrackerUrl>-->
     <tags>unifi ubiquiti wifi network</tags>
     <summary>WiFiman is an intuitive app that will assist you in optimizing your network setup</summary>
-    <description>WiFiman is an intuitive app that will assist you in optimizing your network setup</description>
+    <description>WiFiman is an intuitive app that will assist you in optimizing your network setup.
+
+The WiFiman App optimizes your UniFi Network experience by providing tools for UniFi device discovery, and instant remote access VPN.
+
+#### UniFi Device Discovery
+
+Troubleshoot network issues from the Discovery tab in the WiFiman app. Here, you can view the IP addresses and other identifying information for devices connected to your WiFi network. This feature proves invaluable when you need to diagnose [device adoption](https://help.ui.com/hc/en-us/articles/360012622613) problems quickly and easily.
+
+#### Teleport VPN (Requires UniFi Gateway)
+
+In the dedicated Teleport tab, you can initiate a secure and fast remote connection to your local UniFi network with just a single click. Admins and owners have the power to send Teleport invites to authorized users effortlessly.
+
+Revoking access is a simple process, giving you full control over network security.
+
+[Learn more about Teleport VPN](https://help.ui.com/hc/en-us/articles/5246403561495).
+    </description>
   </metadata>
   <!-- this section controls what actually gets packaged into the Chocolatey package -->
   <files>
