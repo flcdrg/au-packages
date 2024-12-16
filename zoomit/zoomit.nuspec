@@ -3,7 +3,7 @@
   <metadata>
     <id>zoomit</id>
     <title>ZoomIt</title>
-    <version>8.01</version>
+    <version>9.0</version>
     <authors>Mark Russinovich</authors>
     <owners>flcdrg</owners>
     <summary>Presentation utility for zooming and drawing on the screen</summary>
