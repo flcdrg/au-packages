@@ -17,7 +17,7 @@ function global:au_SearchReplace {
 function GetStream($download, [version] $minVersion)
 {
     $nextVersion = New-Object version $minVersion.Major, ($minVersion.Minor+1), $minVersion.Build, $minVersion.Revision
-    $download | Where-Object { [version] $_.version -ge $minVersion} |
+    $item = $download | Where-Object { [version] $_.version -ge $minVersion} |
         Where-Object { [version] $_.version -lt $nextVersion } | 
         Select-Object -Last 1 | 
         ForEach-Object {
@@ -27,6 +27,19 @@ function GetStream($download, [version] $minVersion)
             ReleaseNotes = $_.release_notes_url
         }
     }
+
+    # Check that url is accessible (eg. sometime the download link can be not found https://dl.ui.com/unifi/8.4.62/UniFi-installer.exe)
+    if ($item) {
+        try {
+            Invoke-WebRequest -Uri $item.URL32 -Method Head -UseBasicParsing -ErrorAction Stop | Out-Null
+
+            return $item
+        } catch {
+            Write-Host "Error: Possible unavailable download $($item.URL32) $($_.Exception.Message)"
+            return $null
+        }
+    }
+
 }
 
 function global:au_GetLatest {
