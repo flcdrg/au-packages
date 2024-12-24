@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$url = 'https://download.jetbrains.com/resharper/dotUltimate.2024.3.2/JetBrains.ReSharper.CommandLineTools.2024.3.2.zip'
-$checksum = 'a7eceee0face2cf35839c2b1d7e169af2b0dbb2385451b5ddcea1331892fc617'
+$url = 'https://download.jetbrains.com/resharper/dotUltimate.2024.3.3/JetBrains.ReSharper.CommandLineTools.2024.3.3.zip'
+$checksum = '1ddbefd63012fee68054a02060c41e23b3cc7ca259f8adc71ce3aec79c6562a8'
 
 $installPath  = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 
