@@ -1,3 +1,5 @@
-WinWait, UniFi Uninstall,,20
-IfNotEqual, ErrorLevel, 0, exit 1
-ControlSend,, !y, UniFi Uninstall
+#Requires AutoHotkey 2
+if WinWait("UniFi Network Server Uninstall", , 30)
+    ControlSend "!y", "Button1", "UniFi Network Server Uninstall"
+else
+    exit 1

@@ -6,32 +6,38 @@
     <version>8.6.9</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/ubiquiti-unifi-controller</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Ubiquiti UniFI Controller</title>
+    <title>Ubiquiti UniFi Network Server</title>
     <authors>Ubiquiti Networks Inc</authors>
     <projectUrl>https://www.ui.com/download/releases/network-server</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/ubiquiti-unifi-controller/icons/ubiquiti.png</iconUrl>
-    <copyright>2017 Ubiquiti Networks, Inc</copyright>
+    <copyright>2025 Ubiquiti Networks, Inc</copyright>
     <licenseUrl>https://www.ui.com/eula/</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <docsUrl>https://dl.ubnt.com/guides/UniFi/UniFi_Controller_V5_UG.pdf</docsUrl>
     <mailingListUrl>https://community.ui.com/timeline</mailingListUrl>
-    <tags>unifi ubiquiti wifi network admin</tags>
+    <tags>unifi ubiquiti wifi network controller admin</tags>
     <summary>Ubiquiti device management software</summary>
     <description>UniFi Network Application - software for managing and controlling the following Ubiquiti products:
 	
-UAP, UAP-AC, UAP-AC-EDU, UAP-AC-HD, UAP-AC-LITE, UAP-AC-LR, UAP-AC-M, UAP-AC-M-PRO, UAP-AC Outdoor, UAP-AC-PRO, UAP-IW, UAP-LR, UAP-Outdoor, UAP-Outdoor+, UAP-Outdoor5, UAP-PRO, US-16-150W, US-16-XG, US-24, US-24-250W, US-24-500W, US-48, US-48-500W, US-48-750W, US-8, US-8-150W, US-8-60W, USG, USG-PRO-4
+USW-Ultra-60W, UBB, USW-Enterprise-24-PoE, UAP-AC-PRO, US-16-150W, USW-Aggregation, U6-IW, U7-Pro, U6-Plus, USW-48, UWB-XG-BK, USW-Flex-XG, UAP-AC-HD, US-24-500W, US-XG-6POE, U7-Outdoor, USP-PDU-Pro, US-48-500W, USW-Lite-16-POE, U6-Pro, USW-Enterprise-8-PoE, USW-Ultra-210W, UWB-XG, UAP-AC-IW, US-8-60W, UAP-AC-M, U-LTE-Pro, USW-Pro-Max-24, U6-Enterprise-IW, UAP-AC-SHD, U6-LR, USP-Plug, USW-Pro-Max-16, US-8-150W, USW-Flex-Mini, UAP-IW-HD, UAP-AC-LITE, U6-Mesh-Pro, US-24-250W, USP-RPS, USW-Pro-Max-24-PoE, USW-Pro-8-PoE, USW-Mission-Critical, UAP-nanoHD, USW-EnterpriseXG-24, USW-Pro-48-POE, US-L2-24-POE, USW-24, U-LTE, USW-48-POE, USW-Flex-2.5G-5, USW-Pro-Max-48, U6-Mesh, UXG-Enterprise, U7-Pro-Wall, USW-Pro-48, USG, UXG-Pro, UAP-AC-LR, USW-Enterprise-48-PoE, UAP-AC-M-PRO, UDB, USW-Pro-Max-16-PoE, U6-Enterprise, UAP-XG, USW-16-POE, USW-Pro-Max-48-PoE, USW-24-POE, US-8, UDB-Pro, U6-Lite, UK-Ultra, USW-Industrial, UCI, US-48-750W, U6-Extender, USW-Pro-24, US-16-XG, UBB-XG, USW-Ultra, ECS-Aggregation, UXG-Lite, USP-Strip, UXG-Max, USW-Pro-24-POE, USG-PRO-4, USW-Flex, UAP-BeaconHD, USW-Pro-Aggregation, US-L2-48-POE, U7-Pro-Max, UAP-FlexHD, USP-PDU-HD, USW-Lite-8-PoE, UCK-G2-PLUS
+
 Install script also configures appropriate Windows Firewall rules (for Windows 8/Server 2008 and above)
 
 ### Java runtime prerequisite
 
 Versions of this package prior to v7.3.76 depended upon the [javaruntime](https://community.chocolatey.org/packages/javaruntime) package (Java 8). 
-From v7.3.76 onwards the software requires Java 11 (Java 12 and later are not yet supported). This package does not have a dependency on a specific Java 11 runtime. Rather, the choice is left up to you as to which runtime you select. One option that has been mentioned in the comments is [Temurin](https://community.chocolatey.org/packages/Temurin11jre).
+From v7.3.76 to 7.5 the software requires Java 11 (Java 12 and later are not yet supported). 
+
+This package does not have a dependency on a specific Java 11 runtime. Rather, the choice is left up to you as to which runtime you select. One option that has been mentioned in the comments is [Temurin](https://community.chocolatey.org/packages/Temurin11jre).
+
+From v7.5, JRE 17 is required, and v9.0 can also use JRE 21.
+
+See [this page](https://help.ui.com/hc/en-us/articles/205144550-Self-Hosting-a-UniFi-Network-Server-as-a-Windows-Service-Advanced) for more information on Java JRE requirements.
 
 Due to the way this package is generated, package versions prior to 7.3.76 but published after 18-Dec-2022 will also be affected by this change. Consult the release notes for your package to confirm which Java runtime version is required.
     </description>
     <releaseNotes>https://community.ui.com/releases/r/network/8.6.9</releaseNotes>
     <dependencies>
-      <dependency id="autohotkey.portable" version="1.1" />
+      <dependency id="autohotkey.portable" version="2.0.18" />
     </dependencies>
   </metadata>
   <files>
