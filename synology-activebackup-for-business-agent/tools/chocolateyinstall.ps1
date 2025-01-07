@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop';
 $PackageParameters = Get-PackageParameters
 
-$url        = 'https://global.download.synology.com/download/Utility/ActiveBackupBusinessAgent/2.7.0-3221/Windows/i686/Synology%20Active%20Backup%20for%20Business%20Agent-2.7.0-3221-x86.msi'
-$url64      = 'https://global.download.synology.com/download/Utility/ActiveBackupBusinessAgent/2.7.0-3221/Windows/x86_64/Synology%20Active%20Backup%20for%20Business%20Agent-2.7.0-3221-x64.msi'
-$checksum   = '95fef03df47a511cb987011f1a052f9cbb7b745ddb52aac31604b738e3072d5e'
-$checksum64 = '376cf897930ecb7b6a2daed165fee3fd34240cad1fa1669341806be6d4802c45'
+$url        = 'https://global.download.synology.com/download/Utility/ActiveBackupBusinessAgent/2.7.1-3234/Windows/i686/Synology%20Active%20Backup%20for%20Business%20Agent-2.7.1-3234-x86.msi'
+$url64      = 'https://global.download.synology.com/download/Utility/ActiveBackupBusinessAgent/2.7.1-3234/Windows/x86_64/Synology%20Active%20Backup%20for%20Business%20Agent-2.7.1-3234-x64.msi'
+$checksum   = '49db3bd2eb7eaee25b16d77dad2758ab1b9c26c75bafb36f735cbce04d4d7f14'
+$checksum64 = '22ce61c9909c727551c9d6f88a78b557169137cab387345fc6dad90d85b02d37'
 
 $silentArgs = ""
 

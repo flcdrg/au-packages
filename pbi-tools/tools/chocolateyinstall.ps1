@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url64 = 'https://github.com/pbi-tools/pbi-tools/releases/download/1.1.1/pbi-tools.1.1.1.zip'
-$checksum64 = 'f2d0a26f68f9ac20a8729513dad850cf9253182c86637209bd49e6753cfe2a77'
+$url64 = 'https://github.com/pbi-tools/pbi-tools/releases/download/1.2.0/pbi-tools.1.2.0.zip'
+$checksum64 = 'bca88abb9f30d17ee354a06e75eb3f6c6bdeeb9c98a46990e86978a52a3876b7'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
