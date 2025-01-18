@@ -5,8 +5,8 @@
     <id>resharper-platform</id>
     <owners>JetBrains, flcdrg</owners>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/resharper-platform</packageSourceUrl>
-    <version>243.0.20241219.71852</version>
-    <title>JetBrains ReSharper Ultimate Platform Installer 2024.3.3</title>
+    <version>251.0.20250116.134521-eap01</version>
+    <title>JetBrains ReSharper Ultimate Platform Installer 2025.1-EAP01</title>
     <authors>JetBrains</authors>
     <projectUrl>https://www.jetbrains.com/dotnet/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/jetbrains/chocolatey@master/ReSharper/logo.png</iconUrl>
