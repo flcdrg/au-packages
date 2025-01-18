@@ -4,24 +4,24 @@
 
 $backupFolder = Get-ChocolateyPath -PathType 'PackagePath'
 
-if ($backupFolder -eq $null)
+if ($null -eq $backupFolder)
 {
     # for testing in ISE only
     $backupFolder = $env:TEMP
 }
 
 # Find Beyond Compare
-if (Test-Path "${env:ProgramFiles(x86)}\Beyond Compare 4\bcomp.exe")
+if (Test-Path "${env:ProgramFiles(x86)}\Beyond Compare 5\bcomp.exe")
 {
-    $bcompPath = "${env:ProgramFiles(x86)}\Beyond Compare 4\bcomp.exe"
+    $bcompPath = "${env:ProgramFiles(x86)}\Beyond Compare 5\bcomp.exe"
 }
-elseif (Test-Path "$env:ProgramFiles\Beyond Compare 4\bcomp.exe") 
+elseif (Test-Path "$env:ProgramFiles\Beyond Compare 5\bcomp.exe") 
 {
-    $bcompPath = "$env:ProgramFiles\Beyond Compare 4\bcomp.exe"
+    $bcompPath = "$env:ProgramFiles\Beyond Compare 5\bcomp.exe"
 } 
 else 
 {
-    Write-Error "Beyond Compare 4 was not found"
+    Write-Error "Beyond Compare 5 was not found"
 }
 
 Write-Verbose "Using $bcompPath"
@@ -66,7 +66,7 @@ if (Test-Path HKCU:\SOFTWARE\TortoiseGit)
 
     $r = $keySoftware.OpenSubKey("TortoiseGit", $true)
     $old = $r.GetValue("Diff")
-    if ($old -ne $null)
+    if ($null -ne $old)
     {
         Write-Warning ("Old Registry value (HKCU\SOFTWARE\TortoiseGit\Diff): " + $old)
     }
@@ -92,7 +92,7 @@ if (Test-Path HKCU:\SOFTWARE\TortoiseSVN)
     $r = $keySoftware.OpenSubKey("TortoiseSVN", $true)
 
     $old = $r.GetValue("Diff")
-    if ($old -ne $null)
+    if ($null -ne $old)
     {
         Write-Warning ("Old Registry value (HKCU\SOFTWARE\TortoiseSVN\Diff): " + $old)
     }

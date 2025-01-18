@@ -2,22 +2,33 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>SqlSearch</id>
-        <version>2023.05.25</version>
+        <version>2024.12.16</version>
         <title>SQL Search</title>
+        <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/SqlSearch</packageSourceUrl>
         <authors>Red Gate Software Ltd</authors>
-        <owners>sumo300, flcdrg</owners>
+        <owners>flcdrg</owners>
         <licenseUrl>https://documentation.red-gate.com/display/XX/Licensing</licenseUrl>
         <projectUrl>http://www.red-gate.com/products/sql-development/sql-search/</projectUrl>
-        <iconUrl>https://raw.githubusercontent.com/flcdrg/au-packages/master/SqlSearch/icons/SqlSearch.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/SqlSearch/icons/SqlSearch.png</iconUrl>
         <docsUrl>https://documentation.red-gate.com/ss3</docsUrl>
         <bugTrackerUrl>https://github.com/sumo300/chocolatey-sqlsearch/issues</bugTrackerUrl>
-        <projectSourceUrl>https://github.com/flcdrg/au-packages/tree/master/SqlSearch</projectSourceUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
-        <description>SQL Search is a free add-in for SQL Server Management Studio that lets you quickly search for SQL across your databases.</description>
+        <description>Find SQL fast in SQL Server Management Studio and Visual Studio
+
+- Find fragments of SQL in tables, views, stored procedures, functions, jobs, and more
+- Quickly navigate to objects wherever they happen to be on a server
+- Search across multiple object types and multiple databases
+- Find all references to an object
+- Search with booleans and wildcards
+        
+#### Package updates
+
+This package is automatically updated by referencing the Red Gate download site. Should it be outdated by more than a few days please leave a comment below.
+        </description>
         <summary>Find SQL fast in SQL Server Management Studio</summary>
         <releaseNotes>https://documentation.red-gate.com/ss3/release-notes-and-other-versions</releaseNotes>
         <language>en-US</language>
-        <tags>SQL search SSMS admin</tags>
+        <tags>SQL search SSMS Visual Studio admin</tags>
     </metadata>
     <files>
         <file src="tools\chocolateyInstall.ps1" target="tools\chocolateyInstall.ps1" />

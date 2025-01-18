@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 
 function global:au_SearchReplace {
     @{
@@ -34,6 +34,11 @@ function global:au_GetLatest {
     foreach ($prefix in "v2", "v3") {
         $release = $response | Where-Object { $_.name.StartsWith($prefix) -and -not $_.prerelease } | Select-Object -First 1
 
+        if (-not $release) {
+            Write-Information "No release found for prefix $prefix"
+            continue
+        }
+
         $version = $release.name.Substring(1)
 
         $assets = Invoke-RestMethod -Method Get -Uri $release.assets_url -Headers $headers
@@ -53,6 +58,11 @@ function global:au_GetLatest {
     }
 
     return $Latest
+}
+
+function global:au_AfterUpdate ($Package) {
+
+    Write-Host $Package
 }
 
 update -NoReadme

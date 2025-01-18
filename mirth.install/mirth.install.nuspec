@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>mirth.install</id>
-    <version>4.3.0</version>
+    <version>4.5.2</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/mirth.install</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Mirth Connect (Install)</title>
     <authors>Nextgen Healthcare</authors>
     <projectUrl>https://www.nextgen.com/products-and-services/integration-engine</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/ce211e13b31785e6a8e06186f1a09c42002c7490/mirth/icons/mirth.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/mirth/icons/mirth.png</iconUrl>
     <copyright>2019 NextGen Healthcare</copyright>
     <licenseUrl>https://raw.githubusercontent.com/nextgenhealthcare/connect/development/server/docs/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
@@ -49,7 +49,7 @@ Our NextGen Connect fundamentals and advanced certification training courses ena
 
 This package installs Mirth Connect Server, Mirth Connect Server Manager and Mirth Connect CLI, but not the Mirth Connect Administrator Launcher
     </description>
-    <releaseNotes>https://github.com/nextgenhealthcare/connect/wiki/4.3.0---What&#39;s-New</releaseNotes>
+    <releaseNotes>https://github.com/nextgenhealthcare/connect/wiki/4.5.2---What&#39;s-New</releaseNotes>
     <dependencies>
       <dependency id="openjdk" version="11.0" />
     </dependencies>

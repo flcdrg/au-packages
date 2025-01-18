@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 
 function global:au_SearchReplace {
     $d32 = [DateTimeOffset] $Latest.LastModified32
@@ -21,8 +21,8 @@ function global:au_GetLatest {
     try {
         $response = Invoke-RestMethod -Uri "https://www.tracker-software.com/trackerupdate/TrackerData8.xml"
 
-        # Unfortunately, they're including a Byte Order Mark, so we have to trim that off
-        $xml = [xml] $response.Substring(3)
+        # Trim off any Byte Order Mark
+        $xml = [xml] $response.Trim([char] 0xFEFF, [char] 0x200B)
 
         $xmlNameSpace = new-object System.Xml.XmlNamespaceManager($xml.NameTable)
         $xmlNameSpace.AddNamespace("t", "http://schemas.tracker-software.com/trackerupdate/tb/v1")

@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 
 # For Get-ChocolateyUnzip
 Import-Module "$Env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force -Scope Local

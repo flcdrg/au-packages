@@ -1,10 +1,12 @@
-import-module au
+Import-Module chocolatey-au
 
 . .\update-common.ps1
 function global:au_SearchReplace {
     @{
         'tools\chocolateyInstall.ps1' = @{
             "(^[$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+            "(^[$]filename\s*=\s*)('.*')" = "`$1'$($Latest.Filename)'"
+            "(^[$]url\s*=\s*)('.*')" = "`$1'$($Latest.Url32)'"
         }
         "$($Latest.PackageName).nuspec" = @{
             "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"

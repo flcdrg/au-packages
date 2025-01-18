@@ -1,4 +1,6 @@
-import-module au
+Import-Module chocolatey-au
+
+. ..\_scripts\Submit-VirusTotal.ps1
 
 function global:au_SearchReplace {
     @{
@@ -15,29 +17,39 @@ function global:au_SearchReplace {
 function GetStream($download, [version] $minVersion)
 {
     $nextVersion = New-Object version $minVersion.Major, ($minVersion.Minor+1), $minVersion.Build, $minVersion.Revision
-    $download | Where-Object { [version] $_.version -ge $minVersion} |
+    $item = $download | Where-Object { [version] $_.version -ge $minVersion} |
         Where-Object { [version] $_.version -lt $nextVersion } | 
         Select-Object -Last 1 | 
         ForEach-Object {
         @{ 
-            URL32 = "https://www.ubnt.com" + $_.file_path
+            URL32 = $_.file_path
             Version = $_.version
-            ReleaseNotes = $_.changelog
+            ReleaseNotes = $_.release_notes_url
         }
     }
+
+    # Check that url is accessible (eg. sometime the download link can be not found https://dl.ui.com/unifi/8.4.62/UniFi-installer.exe)
+    if ($item) {
+        try {
+            Invoke-WebRequest -Uri $item.URL32 -Method Head -UseBasicParsing -ErrorAction Stop | Out-Null
+
+            return $item
+        } catch {
+            Write-Host "Error: Possible unavailable download $($item.URL32) $($_.Exception.Message)"
+            return $null
+        }
+    }
+
 }
 
 function global:au_GetLatest {
 
-    $headers = @{
-        "accept"="application/json"
-        "X-Requested-With"="XMLHttpRequest"
-    }
-
-    $response = Invoke-RestMethod -Uri "https://www.ubnt.com/download/?platform=unifi" -Headers $headers
+    $response = Invoke-RestMethod -Uri "https://download.svc.ui.com/v1/software-downloads"
 
     $download = $response.downloads | Where-Object {
-            $_.category__slug -eq "software" `
+            $_.platform -eq "Windows" `
+            -and $_.product_lines[0] -eq "unifi" `
+            -and $_.category.slug -eq "software" `
             -and $_.filename.EndsWith(".exe") `
             -and -not ($_.version.StartsWith("v")) `
         } |
@@ -48,7 +60,7 @@ function global:au_GetLatest {
         }
     }
 
-    $uniqueVersions = $download | % {  [Version] $_.Version; } | % { "$($_.Major).$($_.Minor)" } | Sort-Object -Unique -Descending
+    $uniqueVersions = $download | ForEach-Object {  [Version] $_.Version; } | ForEach-Object { "$($_.Major).$($_.Minor)" } | Sort-Object -Unique -Descending
 
     $uniqueVersions | ForEach-Object {
         $stream = GetStream $download "$_.0.0"
@@ -59,6 +71,13 @@ function global:au_GetLatest {
     }
 
     $latest
+}
+
+function global:au_AfterUpdate ($Package) {
+    $Package.NuspecXml.package.metadata.releaseNotes = $Latest.ReleaseNotes
+    $Package.SaveNuspec()
+
+    VirusTotal_AfterUpdate $Package
 }
 
 update -ChecksumFor 32

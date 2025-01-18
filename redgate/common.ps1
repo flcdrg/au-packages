@@ -1,9 +1,13 @@
 param(
     [string] $name,
+    [string] $packageName,
     [switch] $readVersionFromInstaller
 )
 
-import-module au
+Import-Module chocolatey-au
+
+. ..\_scripts\Submit-VirusTotal.ps1
+
 
 function global:au_SearchReplace {
     @{
@@ -62,7 +66,12 @@ function global:au_GetLatest {
         $checksum = (Get-FileHash $downloadedFile -Algorithm SHA256).Hash
         Write-Verbose "$checksum"
 
-        Remove-Item $downloadedFile
+        # move downloaded file to standard location
+        $ChocolateyPackageFolder = [System.IO.Path]::GetFullPath("$Env:TEMP\chocolatey\$packageName")
+        $pkg_path = Join-Path $ChocolateyPackageFolder $lastModified.ToString("yyyy.M.d") -AdditionalChildPath Chocolatey
+        New-Item -Type Directory -Force $pkg_path | Out-Null
+
+        Move-Item -Path $downloadedFile -Destination "$pkg_path\$name.exe" -Force
 
         $Latest = @{ 
             URL32 = $downloadUrl
@@ -80,23 +89,5 @@ function global:au_GetLatest {
     return $Latest
 }
 
-function global:au_AfterUpdate ($Package)  {
-
-    if ($Package.RemoteVersion -ne $Package.NuspecVersion) {
-
-        Get-RemoteFiles -NoSuffix
-
-        $file = [IO.Path]::Combine("tools", $Latest.FileName32)
-
-        Write-Output "Submitting file $file to VirusTotal"
-
-        # Assumes vt-cli Chocolatey package is installed!
-        vt.exe scan file $file --apikey $env:VT_APIKEY
-
-        Remove-Item $file -ErrorAction Ignore
-
-        $Latest.Remove("FileName32")
-    }
-}
-
-update -ChecksumFor none
+# If we pass '-ChecksumFor none' then the Files array doesn't get populated
+update

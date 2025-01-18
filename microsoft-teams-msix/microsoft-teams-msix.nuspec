@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>microsoft-teams-msix</id>
+    <version>23320.3021.2567.4799-pre</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/microsoft-teams-msix</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>Microsoft Teams MSIX files</title>
+    <authors>Microsoft</authors>
+    <projectUrl>https://learn.microsoft.com/en-us/microsoftteams/new-teams-bulk-install-client</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/microsoft-teams-new-bootstrapper/icons/teams-new.png</iconUrl>
+    <copyright>2023 Microsoft Corporation</copyright>
+    <licenseUrl>https://support.microsoft.com/en-us/office/microsoft-teams-subscription-supplemental-notice-60cc09bf-b02a-4a26-8e4a-ad697194bebf?ui=en-us&amp;rs=en-us&amp;ad=us</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://learn.microsoft.com/en-us/microsoftteams/teams-overview?WT.mc_id=DOP-MVP-5001655</docsUrl>
+    <tags>teams office 365 chat collaboration</tags>
+    <summary>Microsoft Teams new client bootstrapper installer</summary>
+    <description>MSIX files used by the Microsoft Teams New Bootstrapper package.
+    
+    This package is not intended to be installed directly and is only used by the Microsoft Teams New Bootstrapper package.
+
+    The package version is based on the Version attribute of the Identity element from the AppManifest.xml file.
+    </description>
+  </metadata>
+  <!-- this section controls what actually gets packaged into the Chocolatey package -->
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

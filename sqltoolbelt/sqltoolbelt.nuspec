@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sqltoolbelt</id>
-    <version>2023.07.20</version>
+    <version>2025.01.16</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sqltoolbelt</packageSourceUrl>
-    <owners>kscelfo, flcdrg</owners>
+    <owners>flcdrg</owners>
     <title>SQL Toolbelt</title>
     <authors>Red Gate Software Ltd</authors>
     <projectUrl>http://www.red-gate.com/products/sql-development/sql-toolbelt/</projectUrl>
-    <iconUrl>http://raw.githubusercontent.com/flcdrg/au-packages/master/sqltoolbelt/icons/redgate.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/sqltoolbelt/icons/redgate.png</iconUrl>
     <copyright>2017 Red Gate Software Ltd</copyright>
     <licenseUrl>http://www.red-gate.com/assets/purchase/assets/license.pdf</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>

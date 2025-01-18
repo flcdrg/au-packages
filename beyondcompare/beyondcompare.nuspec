@@ -2,17 +2,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>4.4.6.27483</version>
+    <version>5.0.5.30614</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
-    <owners>Miguel Madero, Brendan Forster, David Gardiner</owners>
-    <projectUrl>http://scootersoftware.com/download.php</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/flcdrg/au-packages/master/beyondcompare/icons/beyondcompare.png</iconUrl>
-    <licenseUrl>http://www.scootersoftware.com/index.php?zz=kb_licensev4</licenseUrl>
-    <docsUrl>http://www.scootersoftware.com/v4help/</docsUrl>
-    <mailingListUrl>http://www.scootersoftware.com/vbulletin/</mailingListUrl>
+    <owners>flcdrg</owners>
+    <projectUrl>http://scootersoftware.com/download</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/beyondcompare/icons/beyondcompare.png</iconUrl>
+    <licenseUrl>https://www.scootersoftware.com/kb/licensev5</licenseUrl>
+    <docsUrl>https://www.scootersoftware.com/v5help/</docsUrl>
+    <mailingListUrl>https://forum.scootersoftware.com/</mailingListUrl>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/beyondcompare</packageSourceUrl>
-    <copyright>© 1996-2019 Scooter Software Inc</copyright>
+    <copyright>© 1996-2024 Scooter Software Inc</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>File comparison tool</summary>
     <description>Compare files and folders using simple, powerful commands that focus on the differences you're interested in and ignore those you're not.  Merge changes, synchronize files, and generate reports.
@@ -21,24 +21,27 @@ Directly access FTP sites, media devices, WebDAV resources, svn repositories and
 
 Beyond Compare includes built-in comparison viewers for a variety of data types.  In addition to text, compare tables, images, binary files, registry hives, and much more.
 
+### Major version upgrades
+
+Each major version of Beyond Compare for Windows will install separately on your computer.  This means that if you have version 4 installed, and you install version 5, the new installation will not overwrite any of your version 4 files or settings.
+
 ### Package Specific
 
 The install script by default will detect which localized version of Beyond Compare to install. Use the package parameters to alter this behavior.
 
 #### Package Parameters
+
 The following package parameter can be set:
 
  * `/LCID:nnn` - Use this specific LCID (instead of trying to automatically detect it). Check `chocolateyInstall.ps1` for valid LCID values.
+ * `/CurrentUser` - Install for the current user only (default is for all users).
 
 To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
 
 </description>
     <tags>compare beyondcompare beyond file diff difference trial admin</tags>
-    <releaseNotes>https://www.scootersoftware.com/download.php?zz=v4changelog</releaseNotes>
-    <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.3.0" />
-    </dependencies>
+    <releaseNotes>https://www.scootersoftware.com/download/v5changelog</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

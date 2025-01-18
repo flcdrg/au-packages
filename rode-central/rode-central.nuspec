@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>rode-central</id>
-    <version>2.0.31</version>
+    <version>2.0.62</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/rode-central</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>RØDE Central</title>
     <authors>RØDE Microphones</authors>
     <projectUrl>hhttps://rode.com/en/microphones/wireless/wirelessgoii</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/e076acef472529595d9a5064abbd1d3c6b10e37c/rode-central/icons/rode-central.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/rode-central/icons/rode-central.png</iconUrl>
     <copyright>(c) 2021 RØDE Microphones</copyright>
     <!-- <licenseUrl>tools/LICENSE.txt</licenseUrl> -->
     <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance> -->

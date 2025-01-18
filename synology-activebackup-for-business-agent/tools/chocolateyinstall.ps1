@@ -1,14 +1,14 @@
 ﻿$ErrorActionPreference = 'Stop';
 $PackageParameters = Get-PackageParameters
 
-$url        = 'https://global.download.synology.com/download/Utility/ActiveBackupBusinessAgent/2.6.1-3052/Windows/i686/Synology%20Active%20Backup%20for%20Business%20Agent-2.6.1-3052-x86.msi'
-$url64      = 'https://global.download.synology.com/download/Utility/ActiveBackupBusinessAgent/2.6.1-3052/Windows/x86_64/Synology%20Active%20Backup%20for%20Business%20Agent-2.6.1-3052-x64.msi'
-$checksum   = '48afaa2dc5cf42c8aba69797bb0f70370bcf29c36d3882f3506eb6750aae662d'
-$checksum64 = '66d816fdddabc58ecf2360e3ef4abcd6f5ca673cd0c4d6af6c8d07de52aea6e2'
+$url        = 'https://global.download.synology.com/download/Utility/ActiveBackupBusinessAgent/2.7.1-3234/Windows/i686/Synology%20Active%20Backup%20for%20Business%20Agent-2.7.1-3234-x86.msi'
+$url64      = 'https://global.download.synology.com/download/Utility/ActiveBackupBusinessAgent/2.7.1-3234/Windows/x86_64/Synology%20Active%20Backup%20for%20Business%20Agent-2.7.1-3234-x64.msi'
+$checksum   = '49db3bd2eb7eaee25b16d77dad2758ab1b9c26c75bafb36f735cbce04d4d7f14'
+$checksum64 = '22ce61c9909c727551c9d6f88a78b557169137cab387345fc6dad90d85b02d37'
 
 $silentArgs = ""
 
-# https://www.synology.com/en-us/knowledgebase/DSM/tutorial/Backup/How_to_customize_Active_Backup_for_Business_Agent_installer_for_mass_deployment
+# https://kb.synology.com/en-global/DSM/tutorial/How_to_set_up_Active_Backup_for_Business_for_mass_deployment
 
 if ($PackageParameters['Address']) {
     $silentArgs += " ADDRESS=" + $PackageParameters['Address']
@@ -40,6 +40,10 @@ if ($PackageParameters['ProxyPassword']) {
 
 if ($PackageParameters.RemoveShortcut) {
     $silentArgs += " NO_SHORTCUT=1"
+}
+
+if ($PackageParameters['ALLOW_UNTRUST']) {
+    $silentArgs += " ALLOW_UNTRUST=1"
 }
 
 Write-Output $silentArgs

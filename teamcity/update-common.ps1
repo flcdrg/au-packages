@@ -1,4 +1,4 @@
-function Get-TeamCityLatest([string] $minimumVersion = "2017.2") {
+function Get-TeamCityLatest([version] $minimumVersion = "2017.2") {
     $response = Invoke-RestMethod "https://www.jetbrains.com/teamcity/update.xml"
 
     $latest = @{
@@ -6,7 +6,7 @@ function Get-TeamCityLatest([string] $minimumVersion = "2017.2") {
         }
     }
 
-    $response.products.product | Where-Object { $_.code -eq "TC" } | Select-Object -ExpandProperty channel | Where-Object { $_.status -eq "release" -and ($_.build.version -ge $minimumVersion) } | ForEach-Object {
+    $response.products.product | Where-Object { $_.code -eq "TC" } | Select-Object -ExpandProperty channel | Where-Object { $_.status -eq "release" -and ([version]$_.build.version -ge $minimumVersion) } | Sort-Object @{expr={[version]$_.version}} -Descending | ForEach-Object {
 
         $version = $_.build.version
         $buildNumber = $_.build.number
@@ -23,6 +23,8 @@ function Get-TeamCityLatest([string] $minimumVersion = "2017.2") {
                 Version = $version
                 Checksum32 = $_.build.distribution.sha256
                 ReleaseNotes = $releaseNotes
+                Filename = "TeamCity-$version.tar.gz"
+                Url32 = "https://download.jetbrains.com/teamcity/TeamCity-$version.tar.gz"
             }
         )
     }

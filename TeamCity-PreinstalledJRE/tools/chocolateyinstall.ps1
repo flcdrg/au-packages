@@ -1,7 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
+$version = '2024.12';
+
 $options = @{
-  version = $env:ChocolateyPackageVersion;
+  version = $version;
   unzipLocation = 'C:\';
   runAsSystem = $true;
   serviceName = 'TeamCity';
@@ -18,7 +20,7 @@ if ($options['userName'] -ne '' -and $options['password'] -ne '') {
   $options['runAsSystem'] = $false;
 }
 
-$filename = "TeamCity-$($env:ChocolateyPackageVersion).tar.gz"
+$filename = "TeamCity-$($version).tar.gz"
 
 $platformPackageName = 'teamcity'
 
@@ -27,7 +29,7 @@ $commonPath = $(Split-Path -parent $(Split-Path -parent $scriptPath))
 $downloadFile = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
 
 $tempFolder = Get-ChocolateyPackageTempFolder $env:ChocolateyPackageName
-$tarFile = Join-Path $tempFolder "TeamCity-$($env:ChocolateyPackageVersion).tar"
+$tarFile = Join-Path $tempFolder "TeamCity-$($version).tar"
 
 Get-ChocolateyUnzip -FileFullPath $downloadFile -Destination $tempFolder
 Get-ChocolateyUnzip -FileFullPath $tarFile -Destination $options['unzipLocation']

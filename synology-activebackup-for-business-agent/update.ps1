@@ -1,6 +1,6 @@
 # https://archive.synology.com/download/Utility/ActiveBackupBusinessAgent
 
-import-module au
+Import-Module chocolatey-au
 
 function global:au_SearchReplace {
     @{

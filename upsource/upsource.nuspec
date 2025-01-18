@@ -9,7 +9,7 @@
     <title>JetBrains Upsource</title>
     <authors>JetBrains</authors>
     <projectUrl>https://www.jetbrains.com/upsource</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/b752fcb9e78cdc71e5793c554fc628a81df3ca08/upsource/icons/upsource.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/upsource/icons/upsource.png</iconUrl>
     <copyright>Copyright © 2000-2020 JetBrains s.r.o</copyright>
     <licenseUrl>https://www.jetbrains.com/upsource/buy/license.html</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>

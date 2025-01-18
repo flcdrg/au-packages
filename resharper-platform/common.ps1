@@ -33,11 +33,11 @@ function GetJetbrainsReSharperPlatformLatestRelease($release) {
     # "2022.2 EAP 11"
     $versionMarketingString = $productInfo.VersionMarketingString
 
-    # "2022.2-EAP11"
-    $versionMarketingStringSemVer = ($versionMarketingString -replace " EAP ", "-EAP") -replace "EAP(\d)$", 'EAP0$1'
+    # "2022.2-EAP11", "2023.2 RC 1"
+    $versionMarketingStringSemVer = ($versionMarketingString -replace " EAP ", "-EAP") -replace " RC ", "-RC" -replace "EAP(\d)$", 'EAP0$1' -replace "RC(\d)$", 'RC0$1'
 
     # "2022.2.EAP11"
-    $versionMarketingStringDotted = $versionMarketingString -replace " EAP ", ".EAP"
+    $versionMarketingStringDotted = $versionMarketingString -replace " EAP ", ".EAP" -replace " RC ", ".RC"
 
     #$filename = "JetBrains.dotUltimate.$($versionMarketingStringUpdated).exe"
     $url = $urls[$release].Hash -replace "VERSIONMARKETINGSTRING", $versionMarketingStringDotted

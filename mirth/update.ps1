@@ -1,4 +1,4 @@
-. $PSScriptRoot\..\mirth.install\update.ps1
+. ..\mirth.install\update.ps1
 
 function global:au_SearchReplace {
    @{

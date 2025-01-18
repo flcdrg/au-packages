@@ -3,12 +3,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>microsoft-teams.install</id>
-    <version>1.6.00.18681</version>
+    <version>1.7.00.33761</version>
     <owners>flcdrg</owners>
-    <title>Microsoft Teams Desktop App (Machine-Wide Install)</title>
+    <title>Microsoft Teams Classic Desktop App (Machine-Wide Install)</title>
     <authors>Microsoft Corporation</authors>
-    <projectUrl>https://products.office.com/en-us/microsoft-teams/group-chat-software</projectUrl>
-    <iconUrl>http://raw.githubusercontent.com/flcdrg/au-packages/master/microsoft-teams/icons/teams-logo.png</iconUrl>
+    <projectUrl>https://www.microsoft.com/en-us/microsoft-teams/group-chat-software</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/microsoft-teams/icons/teams-logo.png</iconUrl>
     <copyright>2017 Microsoft Corporation</copyright>
     <licenseUrl>https://support.microsoft.com/en-us/office/microsoft-teams-subscription-supplemental-notice-60cc09bf-b02a-4a26-8e4a-ad697194bebf?ui=en-us&amp;rs=en-us&amp;ad=us</licenseUrl>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/microsoft-teams.install</packageSourceUrl>
@@ -18,6 +18,11 @@
     <tags>microsoft-teams teams office 365 chat collaboration slack admin</tags>
     <summary>Microsoft Teams helps your team work better together. It's one app that brings your team's conversations, meetings, files and notes together into a single place for open and seamless collaboration.</summary>
     <description>Microsoft Teams is a messaging app for teams where all conversations, meetings, files, and notes can be accessed by everyone, all in one place. It's a place for collaboration and work to happen in the open.
+
+The installed software is named:
+
+- "Microsoft Teams classic" for Windows 10 and Mac devices.
+- "Micrsoft Teams classic (work or school)" for Windows 11 devices.
 
 Here's why you should use it:
 

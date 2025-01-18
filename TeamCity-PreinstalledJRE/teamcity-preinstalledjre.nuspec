@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>TeamCity-PreinstalledJRE</id>
-    <version>2023.05.2</version>
+    <version>2024.12</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/TeamCity-PreinstalledJRE</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>TeamCity Continuous Integration Server (Existing JRE)</title>
     <authors>JetBrains</authors>
     <projectUrl>https://www.jetbrains.com/teamcity/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JetBrains/Chocolatey/master/TeamCityAddin/logo.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/jetbrains/chocolatey@master/TeamCityAddin/logo.png</iconUrl>
     <copyright>JetBrains s.r.o.</copyright>
     <licenseUrl>https://www.jetbrains.com/teamcity/buy/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -45,7 +45,7 @@ Example:
     </description>
     <releaseNotes>https://confluence.jetbrains.com/display/TW/TeamCity+2019.1+Release+Notes</releaseNotes>
     <dependencies>
-      <dependency id="teamcity" version="[2023.05.2]" />
+      <dependency id="teamcity" version="[2024.12]" />
     </dependencies>
   </metadata>
   <files>

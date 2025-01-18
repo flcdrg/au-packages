@@ -3,14 +3,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>teamCityAddin</id>
-    <version>2023.2-EAP10</version>
+    <version>2025.1-EAP01</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/teamCityAddin</packageSourceUrl>
     <owners>JetBrains, flcdrg</owners>
     <title>JetBrains TeamCity Add-in</title>
     <authors>JetBrains</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://www.jetbrains.com/teamcity</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JetBrains/Chocolatey/master/TeamCityAddin/logo.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/jetbrains/chocolatey@master/TeamCityAddin/logo.png</iconUrl>
     <copyright>JetBrains s.r.o.</copyright>
     <licenseUrl>https://www.jetbrains.com/teamcity/buy/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -33,7 +33,7 @@ The following package parameters can be set:
     </description>
     <releaseNotes>https://www.jetbrains.com/teamcity/whatsnew/</releaseNotes>
     <dependencies>
-      <dependency id="resharper-platform" version="[232.0.20230720.114643-eap10]" />
+      <dependency id="resharper-platform" version="[251.0.20250116.134521-eap01]" />
       <dependency id="dotnet4.6.1" version="4.6.01055.20170308" />
    </dependencies>
   </metadata>

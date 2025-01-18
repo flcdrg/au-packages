@@ -3,8 +3,8 @@ $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $url32      = 'https://download.microsoft.com/download/e/5/b/e5b8085f-a711-469b-9453-7596a31099cc/MMASetup-i386.exe'
 $checksum32 = '4EE16A77CD5D303F2A678877A75621CFFCB3607779FB7349DC9FC4D868CC045E'
-$url64      = 'https://download.microsoft.com/download/9/2/4/924fff13-98e3-4398-b619-5afa9aa66834/MMASetup-AMD64.exe'
-$checksum64 = '8990F748003F8B90DE81C2E94B11DADF07EEEBF613F668FD51D53D8767AED2FE'
+$url64      = 'https://download.microsoft.com/download/f/6/3/f630608f-5905-4390-b2bf-36f509214022/MMASetup-AMD64.exe'
+$checksum64 = '9AD3E188C219E469D4210B25AD4CBD6CCF506E936855BEE4277DFB87BE8D0096'
 
 # package parameters
 $pp = Get-PackageParameters

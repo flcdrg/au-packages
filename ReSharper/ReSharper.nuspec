@@ -5,11 +5,11 @@
     <id>ReSharper</id>
     <owners>JetBrains, flcdrg</owners>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/ReSharper</packageSourceUrl>
-    <version>2023.2-EAP10</version>
+    <version>2025.1-EAP01</version>
     <title>JetBrains ReSharper</title>
     <authors>JetBrains</authors>
     <projectUrl>https://www.jetbrains.com/resharper</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/jetbrains/chocolatey/master/ReSharper/logo.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/jetbrains/chocolatey@master/ReSharper/logo.png</iconUrl>
     <copyright>JetBrains s.r.o.</copyright>
     <licenseUrl>https://www.jetbrains.com/resharper/buy/index.jsp?product=ultimate</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -51,7 +51,7 @@ The following package parameters can be set:
     </description>
     <releaseNotes>https://www.jetbrains.com/resharper/whatsnew/</releaseNotes>
     <dependencies>
-      <dependency id="resharper-platform" version="[232.0.20230720.114643-eap10]" />
+      <dependency id="resharper-platform" version="[251.0.20250116.134521-eap01]" />
       <dependency id="dotnet4.6.1" version="4.6.01055.20170308" />
     </dependencies>
   </metadata>

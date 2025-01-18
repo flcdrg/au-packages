@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>dell-command-configure</id>
+    <version>5.0.1</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dell-command-configure</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>Dell Command | Configure (Install)</title>
+    <authors>Dell</authors>
+    <projectUrl>https://www.dell.com/support/kbdoc/en-us/000178000/dell-command-configure</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/dell-command-configure/icons/dell-command-configure.png</iconUrl>
+    <copyright>Copyright © 2024 Dell Inc</copyright>
+    <licenseUrl>https://www.dell.com/learn/us/en/uscorp1/terms-of-sale-consumer-license-agreements</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://www.dell.com/support/home/en-us/product-support/product/command-configure/docs</docsUrl>
+    <tags>dell configure</tags>
+    <summary>Dell Command | Configure is a software package that provides BIOS configuration capability for Dell client systems</summary>
+    <description>Dell Command | Configure is a software package that provides BIOS configuration capability for Dell client systems. IT administrators can use this tool to configure BIOS settings and create BIOS packages using the Dell Command | Configure User Interface (UI) or Command Line Interface (CLI).
+    
+Dell Command | Configure supports the following Windows operating systems:
+
+- Windows 11
+- Windows 10
+- Windows Preinstallation Environment (Windows PE)
+
+#### Package parameters
+
+- '/RemoveDesktopShortcut' - Remove the desktop shortcut
+
+Example: `choco install dell-command-configure --params="'/RemoveDesktopShortcut'"`
+
+#### Package updates
+
+There is not currently automatic updates for this package. Either leave a comment below, use the 'Contact Maintainer' link, or create an issue in the package source GitHub repository to notify the maintainer of new versions.
+    </description>
+    <releaseNotes>https://www.dell.com/support/manuals/en-au/command-configure/dcc_rn_5_x/dell-command-configure-version-50?guid=guid-c9971026-f590-4f88-a489-90f317c790c6&amp;lang=en-us</releaseNotes>
+    <dependencies>
+      <dependency id="dotnetfx" version="4.8.0.20220524" />
+      <dependency id="vcredist140" version="14.40.33810" />
+    </dependencies>
+  </metadata>
+  <!-- this section controls what actually gets packaged into the Chocolatey package -->
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

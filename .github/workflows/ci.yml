@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "master" ]
+    branches: ["master"]
 
   schedule:
     - cron: "0 0 * * *"
@@ -14,52 +14,107 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
+
   build:
-    # The type of runner that the job will run on
+    name: Build
     runs-on: windows-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+      DOTNET_NOLOGO: true
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+      DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
+      DOTNET_MULTILEVEL_LOOKUP: 0
+      DOTNET_SYSTEM_CONSOLE_ALLOW_ANSI_COLOR_REDIRECTION: true
+      TERM: xterm
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+      Configuration: Release
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          repository: "flcdrg/au-dotnet"
+          path: "autoupdate"
+          persist-credentials: false
 
-      # Runs a single command using the runners shell
-      - name: Initialise
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: autoupdate/global.json
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/.nuget/packages
+          key: ${{ runner.os }}-dotnet-${{ hashFiles('autoupdate/AutoUpdate/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-dotnet-
+
+      - name: Restore
+        run: dotnet restore
+        working-directory: autoupdate
+
+      - name: Build
+        run: dotnet build --no-restore
+        working-directory: autoupdate
+
+      - name: Test
+        run: dotnet test
+        working-directory: autoupdate
+
+      - uses: actions/checkout@v4
+        with:
+          repository: "flcdrg/chocolatey-au"
+          path: "chocolatey-au"
+          ref: "simplify"
+          persist-credentials: false
+
+      - name: Install
         run: |
-          $PSVersionTable
+          $module_name = 'Chocolatey-AU'
 
-          git config --global user.email "david@gardiner.net.au"
-          git config --global user.name "flcdrg"
-          git config --global core.safecrlf false
+          $module_dst  = "$Env:ProgramFiles\PowerShell\Modules\$module_name"
 
-          choco install vt-cli -y
+          New-Item -ItemType Directory "$module_dst" -ErrorAction Ignore | Out-Null
 
-          Write-Output "Configuring AU"
-          git clone -q https://github.com/flcdrg/chocolatey-au.git $Env:TEMP/au
-          Set-Location $Env:TEMP/au
-          . "./scripts/Install-AU.ps1" fix-warnings
+          Copy-Item -Recurse -Force ./src/* $module_dst -Verbose
 
           Get-InstalledModule | Select-Object Name, Version, InstalledLocation
-        shell: pwsh
-        env:
-          github_api_key: ${{ secrets.GH_API_KEY }}
 
-      - name: Update
+          choco install vt-cli chocolatey-community-validation.extension -y
+        shell: pwsh
+        working-directory: chocolatey-au
+
+      - uses: actions/checkout@v4
+        with:
+          path: "packages"
+
+      - name: Configure Git
         run: |
-          ./update_all.ps1 -Name resharper-platform,teamcity,*.portable,*.install
+          git config user.email "david@gardiner.net.au"
+          git config user.name "David Gardiner"
+        working-directory: packages
 
-          Write-Host "Second pass"
-          ./update_all.ps1
-        shell: pwsh
+      - name: Run
+        run: |
+          dotnet run
+        working-directory: autoupdate/AutoUpdate
         env:
+          PACKAGES_REPO: "${{ github.workspace }}\\packages"
           github_api_key: ${{ secrets.GH_API_KEY }} # GitHub API Key
           api_key: ${{ secrets.API_KEY }} # Chocolatey API Key
           VT_APIKEY: ${{ secrets.VT_APIKEY }} # VirusTotal API Key
-          au_push: true
-          gist_id: 7d00c69c2cde8309a8594abaa897a9a6
-          github_user_repo: flcdrg/au-packages
+
+      - name: Status
+        run: |
+          git status
+
+          git push
+          git push -q --tags
+
+          git log --max-count 2 --pretty=medium
+
+          Get-ChildItem -Recurse *.nupkg | Select-Object -ExpandProperty FullName
+        working-directory: packages

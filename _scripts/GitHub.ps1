@@ -9,11 +9,17 @@ $headers = @{}
 .PARAMETER project
     GitHub project path (used to create URL for API)
 
+.PARAMETER tagPrefix
+    Prefix for the tag name
+
+.PARAMETER newest
+    Set to true to just get the most recent release (not necessarily one marked 'latest')
+
 .OUTPUTS
     Output (if any)
 
 #>
-function Get-GitHubLatestRelease($project, $tagPrefix) {
+function Get-GitHubLatestRelease($project, $tagPrefix, [switch] $newest) {
 
     $token = $env:github_api_key
     $script:headers = @{
@@ -27,7 +33,11 @@ function Get-GitHubLatestRelease($project, $tagPrefix) {
 
     $releasesUrl = "https://api.github.com/repos/$project/releases"
 
-    if ($tagPrefix) {
+    if ($newest.IsPresent) {
+        $releases = Invoke-RestMethod -Method Get -Uri "$releasesUrl" -Headers $headers
+        $releases | Select-Object -First 1
+    }
+    elseif ($tagPrefix) {
         $releases = Invoke-RestMethod -Method Get -Uri "$releasesUrl" -Headers $headers
         $releases | Where-Object { $_.tag_name -and $_.tag_name.StartsWith($tagPrefix) } | Select-Object -First 1
 
@@ -37,7 +47,7 @@ function Get-GitHubLatestRelease($project, $tagPrefix) {
 }
 
 function Get-GitHubReleaseAssets($release) {
-    Invoke-RestMethod -Method Get -Uri $release.assets_url -Headers $script:headers
+    Invoke-RestMethod -Method Get -Uri "$($release.assets_url)?per_page=100" -Headers $script:headers
 }
 
 function Get-GitHubReleaseAssetsBrowserDownloadUrls($assets) {

@@ -8,3 +8,4 @@ api_key
 *.vsix
 /packages
 /Example
+*.exe

@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dellcommandupdate</id>
-    <version>4.9.0</version>
+    <version>5.4.0.20241021</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dellcommandupdate</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Dell Command | Update</title>
     <authors>Dell Inc</authors>
     <projectUrl>https://www.dell.com/support/article/en-au/sln311129/dell-command-update?lang=en</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/359437f27e4f72676411967fe222e27cf1d94a27/dellcommandupdate/icons/dellcommandupdate.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/dellcommandupdate/icons/dellcommandupdate.png</iconUrl>
     <copyright>Copyright © 2020 Dell Inc. All rights reserved</copyright>
     <licenseUrl>https://www.dell.com/learn/us/en/uscorp1/terms-of-sale-consumer-license-agreements</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
@@ -31,9 +31,9 @@ Supported on OptiPlex, Venue Pro Tablet, Precision, XPS Notebook and Latitude mo
 
 This package is updated automatically by querying the Dell Version Control Catalog. There can sometimes be a short delay between the time new software version is released and when it is added to the catalog (which is also used by Dell applications to auto-update)
  </description>
- <releaseNotes>https://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=30F6M</releaseNotes>
+ <releaseNotes>https://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=6VFWW</releaseNotes>
     <dependencies>
-      <dependency id="dotnet4.6.1" version="4.6.01055.20170308" />
+      <dependency id="netfx-4.8" version="4.8.0.20220524 " />
     </dependencies>
   </metadata>
   <files>

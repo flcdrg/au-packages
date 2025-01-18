@@ -1,6 +1,6 @@
-import-module au
+Import-Module chocolatey-au
 
-$releases = 'https://www.scootersoftware.com/download.php'
+$releases = 'https://www.scootersoftware.com/download'
 
 function global:au_SearchReplace {
     @{
@@ -19,7 +19,7 @@ function global:au_GetLatest {
     # 32bit
     $download_page = Invoke-WebRequest -Uri $releases
 
-    #https://www.scootersoftware.com/BCompare-4.2.1.22354.exe
+    #https://www.scootersoftware.com/files/BCompare-4.2.1.22354.exe
     
     $content = $download_page.Content.Trim()
 
@@ -27,16 +27,16 @@ function global:au_GetLatest {
 
     $version = $Matches.version
 
-    $url_en = "https://www.scootersoftware.com/BCompare-$($version).exe"
+    $url_en = "https://www.scootersoftware.com/files/BCompare-$($version).exe"
 
-    # https://www.scootersoftware.com/BCompare-de-4.2.1.22354.exe
-    # https://www.scootersoftware.com/BCompare-fr-4.2.1.22354.exe
-    # https://www.scootersoftware.com/BCompare-jp-4.2.1.22354.exe
+    # https://www.scootersoftware.com/files/BCompare-de-4.2.1.22354.exe
+    # https://www.scootersoftware.com/files/BCompare-fr-4.2.1.22354.exe
+    # https://www.scootersoftware.com/files/BCompare-jp-4.2.1.22354.exe
 
-    $url_de = "https://www.scootersoftware.com/BCompare-de-$($version).exe"
-    $url_fr = "https://www.scootersoftware.com/BCompare-fr-$($version).exe"
-    $url_jp = "https://www.scootersoftware.com/BCompare-jp-$($version).exe"
-    $url_zh = "https://www.scootersoftware.com/BCompare-zh-$($version).exe"
+    $url_de = "https://www.scootersoftware.com/files/BCompare-de-$($version).exe"
+    $url_fr = "https://www.scootersoftware.com/files/BCompare-fr-$($version).exe"
+    $url_jp = "https://www.scootersoftware.com/files/BCompare-jp-$($version).exe"
+    $url_zh = "https://www.scootersoftware.com/files/BCompare-zh-$($version).exe"
     $Latest = @{ 
         URL_EN = $url_en
         URL_DE = $url_de

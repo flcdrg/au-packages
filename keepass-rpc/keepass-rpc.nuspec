@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>keepass-rpc</id>
-    <version>1.14.0.20210127</version>
+    <version>2.0.2</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/keepass-rpc</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>KeePass RPC Plugin</title>
     <authors>luckyrat</authors>
     <projectUrl>https://github.com/kee-org/keepassrpc</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/flcdrg/au-packages/cdbc7f9343160f450ef59ec8ca7d297b46e2c9ca/keepass-rpc/icons/keepass.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/keepass-rpc/icons/keepass.png</iconUrl>
     <copyright>2017 Chris Tomlinson</copyright>
     <licenseUrl>https://raw.githubusercontent.com/kee-org/keepassrpc/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -19,9 +19,15 @@
     <tags>keepass keefox keepassrpc plugin</tags>
     <summary>KeePassRPC plugin that needs to be installed inside KeePass in order for KeeFox to be able to connect your browser to your passwords</summary>
     <description>KeePassRPC plugin that needs to be installed inside KeePass in order for KeeFox to be able to connect your browser to your passwords </description>
-    <releaseNotes>Adds support for the multiple entry editing feature in KeePass 2.46.
+    <releaseNotes>In this version we have made significant changes to how we record configuration of entries and their form fields. In almost all cases there will be no visible impact of the change but it allows us to add a variety of long-desired features to Kee in future. Rolling back to version 1.x is not possible without a corresponding rollback to your backup KDBX file so please check everything works correctly before making a lot of changes to the information stored in your KDBX file.
 
-In situations where there are different KeePassRPC configurations for the entries that are selected for editing, we now show a message in the Kee tab. Earlier versions of KeePassRPC would show an error message explaining that the configuration string is invalid.</releaseNotes>
+See the corresponding beta testing announcement for more details:
+
+https://forum.kee.pm/t/keepassrpc-version-2-is-now-available-for-beta-testing/4501
+
+As usual, we will be enabling the update notifications for this version at least a week or two after we have set this as the latest stable release.
+
+Changes since v2.0.0: Fixes default placeholder fallback for entries so that database-wide placeholder enablement works again. Although we still don't recommend this approach in the long-term.</releaseNotes>
     <dependencies>
       <dependency id="keepass" version="2.0" />
     </dependencies>

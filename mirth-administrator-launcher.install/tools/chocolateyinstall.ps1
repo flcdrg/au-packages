@@ -8,11 +8,11 @@ $packageArgs = @{
   silentArgs    = "-q -console"
   
   validExitCodes= @(0) #please insert other valid exit codes here
-  url           = "https://s3.amazonaws.com/downloads.mirthcorp.com/connect-client-launcher/mirth-administrator-launcher-1.1.0-windows.exe"  #download URL, HTTPS preferrred
-  checksum      = 'E4ADAC3FA8B96BD37C42C774640A0F5784E97597399E863583F8FF68219A3A4A'
+  url           = "https://s3.amazonaws.com/downloads.mirthcorp.com/connect-client-launcher/mirth-administrator-launcher-latest-windows.exe"  #download URL, HTTPS preferrred
+  checksum      = '8957EBFE99846D5192DB2F64A963F34A189D81C5A9EA1994A5CA990161D57A82'
   checksumType  = 'sha256'
-  url64bit      = "https://s3.amazonaws.com/downloads.mirthcorp.com/connect-client-launcher/mirth-administrator-launcher-1.1.0-windows-x64.exe"   # 64bit URL here (HTTPS preferred) or remove - if installer contains both architectures (very rare), use $url
-  checksum64    = '9C00CF2C64284DD146AED0B71C4D032A821EE2B62D9868C6B740927C49CCC38B'
+  url64bit      = "https://s3.amazonaws.com/downloads.mirthcorp.com/connect-client-launcher/mirth-administrator-launcher-latest-windows-x64.exe"   # 64bit URL here (HTTPS preferred) or remove - if installer contains both architectures (very rare), use $url
+  checksum64    = '35DF4BD913B7E9350D1269668EF7AEE764CACED32F73EAC93472C0362E627B8B'
   checksumType64= 'sha256'
   destination   = $toolsDir
 }

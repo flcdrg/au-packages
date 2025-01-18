@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://s3.amazonaws.com/downloads.mirthcorp.com/connect/4.3.0.b2886/mirthconnect-4.3.0.b2886-windows-x32.exe'
-$url64      = 'https://s3.amazonaws.com/downloads.mirthcorp.com/connect/4.3.0.b2886/mirthconnect-4.3.0.b2886-windows-x64.exe'
-$checksum   = 'de845bfd4f7998323aecdc5b044366d845b08b4c071d80c5ef45f189a70b1656'
-$checksum64 = '52c2f86e2d42a2596bde7d8ffc54762d45ad423213c1c344e0641425de506202'
+$url        = 'https://s3.amazonaws.com/downloads.mirthcorp.com/connect/4.5.2.b363/mirthconnect-4.5.2.b363-windows-x32.exe'
+$url64      = 'https://s3.amazonaws.com/downloads.mirthcorp.com/connect/4.5.2.b363/mirthconnect-4.5.2.b363-windows-x64.exe'
+$checksum   = '3ddedb8b4bfc4a349ac12b87a6b5dcb24337126366cbd47594cf59f1916e9483'
+$checksum64 = '69bb832d56f28c2c840e523efa4d7c72d47cd0b2bcd2babed16abe41e4d1a535'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
@@ -21,7 +21,7 @@ $packageArgs = @{
   checksumType64= 'sha256'
 
   # OTHERS
-  silentArgs   = "-q -console -varfile $($toolsDir)\response.varfile"
+  silentArgs   = "-q -console -varfile `"$($toolsDir)\response.varfile`""
   validExitCodes= @(0)
 }
 

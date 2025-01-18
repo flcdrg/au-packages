@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 
 . ..\_scripts\common.ps1
 $releases = 'https://shop.oz-code.com/download/v3'

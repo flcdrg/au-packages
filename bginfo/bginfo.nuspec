@@ -8,7 +8,7 @@
     <title>BgInfo</title>
     <authors>Bryce Cogswell</authors>
     <projectUrl>https://docs.microsoft.com/en-au/sysinternals/downloads/bginfo</projectUrl>
-    <iconUrl>http://raw.githubusercontent.com/flcdrg/au-packages/master/bginfo/icons/bginfo.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/bginfo/icons/bginfo.png</iconUrl>
     <copyright>© 2000-2007 Bryce Cogswell</copyright>
     <licenseUrl>https://docs.microsoft.com/en-au/sysinternals/license-terms</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -45,6 +45,10 @@ __/all__  Specifies that BGInfo should change the wallpaper for any and all user
 __/log__  Causes BGInfo to write errors to the specified log file instead of generating a warning dialog box. This is useful for tracking down errors that occur when BGInfo is run under the scheduler.
 
 __/rtf__  Causes BGInfo to write its output text to an RTF file. All formatting information and colors are included.
+
+#### Package updates
+
+This package is automatically updated via a process that runs every 24 hours. Should it be outdated by more than a few days please leave a comment below.
     </description>
     <releaseNotes>
 #### Program

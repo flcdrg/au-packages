@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>azure-functions-core-tools</id>
+    <version>4.0.5858</version>
+    <title>Azure Function Core Tools</title>
+    <authors>Microsoft</authors>
+    <owners>nugetazurefunctions</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://raw.githubusercontent.com/Azure/azure-functions-core-tools/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Azure/azure-functions-core-tools</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Azure/azure-functions-core-tools@master/src/Azure.Functions.Cli/npm/assets/azure-functions-logo-color-raster.png</iconUrl>
+    <description>The Azure Functions Core Tools provide a local development experience for creating, developing, testing, running, and debugging Azure Functions.</description>
+    <summary>The Azure Functions Core Tools provide a local development experience for creating, developing, testing, running, and debugging Azure Functions.</summary>
+    <tags>azure functions azure-function cli core-tools</tags>
+  </metadata>
+</package>
