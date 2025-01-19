@@ -10,39 +10,12 @@ if ( $version.Revision -gt 20210101 ) {
 
 $filename   = 'ProV10.x86.msi'
 $filename64 = 'ProV10.x64.msi'
-$primaryDownloadUrl = "https://downloads.pdf-xchange.com/$filename"
-$primaryDownloadUrl64 = "https://downloads.pdf-xchange.com/$filename64"
-$url        = "https://builds-archive.tracker-software.com/$version/$filename"
-$url64      = "https://builds-archive.tracker-software.com/$version/$filename64"
+$url        = 'https://downloads.pdf-xchange.com/ProV10.x86.msi'
+$url64      = 'https://downloads.pdf-xchange.com/ProV10.x64.msi'
 $checksum   = '5B77F2DDE727608B25F3B7F54B115A14347B22DF055FFD620D4E71D416B31008'
 $checksum64 = '4905E9C91222927287AB0759A1B934F1887166BE80357BD553B519F2502AF5E2'
 $lastModified32 = New-Object -TypeName DateTimeOffset 2025, 1, 14, 0, 27, 55, 0 # Last modified time corresponding to this package version
 $lastModified64 = New-Object -TypeName DateTimeOffset 2025, 1, 14, 0, 28, 49, 0 # Last modified time corresponding to this package version
-
-# Tracker Software have fixed download URLs, but if the binary changes we can fall back to their alternate (but slower) download site
-# so the package doesn't break.
-function CheckDownload($url, $primaryDownloadUrl, [DateTimeOffset] $packageVersionLastModified)
-{
-    $headers = Get-WebHeaders -url $primaryDownloadUrl
-    $lastModifiedHeader = $headers.'Last-Modified'
-
-    $lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
-
-    Write-Verbose "Package LastModified: $packageVersionLastModified"
-    # The extra space is not a typo, but to mitigate Chocolatey 4 Business Package Internalizer regex accidentally matching the next line as a URL!
-    Write-Verbose "HTT P Last Modified  : $lastModified"
-
-    if ($lastModified -ne $packageVersionLastModified) {
-        Write-Warning "The download available at $primaryDownloadUrl has changed from what this package was expecting. Falling back to $url for version-specific URL"
-        $url
-    } else {
-        Write-Verbose "Primary URL matches package expectation"
-        $primaryDownloadUrl
-    }
-}
-
-$url = CheckDownload $url $primaryDownloadUrl $lastModified32
-$url64 = CheckDownload $url64 $primaryDownloadUrl64 $lastModified64
 
 $packageArgs = @{
   packageName   = $packageName

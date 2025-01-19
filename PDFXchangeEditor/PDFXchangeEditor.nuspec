@@ -7,14 +7,14 @@
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/PDFXchangeEditor</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>PDF-XChange Editor</title>
-    <authors>Tracker Software</authors>
-    <projectUrl>https://www.tracker-software.com/product/pdf-xchange-editor</projectUrl>
+    <authors>PDF-XChange Co. Ltd.</authors>
+    <projectUrl>https://www.pdf-xchange.com/product/pdf-xchange-editor</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/PDFXchangeEditor/icons/pdfxchangeeditor.png</iconUrl>
-    <copyright>1997-2020 Tracker Software Products - A wholly owned subsidiary of PDF-XChange Co Ltd. Registered in England: N0.11091579</copyright>
-    <licenseUrl>https://www.tracker-software.com/licensing</licenseUrl>
+    <copyright>2001-2025 PDF-XChange Co Ltd. Registered in England: N0.11091579</copyright>
+    <licenseUrl>https://www.pdf-xchange.com/licensing<</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <docsUrl>https://help.tracker-software.com/pdfxe8/</docsUrl>
-    <mailingListUrl>https://www.tracker-software.com/forum3/viewforum.php?f=62</mailingListUrl>
+    <docsUrl>https://help.pdf-xchange.com/pdfxe10/</docsUrl>
+    <mailingListUrl>https://forum.pdf-xchange.com/viewforum.php?f=62<</mailingListUrl>
     <!--<bugTrackerUrl></bugTrackerUrl>-->
     <tags>PDFXchangeEditor pdf reader editor ocr pdfxchangeviewer admin</tags>
     <summary>The smallest, fastest, most feature-rich PDF editor/viewer available! Create, View, Edit, Annotate, OCR and Digitally Sign PDF files plus much more..</summary>
@@ -35,7 +35,7 @@ These parameters can be passed to the installer with the use of `-params`.
 For example: `-params '"/NoDesktopShortcuts"'`, `--params "/KeyFile:C:\Users\foo\Temp\PDFXChangeEditor.xcvault"`.
 
 </description>
-    <releaseNotes>https://www.tracker-software.com/product/pdf-xchange-editor/history</releaseNotes>
+    <releaseNotes>https://www.pdf-xchange.com/product/pdf-xchange-editor/history</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

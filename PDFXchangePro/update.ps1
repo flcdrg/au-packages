@@ -12,6 +12,8 @@ function global:au_SearchReplace {
             "(^[$]lastModified64\s*=\s*)(.*)(\s+\#)" = "`$1New-Object -TypeName DateTimeOffset $($d64.Year), $($d64.Month), $($d64.Day), $($d64.Hour), $($d64.Minute), $($d64.Second), 0`$3"
             "(^[$]filename\s*=\s*)('.*')" = "`$1'$($Latest.Filename32)'"
             "(^[$]filename64\s*=\s*)('.*')" = "`$1'$($Latest.Filename64)'"
+            "(^[$]url\s*=\s*)('.*')" = "`$1'$($Latest.url)'"
+            "(^[$]url64\s*=\s*)('.*')" = "`$1'$($Latest.url64)'"
         }
      }
 }
@@ -36,11 +38,14 @@ function global:au_GetLatest {
         $x64update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object @{expr={[version]$_.version}; desc=$true} | Select-Object -First 1
         $filename64 = $x64update.url
 
-        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename" -Method Head -UseBasicParsing
+        $primaryDownloadUrl = "https://downloads.pdf-xchange.com/$filename"
+        $primaryDownloadUrl64 = "https://downloads.pdf-xchange.com/$filename64"
+
+        $response = Invoke-WebRequest $primaryDownloadUrl -Method Head -UseBasicParsing
         $lastModifiedHeader = $response.Headers.'Last-Modified'
         $x86lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
 
-        $response = Invoke-WebRequest "http://downloads.pdf-xchange.com/$filename64" -Method Head -UseBasicParsing
+        $response = Invoke-WebRequest $primaryDownloadUrl64 -Method Head -UseBasicParsing
         $lastModifiedHeader = $response.Headers.'Last-Modified'
         $x64lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
 
@@ -52,6 +57,8 @@ function global:au_GetLatest {
             LastModified64 = $x64lastModified
             Filename32 = $filename
             Filename64 = $filename64
+            url = $primaryDownloadUrl
+            url64 = $primaryDownloadUrl64
         }
     }
     catch {
