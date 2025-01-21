@@ -21,7 +21,7 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
 
     try {
-        $response = Invoke-RestMethod -Uri "https://www.tracker-software.com/trackerupdate/TrackerData8.xml"
+        $response = Invoke-RestMethod -Uri "https://downloads.pdf-xchange.com/trackerupdate/TrackerData8.xml"
 
         # Trim off any Byte Order Mark
         $xml = [xml] $response.Trim([char] 0xFEFF, [char] 0x200B)
@@ -49,7 +49,7 @@ function global:au_GetLatest {
         $lastModifiedHeader = $response.Headers.'Last-Modified'
         $x86lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
 
-        $response = Invoke-WebRequest  $primaryDownloadUrl64 -Method Head -UseBasicParsing
+        $response = Invoke-WebRequest $primaryDownloadUrl64 -Method Head -UseBasicParsing
         $lastModifiedHeader = $response.Headers.'Last-Modified'
         $x64lastModified = [DateTimeOffset]::Parse($lastModifiedHeader, [Globalization.CultureInfo]::InvariantCulture)
 
