@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>SqlSearch</id>
-        <version>2024.12.16</version>
+        <version>2025.01.20</version>
         <title>SQL Search</title>
         <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/SqlSearch</packageSourceUrl>
         <authors>Red Gate Software Ltd</authors>
