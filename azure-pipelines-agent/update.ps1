@@ -31,7 +31,7 @@ function global:au_GetLatest {
     }
 
     # Assume releases are named v1.2.3
-    foreach ($prefix in "v2", "v3") {
+    foreach ($prefix in "v2", "v3", "v4") {
         $release = $response | Where-Object { $_.name.StartsWith($prefix) -and -not $_.prerelease } | Select-Object -First 1
 
         if (-not $release) {
