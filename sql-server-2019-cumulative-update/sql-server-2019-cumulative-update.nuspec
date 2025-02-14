@@ -3,10 +3,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-2019-cumulative-update</id>
-    <version>15.0.4415.2</version>
+    <version>15.0.4420.2</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-2019-cumulative-update</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Microsoft SQL Server 2019 Cumulative Update 30</title>
+    <title>Microsoft SQL Server 2019 Cumulative Update 31</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://www.microsoft.com/en-us/download/details.aspx?id=100809</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/ferventcoder/chocolatey-packages@59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
@@ -52,7 +52,7 @@ Example using /IgnorePendingReboot
 choco install sql-server-2019-cumulative-update --params="'/IgnorePendingReboot'"
 ```
     </description>
-    <releaseNotes>https://support.microsoft.com/help/5049235</releaseNotes>
+    <releaseNotes>https://support.microsoft.com/help/5049296</releaseNotes>
   </metadata>
   <files>
     <file src="tools\*.ps1" target="tools" />

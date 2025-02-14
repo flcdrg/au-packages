@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>bginfo</id>
-    <version>4.32</version>
+    <version>4.33</version>
     <owners>flcdrg, jivkok</owners>
     <title>BgInfo</title>
     <authors>Bryce Cogswell</authors>
