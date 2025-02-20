@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url = 'https://download.red-gate.com/installers/SQLToolbelt/2025-02-17/SQLToolbelt.exe'
-$checksum = '46567C67111FE66528EAEF18C10A1B459556BD89411027086C1AF343E55FE43A'
+$url = 'https://download.red-gate.com/installers/SQLToolbelt/2025-02-18/SQLToolbelt.exe'
+$checksum = 'EABA352DFC26C37A3D3D8A93B89DE366C2A10BEB425C07968CBCD8B16B2FADBE'
 
 $validProductPackageNames = @(
   "SQL Compare",
