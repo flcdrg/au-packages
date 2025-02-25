@@ -5,7 +5,7 @@
     <id>dotTrace</id>
     <owners>JetBrains, flcdrg</owners>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dotTrace</packageSourceUrl>
-    <version>2025.1-EAP04</version>
+    <version>2025.1-EAP05</version>
     <title>JetBrains dotTrace</title>
     <authors>JetBrains</authors>
     <projectUrl>https://www.jetbrains.com/profiler</projectUrl>
@@ -51,7 +51,7 @@ The following package parameters can be set:
 
     <releaseNotes>https://www.jetbrains.com/profiler/whatsnew/</releaseNotes>
     <dependencies>
-      <dependency id="resharper-platform" version="[251.0.20250218.44017-eap04]" />
+      <dependency id="resharper-platform" version="[251.0.20250222.203927-eap05]" />
       <dependency id="dotnet4.6.1" version="4.6.01055.20170308" />
     </dependencies>
   </metadata>
