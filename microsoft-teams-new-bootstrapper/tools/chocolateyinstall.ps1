@@ -28,6 +28,13 @@ Get-ChocolateyWebFile @packageArgs
 & $downloadPath -p
 
 if($pp['VDI']){
+
+  $regHive = "HKLM:\SOFTWARE\Microsoft\Teams"
+  if (-not (Test-Path $regHive)) {
+    New-Item -Path $regHive 
+  }
+  New-ItemProperty -Path $regHive -Name IsWVDEnvironment -Value 1 -PropertyType DWord
+
   $teamsVersion = Get-AppXPackage -Name "*msteams*" | Select-Object -ExpandProperty Version
   # Check if $teamsVersion is empty and attempt an alternative method if so
   if (-not $teamsVersion) {
