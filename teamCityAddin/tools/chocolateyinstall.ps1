@@ -2,7 +2,7 @@
 $packageName = 'teamCityAddin'
 $scriptPath = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 $commonPath = $(Split-Path -parent $(Split-Path -parent $scriptPath))
-$filename = 'JetBrains.dotUltimate.2025.1.RC1.Checked.exe'
+$filename = 'JetBrains.dotUltimate.2025.1.exe'
 
 $installPath = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
 $packageParameters = Get-PackageParameters
