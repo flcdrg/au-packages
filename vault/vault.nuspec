@@ -4,7 +4,7 @@
   <metadata>
     <id>vault</id>
     <title>Vault</title>
-    <version>1.19.1</version>
+    <version>1.19.2</version>
     <authors>Mitchell Hashimoto, HashiCorp</authors>
     <owners>flcdrg</owners>
     <projectUrl>https://www.vaultproject.io/</projectUrl>
@@ -32,45 +32,21 @@ The key features of Vault are:
 * **Revocation**: Vault has built-in support for secret revocation. Vault can revoke not only single secrets, but a tree of secrets, for example all secrets read by a specific user, or all secrets of a particular type. Revocation assists in key rolling as well as locking down systems in the case of an intrusion.
 
 For more information, see the [introduction section](https://www.vaultproject.io/intro) of the Vault website.
-    </description><releaseNotes><![CDATA[### 1.19.1
-#### April 4, 2025
-
-**Enterprise LTS:** Vault Enterprise 1.19 is a [Long-Term Support (LTS)](https://developer.hashicorp.com/vault/docs/enterprise/lts) release.
+    </description><releaseNotes><![CDATA[### 1.19.2 
+#### April 18, 2025
 
 CHANGES:
 
-* UI: remove outdated and unneeded js string extensions [[GH-29834](https://github.com/hashicorp/vault/pull/29834)]
-* auth/azure: Update plugin to v0.20.2. Login requires `resource_group_name`, `vm_name`, and `vmss_name` to match token claims [[GH-30052](https://github.com/hashicorp/vault/pull/30052)]
-* auth/azure: Update plugin to v0.20.3 [[GH-30082](https://github.com/hashicorp/vault/pull/30082)]
-* auth/gcp: Update plugin to v0.20.2 [[GH-30081](https://github.com/hashicorp/vault/pull/30081)]
-* core: Verify that the client IP address extracted from an X-Forwarded-For header is a valid IPv4 or IPv6 address [[GH-29774](https://github.com/hashicorp/vault/pull/29774)]
-* secrets/azure: Update plugin to v0.21.2 [[GH-30037](https://github.com/hashicorp/vault/pull/30037)]
-* secrets/azure: Update plugin to v0.21.3 [[GH-30083](https://github.com/hashicorp/vault/pull/30083)]
-* secrets/gcp: Update plugin to v0.21.2 [[GH-29970](https://github.com/hashicorp/vault/pull/29970)]
-* secrets/gcp: Update plugin to v0.21.3 [[GH-30080](https://github.com/hashicorp/vault/pull/30080)]
-* secrets/openldap: Update plugin to v0.15.2 [[GH-30079](https://github.com/hashicorp/vault/pull/30079)]
-
-IMPROVEMENTS:
-
-* activity: mount_type was added to the API response of sys/internal/counters/activity [[GH-30071](https://github.com/hashicorp/vault/pull/30071)]
-* activity: mount_type was added to the API response of sys/internal/counters/activity
-* core (enterprise): report errors from the underlying seal when getting entropy.
-* storage/raft: Upgrade hashicorp/raft library to v1.7.3 which includes additional logging on the leader when opening and sending a snapshot to a follower. [[GH-29976](https://github.com/hashicorp/vault/pull/29976)]
+* core: Bump Go version to 1.23.7
+* core: Bump Go version to 1.23.8
+* secrets/openldap: Update plugin to v0.15.4 [[GH-30279](https://github.com/hashicorp/vault/pull/30279)]
 
 BUG FIXES:
 
-* auth/aws: fix a panic when a performance standby node attempts to write/update config. [[GH-30039](https://github.com/hashicorp/vault/pull/30039)]
-* auth/ldap: Fix a bug that does not properly delete users and groups by first converting their names to lowercase when case senstivity option is off. [[GH-29922](https://github.com/hashicorp/vault/pull/29922)]
-* auth/ldap: fix a panic when a performance standby node attempts to write/update config. [[GH-30039](https://github.com/hashicorp/vault/pull/30039)]
-* aws/secrets: Prevent vault from rejecting secret role configurations where no regions or endpoints are set [[GH-29996](https://github.com/hashicorp/vault/pull/29996)]
-* core (enterprise): add nil check before attempting to use Rotation Manager operations.
-* core: Fix a bug that prevents certain loggers from writing to a log file. [[GH-29917](https://github.com/hashicorp/vault/pull/29917)]
-* identity: reintroduce RPC functionality for group creates, allowing performance standbys to handle external group changes during login and token renewal [[GH-30069](https://github.com/hashicorp/vault/pull/30069)]
-* plugins (enterprise): Fix plugin registration with artifact when a binary for the same plugin is already present in the plugin directory.
-* secrets/aws: fix a bug where environment and shared credential providers were overriding the WIF configuration [[GH-29982](https://github.com/hashicorp/vault/pull/29982)]
-* secrets/aws: fix a panic when a performance standby node attempts to write/update config. [[GH-30039](https://github.com/hashicorp/vault/pull/30039)]
-* secrets/db: fix a panic when a performance standby node attempts to write/update config. [[GH-30039](https://github.com/hashicorp/vault/pull/30039)]
-* secrets/pki: Fix a bug that prevents enabling automatic tidying of the CMPv2 nonce store. [[GH-29852](https://github.com/hashicorp/vault/pull/29852)]]]></releaseNotes>
+* secrets/openldap: Prevent static role rotation on upgrade when `NextVaultRotation` is nil. Fixes an issue where static roles were unexpectedly rotated after upgrade due to a missing `NextVaultRotation` value. Now sets it to either `LastVaultRotation + RotationPeriod` or `now + RotationPeriod`. [[GH-30265](https://github.com/hashicorp/vault/pull/30265)]
+* secrets/pki (enterprise): Address a parsing bug that rejected CMPv2 requests containing a validity field.
+* secrets/pki: fix a bug where key_usage was ignored when generating root certificates, and signing certain intermediate certificates. [[GH-30034](https://github.com/hashicorp/vault/pull/30034)]
+* secrets/transit: fix a panic when rotating on a managed key returns an error [[GH-30214](https://github.com/hashicorp/vault/pull/30214)]]]></releaseNotes>
     
   </metadata>
   <files>
