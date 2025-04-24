@@ -7,8 +7,8 @@ $packageArgs = @{
   fileType      = 'exe'
   silentArgs    = "/S"
   validExitCodes= @(0)
-  url64bit      = "https://desktop.wifiman.com/wifiman-desktop-1.1.0-amd64.exe"
-  checksum64    = 'CB22CC3EBD21BADC64524452B5FD54A19AF5010EFB52D1EB0EAF319A3D3D961F'
+  url64bit      = "https://desktop.wifiman.com/wifiman-desktop-1.1.3-amd64.exe"
+  checksum64    = 'B7FA21C4BA58BEFF6740927FC527307057FCE5CDA898A91DB3FE21EF344B2305'
   checksumType64= 'sha256'
   destination   = $toolsDir
 }
