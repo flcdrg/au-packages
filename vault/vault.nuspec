@@ -4,7 +4,7 @@
   <metadata>
     <id>vault</id>
     <title>Vault</title>
-    <version>1.19.2</version>
+    <version>1.19.3</version>
     <authors>Mitchell Hashimoto, HashiCorp</authors>
     <owners>flcdrg</owners>
     <projectUrl>https://www.vaultproject.io/</projectUrl>
@@ -32,21 +32,7 @@ The key features of Vault are:
 * **Revocation**: Vault has built-in support for secret revocation. Vault can revoke not only single secrets, but a tree of secrets, for example all secrets read by a specific user, or all secrets of a particular type. Revocation assists in key rolling as well as locking down systems in the case of an intrusion.
 
 For more information, see the [introduction section](https://www.vaultproject.io/intro) of the Vault website.
-    </description><releaseNotes><![CDATA[### 1.19.2 
-#### April 18, 2025
-
-CHANGES:
-
-* core: Bump Go version to 1.23.7
-* core: Bump Go version to 1.23.8
-* secrets/openldap: Update plugin to v0.15.4 [[GH-30279](https://github.com/hashicorp/vault/pull/30279)]
-
-BUG FIXES:
-
-* secrets/openldap: Prevent static role rotation on upgrade when `NextVaultRotation` is nil. Fixes an issue where static roles were unexpectedly rotated after upgrade due to a missing `NextVaultRotation` value. Now sets it to either `LastVaultRotation + RotationPeriod` or `now + RotationPeriod`. [[GH-30265](https://github.com/hashicorp/vault/pull/30265)]
-* secrets/pki (enterprise): Address a parsing bug that rejected CMPv2 requests containing a validity field.
-* secrets/pki: fix a bug where key_usage was ignored when generating root certificates, and signing certain intermediate certificates. [[GH-30034](https://github.com/hashicorp/vault/pull/30034)]
-* secrets/transit: fix a panic when rotating on a managed key returns an error [[GH-30214](https://github.com/hashicorp/vault/pull/30214)]]]></releaseNotes>
+    </description><releaseNotes><![CDATA[]]></releaseNotes>
     
   </metadata>
   <files>
