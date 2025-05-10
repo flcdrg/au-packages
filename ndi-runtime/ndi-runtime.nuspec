@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>ndi-runtime</id>
+    <version>6.1.1</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/ndi-runtime</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>NDI Runtime</title>
+    <authors>Vizrt NDI AB</authors>
+    <projectUrl>https://ndi.video/tools/</projectUrl>
+    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/ndi-runtime.png</iconUrl>-->
+    <copyright>Vizrt NDI AB</copyright>
+    <licenseUrl>https://docs.ndi.video/all/using-ndi/ndi-tools/installing-ndi-tools/software-license-agreement</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>At what url are the software docs located?</docsUrl>
+    <tags>ndi obs</tags>
+    <summary>Runtime for NDI tools and plugins</summary>
+    <description>This is the runtime library for NDI tools. It is used by those tools available at [https:ndi.video/tools/](https:ndi.video/tools/) and also 3rd party extensions to other software like OBS Studio.
+    
+    NDI stands for Network Device Interface, a video connectivity standard that enables multimedia systems to identify and communicate with one another over IP and to encode, transmit, and receive high-quality, low latency, frame-accurate video and audio, and exchange metadata in real-time.    
+    </description>
+    <releaseNotes>https://docs.ndi.video/all/using-ndi/ndi-tools/release-notes</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
