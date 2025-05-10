@@ -9,11 +9,11 @@
     <title>NDI Runtime</title>
     <authors>Vizrt NDI AB</authors>
     <projectUrl>https://ndi.video/tools/</projectUrl>
-    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/ndi-runtime.png</iconUrl>-->
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/ndi-runtime/icons/ndi-icon.png</iconUrl>
     <copyright>Vizrt NDI AB</copyright>
     <licenseUrl>https://docs.ndi.video/all/using-ndi/ndi-tools/installing-ndi-tools/software-license-agreement</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <docsUrl>At what url are the software docs located?</docsUrl>
+    <docsUrl>https://docs.ndi.video/all/using-ndi/ndi-tools</docsUrl>
     <tags>ndi obs</tags>
     <summary>Runtime for NDI tools and plugins</summary>
     <description>This is the runtime library for NDI tools. It is used by those tools available at [https:ndi.video/tools/](https:ndi.video/tools/) and also 3rd party extensions to other software like OBS Studio.
