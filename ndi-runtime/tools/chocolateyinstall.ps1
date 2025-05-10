@@ -15,3 +15,5 @@ $packageArgs = @{
 }
 
 Install-ChocolateyPackage @packageArgs
+
+Write-Warning "You must reboot your computer to make a new or updated NDI Runtime installation effective"
