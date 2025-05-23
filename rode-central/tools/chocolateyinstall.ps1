@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$checksum = '8CE31054364DA7E54BBEAAF6653B001CBC7B5907067B69150B464F7313E9CDBB';
-$relativePath = 'RODE Central (2.0.96-156).msi';
+$checksum = '3C2A61B2F82AFA7A3ECF9F921AA3168D6E27DD5D53CB3B7383262635EA82FE77';
+$relativePath = 'RODE Central (2.0.97-200).msi';
 
 
 if ([Version] (Get-CimInstance Win32_OperatingSystem).Version -lt [version] "10.0.17134.0") {
