@@ -68,7 +68,7 @@ function global:au_GetLatest {
         $response = Invoke-RestMethod -Uri "https://go.microsoft.com/fwlink/?linkid=2155334"
         $version = $response.component.version
 
-        $response = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MicrosoftDocs/data-tools/main/ssms/download-sql-server-management-studio-ssms.md"
+        $response = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MicrosoftDocs/data-tools/main/ssms/release-notes-21.md"
         $content = $response.Content
 
         # The version number for this latest preview is: 13.0.12000.65

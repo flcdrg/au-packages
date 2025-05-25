@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>distroav</id>
+    <version>6.0.0</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/distroav</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>DistroAV: NDI integration for OBS Studio</title>
+    <authors>Stéphane Lepin</authors>
+    <projectUrl>https://github.com/DistroAV/DistroAV</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/aeliussaionji/chocopkgs@979a823c98cedde055c6004aebfc6d8a7bdef796/icons/obs-studio.png</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/DistroAV/DistroAV/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/DistroAV/DistroAV</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/DistroAV/DistroAV/issues</bugTrackerUrl>
+    <tags>obs obs-studio ndi</tags>
+    <summary>NDI integration for OBS Studio</summary>
+    <description>Network Audio/Video in OBS-Studio using NDI technology
+
+#### Features
+
+- NDI Source : Receive NDI video and audio in OBS
+- NDI Output : Transmit OBS video and audio to NDI
+- NDI Filter (a.k.a. NDI Dedicated Output) : Transmit a single OBS source or scene audio to NDI
+</description>
+    <releaseNotes>https://github.com/DistroAV/DistroAV/releases/tag/6.1.0</releaseNotes>
+    <dependencies>
+      <dependency id="obs-studio" version="31.0" />
+      <dependency id="ndi-runtime" version="6.1.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

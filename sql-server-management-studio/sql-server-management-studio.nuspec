@@ -3,17 +3,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-management-studio</id>
-    <version>20.2.37.0</version>
+    <version>21.0.1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-management-studio</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>SQL Server Management Studio 20.2.1</title>
+    <title>SQL Server Management Studio</title>
     <authors>Microsoft</authors>
-    <projectUrl>https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms</projectUrl>
+    <projectUrl>https://learn.microsoft.com/en-us/ssms/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/sql-server-management-studio/icons/ssms-icon.png</iconUrl>
-    <copyright>Microsoft 2019</copyright>
-    <licenseUrl>https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-license-terms</licenseUrl>
+    <copyright>Microsoft 2025</copyright>
+    <licenseUrl>https://learn.microsoft.com/en-us/Legal/sql/sql-server-management-studio-license-terms</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <mailingListUrl>https://social.msdn.microsoft.com/forums/en-us/home?forum=sqltools</mailingListUrl>
+    <mailingListUrl>https://learn.microsoft.com/en-us/answers/tags/191/sql-server</mailingListUrl>
     <bugTrackerUrl>https://connect.microsoft.com/SQLServer/Feedback</bugTrackerUrl>
     <tags>sql server management studio ssms admin</tags>
     <summary>SQL Server Management Studio (SSMS) is an integrated environment for accessing, configuring, managing, administering, and developing all components of SQL Server</summary>
@@ -47,7 +47,6 @@ Supported Operating Systems:
 
 ### Package Specific
 
-
 #### Upgrading from 18.x to 19.x
 
 As mentioned above, SSMS 19.x doesn't upgrade 18.x but will install side by side. If you don't wish to keep 18.x then you should run `choco uninstall sql-server-management-studio` prior to installing the latest version of this package.
@@ -70,6 +69,7 @@ This package is automatically updated based on the same data source that SSMS it
 
 If you have a preview versions of SSMS 18.0 installed, uninstall it and reboot before installing SSMS 18.0 GA.</releaseNotes>
     <dependencies>
+      <!-- <dependency id=" chocolatey-visualstudio.extension" version="1.11.1" /> -->
     </dependencies>
   </metadata>
   <files>

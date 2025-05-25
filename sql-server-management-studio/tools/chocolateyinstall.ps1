@@ -1,30 +1,38 @@
 ﻿$ErrorActionPreference = 'Stop';
+# Install-VisualStudio `
+#     -PackageName 'sql-server-management-studio' `
+#     -ApplicationName 'SQL Server Management Studio' `
+#     -Url 'https://download.visualstudio.microsoft.com/download/pr/8d215e6a-7f65-4949-bc09-e1befa5b6497/e16b5eda7e6eecad858faa89cabb3fd5f6b108b70f2fa18eb38fbbe3d679dd3d/vs_SSMS.exe' <# https://aka.ms/ssms/21/release/vs_SSMS.exe #> `
+#     -Checksum 'E16B5EDA7E6EECAD858FAA89CABB3FD5F6B108B70F2FA18EB38FBBE3D679DD3D' `
+#     -ChecksumType 'SHA256' `
+#     -InstallerTechnology 'WillowVS2017OrLater' `
+#     -Product 'Microsoft.VisualStudio.Product.SSMS' # 'Microsoft SQL Server Management Studio' `
+#     #-VisualStudioYear '2022' `
+#     -Preview $false
 
-$release = '20.2.1'
-$fullUrl = 'https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-ENU.exe'
-$fullChecksum = '1B3A54A08A258C6768F4AF726CFE97123478AAF7E8EDA6503054D20E354638EF'
+$toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
+
+  FileFullPath  = "$toolsDir\vs_SSMS.exe"
+  url           = 'https://download.visualstudio.microsoft.com/download/pr/8d215e6a-7f65-4949-bc09-e1befa5b6497/e16b5eda7e6eecad858faa89cabb3fd5f6b108b70f2fa18eb38fbbe3d679dd3d/vs_SSMS.exe'
+  checksum      = 'E16B5EDA7E6EECAD858FAA89CABB3FD5F6B108B70F2FA18EB38FBBE3D679DD3D'
+  checksumType  = 'sha256'
+}
+
+Write-Warning "Downloading file..."
+Get-ChocolateyWebFile @packageArgs
+
+# Run the installer
+$packageArgs = @{
+  packageName   = $env:ChocolateyPackageName
   fileType      = 'EXE'
-  silentArgs    = "/quiet /install /norestart /log `"$env:TEMP\chocolatey\$($env:ChocolateyPackageName)\$($env:ChocolateyPackageVersion)\SSMS.MsiInstall.log`""
-  validExitCodes= @(0, 3010, 1641)
-  softwareName  = "SQL Server Management Studio - $release"
+  file64        = "$toolsDir\vs_SSMS.exe"
+  softwareName  = 'SQL Server Management Studio 21*'
+  silentArgs   = "--all --norestart --passive"
+  validExitCodes= @(0, 3010)
 }
 
-$pp = Get-PackageParameters
-
-if ($pp['SSMSExePath'])
-{
-    $packageArgs.file = $pp['SSMSExePath']
-
-    Install-ChocolateyInstallPackage @packageArgs
-}
-else
-{
-    $packageArgs.url           = $fullUrl
-    $packageArgs.checksum      = $fullChecksum
-    $packageArgs.checksumType  = 'SHA256'
-
-    Install-ChocolateyPackage @packageArgs
-}
+Write-Warning "Running installer..."
+Install-ChocolateyInstallPackage @packageArgs
