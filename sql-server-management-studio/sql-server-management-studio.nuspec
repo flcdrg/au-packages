@@ -3,73 +3,66 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-management-studio</id>
-    <version>21.0.1</version>
+    <version>21.0.1-pre</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-management-studio</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>SQL Server Management Studio</title>
     <authors>Microsoft</authors>
     <projectUrl>https://learn.microsoft.com/en-us/ssms/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/sql-server-management-studio/icons/ssms-icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/sql-server-management-studio/icons/ssms21-icon.png</iconUrl>
     <copyright>Microsoft 2025</copyright>
     <licenseUrl>https://learn.microsoft.com/en-us/Legal/sql/sql-server-management-studio-license-terms</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <mailingListUrl>https://learn.microsoft.com/en-us/answers/tags/191/sql-server</mailingListUrl>
-    <bugTrackerUrl>https://connect.microsoft.com/SQLServer/Feedback</bugTrackerUrl>
+    <bugTrackerUrl>https://aka.ms/ssms-feedback</bugTrackerUrl>
     <tags>sql server management studio ssms admin</tags>
     <summary>SQL Server Management Studio (SSMS) is an integrated environment for accessing, configuring, managing, administering, and developing all components of SQL Server</summary>
     <description>
-      SQL Server Management Studio (SSMS) is an integrated environment for managing any SQL infrastructure, from SQL Server to Azure SQL Database. SSMS provides tools to configure, monitor, and administer instances of SQL Server and databases. Use SSMS to deploy, monitor, and upgrade the data-tier components used by your applications and build queries and scripts.
-
-The SSMS 19.x installation doesn't upgrade or replace SSMS versions 18.x or earlier. SSMS 19.x installs alongside previous versions, so both versions are available for use.
-
-Beginning with SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is automatically installed alongside SSMS. As a consequence of this, uninstalling this package will impact azure-data-studio if you had that package installed previously.
-
-#### Version Number
-
-This package is versioned using the published build number. The corresponding 'release number' is included in the package title.
+SQL Server Management Studio (SSMS) is an integrated environment for managing any SQL infrastructure. Use SSMS to access, configure, manage, administer, and develop all components of SQL Server, Azure SQL Database, Azure SQL Managed Instance, SQL Server on Azure VM, and Azure Synapse Analytics. SSMS provides a single comprehensive utility that combines a broad group of graphical tools with many rich script editors to provide access to SQL Server for developers and database administrators of all skill levels.
 
 #### Supported SQL offerings
 
-- This version of SSMS works with SQL Server 2014 and higher and provides the most significant level of support for working with the latest cloud features in Azure SQL Database and Azure Synapse Analytics.
-- Additionally, SSMS 19.x can be installed alongside with SSMS 18.x, SSMS 17.x, SSMS 16.x.
-- SQL Server Integration Services (SSIS) - SSMS version 17.x or later doesn't support connecting to the legacy SQL Server Integration Services service. To connect to an earlier version of the legacy Integration Services, use the version of SSMS aligned with the version of SQL Server. For example, use SSMS 16.x to connect to the legacy SQL Server 2016 Integration Services service. SSMS 17.x and SSMS 16.x can be installed side by side on the same computer. Since the release of SQL Server 2012, the SSIS Catalog database, SSISDB, is the recommended way to store, manage, run, and monitor Integration Services packages. For details, see [SSIS Catalog](https://docs.microsoft.com/en-us/sql/integration-services/catalog/ssis-catalog?view=sql-server-ver15).
+- You can use it to manage all supported SQL Server versions, such as SQL Server 2022, SQL Server 2019, and earlier versions.
+-  SSMS 21 includes enhanced integration for managing Azure SQL Database and Azure SQL Managed Instance environments.
+
 #### SSMS System Requirements
 
-The current release of SSMS supports the following 64-bit platforms when used with the latest available service pack:
+SQL Server Management Studio 21 is supported on the following 64-bit operating systems:
 
 Supported Operating Systems:
 
-- Windows 11 (64-bit)
-- Windows 10 (64-bit) version 1607 (10.0.14393) or later
-- Windows Server 2022 (64-bit)
-- Windows Server 2019 (64-bit)
-- Windows Server 2016 (64-bit)
+- Windows 11 minimum supported OS version or higher: Home, Pro, Pro Education, Pro for Workstations, Enterprise, and Education 
+- Windows 10 minimum supported OS version or higher: Home, Professional, Education, and Enterprise. 
+- Windows Server 2022: Standard and Datacenter.
+- Windows Server 2019: Standard and Datacenter.
+- Windows Server 2016: Standard and Datacenter.
 
 ### Package Specific
 
-#### Upgrading from 18.x to 19.x
+Major versions of SSMS install side by side. If you upgrade this package from an earlier major version (eg. 18.x, 19.x, 20.x), that version will remain installed.
 
-As mentioned above, SSMS 19.x doesn't upgrade 18.x but will install side by side. If you don't wish to keep 18.x then you should run `choco uninstall sql-server-management-studio` prior to installing the latest version of this package.
+As of version 21, SSMS now uses the standard Visual Studio installer to install and update SSMS.
 
 #### Package Parameters
 
-- `SSMSExePath:PathToFile` - Use this installer exe instead of downloading
+The default installation installs the SMSS core tools. You can use [package parameters](https://learn.microsoft.com/ssms/install/command-line-parameters?WT.mc_id=DOP-MVP-5001655 to install additional workloads:
 
-To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
-To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
+- `Microsoft.SqlServer.Workload.SSMS.AI`
+- `Microsoft.SqlServer.Workload.SSMS.BI`
+- `Microsoft.SqlServer.Workload.SSMS.HybridAndMigration`
+- `Microsoft.SqlServer.Workload.SSMS.CodeTools`
 
 Example:
-`choco install sql-server-management-studio --params "'/SSMSExePath:c:\Downloads\SSMS-Setup-ENU.exe'"`
+`choco install sql-server-management-studio --params "'--all'"`
 
 #### Package Updates
 
 This package is automatically updated based on the same data source that SSMS itself uses to determine when updates are available. This may mean that there may sometimes be a delay between Microsoft releasing a new version and when they 'advertise' it as being generally available for SSMS to update.
 </description>
-    <releaseNotes>https://docs.microsoft.com/en-au/sql/ssms/release-notes-ssms
-
-If you have a preview versions of SSMS 18.0 installed, uninstall it and reboot before installing SSMS 18.0 GA.</releaseNotes>
+    <releaseNotes>https://learn.microsoft.com/en-us/ssms/release-notes-21</releaseNotes>
     <dependencies>
-      <!-- <dependency id=" chocolatey-visualstudio.extension" version="1.11.1" /> -->
+      <dependency id="chocolatey-visualstudio.extension" version="1.11.1" />
+      <dependency id="dotnetfx" version="4.8.0.20220524" />
     </dependencies>
   </metadata>
   <files>
