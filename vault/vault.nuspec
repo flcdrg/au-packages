@@ -4,7 +4,7 @@
   <metadata>
     <id>vault</id>
     <title>Vault</title>
-    <version>1.19.4</version>
+    <version>1.19.5</version>
     <authors>Mitchell Hashimoto, HashiCorp</authors>
     <owners>flcdrg</owners>
     <projectUrl>https://www.vaultproject.io/</projectUrl>
@@ -32,30 +32,7 @@ The key features of Vault are:
 * **Revocation**: Vault has built-in support for secret revocation. Vault can revoke not only single secrets, but a tree of secrets, for example all secrets read by a specific user, or all secrets of a particular type. Revocation assists in key rolling as well as locking down systems in the case of an intrusion.
 
 For more information, see the [introduction section](https://www.vaultproject.io/intro) of the Vault website.
-    </description><releaseNotes><![CDATA[### 1.19.4
-#### May 16, 2025
-
-CHANGES:
-
-* Update vault-plugin-auth-cf to v0.20.1 [[GH-30586](https://github.com/hashicorp/vault/pull/30586)]
-* auth/azure: Update plugin to v0.20.4 [[GH-30543](https://github.com/hashicorp/vault/pull/30543)]
-* core: Bump Go version to 1.24.3.
-
-IMPROVEMENTS:
-
-* Namespaces (enterprise): allow a root token to relock a namespace
-* core (enterprise): update to FIPS 140-3 cryptographic module in the FIPS builds.
-* core: Updated code and documentation to support FIPS 140-3 compliant algorithms. [[GH-30576](https://github.com/hashicorp/vault/pull/30576)]
-* core: support for X25519MLKEM768 (post quantum key agreement) in the Go TLS stack. [[GH-30603](https://github.com/hashicorp/vault/pull/30603)]
-* ui: Replaces all instances of the deprecated event.keyCode with event.key [[GH-30493](https://github.com/hashicorp/vault/pull/30493)]
-
-BUG FIXES:
-
-* core (enterprise): fix a bug where plugin automated root rotations would stop after seal/unseal operations
-* plugins (enterprise): Fix an issue where Enterprise plugins can't run on a standby node
-when it becomes active because standby nodes don't extract the artifact when the plugin
-is registered. Remove extracting from Vault and require the operator to place
-the extracted artifact in the plugin directory before registration.]]></releaseNotes>
+    </description><releaseNotes><![CDATA[]]></releaseNotes>
     
   </metadata>
   <files>
