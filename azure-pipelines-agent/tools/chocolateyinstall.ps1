@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$url = 'https://vstsagentpackage.azureedge.net/agent/4.253.0/vsts-agent-win-x86-4.253.0.zip'
-$url64 = 'https://vstsagentpackage.azureedge.net/agent/4.253.0/vsts-agent-win-x64-4.253.0.zip'
+$url = 'https://download.agent.dev.azure.com/agent/4.253.0/vsts-agent-win-x86-4.253.0.zip'
+$url64 = 'https://download.agent.dev.azure.com/agent/4.253.0/vsts-agent-win-x64-4.253.0.zip'
 $checksum = '3bfb34c73784041844c1fec05b310327d6b2a9a2b4542467a634ac324033afc3'
 $checksum64 = 'aecbff3d911e2634dccda26434eb39752d74ff0595c78814fb219b29baef17f6'
 
@@ -26,7 +26,7 @@ if ($pp['Url']) {
         if (!$pp['Auth']) {
             Write-Error "You need to specify an auth type with /Auth= 'negotiate', 'alt' or 'integrated'"
         }
-        
+
         $configOpts += @("--auth", $($pp['Auth']))
 
         if ($pp['Auth'] -ine 'integrated') {
@@ -36,7 +36,7 @@ if ($pp['Url']) {
             if (!$username -or !$password) {
                 Write-Error "You must supply /username and /password"
             }
-            
+
             $configOpts += @("--userName", $username, "--password", $password)
         }
     }
@@ -76,10 +76,10 @@ if ($pp['Url']) {
     }
     else {
         if (!$pp['Pool']) { $pp['Pool'] = 'default'}
-      
+
         $configOpts += @("--pool", $pp['Pool'])
     }
-    
+
     # AutoLogon(interactive) or as a service
     if ($pp['AutoLogon']) {
         $configOpts += @('--runAsAutoLogon', '--noRestart')
@@ -145,7 +145,7 @@ if ($pp['Url']) {
             if ($pp['ProxyPassword']) {
                 $configOpts += @("--proxypassword", $pp['ProxyPassword'])
             }
-        }        
+        }
     }
 }
 
