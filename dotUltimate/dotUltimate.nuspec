@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dotUltimate</id>
-    <version>2025.2-EAP03</version>
+    <version>2025.2-EAP04</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dotUltimate</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>dotUltimate</title>
@@ -49,7 +49,7 @@ For example: `--params "'/NoCpp /NoTeamCityAddin'"`.
 	</description>
     <releaseNotes>ReSharper release notes: https://www.jetbrains.com/resharper/whatsnew</releaseNotes>
     <dependencies>
-      <dependency id="resharper-platform" version="[252.0.20250603.84956-eap03]" />
+      <dependency id="resharper-platform" version="[252.0.20250604.112431-eap04]" />
       <dependency id="chocolatey-core.extension" version="1.3.1" />
       <dependency id="dotnet4.6.1" version="4.6.01055.20170308" />
     </dependencies>
