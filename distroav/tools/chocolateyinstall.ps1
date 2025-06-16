@@ -2,8 +2,8 @@
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 # DO NOT CHANGE THESE MANUALLY, USE update.ps1
-$url      = 'https://github.com/DistroAV/DistroAV/releases/download/6.0.0/distroav-6.0.0-windows-x64-Installer.exe'
-$checksum = '9a57af278fbffc348ade7659289ab9cb0a62c7233863bf5a29f6d2949df5f0f1'
+$url      = 'https://github.com/DistroAV/DistroAV/releases/download/6.1.1/distroav-6.1.1-windows-x64-Installer.exe'
+$checksum = ''
 
 
 # Now install obs-ndi

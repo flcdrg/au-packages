@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>distroav</id>
-    <version>6.0.0</version>
+    <version>6.1.1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/distroav</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>DistroAV: NDI integration for OBS Studio</title>
@@ -24,8 +24,8 @@
 - NDI Source : Receive NDI video and audio in OBS
 - NDI Output : Transmit OBS video and audio to NDI
 - NDI Filter (a.k.a. NDI Dedicated Output) : Transmit a single OBS source or scene audio to NDI
-</description>
-    <releaseNotes>https://github.com/DistroAV/DistroAV/releases/tag/6.1.0</releaseNotes>
+</description><releaseNotes><![CDATA[https://github.com/DistroAV/DistroAV/releases/tag/6.1.1]]></releaseNotes>
+    
     <dependencies>
       <dependency id="obs-studio" version="31.0" />
       <dependency id="ndi-runtime" version="6.1.1" />
