@@ -73,21 +73,21 @@ function Get-ReleaseVersion($release, [string] $prefix) {
 
 function Update-ReleaseNotes($Package) {
     [System.Xml.XmlNamespaceManager]$xmlNsManager = New-Object System.Xml.XmlNamespaceManager($Package.NuspecXml.NameTable)
-    $xmlNsManager.AddNamespace("ns", $Package.NuspecXml.package.GetAttribute("xmlns"))
+    [void]$xmlNsManager.AddNamespace("ns", $Package.NuspecXml.package.GetAttribute("xmlns"))
 
     # If 'releaseNotes' is a string property (no CDATA child) then we need to remove it so we can replace it with
     # a proper Element that has a child CDATA.
     $releaseNotesNode = $Package.NuspecXml.package.metadata.SelectSingleNode("ns:releaseNotes", $xmlNsManager)
     if ($releaseNotesNode) {
-        $Package.NuspecXml.package.metadata.RemoveChild($releaseNotesNode)
+        [void]$Package.NuspecXml.package.metadata.RemoveChild($releaseNotesNode)
     }
     # Create releaseNotes element
     $releaseNotesNode = $Package.NuspecXml.CreateElement("releaseNotes", $Package.NuspecXml.DocumentElement.NamespaceURI)
     $cdataNode = $Package.NuspecXml.CreateCDataSection($Latest.ReleaseNotes)
-    $releaseNotesNode.AppendChild($cdataNode)
+    [void] $releaseNotesNode.AppendChild($cdataNode)
 
     # Insert releaseNotes after description
     $descriptionNode = $Package.NuspecXml.package.metadata.SelectSingleNode("ns:description", $xmlNsManager)
-    $Package.NuspecXml.package.metadata.InsertAfter($releaseNotesNode, $descriptionNode)
+    [void] $Package.NuspecXml.package.metadata.InsertAfter($releaseNotesNode, $descriptionNode)
     $Package.SaveNuspec()
 }

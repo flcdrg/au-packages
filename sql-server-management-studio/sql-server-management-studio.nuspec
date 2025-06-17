@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-management-studio</id>
-    <version>21.0.1-pre</version>
+    <version>21.2.5</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-management-studio</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>SQL Server Management Studio</title>
@@ -23,7 +23,7 @@ SQL Server Management Studio (SSMS) is an integrated environment for managing an
 #### Supported SQL offerings
 
 - You can use it to manage all supported SQL Server versions, such as SQL Server 2022, SQL Server 2019, and earlier versions.
--  SSMS 21 includes enhanced integration for managing Azure SQL Database and Azure SQL Managed Instance environments.
+- SSMS 21 includes enhanced integration for managing Azure SQL Database and Azure SQL Managed Instance environments.
 
 #### SSMS System Requirements
 
@@ -45,15 +45,16 @@ As of version 21, SSMS now uses the standard Visual Studio installer to install 
 
 #### Package Parameters
 
-The default installation installs the SMSS core tools. You can use [package parameters](https://learn.microsoft.com/ssms/install/command-line-parameters?WT.mc_id=DOP-MVP-5001655 to install additional workloads:
+The default installation installs the SMSS core tools. You can use [package parameters](https://learn.microsoft.com/ssms/install/command-line-parameters?WT.mc_id=DOP-MVP-5001655) to install additional workloads:
 
 - `Microsoft.SqlServer.Workload.SSMS.AI`
 - `Microsoft.SqlServer.Workload.SSMS.BI`
 - `Microsoft.SqlServer.Workload.SSMS.HybridAndMigration`
 - `Microsoft.SqlServer.Workload.SSMS.CodeTools`
 
-Example:
+Example (install all workloads):
 `choco install sql-server-management-studio --params "'--all'"`
+`choco install sql-server-management-studio --params "'--add Microsoft.SqlServer.Workload.SSMS.CodeTools'"`
 
 #### Package Updates
 

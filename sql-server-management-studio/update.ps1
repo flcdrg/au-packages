@@ -1,11 +1,12 @@
-# Import-Module chocolatey-au
-Import-Module ..\..\chocolatey-au\src\Chocolatey-AU.psm1
+Import-Module chocolatey-au
+
+. ..\_scripts\GitHub.ps1
 
 function global:au_SearchReplace {
     @{
         'tools\chocolateyInstall.ps1' = @{
-            "(^[$]fullUrl\s*=\s*)('.*')"         = "`$1'$($Latest.FullUrl)'"
-            "(^[$]fullChecksum\s*=\s*)('.*')"    = "`$1'$($Latest.FullChecksum)'"
+            "(^[$]fullUrl\s*=\s*)('.*')"         = "`$1'$($Latest.Url32)'"
+            "(^[$]fullChecksum\s*=\s*)('.*')"    = "`$1'$($Latest.Checksum32)'"
         }
      }
 }
@@ -71,8 +72,8 @@ function global:au_GetLatest {
             PackageName = 'sql-server-management-studio'
             Version = $version
             ReleaseNotes = $releaseNotes
-            FullChecksum = $download.checksum
-            FullUrl = $download.url
+            Checksum32 = $download.checksum
+            Url32 = $download.url
         }
 
         return $Latest
@@ -82,6 +83,10 @@ function global:au_GetLatest {
     }
 
     return 'ignore'
+}
+
+function global:au_AfterUpdate ($Package) {
+    Update-ReleaseNotes $Package
 }
 
 update -ChecksumFor none
