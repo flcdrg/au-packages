@@ -24,8 +24,8 @@ function global:au_GetLatest {
     Version = $release.tag_name
     URL32   = $windowsAsset.browser_download_url
     ReleaseNotes = $release.html_url
-    checksum = $checksumValue
-    checksumType = $checksumType
+    Checksum32 = $checksumValue
+    Checksum32Type = $checksumType
   }
 }
 
