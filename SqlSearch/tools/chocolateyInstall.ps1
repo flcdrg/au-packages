@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$checksum = 'AF0BF4F91EC3D2C06D21C75F119861E66BA7720C778A4BD97C670FD230C10D9F'
-$url = 'https://download.red-gate.com/installers/SQLSearch/2025-05-29/SQLSearch.exe'
+$checksum = '854C6DDBB9C8E82408CEB46732FB4B55A33A745474341CA9B5DCB2B1C3ABB111'
+$url = 'https://download.red-gate.com/installers/SQLSearch/2025-06-19/SQLSearch.exe'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
