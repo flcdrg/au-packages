@@ -202,7 +202,7 @@ function global:au_GetLatest {
     $f.Dispose()
 
     $Latest = @{
-        URL32          = $url
+        URL32          = $url.Replace("https://downloads.dell.com/", "https://dl.dell.com/")
         Version        = $version
         Checksum32     = $checksum
         ChecksumType32 = $checksumType
