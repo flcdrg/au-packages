@@ -2,7 +2,7 @@
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 # The dl.dell.com site seems to reject requests from the Chocolatey user agent, so prefer downloads.dell.com
-$fileLocation = 'https://downloads.dell.com/FOLDER12409577M/4/Dell-Command-Configure-Application_438RH_WIN64_5.0.1.3_A00.EXE'
+$fileLocation = 'https://downloads.dell.com/FOLDER12902766M/1/Dell-Command-Configure-Application_MD8CJ_WIN64_5.2.0.9_A00.EXE'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
@@ -12,7 +12,7 @@ $packageArgs = @{
   silentArgs     = "/s"
   
   validExitCodes = @(0)
-  checksum       = '997652aa18fa17be7c418b288a0f783f58694f0f2a972410c055dea83a1fa67f'
+  checksum       = 'ff4d5685036e4f2cfa9856d8cf16761ab098d369573e97ae944eb4555cd9341e'
   checksumType   = 'sha256'
   destination    = $toolsDir
 }
