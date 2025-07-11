@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://download.microsoft.com/download/a89001cb-9c99-48d3-9f14-ded054b35fe4/SQLServer2022-KB5054531-x64.exe'
-$checksum   = '6e58447853af96373bb838e7e7a0b41237cc8dac2ebdcb78e13a268be27b2694'
-$softwareName = 'Hotfix 4195 for SQL Server 2022*(KB5054531)*'
+$url        = 'https://download.microsoft.com/download/a89001cb-9c99-48d3-9f14-ded054b35fe4/SQLServer2022-KB5059390-x64.exe'
+$checksum   = '3565c4de8d3adb31bcd7b11528b1287ffc7a23e118a5817fcbcf92dc88270243'
+$softwareName = 'Hotfix 4205 for SQL Server 2022*(KB5059390)*'
 
 [bool] $runningAU = (Test-Path Function:\au_GetLatest)
 
