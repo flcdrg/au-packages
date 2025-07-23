@@ -24,9 +24,9 @@
 - ANTS Memory Profiler - Find memory leaks within minutes and optimize the memory usage of your C# and VB.NET code.
 - .NET Reflector VSPro - Understand and debug any 3rd party code, including frameworks, components and libraries.
 </description>
-    <releaseNotes>- [ANTS Memory Profiler](https://documentation.red-gate.com/display/AMP8/ANTS+Memory+Profiler+8.11+release+notes)
-- [ANTS Performance Profiler](https://documentation.red-gate.com/display/APP9/ANTS+Performance+Profiler+9.6+release+notes)
-- [.NET Reflector](https://documentation.red-gate.com/display/REF9/.NET+Reflector+9.0+release+notes)</releaseNotes>
+    <releaseNotes>- [ANTS Memory Profiler](https://documentation.red-gate.com/amp/release-notes-and-other-versions/ants-memory-profiler-11-0-release-notes)
+- [ANTS Performance Profiler](https://documentation.red-gate.com/app/release-notes-and-other-versions/ants-performance-profiler-11-0-release-notes)
+- [.NET Reflector](https://documentation.red-gate.com/ref/release-notes-and-other-versions/net-reflector-11-1-release-notes)</releaseNotes>
   <dependencies>
     <dependency id="chocolatey-core.extension" version="1.1.0" />
     <dependency id="vcredist2015" version="14.0.24215.20170201" />
