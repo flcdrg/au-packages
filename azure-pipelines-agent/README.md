@@ -5,7 +5,10 @@ The following package parameters can be set:
 * `/Directory:` - Directory to install agent in (defaults to `c:\agent`)
 * `/Url:` - URL of the server. For example: `https://myaccount.visualstudio.com` or `http://onprem:8080/tfs`
 * `/Token:` - Personal Access Token
-* `/Auth:` - One of `negotiate`, `alt` or `integrated`
+* `/Auth:` - One of `negotiate`, `alt`, `SP` or `integrated`
+* `/ClientId:` - Used with `SP` - Specifies the Client ID of the Service Principal with access to register agents
+* `/TenantId:` - Used with `SP` - Specifies the Tenant ID which the Service Principal is registered in
+* `/ClientSecret:` - Used with `SP` - Specifies the Client Secret of the Service Principal
 * `/Username:` - Used with `negotiate` or `alt` - Specify the Windows user name in the format: domain\userName or userName@domain.com
 * `/Password:` - Used with `negotiate` or `alt`
 * `/Pool:` - Pool name for the agent to join (defaults to `default`)

@@ -24,12 +24,22 @@ if ($pp['Url']) {
     }
     else {
         if (!$pp['Auth']) {
-            Write-Error "You need to specify an auth type with /Auth= 'negotiate', 'alt' or 'integrated'"
+            Write-Error "You need to specify an auth type with /Auth= 'negotiate', 'alt', 'SP' or 'integrated'"
         }
         
-        $configOpts += @("--auth", $($pp['Auth']))
+        $auth = $($pp['Auth'])
+        $configOpts += @("--auth", $auth)
 
-        if ($pp['Auth'] -ine 'integrated') {
+        if ($auth -ieq 'SP') {
+            Write-Verbose "Using Service Principal authentication"
+
+            if (!$pp['ClientId'] -or !$pp['ClientSecret'] -or !$pp['TenantId']) {
+                Write-Error "Must specify /ClientID, /TenantID and /ClientSecret"
+            }
+            
+            $configOpts += @("--clientID", $pp['ClientId'], "--tenantId", $pp['TenantId'], "--clientSecret", $pp['ClientSecret'])
+        }
+        elseif ($auth -ine 'integrated') {
             $username = $pp['Username']
             $password = $pp['Password']
 
