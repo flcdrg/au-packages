@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>oscar-cpap-analysis</id>
-    <version>1.6.0</version>
+    <version>1.6.1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/oscar-cpap-analysis</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>OSCAR, the Open Source CPAP Analysis Reporter</title>
