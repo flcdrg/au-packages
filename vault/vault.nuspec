@@ -4,7 +4,7 @@
   <metadata>
     <id>vault</id>
     <title>Vault</title>
-    <version>1.20.1</version>
+    <version>1.20.2</version>
     <authors>Mitchell Hashimoto, HashiCorp</authors>
     <owners>flcdrg</owners>
     <projectUrl>https://www.vaultproject.io/</projectUrl>
