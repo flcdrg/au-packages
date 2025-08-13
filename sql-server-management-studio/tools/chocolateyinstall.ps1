@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$fullUrl = 'https://download.visualstudio.microsoft.com/download/pr/f55fba7b-3f02-49b7-9aca-a075049a807d/c2d75555c4674948771dd1bb9433103560dbf7ad7bccb1d822818e7af59494cc/vs_SSMS.exe'
-$fullChecksum = 'C2D75555C4674948771DD1BB9433103560DBF7AD7BCCB1D822818E7AF59494CC'
+$fullUrl = 'https://download.visualstudio.microsoft.com/download/pr/df8b8a1d-60a9-4872-99a4-7b1bcd00b219/6f3653dd0e2e36e87b21da7bdee3d3e67020a9b94684a6fd23678448bfcb0e4f/vs_SSMS.exe'
+$fullChecksum = '6F3653DD0E2E36E87B21DA7BDEE3D3E67020A9B94684A6FD23678448BFCB0E4F'
 
 Install-VisualStudio `
     -PackageName 'sql-server-management-studio' `
