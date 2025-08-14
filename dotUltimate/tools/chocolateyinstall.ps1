@@ -4,7 +4,7 @@ $platformPackageName = 'resharper-platform'
 $packageName = 'dotUltimate'
 $scriptPath = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 $commonPath = $(Split-Path -parent $(Split-Path -parent $scriptPath))
-$filename = 'JetBrains.dotUltimate.2025.2.RC2.Checked.exe'
+$filename = 'JetBrains.dotUltimate.2025.2.exe'
 $installPath = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
 $packageParameters = Get-PackageParameters
 
