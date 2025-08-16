@@ -14,7 +14,7 @@ $german = @(3079,1031,5127,4103,2055)
 $french = @(2060,11276,3084,9228,12300,1036,5132,13324,6156,14348,10252,4108,7180)
 $japanese = @(17, 1041)
 $chinese = @(2052)
-$version = '5.1.2.31185'
+$version = '5.1.3.31238'
 
 # Install for all users by default
 if ($pp["CurrentUser"]) {
@@ -32,11 +32,11 @@ $packageArgs = @{
   checksumType  = 'sha256'
 }
 
-$checksumde = '84666d9069ffcf7a7ecbd249a88eba9b95a63469039c428d82f588461e9fd915'
-$checksumfr = '0f1dbd3b036d68cb3a1954ddc7e716d128b4ff6493eff9044f0e8e379a9931c4'
-$checksumjp = '39bc5ebd89ec1609c5aa713f25c3d3614ab2de18e3068238b88ee5a023d3f924'
-$checksumzh = '6f5c7f8aa9f262902f4ef66afc65399dfb29613e44f859bee93e521d9efbfc44'
-$checksum = 'fdfa87d53640b59f9e16e3a0952ebad3f9b787788beaa656a1a00c64d48f5ca2'
+$checksumde = '2f4e694bb6dccd93049b3a6c48eca3fd9632962fb1a8cd00b45a2b1feef3c18b'
+$checksumfr = 'ff8a607cb2077a1d59105072fd3ae1585c2fec7ec47ae8f40827286f1a74a500'
+$checksumjp = 'a36957f10e0f5e4ca0e5895a6491f2d60fc62f50a8b5efbbe581cda0ce6f5519'
+$checksumzh = '57826b6602b2f6bf1b7c83bbe139cffd8a5c9c128cd39deca830930c252f346a'
+$checksum = '68b13054d330287490b472708d3f2ef94562bcc38e3de15174121672781b5d3f'
 
 if ($german -contains $LCID)
 {
