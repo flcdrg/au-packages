@@ -1,44 +1,16 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://download.microsoft.com/download/1/0/5/1059800B-F375-451C-B37E-758FFC7C8C8B/WindowsAdminCenter2311.msi'
-$checksum = '177AA97DA167FA13D7BE0B198B8AA3135AD0C3BA7A17FAFE0BBB9453EC447153'
+$url = 'https://download.microsoft.com/download/1/0/5/1059800B-F375-451C-B37E-758FFC7C8C8B/WindowsAdminCenter2410.exe'
+$checksum = '5FA1B293E99B9DCAD020A092B9FFD5D4E5DE1D4C314F8FA121BED717C128B7AF'
 
-$pp = Get-PackageParameters
-
-# Defaults
-if ($pp['PORT']) {
-  $port = $pp['PORT']
-}
-else {
-  $port = 6516
-}
-
-if ($pp['THUMBPRINT']) {
-  $certificateOption = 'installed'
-}
-else {
-  $certificateOption = 'generate'
-}
-
-$arguments = '/qn /norestart'
-$arguments += ' SME_PORT={0}' -f $port
-$arguments += ' SSL_CERTIFICATE_OPTION={0}' -f $certificateOption
-
-if ($pp['THUMBPRINT']) {
-  $arguments += ' SME_THUMBPRINT={0}' -f $pp['THUMBPRINT']
-}
-
-if ($pp['DISABLERESTARTWINRM']) {
-  $arguments += ' RESTART_WINRM=0'
-}
-
-$arguments += ' /l*v "{0}\{1}.{2}.MsiInstall.log"' -f $env:Temp, $packageName, $env:chocolateyPackageVersion
+$arguments = '/VERYSILENT /NORESTART'
+$arguments += ' /LOG="{0}\{1}.{2}.Install.log"' -f $env:Temp, $env:ChocolateyPackageName, $env:chocolateyPackageVersion
 
 # http://aka.ms/WACDownload
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   softwareName   = 'Windows Admin Center'
-  fileType       = 'msi'
+  fileType       = 'exe'
   silentArgs     = $arguments
   validExitCodes = @(0, 3010, 1641)
   url            = $url

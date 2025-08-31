@@ -3,45 +3,48 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>windows-admin-center</id>
-    <version>1.5.24289.0</version>
+    <version>2.4.1.2</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/windows-admin-center</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Windows Admin Center (2311)</title>
+    <title>Windows Admin Center (2410)</title>
     <authors>Microsoft Corporation</authors>
-    <projectUrl>https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/overview</projectUrl>
+    <projectUrl>https://learn.microsoft.com/windows-server/manage/windows-admin-center/overview?WT.mc_id=DOP-MVP-5001655</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/windows-admin-center/icons/windows-admin-center.png</iconUrl>
     <copyright>2018 Microsoft Corporation</copyright>
-    <licenseUrl>https://docs.microsoft.com/en-us/windows-server/windows-server-licensing/windows-admin-center-licensing</licenseUrl>
-    <docsUrl>https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/windows-admin-center</docsUrl>
+    <licenseUrl>https://aka.ms/wac-product-ga-eula</licenseUrl>
+    <docsUrl>https://learn.microsoft.com/windows-server/manage/windows-admin-center/understand/what-is?WT.mc_id=DOP-MVP-5001655</docsUrl>
     <!--<mailingListUrl></mailingListUrl>-->
-    <bugTrackerUrl>https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/support/troubleshooting#providing-feedback-on-issues</bugTrackerUrl>
     <tags>honolulu windows</tags>
-    <summary>Windows Admin Center is a locally deployed, browser-based app for managing servers, clusters, hyper-converged infrastructure, and Windows 10 PCs</summary>
-    <description>Windows Admin Center is a new, locally-deployed, browser-based management tool set that lets you manage your Windows Servers with no Azure or cloud dependency. Windows Admin Center gives you full control over all aspects of your server infrastructure and is particularly useful for managing servers on private networks that are not connected to the Internet.
+    <summary>Windows Admin Center is a locally deployed, browser-based app for managing servers, clusters, hyper-converged infrastructure, and Windows 10 and 11 PCs</summary>
+    <description>Windows Admin Center is a remote management tool for Windows Server running anywhere—physical, virtual, on-premises, in Azure, or in a hosted environment—at no extra cost.
 
-Windows Admin Center is the modern evolution of in-box management tools, like Server Manager and MMC. It complements System Center and Operations Management Suite - it's not a replacement.
+Here are a few things you can use Windows Admin Center for:
+
+- Simplify server management: Manage your servers and clusters with modernized versions of familiar tools such as Server Manager. Install in under five minutes and manage servers in your environment immediately, no extra configuration required. For details, see What is Windows Admin Center?
+- Work with hybrid solutions: Integration with Azure helps you optionally connect your on-premises servers with relevant cloud services. For details, see Azure hybrid services.
+- Streamline hyperconverged management: Streamline management of Azure Local or Windows Server hyperconverged clusters. Use simplified workloads to create and manage VMs, Storage Spaces Direct volumes, Software-Defined Networking and more. For details, see Manage HCI.
+
+Once installed, you can access Windows Admin Center through a web browser by navigating to https://localhost:6516.
 
 ### Supported operating systems
 
 You can install Windows Admin Center on the following Windows operating systems:
-Version 	Installation Mode
-- Windows 10 	Local client
-- Windows Server Semi-Annual Channel 	Gateway sever, managed server, failover cluster
-- Windows Server 2016 	Gateway sever, managed server, failover cluster
-- Windows Server 2019   Gateway sever, managed server, failover cluster
 
-### Package Specific
-#### Package Parameters
-The following package parameters can be set:
+| Operating system | Role(s) |
+| --- | --- |
+| Windows 10, 11 | Local client |
+| Windows Server Semi-Annual Channel | Gateway server, managed server, failover cluster |
+| Windows Server 2016 | Gateway server, managed server, failover cluster |
+| Windows Server 2019 | Gateway server, managed server, failover cluster |
+| Windows Server 2022 | Gateway server, managed server, failover cluster |
+| Windows Server 2025 | Gateway server, managed server, failover cluster |
 
- * `/Port:` - determines what port to listen on. Defaults to 6516. (You may want to use 443 on Windows Server)
- * `/Thumbprint:` - Existing certificate thumbprint. If not specified, a self-signed certificate is generated (expires after 60 days)
- * `/DisableRestartWinrm` -  If you are installing with an automation solution that would be broken by the WinRM service restarting, you can disable this by passing this parameter
+### Package notes
 
-To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
-To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
+The v2 release of Windows Admin Center changed the way it is installed, and as such the package parameters previously supported by v1 releases are no longer supported.
+
 </description>
-    <releaseNotes>https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/support/release-history</releaseNotes>
+    <releaseNotes>https://learn.microsoft.com/windows-server/manage/windows-admin-center/support/release-history?WT.mc_id=DOP-MVP-5001655</releaseNotes>
     <dependencies>
       <dependency id="PowerShell" version="5.1.14409.20180105" />
     </dependencies>

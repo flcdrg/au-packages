@@ -1,4 +1,4 @@
-Import-Module chocolatey-au
+Import-Module D:\git\chocolatey-au\src\Chocolatey-AU.psm1  #chocolatey-au
 
 function global:au_SearchReplace {
     @{
@@ -23,7 +23,7 @@ function global:au_GetLatest {
         $url = $response.Headers.Location[0] -replace "http:", "https:"
 
         # https://download.microsoft.com/download/1/0/5/1059800B-F375-451C-B37E-758FFC7C8C8B/WindowsAdminCenter1809.msi
-        $url -match "WindowsAdminCenter(?<version>\d+(\.\d+)?)\.msi$"
+        $url -match "WindowsAdminCenter(?<version>\d+(\.\d+)?)\.exe$"
 
         Write-Verbose "Downloading $url"
         $client = new-object System.Net.WebClient
@@ -31,7 +31,8 @@ function global:au_GetLatest {
 
         $client.DownloadFile($url, $downloadedFile)
 
-        $version = (..\_scripts\Get-MSIInfo.ps1 -Path $downloadedFile -Property ProductVersion)[3]
+        # Get version from .EXE
+        $version = (Get-Item $downloadedFile).VersionInfo.FileVersion.Trim()
 
         Write-Verbose "$version"
         $checksum = (Get-FileHash $downloadedFile -Algorithm SHA256).Hash
