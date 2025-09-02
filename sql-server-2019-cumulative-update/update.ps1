@@ -3,7 +3,7 @@ Import-Module chocolatey-au
 . ..\_scripts\SqlServerCumulativeUpdates.ps1
 
 function global:au_SearchReplace {
-    return SearchReplace 2022 $Latest
+    return SearchReplace 2019 $Latest
 }
 
 function global:au_GetLatest {
