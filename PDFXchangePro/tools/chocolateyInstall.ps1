@@ -12,10 +12,10 @@ $filename   = 'ProV10.x86.msi'
 $filename64 = 'ProV10.x64.msi'
 $url        = 'https://downloads.pdf-xchange.com/ProV10.x86.msi'
 $url64      = 'https://downloads.pdf-xchange.com/ProV10.x64.msi'
-$checksum   = '706C0E80184BDF27531E3CF9D8A67DB2758B556B1C70A97D1DC38E23005CA572'
-$checksum64 = '526DF9B076B74AD61C2572425B35E0961E02B7B92683EA30BE1BDE523A2F6B58'
-$lastModified32 = New-Object -TypeName DateTimeOffset 2025, 8, 26, 0, 50, 17, 0 # Last modified time corresponding to this package version
-$lastModified64 = New-Object -TypeName DateTimeOffset 2025, 8, 26, 0, 51, 1, 0 # Last modified time corresponding to this package version
+$checksum   = '80A39EDAC42AC1F90B4A4C6C3BFB8E8329153FA365699816D50696CBD5E7940B'
+$checksum64 = '3142D168F5557EBDAACCCEC0431310E91358C67B6D04AA7A2D230E13993274AC'
+$lastModified32 = New-Object -TypeName DateTimeOffset 2025, 9, 2, 22, 0, 16, 0 # Last modified time corresponding to this package version
+$lastModified64 = New-Object -TypeName DateTimeOffset 2025, 9, 2, 22, 1, 18, 0 # Last modified time corresponding to this package version
 
 $packageArgs = @{
   packageName   = $packageName
