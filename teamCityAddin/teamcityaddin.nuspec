@@ -3,14 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>teamCityAddin</id>
-    <version>2025.2.1</version>
+    <version>2025.2.1.20250909</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/teamCityAddin</packageSourceUrl>
     <owners>JetBrains, flcdrg</owners>
-    <title>JetBrains TeamCity Add-in</title>
+    <title>[Deprecated] JetBrains TeamCity Add-in</title>
     <authors>JetBrains</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://www.jetbrains.com/teamcity</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/jetbrains/chocolatey@master/TeamCityAddin/logo.png</iconUrl>
     <copyright>JetBrains s.r.o.</copyright>
     <licenseUrl>https://www.jetbrains.com/teamcity/buy/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -19,23 +18,10 @@
     <bugTrackerUrl>https://youtrack.jetbrains.com/issues/TW?q=Subsystem:%20%7BIDE:%20VS%20add-in%7D</bugTrackerUrl>
     <tags>jetbrains developer admin visualstudio teamcity</tags>
     <summary>TeamCity integration provider in Visual Studio</summary>
-    <description> If you use TeamCity continuous integration server to build and test your Visual Studio projects, TeamCity Add-in can help you access, execute, and analyze builds and tests on your TeamCity server without leaving Visual Studio.
-
-You can get the most from TeamCity Add-in when working with centralized version control systems (VCS) (like Perforce, Subversion, or Team Foundation Server), where light feature branches are not a part of the workflow. For these VCSs, TeamCity Add-in provides the possibility to run personal builds so that you can test your local changes on your TeamCity server before you commit them to your VCS.
-
-The TeamCity Add-in is a free Visual Studio extension that seamlessly integrates with Visual Studio 2010, 2012, 2013, 2015, and 2017 and with other JetBrains .NET tools such as ReSharper and dotCover.
-
-#### Package Parameters
-
-The following package parameters can be set:
-
- * `/PerMachine` - install machine-wide (instead of per-user)
+    <description>The TeamCity extension for Visual Studio has been discontinued. See [ReSharper and the .NET Tools 2025.2 Are Out!](https://blog.jetbrains.com/dotnet/2025/08/14/resharper-and-the-net-tools-2025-2-are-out/#continuous-integration) for more information.
     </description>
     <releaseNotes>https://www.jetbrains.com/teamcity/whatsnew/</releaseNotes>
-    <dependencies>
-      <dependency id="resharper-platform" version="[252.0.20250903.81842]" />
-      <dependency id="dotnet4.6.1" version="4.6.01055.20170308" />
-   </dependencies>
+
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
