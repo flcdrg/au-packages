@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$version = '2025.07.1'
+$version = '2025.07.2'
 
 $options = @{
   version = $version;
