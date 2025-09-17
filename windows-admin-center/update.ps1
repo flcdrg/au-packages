@@ -1,4 +1,4 @@
-Import-Module D:\git\chocolatey-au\src\Chocolatey-AU.psm1  #chocolatey-au
+Import-Module chocolatey-au
 
 function global:au_SearchReplace {
     @{
