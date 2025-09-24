@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>ubiquiti-unifi-controller</id>
-    <version>9.4.19</version>
+    <version>4.3.6</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/ubiquiti-unifi-controller</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Ubiquiti UniFi Network Server</title>
@@ -35,7 +35,7 @@ See [this page](https://help.ui.com/hc/en-us/articles/205144550-Self-Hosting-a-U
 
 Due to the way this package is generated, package versions prior to 7.3.76 but published after 18-Dec-2022 will also be affected by this change. Consult the release notes for your package to confirm which Java runtime version is required.
     </description>
-    <releaseNotes>https://community.ui.com/releases/r/network/9.4.19</releaseNotes>
+    <releaseNotes>https://community.ui.com/releases/r/uosserver/4.3.6</releaseNotes>
     <dependencies>
       <dependency id="autohotkey.portable" version="2.0.18" />
     </dependencies>
