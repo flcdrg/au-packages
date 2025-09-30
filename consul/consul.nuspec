@@ -48,7 +48,7 @@ IMPROVEMENTS:
 
 ]]></releaseNotes>
     <summary>Consul is a tool for service discovery, monitoring and configuration.</summary>
-    <iconUrl>https://cdn.rawgit.com/calvn/chocolatey-consul/master/icons/consul.png</iconUrl>
+    <iconUrl>https://cdn.statically.io/gh/flcdrg/au-packages/master/consul/icons/consul.png</iconUrl>
     
     <copyright>HashiCorp 2019</copyright>
     <tags>consul service consul.io</tags>
