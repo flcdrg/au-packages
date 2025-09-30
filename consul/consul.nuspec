@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>consul</id>
-    <version>1.20.1</version>
+    <version>1.21.5</version>
     <title>Consul</title>
     <authors>Mitchell Hashimoto, Armon Dadgar, HashiCorp</authors>
     <owners>cleung2010, flcdrg</owners>
@@ -30,21 +30,38 @@ For example:
  * `--params="'/agentargs=""-config-file %PROGRAMDATA%\consul\dsc-config\default.json -client 10.0.0.1""'"` (be cautious of quotes)
 
 For setting Consul agent CLI options, it is better dropping a `config.hcl` into `%PROGRAMDATA%\consul\config` instead of setting them with package parameters.
-    </description><releaseNotes><![CDATA[### 1.20.1 (October 29, 2024)
-BREAKING CHANGES:
-
-* mesh: Enable Envoy `HttpConnectionManager.normalize_path` by default on inbound traffic to mesh proxies. This resolves [CVE-2024-10005](https://nvd.nist.gov/vuln/detail/CVE-2024-10005). [[GH-21816](https://github.com/hashicorp/consul/issues/21816)]
+    </description><releaseNotes><![CDATA[### 1.21.5 (September 21, 2025)
 
 SECURITY:
 
-* mesh: Add `contains` and `ignoreCase` to L7 Intentions HTTP header matching criteria to support configuration resilient to variable casing and multiple values. This resolves [CVE-2024-10006](https://nvd.nist.gov/vuln/detail/CVE-2024-10006). [[GH-21816](https://github.com/hashicorp/consul/issues/21816)]
-* mesh: Add `http.incoming.requestNormalization` to Mesh configuration entry to support inbound service traffic request normalization. This resolves [CVE-2024-10005](https://nvd.nist.gov/vuln/detail/CVE-2024-10005) and [CVE-2024-10006](https://nvd.nist.gov/vuln/detail/CVE-2024-10006). [[GH-21816](https://github.com/hashicorp/consul/issues/21816)]
+* Migrate transitive dependency from archived `mitchellh/mapstructure` to `go-viper/mapstructure` to v2 to address [CVE-2025-52893](https://www.cve.org/CVERecord?id=CVE-2025-52893). [[GH-22581](https://github.com/hashicorp/consul/issues/22581)]
+* agent: Add the KV Validations to block path traversal allowing access to unauthorized endpoints. [[GH-22682](https://github.com/hashicorp/consul/issues/22682)]
+* agent: Fix a security vulnerability to filter out anonymous tokens along with empty tokens when setting the Results-Filtered-By-ACLs header [[GH-22534](https://github.com/hashicorp/consul/issues/22534)]
+* agent: Fix a security vulnerability where the attacker could read agent’s TLS certificate and private key by using the group ID that the Consul agent runs as. [[GH-22626](https://github.com/hashicorp/consul/issues/22626)]
+* api: add charset in all applicable content-types. [[GH-22598](https://github.com/hashicorp/consul/issues/22598)]
+* connect: Upgrade envoy version to 1.34.7 [[GH-22735](https://github.com/hashicorp/consul/issues/22735)]
+* security: Fix GHSA-65rg-554r-9j5x (CVE-2024-48908) by upgrading lycheeverse/lychee-action. [[GH-22667](https://github.com/hashicorp/consul/issues/22667)]
+* security: Fix a security vulnerability where the attacker could bypass authentication by passing url params as there was no validation on them. [[GH-22612](https://github.com/hashicorp/consul/issues/22612)]
+* security: perform constant time compare for sensitive values. [[GH-22537](https://github.com/hashicorp/consul/issues/22537)]
+* security: upgrade go version to 1.25.0 [[GH-22652](https://github.com/hashicorp/consul/issues/22652)]
+* security:: **(Enterprise only)**  fix nil pointer dereference.
+* security:: **(Enterprise only)**  fix potential race condition in partition CRUD.
+* security:: **(Enterprise only)**  perform constant time compare for sensitive values.
+
+FEATURES:
+
+* config: Add new parameter `max_request_headers_kb` to configure maximum header size for requests from downstream to upstream [[GH-22604](https://github.com/hashicorp/consul/issues/22604)]
+* config: Handle a new parameter `max_request_headers_kb` to configure maximum header size for requests from downstream to upstream in API Gateway config and proxy-defaults [[GH-22679](https://github.com/hashicorp/consul/issues/22679)]
+* config: Handle a new parameter `max_request_headers_kb` to configure maximum header size for requests from downstream to upstream in Mesh Gateway via service-defaults and proxy-defaults [[GH-22722](https://github.com/hashicorp/consul/issues/22722)]
+* config: Handle a new parameter `max_request_headers_kb` to configure maximum header size for requests from downstream to upstream in Terminating Gateway service-defaults and proxy-defaults [[GH-22680](https://github.com/hashicorp/consul/issues/22680)]
 
 IMPROVEMENTS:
 
-* api: remove dependency on proto-public, protobuf, and grpc [[GH-21780](https://github.com/hashicorp/consul/issues/21780)]
-* snapshot agent: **(Enterprise only)**  Implement Service Principal Auth for snapshot agent on azure.
-* xds: configures Envoy to load balance over all instances of an external service configured with hostnames when "envoy_dns_discovery_type" is set to "STRICT_DNS" [[GH-21655](https://github.com/hashicorp/consul/issues/21655)]
+* cli: add troubleshoot ports in debug command. A ports.json file is created, which lists the open or closed ports on the host where the command is executed. [[GH-22624](https://github.com/hashicorp/consul/issues/22624)]
+
+BUG FIXES:
+
+* agent: Don't show admin partition during errors [[GH-11154](https://github.com/hashicorp/consul/issues/11154)]
 
 ]]></releaseNotes>
     <summary>Consul is a tool for service discovery, monitoring and configuration.</summary>
