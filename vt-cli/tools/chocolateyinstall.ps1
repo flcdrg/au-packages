@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/VirusTotal/vt-cli/releases/download/1.1.1/Windows32.zip'
-$url64      = 'https://github.com/VirusTotal/vt-cli/releases/download/1.1.1/Windows64.zip'
-$checksum   = '5bcd4e85e9925f80bd1e02e7eaab50ed37c1999cfe59d144ab7c5b5a1a534b4e'
-$checksum64 = '469b7e7f4d5ccfce12a0576a82822ecd431e852052517af28acf67d93609fd14'
+$url        = 'https://github.com/VirusTotal/vt-cli/releases/download/1.2.0/Windows32.zip'
+$url64      = 'https://github.com/VirusTotal/vt-cli/releases/download/1.2.0/Windows64.zip'
+$checksum   = '80309c8ef9a446b901578f2be33f5cd420516ecae8233dcea38b07e470a9d629'
+$checksum64 = 'f95cde94fe7146ea9712d1ccad9ba9681505e92eb474d0c3e7f85a5f044963f8'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
