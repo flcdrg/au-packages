@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-management-studio</id>
-    <version>21.5.14</version>
+    <version>21.6.17</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-management-studio</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>SQL Server Management Studio</title>
@@ -59,7 +59,7 @@ Example (install all workloads):
 #### Package Updates
 
 This package is automatically updated based on the same data source that SSMS itself uses to determine when updates are available. This may mean that there may sometimes be a delay between Microsoft releasing a new version and when they 'advertise' it as being generally available for SSMS to update.
-</description><releaseNotes><![CDATA[https://aka.ms/SSMSReleaseNotes-21#21.5.14]]></releaseNotes>
+</description><releaseNotes><![CDATA[https://aka.ms/SSMSReleaseNotes-21#21.6.17]]></releaseNotes>
     
     <dependencies>
       <dependency id="chocolatey-visualstudio.extension" version="1.11.1" />
