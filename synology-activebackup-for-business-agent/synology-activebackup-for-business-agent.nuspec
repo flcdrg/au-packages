@@ -3,7 +3,7 @@
   <metadata>
     <id>synology-activebackup-for-business-agent</id>
     <title>Synology ActiveBackup for Business Agent</title>
-    <version>3.1.0.4948</version>
+    <version>3.1.0.4957</version>
     <authors>Synology Inc.</authors>
     <owners>flcdrg</owners>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/synology-activebackup-for-business-agent</packageSourceUrl>

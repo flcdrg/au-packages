@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$checksum = 'F8EA4FCA1DC3577415D2C94C23CE87319B108F8C918C00F2A3F097221F9B219B'
-$url = 'https://download.red-gate.com/installers/DotNETDeveloperBundle/2025-10-13/DotNETDeveloperBundle.exe'
+$checksum = '132E582AA16B03B330907B4181B243FD7FD1C3069BA54BB6EEA7F8E73CAC1BAB'
+$url = 'https://download.red-gate.com/installers/DotNETDeveloperBundle/2025-10-15/DotNETDeveloperBundle.exe'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
