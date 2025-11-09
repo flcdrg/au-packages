@@ -17,6 +17,19 @@ $packageArgs = @{
   validExitCodes= @(0)
 }
 
+# Stop UniFi service if it exists and is running
+$ServiceName = "UniFi"
+$WasRunning = $false
+
+$Service = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
+if ($null -ne $Service) {
+    if ($Service.Status -eq 'Running') {
+        Write-Verbose "Stopping UniFi service for upgrade"
+        $WasRunning = $true
+        Stop-Service -Name $ServiceName -Force
+    }
+}
+
 # Flag whether we're being invoked by AU module
 [bool] $runningAU = (Test-Path Function:\au_GetLatest)
 
@@ -57,4 +70,10 @@ if (-not $runningAU) {
         Write-Verbose "No upgrade prompt, so killing autohotkey process"
         $ahkProc.Kill()
     }
+}
+
+# Start UniFi service again if it was running before
+if ($WasRunning) {
+    Write-Verbose "Starting UniFi service after upgrade"
+    Start-Service -Name $ServiceName
 }
