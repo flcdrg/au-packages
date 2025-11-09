@@ -7,14 +7,14 @@
     <owners>flcdrg, jivkok</owners>
     <title>BgInfo</title>
     <authors>Bryce Cogswell</authors>
-    <projectUrl>https://docs.microsoft.com/en-au/sysinternals/downloads/bginfo</projectUrl>
+    <projectUrl>https://learn.microsoft.com/sysinternals/downloads/bginfo?WT.mc_id=DOP-MVP-5001655</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/bginfo/icons/bginfo.png</iconUrl>
     <copyright>© 2000-2007 Bryce Cogswell</copyright>
-    <licenseUrl>https://docs.microsoft.com/en-au/sysinternals/license-terms</licenseUrl>
+    <licenseUrl>https://learn.microsoft.com/sysinternals/license-terms?WT.mc_id=DOP-MVP-5001655</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <mailingListUrl>https://social.technet.microsoft.com/Forums/en-US/home?category=sysinternals</mailingListUrl>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/bginfo</packageSourceUrl>
-    <docsUrl>https://docs.microsoft.com/en-au/sysinternals/downloads/bginfo</docsUrl>
+    <docsUrl>https://learn.microsoft.com/sysinternals/downloads/bginfo?WT.mc_id=DOP-MVP-5001655</docsUrl>
     <tags>desktop background info sysinternals</tags>
     <summary>Automatic desktop backgrounds that include system information</summary>
     <description>
