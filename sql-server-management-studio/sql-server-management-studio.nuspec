@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-management-studio</id>
-    <version>21.6.17</version>
+    <version>22.0.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-management-studio</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>SQL Server Management Studio</title>
@@ -23,23 +23,24 @@ SQL Server Management Studio (SSMS) is an integrated environment for managing an
 #### Supported SQL offerings
 
 - You can use it to manage all supported SQL Server versions, such as SQL Server 2022, SQL Server 2019, and earlier versions.
-- SSMS 21 includes enhanced integration for managing Azure SQL Database and Azure SQL Managed Instance environments.
+- SSMS 22 includes enhanced integration for managing Azure SQL Database and Azure SQL Managed Instance environments.
 
 #### SSMS System Requirements
 
-SQL Server Management Studio 21 is supported on the following 64-bit operating systems:
+SQL Server Management Studio 22 is supported on the following 64-bit operating systems:
 
 Supported Operating Systems:
 
-- Windows 11 minimum supported OS version or higher: Home, Pro, Pro Education, Pro for Workstations, Enterprise, and Education 
-- Windows 10 minimum supported OS version or higher: Home, Professional, Education, and Enterprise. 
+- Windows 11 minimum supported OS version or higher: Home, Pro, Pro Education, Pro for Workstations, Enterprise, and Education
+- Windows 10 minimum supported OS version or higher: Home, Professional, Education, and Enterprise.
+- Windows Server 2025: Standard and Datacenter.
 - Windows Server 2022: Standard and Datacenter.
 - Windows Server 2019: Standard and Datacenter.
 - Windows Server 2016: Standard and Datacenter.
 
 ### Package Specific
 
-Major versions of SSMS install side by side. If you upgrade this package from an earlier major version (eg. 18.x, 19.x, 20.x), that version will remain installed.
+Major versions of SSMS install side by side. If you upgrade this package from an earlier major version (eg. 18.x, 19.x, 20.x, 21.x), that version will remain installed.
 
 As of version 21, SSMS now uses the standard Visual Studio installer to install and update SSMS.
 
@@ -59,8 +60,8 @@ Example (install all workloads):
 #### Package Updates
 
 This package is automatically updated based on the same data source that SSMS itself uses to determine when updates are available. This may mean that there may sometimes be a delay between Microsoft releasing a new version and when they 'advertise' it as being generally available for SSMS to update.
-</description><releaseNotes><![CDATA[https://aka.ms/SSMSReleaseNotes-21#21.6.17]]></releaseNotes>
-    
+</description><releaseNotes><![CDATA[https://aka.ms/SSMSReleaseNotes-22#22.0.0]]></releaseNotes>
+
     <dependencies>
       <dependency id="chocolatey-visualstudio.extension" version="1.11.1" />
       <dependency id="dotnetfx" version="4.8.0.20220524" />

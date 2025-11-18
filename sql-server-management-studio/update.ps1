@@ -61,12 +61,12 @@ function Get-Download($url, $version)
 function global:au_GetLatest {
     try {
         # Get latest version from XML
-        $response = Invoke-RestMethod -Uri "https://aka.ms/ssms/21/release/channel"
+        $response = Invoke-RestMethod -Uri "https://aka.ms/ssms/22/release/channel"
         $version = $response.info.productDisplayVersion
 
         $releaseNotes = ($response.channelItems | Where-Object { $_.id -eq "Microsoft.VisualStudio.Product.Ssms" } | Select-Object -First 1).releaseNotes
 
-        $download = Get-Download "https://aka.ms/ssms/21/release/vs_SSMS.exe" -version $version
+        $download = Get-Download "https://aka.ms/ssms/22/release/vs_SSMS.exe" -version $version
 
         $Latest = @{
             PackageName = 'sql-server-management-studio'

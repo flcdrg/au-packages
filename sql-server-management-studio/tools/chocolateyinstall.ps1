@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$fullUrl = 'https://download.visualstudio.microsoft.com/download/pr/5967a899-96aa-47e2-a7c5-1b7192f292ee/d2915d740f8a159b75c0b25315b0b2ae51c73ae60be7dcc4b68e10747751acac/vs_SSMS.exe'
-$fullChecksum = 'D2915D740F8A159B75C0B25315B0B2AE51C73AE60BE7DCC4B68E10747751ACAC'
+$fullUrl = 'https://download.visualstudio.microsoft.com/download/pr/d3b4e0f6-4bc0-4ec0-ba9c-20b355d61cc4/41b0ec8225d7d6a773abc363b0fb90a9443072e49fa4619271220e244b11f832/vs_SSMS.exe'
+$fullChecksum = '41B0EC8225D7D6A773ABC363B0FB90A9443072E49FA4619271220E244B11F832'
 
 Install-VisualStudio `
     -PackageName 'sql-server-management-studio' `
@@ -11,7 +11,7 @@ Install-VisualStudio `
     -ChecksumType 'SHA256' `
     -InstallerTechnology 'WillowVS2017OrLater' `
     -DefaultParameterValues @{
-      channelId = 'SSMS.21.SSMS.Release'
-      channelUri = 'https://aka.ms/ssms/21/release/channel'
+      channelId = 'SSMS.22.SSMS.Release'
+      channelUri = 'https://aka.ms/ssms/22/release/channel'
     } `
     -Product 'ssms'
