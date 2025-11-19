@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>sql-server-2025</id>
+    <!-- https://www.sqlserverversions.com/2021/07/sql-server-2022-versions.html -->
+    <version>17.0.1000.7-pre</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-2025</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>Microsoft SQL Server 2025 Developer Edition</title>
+    <authors>Microsoft Corporation</authors>
+    <projectUrl>https://www.microsoft.com/en-us/sql-server</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ferventcoder/chocolatey-packages@59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
+    <copyright>2025 Microsoft Corporation</copyright>
+    <licenseUrl>https://www.microsoft.com/licensing/guidance/SQL</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://learn.microsoft.com/en-au/sql/sql-server/what-s-new-in-sql-server-2025?view=sql-server-ver17</docsUrl>
+    <mailingListUrl>https://learn.microsoft.com/en-us/answers/tags/191/sql-server</mailingListUrl>
+    <bugTrackerUrl>https://feedback.azure.com/d365community/forum/04fe6ee0-3b25-ec11-b6e6-000d3a4f0da0</bugTrackerUrl>
+    <tags>SQL tSQL Relational Data Database</tags>
+    <summary>SQL Server 2025 is the most Azure-enabled release of SQL Server yet, with continued innovation in security, availability, and performance.</summary>
+    <description>Reinvent your business with SQL Server 2025
+
+### Overview
+
+Best in class security and performance
+
+- Utilize authentication through Microsoft Entra Managed Identity
+- Tap into improved app concurrency with optimized locking
+- Accelerate performance with batch mode and faster query processing
+- Track increased uptime with reliable failover enhancements
+
+AI built in
+
+- Enhance intelligence by combining semantic search with full-text search and filtering
+- Apply flexible interfaces for AI models, deployed locally or via cloud services
+- Streamline workflows with integrated vector embedding
+- Accelerate app development with LangChain, Semantic Kernel, and Entity Framework Core integration
+
+Made for developers
+
+- Efficiently process JSON data with native type, index, and functions
+- Increase extensibility by connecting data to any REST interface
+- Simplify querying of diverse datasets using Regular Expression (RegEx)
+- Build real-time, event-driven apps with change event streaming
+
+Cloud agility through Azure
+
+- Achieve zero-ETL, near-real-time analytics by replicating SQL Server data to Microsoft OneLake with database mirroring in Fabric
+- Deploy centralized management, security, and automation using Azure Arc
+- Enable disaster recovery and read scale-out to Azure SQL
+- Get simplified licensing with Azure Arc pay-as-you-go
+
+### Operating System requirements for SQL Server Developer
+
+- Windows 10 TH1 1507 or greater
+- Windows Server 2016 or greater
+
+### Package Specific
+
+#### Package notes
+
+This package will install SQL Server 2025 Developer Enterprise Edition using an existing .iso file. If a path to an existing .iso is not supplied, it downloads the same .iso that can be obtained from the [SQL Server Basic Installer](https://go.microsoft.com/fwlink/p/?linkid=2215158)'s *Download Media* menu.
+
+#### Package Parameters
+
+The following package parameters can be set:
+
+- `/IsoPath:` - path to a local copy of the .iso file - if not supplied then .iso is downloaded
+- `/IgnorePendingReboot` - don't check for pending reboot (Warning, SQL Server installation may fail if reboots are pending)
+- `/PID:` - Product key / PID for licensed editions (default is Developer Enterprise edition)
+
+All other package parameters are passed through to SQL Server Setup, allowing you to customise the installation as necessary.
+
+The following are set by default:
+
+- `/ConfigurationFile:` - The path to a configurationfile.ini - defaults to the supplied tools\configurationfile.ini
+- `/SQLSYSADMINACCOUNTS:` - A username or group to add to the SQL SysAdmin role - defaults to current user. This option is only set if configurationfile.ini does not contain 'SQLSYSADMINACCOUNTS=' at the start of a line.
+
+See https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt#Install for the full list of parameters supported by SQL Server.
+
+To pass parameters, use `--params "''"` (e.g. `choco install sql-server-2025 [other options] --params="'/ITEM:value /ITEM2:value2'"`).
+
+Example using /IsoPath to use previously downloaded SQL Server .iso
+
+```powershell
+choco install sql-server-2025 --params="'/IsoPath:c:\downloads\SQLServer2025-x64-ENU-Dev.iso'"
+```
+
+#### Chocolatey Pro / Business users
+
+If you allow the package to download the ISO file, it is suggested you run Chocolatey with the `--skip-virus-check` parameter, as the online virus scanner doesn't handle files over 500MB. You should use alternate methods of scanning in this case.
+      </description>
+    <releaseNotes>https://learn.microsoft.com/en-us/sql/sql-server/sql-server-2025-release-notes?view=sql-server-ver17</releaseNotes>
+    <dependencies>
+      <dependency id="netfx-4.7.2" version="4.7.2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
