@@ -33,7 +33,7 @@ jobs:
       Configuration: Release
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           repository: "flcdrg/au-dotnet"
           path: "autoupdate"
@@ -64,7 +64,7 @@ jobs:
         run: dotnet test
         working-directory: autoupdate
 
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           repository: "flcdrg/chocolatey-au"
           path: "chocolatey-au"
@@ -87,7 +87,7 @@ jobs:
         shell: pwsh
         working-directory: chocolatey-au
 
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           path: "packages"
 
