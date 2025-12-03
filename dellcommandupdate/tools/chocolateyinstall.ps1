@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://dl.dell.com/FOLDER13309509M/1/Dell-Command-Update-Application_PPWHH_WIN64_5.5.0_A00.EXE'
-$checksum = 'e80d51abc9e8171bb30a5b6e992c3bd860dfe877cafcd99c077bab922349048c'
+$url = 'https://dl.dell.com/FOLDER13922605M/1/Dell-Command-Update-Application_5CR1Y_WIN64_5.6.0_A00.EXE'
+$checksum = '546678d8517977287fe37768db70335cb41d9a9d2e2b373ded4a80bbd3075e16'
 $checksumType = 'sha256'
 
 $packageArgs = @{
