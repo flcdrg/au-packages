@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url = 'https://dl.dell.com/FOLDER12902766M/1/Dell-Command-Configure-Application_MD8CJ_WIN64_5.2.0.9_A00.EXE'
+$url = 'https://dl.dell.com/FOLDER13914977M/1/Dell-Command-Configure-Application_5RNW8_WIN64_5.2.1.16_A00.EXE'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
@@ -11,7 +11,7 @@ $packageArgs = @{
   fileType       = 'exe'
   silentArgs     = "/s"
   validExitCodes = @(0)
-  checksum       = 'ff4d5685036e4f2cfa9856d8cf16761ab098d369573e97ae944eb4555cd9341e'
+  checksum       = '521fafc70f7f587b49b3f48ccd5fd24474320a43f34acdf4cc6a72ed22a1e648'
   checksumType   = 'sha256'
   UserAgent      = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
 }

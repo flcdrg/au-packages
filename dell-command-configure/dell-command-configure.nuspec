@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dell-command-configure</id>
-    <version>5.2.0</version>
+    <version>5.2.1</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dell-command-configure</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Dell Command | Configure (Install)</title>
@@ -33,9 +33,9 @@ Example: `choco install dell-command-configure --params="'/RemoveDesktopShortcut
 
 #### Package updates
 
-There is not currently automatic updates for this package. Either leave a comment below, use the 'Contact Maintainer' link, or create an issue in the package source GitHub repository to notify the maintainer of new versions.
+There is not currently automatic updates for this package. Either [open an issue on the GitHub repository](https://github.com/flcdrg/au-packages/issues), leave a comment below or use the 'Contact Maintainer' link to notify the maintainer of new versions.
     </description>
-    <releaseNotes>https://www.dell.com/support/home/en-us/drivers/DriversDetails?driverId=MD8CJ</releaseNotes>
+    <releaseNotes>https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=5rnw8</releaseNotes>
     <dependencies>
       <dependency id="dotnetfx" version="4.8.0.20220524" />
       <dependency id="vcredist140" version="14.40.33810" />
