@@ -3,10 +3,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>windows-admin-center</id>
-    <version>2.4.1.2</version>
+    <version>2.6.2.6</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/windows-admin-center</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Windows Admin Center (2410)</title>
+    <title>Windows Admin Center (2511)</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://learn.microsoft.com/windows-server/manage/windows-admin-center/overview?WT.mc_id=DOP-MVP-5001655</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/windows-admin-center/icons/windows-admin-center.png</iconUrl>
