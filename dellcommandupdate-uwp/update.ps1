@@ -39,25 +39,25 @@ function global:au_GetLatest {
     #       <Hash algorithm="SHA1">cbb6bd4d7f1936ffa718ed564d62b7bf6e0266c1</Hash>
     #     </Cryptography>
     #   </InventoryComponent>
-#   <GroupManifest type="MTPDK" id="3686011a-5ab8-4e1c-89fe-109e2f11296b" latest="f58068ef-0fbe-4b97-8b0c-1a1489a4b1ba" eol="false" BKCCompliance="true" creationDateTime="2023-08-11T18:12:34+05:30">
-#     <Display lang="en"><![CDATA[ PDK Catalog for XPS Notebook 9530]]></Display>
-#     <SupportedSystems>
-#       <Brand key="53" prefix="XPSNOTEBOOK">
-#         <Display lang="en"><![CDATA[XPS Notebook]]></Display>
-#         <Model systemID="0BEB" systemIDType="BIOS">
-#           <Display lang="en"><![CDATA[9530]]></Display>
-#         </Model>
-#       </Brand>
-#     </SupportedSystems>
-#     <ManifestInformation id="f58068ef-0fbe-4b97-8b0c-1a1489a4b1ba" releaseID="YF49R" creationDateTime="2023-08-10T18:14:54+05:30" version="2023.08.10" path="FOLDER10470102M/1/XPS_Notebook_0BEB.cab" size="106720" inventoryCollectorType="COMPACT">
-#       <Cryptography>
-#         <Hash algorithm="MD5">8464b9c5a702b269017560eb5ae3b7fa</Hash>
-#         <Hash algorithm="SHA1">abfb5edc66ec09c860291c7efa81b2e47f616ed2</Hash>
-#         <Hash algorithm="SHA256">2df92f7f0bdad6293cced8b5e715f9fbfc2b86c9c6910c7b5bdbe245490842b1</Hash>
-#       </Cryptography>
-#       <Display lang="en"><![CDATA[ PDK Catalog for XPS Notebook 9530]]></Display>
-#     </ManifestInformation>
-#   </GroupManifest>   
+    #   <GroupManifest type="MTPDK" id="3686011a-5ab8-4e1c-89fe-109e2f11296b" latest="f58068ef-0fbe-4b97-8b0c-1a1489a4b1ba" eol="false" BKCCompliance="true" creationDateTime="2023-08-11T18:12:34+05:30">
+    #     <Display lang="en"><![CDATA[ PDK Catalog for XPS Notebook 9530]]></Display>
+    #     <SupportedSystems>
+    #       <Brand key="53" prefix="XPSNOTEBOOK">
+    #         <Display lang="en"><![CDATA[XPS Notebook]]></Display>
+    #         <Model systemID="0BEB" systemIDType="BIOS">
+    #           <Display lang="en"><![CDATA[9530]]></Display>
+    #         </Model>
+    #       </Brand>
+    #     </SupportedSystems>
+    #     <ManifestInformation id="f58068ef-0fbe-4b97-8b0c-1a1489a4b1ba" releaseID="YF49R" creationDateTime="2023-08-10T18:14:54+05:30" version="2023.08.10" path="FOLDER10470102M/1/XPS_Notebook_0BEB.cab" size="106720" inventoryCollectorType="COMPACT">
+    #       <Cryptography>
+    #         <Hash algorithm="MD5">8464b9c5a702b269017560eb5ae3b7fa</Hash>
+    #         <Hash algorithm="SHA1">abfb5edc66ec09c860291c7efa81b2e47f616ed2</Hash>
+    #         <Hash algorithm="SHA256">2df92f7f0bdad6293cced8b5e715f9fbfc2b86c9c6910c7b5bdbe245490842b1</Hash>
+    #       </Cryptography>
+    #       <Display lang="en"><![CDATA[ PDK Catalog for XPS Notebook 9530]]></Display>
+    #     </ManifestInformation>
+    #   </GroupManifest>   
 
     $f = [System.Xml.XmlReader]::create($xmlFile)
     $ns = [System.Xml.Linq.XNamespace] "openmanage/cm/dm"
@@ -71,7 +71,8 @@ function global:au_GetLatest {
 
                     $systemID = $e.Element($ns + "SupportedSystems").Element($ns + "Brand").Element($ns + "Model").Attribute("systemID").Value
 
-                    if ($systemID -eq "0BEB") { # This is the magic number for XPS 9530
+                    if ($systemID -eq "0BEB") {
+                        # This is the magic number for XPS 9530
                         $cabUrl = "https://downloads.dell.com/" + $e.Element($ns + "ManifestInformation").Attribute("path").Value
                         break
                     }
@@ -179,7 +180,8 @@ function global:au_GetLatest {
 
                     $componentID = $e.Element($ns + "SupportedDevices").Element($ns + "Device").Attribute("componentID").Value
 
-                    if ($componentID -eq "107174") { # This is the magic number for Dell Command Update
+                    if ($componentID -eq "107174") {
+                        # This is the magic number for Dell Command Update
                         $newVersion = $e.Attribute("vendorVersion").Value
                         if ($compareVersion -lt ([version] $newVersion)) {
                             $version = $newVersion
@@ -208,6 +210,7 @@ function global:au_GetLatest {
         ChecksumType32 = $checksumType
         Description    = $description
         ReleaseNotes   = $releaseNotes
+        Options        = @{ UserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3' }
     }
     return $Latest
 }
@@ -219,7 +222,5 @@ function global:au_AfterUpdate ($Package) {
 
     VirusTotal_AfterUpdate $Package
 }
-
-$global:au_UserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
 
 update -ChecksumFor none
