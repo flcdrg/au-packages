@@ -210,7 +210,11 @@ function global:au_GetLatest {
         ChecksumType32 = $checksumType
         Description    = $description
         ReleaseNotes   = $releaseNotes
-        Options        = @{ UserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3' }
+        Options        = @{
+            Headers = @{
+                'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+            }
+        }    
     }
     return $Latest
 }

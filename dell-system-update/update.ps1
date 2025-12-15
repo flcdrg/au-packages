@@ -73,7 +73,8 @@ function global:au_GetLatest {
 
                         $componentID = $e.Element("SupportedDevices").Element("Device").Attribute("componentID").Value
 
-                        if ($componentID -eq "105861") { # This is the magic number for Dell Command Update
+                        if ($componentID -eq "105861") {
+                            # This is the magic number for Dell Command Update
                             $newVersion = $e.Attribute("vendorVersion").Value
                             if ($compareVersion -lt ([version] $newVersion)) {
                                 $version = $newVersion
@@ -98,7 +99,11 @@ function global:au_GetLatest {
             Checksum64   = $checksum
             Description  = $description
             ReleaseNotes = $releaseNotes
-            Options      = @{ UserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3' }
+            Options      = @{
+                Headers = @{
+                    'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+                }
+            }
         }
     }
     catch {
