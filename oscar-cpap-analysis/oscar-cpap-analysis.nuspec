@@ -3,14 +3,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>oscar-cpap-analysis</id>
-    <version>1.6.1</version>
+    <version>1.7.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/oscar-cpap-analysis</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>OSCAR, the Open Source CPAP Analysis Reporter</title>
     <authors>Mark Watkins, The OSCAR Team</authors>
     <projectUrl>http://www.apneaboard.com/wiki/index.php?title=OSCAR_Help#Basic_OSCAR_organisation</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/oscar-cpap-analysis/icons/oscar.png</iconUrl>
-    <copyright>(C) 2011-2018 Mark Watkins, 2019-2024 by The OSCAR Team</copyright>
+    <copyright>(C) 2011-2018 Mark Watkins, 2019-2025 by The OSCAR Team</copyright>
     <licenseUrl>https://gitlab.com/pholy/OSCAR-code/-/raw/master/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://gitlab.com/pholy/OSCAR-code</projectSourceUrl>
