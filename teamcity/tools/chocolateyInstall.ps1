@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$filename = 'TeamCity-2025.11.tar.gz'
-$checksum = '70d6763a8247c6f54b2549c71d9fcf217edc1e4c8eb768537c666ecc7fedff90'
+$filename = 'TeamCity-2025.11.1.tar.gz'
+$checksum = '9f51dff36ad64623b6b699525d154b1fbfd3b39564b8c173642480281bd72239'
 
-$url = 'https://download.jetbrains.com/teamcity/TeamCity-2025.11.tar.gz'
+$url = 'https://download.jetbrains.com/teamcity/TeamCity-2025.11.1.tar.gz'
 $packagePath = $(Split-Path -parent $toolsDir)
 $installPath = Join-Path $packagePath $filename
 
