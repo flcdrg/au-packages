@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>consul</id>
-    <version>1.22.1</version>
+    <version>1.22.2</version>
     <title>Consul</title>
     <authors>Mitchell Hashimoto, Armon Dadgar, HashiCorp</authors>
     <owners>cleung2010, flcdrg</owners>
@@ -30,28 +30,23 @@ For example:
  * `--params="'/agentargs=""-config-file %PROGRAMDATA%\consul\dsc-config\default.json -client 10.0.0.1""'"` (be cautious of quotes)
 
 For setting Consul agent CLI options, it is better dropping a `config.hcl` into `%PROGRAMDATA%\consul\config` instead of setting them with package parameters.
-    </description><releaseNotes><![CDATA[### 1.22.1 (November 16, 2025)
+    </description><releaseNotes><![CDATA[### 1.22.2 (December 15, 2025)
 
 SECURITY:
 
-* connect: Upgrade envoy version to 1.35.6 [[GH-23056](https://github.com/hashicorp/consul/issues/23056)]
-* security: Updated `golang.org/x/crypto` from v0.42.0 to v0.44.0. This resolves [GO-2025-4116](https://pkg.go.dev/vuln/GO-2025-4116)
+* security: Upgrade golang to 1.25.4. [[GH-23029](https://github.com/hashicorp/consul/issues/23029)]
+* security: upgrade internal packages of RHEL builds to include security fixes [[GH-23078](https://github.com/hashicorp/consul/issues/23078)]
 
 IMPROVEMENTS:
 
-* ui: Removed ember-route-action-helper and migrated all {{route-action}} usages to explicit route/controller logic. [[GH-23004](https://github.com/hashicorp/consul/issues/23004)]
-* ui: Replaced `reopen()` calls with direct property assignment and subclassing to resolve Ember component reopen deprecation warnings [[GH-22971](https://github.com/hashicorp/consul/issues/22971)]
-* ui: removed deprecated Route#renderTemplate usage by introducing DebugLayout component and controller-based conditional rendering for docs routes [[GH-22978](https://github.com/hashicorp/consul/issues/22978)]
-* ui: resolved multiple Ember deprecations:
-- Removed mutation-after-consumption warnings in Outlet by staging state updates outside the render pass
-- Replaced deprecated Route#replaceWith/transitionTo usage with RouterService in affected routes
-- Avoided mutating objects produced by {{hash}} (setting-on-hash) by switching to tracked POJOs [[GH-23010](https://github.com/hashicorp/consul/issues/23010)]
+* ui: upgraded Ember framework from v3.28 to v4.12, improving performance and stability. Upgrades multiple other packages which support Ember v4. [[GH-23070](https://github.com/hashicorp/consul/issues/23070)]
 
 BUG FIXES:
 
-* acl: fixed a bug where ACL policy replication in WANfed is impacted when primaryDC is inconsistent [[GH-22954](https://github.com/hashicorp/consul/issues/22954)]
-* xds: fix RBAC failure in upstream service when there are more than one downstream exported service with same name but different peer [[GH-23049](https://github.com/hashicorp/consul/issues/23049)]
-* xds: fix bug where Using replacePrefixMatch: "/" results in double slashes (//path) and Using replacePrefixMatch: "" does not strip the prefix at all (e.g., mapping /v1/dashboard → /dashboard) resulting in 301 and 404 errors respectively [[GH-23035](https://github.com/hashicorp/consul/issues/23035)]
+* agent: fix bug prevents default TCP checks from being re-added on service reload when they were explicitly disabled or when custom checks were specified during initial registration. [[GH-23088](https://github.com/hashicorp/consul/issues/23088)]
+* audit-logging: (Enterprise only) Fixed JSON unmarshall error when array of obj is passed for auditReq body. [[GH-11546](https://github.com/hashicorp/consul/issues/11546)]
+* cli: Enhanced error messages in `consul config write` command to provide actionable guidance when config entries cannot be modified due to references by gateways or routers. [[GH-22921](https://github.com/hashicorp/consul/issues/22921)]
+* mesh: router + splitter + failover with retry now correctly failover for external services failover subsets through terminating gateways. [[GH-23092](https://github.com/hashicorp/consul/issues/23092)]
 
 ]]></releaseNotes>
     <summary>Consul is a tool for service discovery, monitoring and configuration.</summary>
