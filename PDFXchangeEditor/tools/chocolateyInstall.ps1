@@ -12,10 +12,10 @@ $filename   = 'EditorV10.x86.msi'
 $filename64 = 'EditorV10.x64.msi'
 $url        = 'https://downloads.pdf-xchange.com/EditorV10.x86.msi'
 $url64      = 'https://downloads.pdf-xchange.com/EditorV10.x64.msi'
-$checksum   = '9C30687004CA71B1F0FCF73610412CB618416769A2A2F54C5AEE8BE67E213B74'
-$checksum64 = '2BEC61CD97D5334823B1D3A249D0302E92A2DD4478C7F2DF4BCB44D2A04ADA94'
-$lastModified32 = New-Object -TypeName DateTimeOffset 2025, 11, 20, 21, 16, 47, 0 # Last modified time corresponding to this package version
-$lastModified64 = New-Object -TypeName DateTimeOffset 2025, 11, 20, 21, 15, 24, 0 # Last modified time corresponding to this package version
+$checksum   = '78EF18A0E2FA5685C5AAA1451F04AFC17F12B3225BAA57DB9F2D9F0CF2887066'
+$checksum64 = 'D25B79C6F07DB7F9421CFB96301AD323EA60E72B88C75FF8D39453902707594D'
+$lastModified32 = New-Object -TypeName DateTimeOffset 2025, 12, 18, 21, 8, 47, 0 # Last modified time corresponding to this package version
+$lastModified64 = New-Object -TypeName DateTimeOffset 2025, 12, 18, 21, 7, 34, 0 # Last modified time corresponding to this package version
 
 $packageArgs = @{
   packageName   = $packageName
