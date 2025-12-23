@@ -4,7 +4,7 @@
   <metadata>
     <id>sql-server-2025</id>
     <!-- https://www.sqlserverversions.com/2021/07/sql-server-2022-versions.html -->
-    <version>17.0.1000.7-pre</version>
+    <version>17.0.1000.7</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-2025</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Microsoft SQL Server 2025 Developer Edition</title>
@@ -77,7 +77,7 @@ The following are set by default:
 - `/ConfigurationFile:` - The path to a configurationfile.ini - defaults to the supplied tools\configurationfile.ini
 - `/SQLSYSADMINACCOUNTS:` - A username or group to add to the SQL SysAdmin role - defaults to current user. This option is only set if configurationfile.ini does not contain 'SQLSYSADMINACCOUNTS=' at the start of a line.
 
-See https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt#Install for the full list of parameters supported by SQL Server.
+See https://learn.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt?view=sql-server-ver17#Install for the full list of parameters supported by SQL Server.
 
 To pass parameters, use `--params "''"` (e.g. `choco install sql-server-2025 [other options] --params="'/ITEM:value /ITEM2:value2'"`).
 
