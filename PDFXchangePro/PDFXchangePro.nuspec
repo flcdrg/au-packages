@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>PDFXchangePro</id>
-    <version>10.8.2.407</version>
+    <version>10.8.2.20260116</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/PDFXchangePro</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>PDF-XChange Pro</title>
@@ -36,13 +36,11 @@ The following package parameters can be set:
  * `/KeyFile:[file]` - Pass [file] (which should be a .xcvault file downloaded from Tracker Software) in as your license file.
 
 These parameters can be passed to the installer with the use of `-params`.
-For example: `-params '"/NoDesktopShortcuts"'`, `--params "/KeyFile:C:\Users\foo\Temp\PDFXChangeEditor.xcvault"`.
+For example: `-params '"/NoDesktopShortcuts"'`, `--params "/KeyFile:C:\Users\foo\Temp\PDFXChangePro.xcvault"`.
 
 #### Package updates
 
-This package is automatically checked for updates daily. However because the vendor uses a fixed download URL it means that when they release a new version of the software, the package may become out-of-date until the next automated update occurs.
-
-If you don't want to wait for the updated package, you can use the `--ignore-checksum` (but this is not recommended)
+This package is automatically checked for updates daily. Please raise an issue in the package source GitHub repository if the package is out-of-date for more than a few days.
 </description>
     <releaseNotes>https://www.pdf-xchange.com/product/pdf-xchange-pro/history</releaseNotes>
   </metadata>

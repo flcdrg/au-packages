@@ -1,21 +1,11 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $packageName = 'PDFXchangeEditor' 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$version    = [version] $env:ChocolateyPackageVersion
 
-if ( $version.Revision -gt 20210101 ) {
-    $version = New-Object version $version.Major, $version.Minor, $version.Build, 0
-    Write-Warning "'Package fix version notation' detected. Assuming original build version was .0"
-}
-
-$filename   = 'EditorV10.x86.msi'
-$filename64 = 'EditorV10.x64.msi'
-$url        = 'https://downloads.pdf-xchange.com/EditorV10.x86.msi'
-$url64      = 'https://downloads.pdf-xchange.com/EditorV10.x64.msi'
+$url        = 'https://downloads.pdf-xchange.com/10.8.2.407/EditorV10.x86.msi'
+$url64      = 'https://downloads.pdf-xchange.com/10.8.2.407/EditorV10.x64.msi'
 $checksum   = 'E4259FCC1AAC8F356EE9C73817959E7A9EB6072C47E1ECF1CF76E93846150BF9'
 $checksum64 = '6A2A943A14BD53FC63C04018AD8C04818E3B4E49A5BF67D9084720045F5E0D2B'
-$lastModified32 = New-Object -TypeName DateTimeOffset 2026, 1, 8, 2, 14, 51, 0 # Last modified time corresponding to this package version
-$lastModified64 = New-Object -TypeName DateTimeOffset 2026, 1, 8, 2, 12, 34, 0 # Last modified time corresponding to this package version
 
 $packageArgs = @{
   packageName   = $packageName

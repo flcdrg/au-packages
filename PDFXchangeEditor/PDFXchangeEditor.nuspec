@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>PDFXchangeEditor</id>
-    <version>10.8.2.407</version>
+    <version>10.8.2.20260116</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/PDFXchangeEditor</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>PDF-XChange Editor</title>
@@ -22,6 +22,7 @@
 Designed for anyone from home users to large corporate environments that wish to View/Edit/Modify and even OCR Image based PDF files on their Windows PC's. There is now a FREE pdf reader alternative to the Adobe Reader that truly raises the bar! The PDF-XChange Editor is smaller, faster and more feature rich than any other FREE PDF Reader/ PDF Viewer/ PDF Editor available on the market. This free pdf editor download also allows users to try the extended functionality offered by the licensed PDF-XChange Editor in evaluation mode - for free. No PDF reader or Viewer offers more features than PDF-XChange - or does so without compromising performance, quality or security.
 
 #### Package Parameters
+
 The following package parameters can be set:
 
  * `/NoDesktopShortcuts` - Do not create shortcut on desktop.
@@ -36,9 +37,7 @@ For example: `-params '"/NoDesktopShortcuts"'`, `--params "/KeyFile:C:\Users\foo
 
 #### Package updates
 
-This package is automatically checked for updates daily. However because the vendor uses a fixed download URL it means that when they release a new version of the software, the package may become out-of-date until the next automated update occurs.
-
-If you don't want to wait for the updated package, you can use the `--ignore-checksum` (but this is not recommended)
+This package is automatically checked for updates daily. Please raise an issue in the package source GitHub repository if the package is out-of-date for more than a few days.
 </description>
     <releaseNotes>https://www.pdf-xchange.com/product/pdf-xchange-editor/history</releaseNotes>
   </metadata>

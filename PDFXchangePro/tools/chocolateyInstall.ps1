@@ -1,21 +1,11 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $packageName = 'PDFXchangePro' 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$version    = [version] $env:ChocolateyPackageVersion
 
-if ( $version.Revision -gt 20210101 ) {
-    $version = New-Object version $version.Major, $version.Minor, $version.Build, 0
-    Write-Warning "'Package fix version notation' detected. Assuming original build version was .0"
-}
-
-$filename   = 'ProV10.x86.msi'
-$filename64 = 'ProV10.x64.msi'
-$url        = 'https://downloads.pdf-xchange.com/ProV10.x86.msi'
-$url64      = 'https://downloads.pdf-xchange.com/ProV10.x64.msi'
+$url        = 'https://downloads.pdf-xchange.com/10.8.2.407/ProV10.x86.msi'
+$url64      = 'https://downloads.pdf-xchange.com/10.8.2.407/ProV10.x64.msi'
 $checksum   = 'EB0D448E4F0A1858F0869735F5F6EF4E37CBA7EB373EB47F2B0FCE19E8C2330E'
 $checksum64 = '362F72E602D01FAB6068DCA8860935F15B64186E5F32E0E13A560E35109F2CEE'
-$lastModified32 = New-Object -TypeName DateTimeOffset 2026, 1, 8, 2, 14, 8, 0 # Last modified time corresponding to this package version
-$lastModified64 = New-Object -TypeName DateTimeOffset 2026, 1, 8, 2, 13, 18, 0 # Last modified time corresponding to this package version
 
 $packageArgs = @{
   packageName   = $packageName
@@ -68,7 +58,7 @@ if ($packageParameters) {
 
     if ($packageParameters.ContainsKey("KeyFile")) {
         if ($packageParameters["KeyFile"] -eq "") {
-          Throw 'KeyFile needs a colon-separated argument; try something like this: --params "/KeyFile:C:\Users\foo\Temp\PDFXChangeEditor.xcvault".'
+          Throw 'KeyFile needs a colon-separated argument; try something like this: --params "/KeyFile:C:\Users\foo\Temp\PDFXChangePro.xcvault".'
         } else {
           Write-Host "You want a KeyFile named $($packageParameters["KeyFile"])"
           $customArguments.Add("KEYFILE", $packageParameters["KeyFile"])
