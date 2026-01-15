@@ -34,6 +34,11 @@ The following package parameters can be set:
 These parameters can be passed to the installer with the use of `-params`.
 For example: `-params '"/NoDesktopShortcuts"'`, `--params "/KeyFile:C:\Users\foo\Temp\PDFXChangeEditor.xcvault"`.
 
+#### Package updates
+
+This package is automatically checked for updates daily. However because the vendor uses a fixed download URL it means that when they release a new version of the software, the package may become out-of-date until the next automated update occurs.
+
+If you don't want to wait for the updated package, you can use the `--ignore-checksum` (but this is not recommended)
 </description>
     <releaseNotes>https://www.pdf-xchange.com/product/pdf-xchange-editor/history</releaseNotes>
   </metadata>
