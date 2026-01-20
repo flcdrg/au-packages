@@ -15,6 +15,10 @@ SQL Server 2022 (16.x) Express edition is the entry-level, free database and is 
 
 ### Package Specific
 
+The following package parameters can be set:
+
+- `/ConfigurationFile:` - The path to a configurationfile.ini - does not default to any file.
+
 Be aware that the way SQL Express is installed by this package does not allow for upgrades between major versions of SQL Server.
 
 A workaround would be to uninstall the existing version and then install the latest version, then manually reattach any databases.
