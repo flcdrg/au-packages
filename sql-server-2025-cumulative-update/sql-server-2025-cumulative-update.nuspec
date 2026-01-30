@@ -9,7 +9,7 @@
     <title>Microsoft SQL Server 2025 Cumulative Update 1</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://www.microsoft.com/en-us/download/details.aspx?id=108540</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/ferventcoder/chocolatey-packages@59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@refs/heads/master/sql-server-2025/icons/Microsoft_SQL_Server_2025_icon.svg</iconUrl>
     <copyright>2025 Microsoft Corporation</copyright>
     <licenseUrl>https://www.microsoft.com/licensing/guidance/SQL</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
