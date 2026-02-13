@@ -3,10 +3,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-2025-cumulative-update</id>
-    <version>17.0.4006.2</version>
+    <version>17.0.4015.4</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-2025-cumulative-update</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Microsoft SQL Server 2025 Cumulative Update 1</title>
+    <title>Microsoft SQL Server 2025 Cumulative Update 2</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://www.microsoft.com/en-us/download/details.aspx?id=108540</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@refs/heads/master/sql-server-2025/icons/Microsoft_SQL_Server_2025_icon.svg</iconUrl>
@@ -54,7 +54,7 @@ Example using /IgnorePendingReboot
 choco install sql-server-2025-cumulative-update --params="'/IgnorePendingReboot'"
 ```
     </description>
-    <releaseNotes>https://support.microsoft.com/help/5078298</releaseNotes>
+    <releaseNotes>https://support.microsoft.com/help/5075211</releaseNotes>
   </metadata>
   <files>
     <file src="tools\*.ps1" target="tools" />
