@@ -1,74 +1,93 @@
 # AI contributor guide for this repo
 
-This repository hosts many Chocolatey packages. Packages are maintained with AU-style `update.ps1` scripts, but batch orchestration is handled with a separate tool (see below). The goal is to keep package folders consistent and automate updates safely.
+This repository maintains ~100 Chocolatey packages using automatic AU-style update scripts. Each package auto-detects upstream version changes and publishes updates daily via au-dotnet orchestration.
 
-## Big picture
+## Architecture & Core Pattern
 
-- Structure: Each package lives in its own folder at the repo root (e.g., `windows-admin-center/`). Typical contents:
-  - `<pkg>.nuspec` (metadata), `tools/chocolateyinstall.ps1`, optionally `tools/chocolateyuninstall.ps1`.
-  - `update.ps1` (AU script) for automatic packages; packages without it are manual.
-  - A package-specific `README.md` when parameters or special notes exist.
-- Automation: A custom fork of Chocolatey AU is used for updater helpers inside each package, while a separate orchestrator (au-dotnet) drives batch updates across packages.
-- CI/status: Update status is published to a public gist (see badge in `README.md`). CI details may change; prefer running locally with PowerShell 7+.
+**Multi-tier package structure:**
+- **Package folder** (e.g., `vault/`, `PDFXchangeEditor/`): Completely self-contained (icons, README, tools, metadata).
+  - `update.ps1` — AU-driven version detection; defines three global callbacks.
+  - `tools/chocolateyInstall.ps1` — handles download+install; variables injected by update.ps1.
+  - `*.nuspec` — package metadata (name, version, description from README.md).
+  - `tools/chocolateyUninstall.ps1` (optional) — removal logic.
+  - `README.md` (when needed) — documents installer `--params` flags; used to populate nuspec description.
 
-## Developer workflows
+**Helper ecosystem** (`_scripts/`):
+- `GitHub.ps1` — GitHub Releases API helpers (`Get-GitHubLatestRelease`, `Get-ReleaseVersion`, `Update-ReleaseNotes`).
+- `Set-DescriptionFromReadme.ps1` — syncs README.md → nuspec description in `au_AfterUpdate`.
+- `common.ps1` — utility functions (e.g., `Get-RedirectedUri` for tracking download redirects).
+- `Submit-VirusTotal.ps1`, `Get-MSIInfo.ps1`, `SqlServerCumulativeUpdates.ps1` — specialized helpers for complex packages.
 
-- Prerequisites:
-  - PowerShell 7+ and Chocolatey installed.
-  - Custom AU fork: https://github.com/flcdrg/chocolatey-au/tree/simplify (used by per‑package scripts).
-  - Orchestrator: https://github.com/flcdrg/au-dotnet/ (used instead of AU’s `update_all.ps1`).
+## AU Update Script Pattern
 
-- Single package update (automatic packages):
-  - From the package directory, run `./update.ps1`.
-  - Set `$au_Force = $true` before the call to force an update even if no new version is detected.
+Standard `update.ps1` structure (uses chocolatey-au fork):
 
-- Batch update:
-  - Use the au-dotnet orchestrator to run updates across packages on PowerShell 7+. Refer to its documentation for commands and filters.
-  - The legacy `update_all.ps1` exists but is not the primary path on PS7; avoid relying on it unless specifically intended.
+```powershell
+Import-Module chocolatey-au
+# . ../_scripts/GitHub.ps1  # if using GitHub helpers
 
--- Optional test runs: Some legacy scripts (e.g., `test_all.ps1`) remain for local validation; prefer au-dotnet for coordinated runs.
+function global:au_GetLatest {
+    # 1. Fetch latest version (REST API, web scraping, GitHub, etc.)
+    # 2. Return $Latest = @{ Version='x.y.z'; Checksum32='...'; Url='...'; Url64='...'; ... }
+}
 
-## Conventions and patterns
+function global:au_SearchReplace {
+    # 3. Define regex replacements to inject Latest values into tools/chocolateyInstall.ps1
+    @{ 'tools\chocolateyInstall.ps1' = @{ "pattern" = "replacement"; ... } }
+}
 
-- Keep all package assets within the package folder (icons, screenshots, config files).
-- Prefer automatic packages when feasible; include `update.ps1` using AU patterns.
-- Use AU’s standard variables and callbacks within each `update.ps1`. Many packages use the conventional AU update script with 1–2 custom lines to locate the latest release or version.
-- Package READMEs document user-facing parameters. See examples:
-  - `azure-pipelines-agent/README.md` for supported `--params` flags.
-  - `sql-server-2019/README.md` for package-specific install details and OS requirements.
-- For nuspec descriptions, Markdown is allowed in `<description>` blocks and used widely.
+function global:au_AfterUpdate ($Package) {
+    # 4. Optional post-update hooks (e.g., Set-DescriptionFromReadme)
+}
 
-## Key files and directories
+update  # Kick-off the AU workflow
+```
 
-- Root scripts:
-  - `_scripts/` — helper PowerShell scripts; `all.ps1` dot-sources others in this folder.
-- Package anatomy:
-  - `*/update.ps1` — the AU script present in most automatic packages.
-  - `*/tools/chocolateyinstall.ps1` — installation steps; may call upstream installers or unpack zips.
-  - `*/README.md` — parameters and package-specific notes when relevant.
+Key global variables AU provides: `$Latest` (latest version info), `$Package` (nuspec XML object), `$ChecksumType` (SHA256 default).
 
-## External dependencies and integration
+## Developer Workflows
 
-- Custom AU fork (helpers for per‑package scripts): https://github.com/flcdrg/chocolatey-au/tree/simplify
-- Orchestrator for batch runs: https://github.com/flcdrg/au-dotnet/
-- Chocolatey: building (`choco pack`) and installing/testing; end users pass `--params` as documented in per-package READMEs.
-- Gist/GitHub: update status is published to a gist (see badge in the root `README.md`).
+**Single package update** (for testing or manual override):
+```powershell
+cd vault
+./update.ps1                    # Auto-detect and update
+$au_Force = $true; ./update.ps1 # Force update even if version unchanged
+```
 
-## Tips for AI changes
+**Batch updates** (primary workflow on PS7+):
+- Use `au-dotnet` orchestrator (https://github.com/flcdrg/au-dotnet/), NOT `update_all.ps1`.
+- au-dotnet coordinates updates across all packages, respects filters, publishes status to public gist.
 
-- When editing a package:
-  - Update only that package’s folder; don’t spill assets into the root or other packages.
-  - If altering `update.ps1`, keep AU patterns intact (respect `$global:au_*` vars and the repo’s PS7/au-dotnet orchestration assumptions).
-  - Reflect user-facing changes in the package `README.md` and nuspec `<description>`.
-- When adding a new package:
-  - Follow the structure above and reference AU’s “Creating the package updater script”.
-  - If the package is manual (no `update.ps1`), omit AU hooks and ensure `tools/chocolateyinstall.ps1` is robust and idempotent.
-- Don’t commit secrets. Keep local secrets out of the repo; prefer environment variables or local `update_vars.ps1` ignored by git.
+**Testing changes locally:**
+- `choco pack` in a package folder to build the .nupkg.
+- `choco install -s . <package>` to test locally with `--params` if documented in README.
 
-## Examples in this repo
+## Critical Conventions
 
-- Parameters-heavy package: `azure-pipelines-agent/README.md` enumerates many `/Param:` options and how to pass them.
-- Non-standard purpose package: `azure-functions-core-tools` only submits binaries to VirusTotal; its README clarifies this.
-- Complex installer: `sql-server-2019/README.md` shows how large installers and ISO mounting are handled and how parameters are forwarded.
+1. **Version detection**: Prefer GitHub Releases API (with `GitHub.ps1` helpers) → fallback to direct REST API → last resort web scraping.
+2. **Checksum injection**: Always use `au_SearchReplace` to replace hardcoded checksums in `tools/chocolateyInstall.ps1`. Never commit real checksums; AU regenerates them.
+3. **README → nuspec sync**: If package accepts installer `--params` (e.g., `azure-pipelines-agent`, `sql-server-2019`), document in `README.md` and call `Set-DescriptionFromReadme -SkipFirst N` in `au_AfterUpdate`.
+4. **Idempotent installs**: `chocolateyInstall.ps1` must handle re-runs gracefully (check if already installed, clean temp files, etc.).
+5. **Asset isolation**: All package files (icons, screenshots) live in package folder; never pollute root or other packages.
 
-If any of these sections are unclear or if other workflows exist (e.g., GitHub Actions, local test harnesses), let me know and I’ll refine this guide.
+## Pattern Examples by Complexity
+
+- **GitHub Releases (simple)**: `vault/update.ps1` — fetch latest release, extract version, inject checksums.
+- **Version transformation**: `PDFXchangeEditor/update.ps1` — parse XML tracker feed, convert semver2 → semver1, extract x32/x64 URLs separately.
+- **File introspection**: `zoomit/update.ps1` — download ZIP, extract .exe, read file version info, no remote API.
+- **Conditional detection**: `tflint/update.ps1` — use GitHub API with tag prefix filter, custom release notes formatting.
+
+## External Dependencies
+
+- **Custom AU fork** (https://github.com/flcdrg/chocolatey-au/tree/simplify): Provides `Import-Module chocolatey-au`, `$Latest`, callback hooks, `update` function.
+- **Orchestrator** (https://github.com/flcdrg/au-dotnet/): Runs batch updates on schedule, publishes status gist.
+- **Chocolatey**: `choco pack` (build), `choco install -s .` (test); end-users pass `--params` from package READMEs.
+- **GitHub API** (optional): Used for releases tracking; auth via `$env:github_api_key` for rate-limiting.
+
+## AI Editing Guidelines
+
+- **Modifying `update.ps1`**: Preserve AU callback function names (`global:au_GetLatest`, `global:au_SearchReplace`, `global:au_AfterUpdate`), respect `$Latest` object shape, keep `update` call at end.
+- **New package**: Create folder, add `update.ps1` (or skip if manual), `tools/chocolateyInstall.ps1`, `*.nuspec`, and `README.md` (if `--params` exist). Use existing packages as templates.
+- **Regex in `au_SearchReplace`**: Must match variable assignment in `tools/chocolateyInstall.ps1` exactly (e.g., `(^\s*\$checksum\s*=\s*)('.*')`); test locally with `./update.ps1`.
+- **No secrets in repo**: Use `$env:*` variables or `.gitignore`-d `update_vars.ps1` for local API keys, credentials.
+- **Description sync**: Always call `Set-DescriptionFromReadme` if README.md exists to keep nuspec description in sync.

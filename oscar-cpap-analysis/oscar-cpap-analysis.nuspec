@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
@@ -24,7 +24,7 @@ OSCAR is also used by many physicians and therapists who consult with patients, 
 
 #### Package updates
 
-This package is not currently automatically updated. If you notice a new release of the software, use the 'Contain Maintainer' link, or leave a comment below.
+This package is automatically checked for updates daily. Please raise an issue in the package source GitHub repository if the package is out-of-date for more than a few days.
 
     </description>
     <releaseNotes>http://www.apneaboard.com/wiki/index.php/OSCAR_Release_Notes</releaseNotes>
