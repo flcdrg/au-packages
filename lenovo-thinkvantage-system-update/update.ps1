@@ -1,4 +1,5 @@
 Import-Module chocolatey-au
+#Import-Module "$PSScriptRoot\..\..\chocolatey-au\src\chocolatey-au.psm1"
 
 . ../_scripts/common.ps1
 
@@ -24,9 +25,10 @@ function global:au_GetLatest {
     # Unfortunately, they're including a Byte Order Mark, so we have to trim that off
     # I wonder if we should increment this number in the download each time we find an update?
     $response = Invoke-RestMethod -Uri "https://download.lenovo.com/ibmdl/pub/pc/pccbbs/agent/SSClientCommon/HelloLevel_9_59_00.xml"
+    $xmlContent = if ($response -is [string]) { $response } else { $response.Content }
 
-    if ($response.Length -gt 0) {
-        $xml = [xml]$response.Content.Trim([char]0xFEFF, [char]0x200B)
+    if (-not [string]::IsNullOrWhiteSpace($xmlContent)) {
+        $xml = [xml]$xmlContent.Trim([char]0xFEFF, [char]0x200B)
 
         $version = $xml.LevelDescriptor.Version
         $buildDate = $xml.LevelDescriptor.BuildDate
