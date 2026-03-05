@@ -24,9 +24,8 @@ jobs:
       TERM: xterm
 
     steps:
-
       # Install a customised version of Chocolatey-AU PowerShell module
-      # If my PR (https://github.com/chocolatey-community/chocolatey-au/pull/53) ever gets merged, 
+      # If my PR (https://github.com/chocolatey-community/chocolatey-au/pull/53) ever gets merged,
       # then we can revert back to use the official module
       - uses: actions/checkout@v6
         with:
