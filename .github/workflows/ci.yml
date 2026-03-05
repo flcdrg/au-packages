@@ -73,6 +73,7 @@ jobs:
           github_api_key: ${{ secrets.GH_API_KEY }} # GitHub API Key
           api_key: ${{ secrets.API_KEY }} # Chocolatey API Key
           VT_APIKEY: ${{ secrets.VT_APIKEY }} # VirusTotal API Key
+        continue-on-error: true
 
       - name: Status
         run: |

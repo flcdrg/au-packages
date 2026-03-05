@@ -13,6 +13,8 @@ function global:au_SearchReplace {
      }
 }
 
+# Interfaceware have changed how downloads are available. This is a new download URL - it isn't a .zip
+# https://downloads.interfaceware.com/downloads/10.1.117/windows/iguana_setup.exe
 function global:au_GetLatest {
 
     $download_page = Invoke-WebRequest -Uri $releases #1 
