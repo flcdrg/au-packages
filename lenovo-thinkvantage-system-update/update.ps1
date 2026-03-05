@@ -26,9 +26,12 @@ function global:au_GetLatest {
     $response = Invoke-RestMethod -Uri "https://download.lenovo.com/ibmdl/pub/pc/pccbbs/agent/SSClientCommon/HelloLevel_9_59_00.xml"
 
     if ($response.Length -gt 0) {
-        $xml = [xml] $response.Substring(3)
+        $xml = [xml]$response.Content.Trim([char]0xFEFF, [char]0x200B)
+
         $version = $xml.LevelDescriptor.Version
         $buildDate = $xml.LevelDescriptor.BuildDate
+    } else {
+        throw "Failed to get version info from Lenovo"
     }
     
     $Latest = createLatest $version $buildDate
