@@ -1,4 +1,5 @@
-Import-Module chocolatey-au
+#Import-Module chocolatey-au
+Import-Module "$PSScriptRoot\..\..\chocolatey-au\src\chocolatey-au.psd1"
 
 . ..\_scripts\SqlServerCumulativeUpdates.ps1
 

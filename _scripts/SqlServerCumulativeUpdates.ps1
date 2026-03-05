@@ -21,8 +21,10 @@ function GetLatest($downloadId, $MajorVersion) {
         Select-string "\.exe$" | 
         Select-Object -First 1 -ExpandProperty Line
     
-    # <meta name="description" content="Cumulative Update Package 16 for SQL Server 2022 - KB5048033"/>
-    if ($response.Content -match "<meta name=`"description`" content=`"Cumulative Update Package (\d+) for SQL Server $MajorVersion - KB(\d+)`"\s*\/\>") {
+    # Example values seen:
+    # - Cumulative Update Package 16 for SQL Server 2022 - KB5048033
+    # - Cumulative Update Package 31 Azure Connect Pack for SQL Server 2017 - KB5050533
+    if ($response.Content -match "<meta name=`"description`" content=`"Cumulative Update Package\s+(\d+)\b.*?for SQL Server\s+$MajorVersion\s+-\s+KB(\d+)`"\s*\/\>") {
         $cu = $Matches[1]
         $kb = $Matches[2]
     } else {
