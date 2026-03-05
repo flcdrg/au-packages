@@ -1,4 +1,5 @@
 Import-Module chocolatey-au
+#Import-Module "$PSScriptRoot\..\..\chocolatey-au\src\chocolatey-au.psm1"
 
 $ErrorActionPreference = 'Stop'
 
@@ -15,9 +16,20 @@ function global:au_SearchReplace {
 
 function global:au_GetLatest {
 
-  $release = Get-GitHubLatestRelease -project 'DistroAV/DistroAV' -newest
+  # Avoid prereleases that may not include Windows assets.
+  $release = Get-GitHubLatestRelease -project 'DistroAV/DistroAV'
 
-  $windowsAsset = ($release.assets | Where-Object { $_.name -Match ".*\.exe" } | Select-Object -First 1)
+  $windowsAsset = $release.assets |
+    Where-Object { $_.name -match 'windows.*installer\.exe$' } |
+    Select-Object -First 1
+
+  if (-not $windowsAsset) {
+    throw "No Windows installer asset found in release '$($release.tag_name)'"
+  }
+
+  if (-not $windowsAsset.digest -or $windowsAsset.digest -notmatch ':') {
+    throw "No digest returned for asset '$($windowsAsset.name)'"
+  }
 
   ($checksumType, $checksumValue) = ($windowsAsset.digest -split ':')[0..1]
   return @{
