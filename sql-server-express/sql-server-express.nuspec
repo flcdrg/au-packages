@@ -4,7 +4,7 @@
   <metadata>
     <id>sql-server-express</id>
     <title>Microsoft SQL Server 2022 Express</title>
-    <version>2022.16.0.1000</version>
+    <version>2022.16.0.20260305</version>
     <authors>Microsoft</authors>
     <owners>flcdrg</owners>
     <summary>Installs SQL Server 2022 Express database engine.</summary>
