@@ -1,0 +1,9 @@
+﻿VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Download the Windows binary from the related release at https://codeberg.org/mergiraf/mergiraf/releases
+
+Use PowerShell's `Get-Filehash` cmdlet to get the checksum of the downloaded file and compare that value
+to the one listed for this package.
