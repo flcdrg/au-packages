@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url = 'https://download.microsoft.com/download/5e854024-dcf1-4e86-9546-7389fd08a34b/WindowsAdminCenter2511.exe'
-$checksum = '21256C8954BCBCDB56B57ED253710813CCA90DEDC5CF7D93D8A0AAC1264225FD'
+$checksum = '4E55FE3F6E2C0FAF71EAD5FC090266331867E5A867D3F60ADCCA9BA069ABFF72'
 
 $arguments = '/VERYSILENT /NORESTART'
 $arguments += ' /LOG="{0}\{1}.{2}.Install.log"' -f $env:Temp, $env:ChocolateyPackageName, $env:chocolateyPackageVersion
