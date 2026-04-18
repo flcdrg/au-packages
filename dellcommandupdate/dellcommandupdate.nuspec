@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dellcommandupdate</id>
-    <version>5.6.0</version>
+    <version>5.7.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dellcommandupdate</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Dell Command | Update</title>
@@ -33,7 +33,7 @@ This package is updated automatically by querying the Dell Version Control Catal
 
 If you notice a newer version is available but the package has not been updated, please [open an issue on the GitHub repository](https://github.com/flcdrg/au-packages/issues) or leave a comment below.
  </description>
- <releaseNotes>https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=5cr1y</releaseNotes>
+ <releaseNotes>https://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=RXT5N</releaseNotes>
     <dependencies>
       <!-- https://community.chocolatey.org/packages/dotnet-8.0-desktopruntime -->
       <dependency id="dotnet-8.0-desktopruntime" version="8.0.15" />
