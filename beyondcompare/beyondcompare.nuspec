@@ -35,6 +35,7 @@ The following package parameter can be set:
 
  * `/LCID:nnn` - Use this specific LCID (instead of trying to automatically detect it). Check `chocolateyInstall.ps1` for valid LCID values.
  * `/CurrentUser` - Install for the current user only (default is for all users).
+ * `/LicenseFile:path` - Path to a Beyond Compare license key file to be copied to `%ProgramData%\Scooter Software\Beyond Compare 5\`. This enables silent network/enterprise deployments. See [Network Installation](https://www.scootersoftware.com/support.php?zz=kb_netsetup) for details.
 
 To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.

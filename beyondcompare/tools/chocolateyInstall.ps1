@@ -64,3 +64,21 @@ else
 }
 
 Install-ChocolateyPackage @packageArgs
+
+if ($pp["LicenseFile"]) {
+    $licenseSource = $pp["LicenseFile"]
+    if (Test-Path $licenseSource) {
+        $licenseDir = Join-Path $env:ProgramData "Scooter Software\Beyond Compare 5"
+        if (!(Test-Path $licenseDir)) {
+            New-Item -ItemType Directory -Path $licenseDir | Out-Null
+        }
+        try {
+            Copy-Item -Path $licenseSource -Destination $licenseDir -Force
+            Write-Host "License file copied to $licenseDir"
+        } catch {
+            Write-Warning "Failed to copy license file to ${licenseDir}: $_"
+        }
+    } else {
+        Write-Warning "License file not found: $licenseSource"
+    }
+}
