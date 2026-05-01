@@ -63,22 +63,32 @@ else
     $packageArgs.checksum = $checksum
 }
 
-Install-ChocolateyPackage @packageArgs
-
 if ($pp["LicenseFile"]) {
     $licenseSource = $pp["LicenseFile"]
-    if (Test-Path $licenseSource) {
-        $licenseDir = Join-Path $env:ProgramData "Scooter Software\Beyond Compare 5"
-        if (!(Test-Path $licenseDir)) {
-            New-Item -ItemType Directory -Path $licenseDir | Out-Null
-        }
-        try {
-            Copy-Item -Path $licenseSource -Destination $licenseDir -Force
-            Write-Host "License file copied to $licenseDir"
-        } catch {
-            Write-Warning "Failed to copy license file to ${licenseDir}: $_"
-        }
-    } else {
-        Write-Warning "License file not found: $licenseSource"
+    if (!(Test-Path $licenseSource)) {
+        throw "License file not found: $licenseSource"
     }
+
+    # Download the installer first so we can place the key file alongside it
+    $installerFileName = "BCompareSetup-$($packageArgs.packageName)-$version.exe"
+    $installerPath = Get-ChocolateyWebFile -PackageName $packageArgs.packageName `
+        -FileFullPath (Join-Path $env:TEMP $installerFileName) `
+        -Url $packageArgs.url `
+        -Checksum $packageArgs.checksum `
+        -ChecksumType $packageArgs.checksumType
+
+    # Copy the license key file next to the installer (must be named 'BC5Key.txt')
+    $installerDir = Split-Path -Parent $installerPath
+    try {
+        Copy-Item -Path $licenseSource -Destination (Join-Path $installerDir 'BC5Key.txt') -Force
+    } catch {
+        throw "Failed to copy license file to installer directory: $_"
+    }
+
+    Install-ChocolateyInstallPackage -PackageName $packageArgs.packageName `
+        -FileType $packageArgs.fileType `
+        -SilentArgs $packageArgs.silentArgs `
+        -File $installerPath
+} else {
+    Install-ChocolateyPackage @packageArgs
 }
