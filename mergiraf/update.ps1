@@ -1,5 +1,4 @@
-#Import-Module chocolatey-au
-Import-Module $PSScriptRoot\..\..\chocolatey-au\src\Chocolatey-AU.psm1
+Import-Module chocolatey-au
 
 function global:au_SearchReplace {
     @{

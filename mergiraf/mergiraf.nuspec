@@ -17,7 +17,10 @@
     <summary>A syntax-aware git merge driver for a growing collection of programming languages and file formats.</summary>
     <description>Mergiraf can solve a wide range of Git merge conflicts. That's because it's aware of the trees in your files! Thanks to its understanding of your language, it can often reconcile the needs of both sides.
 
-You can teach Mergiraf a new language in a completely declarative way. It's a nonviolent animal, so it prefers that over imperatives</description>
+You can teach Mergiraf a new language in a completely declarative way. It's a nonviolent animal, so it prefers that over imperatives
+
+See [usage](https://mergiraf.org/usage.html) for instructions on how to integrate Mergiraf with Git.
+    </description>
     <releaseNotes>https://codeberg.org/mergiraf/mergiraf/releases/tag/v0.16.3</releaseNotes>
   </metadata>
   <files>
