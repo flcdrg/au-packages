@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>mergiraf</id>
-    <version>0.16.3</version>
+    <version>0.17.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/mergiraf</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Mergiraf</title>
@@ -21,7 +21,7 @@ You can teach Mergiraf a new language in a completely declarative way. It's a no
 
 See [usage](https://mergiraf.org/usage.html) for instructions on how to integrate Mergiraf with Git.
     </description>
-    <releaseNotes>https://codeberg.org/mergiraf/mergiraf/releases/tag/v0.16.3</releaseNotes>
+    <releaseNotes>https://codeberg.org/mergiraf/mergiraf/releases/tag/v0.17.0</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
