@@ -37,6 +37,8 @@ The following package parameters can be set:
 * `/ProxyUrl` - Url of your proxy. For example http://proxy.domain.com:port. This adds --proxyurl parameter to configuration
 * `/ProxyUserName` - Used with /ProxyUrl. Username for proxy. For example domain\username. This adds --proxyusername parameter to configuration
 * `/ProxyPassword` - Used with /ProxyUserName. Password for proxy. For example MySecurePass. This adds --proxypassword parameter to configuration
+* `/NoStopService` - Skip stopping running Azure Pipelines Agent services before install/upgrade. By default, all services matching `vstsagent*` are stopped before the package is modified.
+* `/ClearDirectory` - Clear the agent installation directory before extracting the new version. Useful when upgrading to ensure no stale files from a previous version remain.
 
 To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
