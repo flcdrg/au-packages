@@ -171,6 +171,11 @@ $packageArgs = @{
     checksumType64 = 'sha256'
 }
 
+if ($pp['ClearDirectory'] -and (Test-Path $pp['Directory'])) {
+    Write-Warning "ClearDirectory specified - removing '$($pp['Directory'])' before extracting new agent files"
+    Remove-Item -Recurse -Force $pp['Directory']
+}
+
 Install-ChocolateyZipPackage @packageArgs
 
 if ($configOpts.Count) {
