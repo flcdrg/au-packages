@@ -9,11 +9,8 @@ $packageArgs = @{
   silentArgs   = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
   
   validExitCodes= @(0) #please insert other valid exit codes here
-  url           = 'https://www.sleepfiles.com/OSCAR/1.7.1/OSCAR-1.7.1-Win32-Qt5.exe'
-  checksum      = '3b47b48334fe6670f9b43849a24d277c87ff4c74727bc312528c1727ecb99acc'
-  checksumType  = 'sha256'
-  url64bit      = 'https://www.sleepfiles.com/OSCAR/1.7.1/OSCAR-1.7.1-Win64-Qt5.exe'
-  checksum64    = '3bb822fe7a1b9195babc9f879fc4b24645fec6d3a52ad93cd0ff07aabe724c7c'
+  url64bit      = 'https://www.sleepfiles.com/OSCAR/2.0/OSCAR-2.0.0-Win64.exe'
+  checksum64    = '22E1F01323FE5E96419CF6D22C867BC66B67F46841B129018C8B4A9CD143EF05'
   checksumType64= 'sha256'
   destination   = $toolsDir
 }

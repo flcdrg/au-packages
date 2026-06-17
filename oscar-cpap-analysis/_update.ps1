@@ -1,5 +1,5 @@
-Import-Module chocolatey-au
-# Import-Module "$PSScriptRoot\..\..\chocolatey-au\src\chocolatey-au.psd1"
+#Import-Module chocolatey-au
+Import-Module "$PSScriptRoot\..\..\chocolatey-au\src\chocolatey-au.psd1"
 
 function global:au_SearchReplace {
 	@{
@@ -25,6 +25,7 @@ function global:au_GetLatest {
 			throw 'Could not determine release version from versions.xml'
 		}
 
+		# https://www.sleepfiles.com/OSCAR/2.0/OSCAR-2.0.0-Win64.exe
 		$url32 = "https://www.sleepfiles.com/OSCAR/$version/OSCAR-$version-Win32-Qt5.exe"
 		$url64 = "https://www.sleepfiles.com/OSCAR/$version/OSCAR-$version-Win64-Qt5.exe"
 
