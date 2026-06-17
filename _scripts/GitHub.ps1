@@ -34,15 +34,15 @@ function Get-GitHubLatestRelease($project, $tagPrefix, [switch] $newest) {
     $releasesUrl = "https://api.github.com/repos/$project/releases"
 
     if ($newest.IsPresent) {
-        $releases = Invoke-RestMethod -Method Get -Uri "$releasesUrl" -Headers $headers
+        $releases = Invoke-RestMethod -Method Get -Uri "$releasesUrl" -Headers $script:headers
         $releases | Select-Object -First 1
     }
     elseif ($tagPrefix) {
-        $releases = Invoke-RestMethod -Method Get -Uri "$releasesUrl" -Headers $headers
+        $releases = Invoke-RestMethod -Method Get -Uri "$releasesUrl" -Headers $script:headers
         $releases | Where-Object { $_.tag_name -and $_.tag_name.StartsWith($tagPrefix) } | Select-Object -First 1
 
     } else {
-        Invoke-RestMethod -Method Get -Uri "$releasesUrl/latest" -Headers $headers
+        Invoke-RestMethod -Method Get -Uri "$releasesUrl/latest" -Headers $script:headers
     }
 }
 
