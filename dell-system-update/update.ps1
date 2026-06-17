@@ -108,8 +108,7 @@ function global:au_GetLatest {
     }
     catch {
         Write-Warning $_
-        Write-Error $_
-        Write-Error $_.Exception
+        Write-Warning $_.Exception
         $Latest = 'ignore'
     }
 

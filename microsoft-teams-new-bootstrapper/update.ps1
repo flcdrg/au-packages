@@ -44,9 +44,10 @@ function global:au_GetLatest {
     }
     catch {
         if ($_.Exception.InnerException) {
-            Write-Error $_.Exception.InnerException.Message
+            Write-Warning $_.Exception.InnerException.Message
         }
-        Write-Error $_
+        Write-W $_
+        return 'ignore'
     }
     return $Latest
 }

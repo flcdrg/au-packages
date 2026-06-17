@@ -48,7 +48,8 @@ function global:au_GetLatest {
         }
     }
     catch {
-        Write-Error $_
+        Write-Warning $_
+        return 'ignore'
     }
     return $Latest
 }
