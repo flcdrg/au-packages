@@ -1,4 +1,5 @@
-Import-Module chocolatey-au
+#Import-Module chocolatey-au
+Import-Module "$PSScriptRoot\..\..\chocolatey-au\src\chocolatey-au.psm1"
 
 function global:au_SearchReplace {
     @{
@@ -14,21 +15,25 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
 
     try {
-        $response = Invoke-RestMethod -Uri "https://downloads.pdf-xchange.com/trackerupdate/TrackerData8.xml"
+        $response = Invoke-RestMethod -Uri "https://www.pdf-xchange.com/updater/UpdaterData.xml"
 
         # Trim off any Byte Order Mark
         $xml = [xml] $response.Trim([char] 0xFEFF, [char] 0x200B)
 
         $xmlNameSpace = new-object System.Xml.XmlNamespaceManager($xml.NameTable)
-        $xmlNameSpace.AddNamespace("t", "http://schemas.tracker-software.com/trackerupdate/tb/v1")
+        # Use the namespace from the XML root element to stay compatible with schema URI changes.
+        $xmlNameSpace.AddNamespace("t", $xml.DocumentElement.NamespaceURI)
 
         $bundleId = "Pro.x32"
         $x32update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object @{expr={[version]$_.version}; desc=$true} | Select-Object -First 1
+        if (-not $x32update) { throw "Could not find updates for bundle '$bundleId' in namespace '$($xml.DocumentElement.NamespaceURI)'" }
+
         $version = $x32update.version
         $filename = $x32update.url
 
         $bundleId = "Pro.x64"
         $x64update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object @{expr={[version]$_.version}; desc=$true} | Select-Object -First 1
+        if (-not $x64update) { throw "Could not find updates for bundle '$bundleId' in namespace '$($xml.DocumentElement.NamespaceURI)'" }
         $filename64 = $x64update.url
 
         $primaryDownloadUrl = "https://downloads.pdf-xchange.com/$version/$filename"

@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>PDFXchangePro</id>
-    <version>10.8.5.410</version>
+    <version>11.0.1.0</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/PDFXchangePro</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>PDF-XChange Pro</title>
@@ -23,6 +23,11 @@
 - PDF-XChange Editor Plus is a hugely dynamic and fully-customizable PDF application. Create, view, edit, annotate, OCR* and sign PDF files – and that’s just the beginning. If you work with PDF then this fully-customizable product will optimize your work process to levels that no other product can achieve. Create PDF files from scanned documents, images, text files, Markdown files and much more. Open, edit and convert Microsoft Office documents.* Avail of over thirty tools to assist in the creation of document comments, annotations, links and fillable forms. These tools make editing PDFs a finely-tuned, precise process that produces documentation and image files of the highest quality. Our user-friendly functionality is diverse enough to meet the needs of all practitioners from novices to professionals.**
 - PDF-Tools is a worldwide leader in the creation and manipulation of PDF and image files. Highly user-friendly, it can be used to convert files of almost any format to/from PDF. Avail of seventy built-in standard tools, as well as functionality to clone and edit these tools and their variables as you desire. Use the Actions Library to fully customize your tools and the Tool Actions Sequence to determine the order in which they perform operations. Combine seventy-seven available actions to create your own tools - out of billions of possibilities. PDF-Tools is compatible with large PDF files and can also handle a huge number of files simultaneously – batch conversion is its strength.
 - PDF-XChange Standard Printer is PDF-XChange’s best-selling virtual printer - the ultimate application for the creation and virtual printing of industry-standard PDF files. It’s compatible with files from almost all Windows applications, such as Word, Excel and AutoCAD, and features an optimized engine for superb conversion of images and image-based text characters. The files it creates are surprisingly small, given their quality – allowing for faster uploads/downloads, a reduction in storage space and increased data retention - even at high levels of compression. PDF-XChange Standard also features MS Office integration, which provides extra functionality such as adding clickable tables of contents and embedded URL support that facilitates the creation of external links.
+
+#### Version 11 breaking changes
+
+- Version 11 products will be installed in different folders from Version 10. Paths in the registry and the user's data will also be changed. Any existing scripts relying on the old folder structure should be updated.
+- Version 11 products require Windows 10 or later. If you're still using Windows 7 or Windows 8, then please continue to use Version 10 products, and do not update to V11.
 
 #### Package Parameters
 

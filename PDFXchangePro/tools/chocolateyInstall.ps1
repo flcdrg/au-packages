@@ -2,10 +2,10 @@
 $packageName = 'PDFXchangePro' 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://downloads.pdf-xchange.com/10.8.5.410/ProV10.x86.msi'
-$url64      = 'https://downloads.pdf-xchange.com/10.8.5.410/ProV10.x64.msi'
-$checksum   = '4387625A60C0C62630CD32CD1E7B71F2F1CB05916EB35577C333B1941E18819B'
-$checksum64 = 'A5D9A8371D412F069A4711ADECC6FE6E5F82A6433C368BA012D89693C4925398'
+$url        = 'https://downloads.pdf-xchange.com/11.0.1.0/ProV11.x86.msi'
+$url64      = 'https://downloads.pdf-xchange.com/11.0.1.0/ProV11.x64.msi'
+$checksum   = '76F5A5BB4ECCFC1AC206E8487CA0D93D14D904B1CF241FFF0962511F3B1F6F4F'
+$checksum64 = '93E938B2A9A25216325A898ED87CF523E6718F8F3F5B6D56599314E6F6B1F47F'
 
 $packageArgs = @{
   packageName   = $packageName

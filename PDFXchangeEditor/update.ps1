@@ -1,5 +1,5 @@
-Import-Module chocolatey-au
-#Import-Module "$PSScriptRoot\..\..\chocolatey-au\src\chocolatey-au.psm1"
+#Import-Module chocolatey-au
+Import-Module "$PSScriptRoot\..\..\chocolatey-au\src\chocolatey-au.psm1"
 
 function global:au_SearchReplace {
     @{
@@ -15,13 +15,14 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
 
     try {
-        $response = Invoke-RestMethod -Uri "https://downloads.pdf-xchange.com/trackerupdate/TrackerData8.xml"
+        $response = Invoke-RestMethod -Uri "https://www.pdf-xchange.com/updater/UpdaterData.xml"
 
         # Trim off any Byte Order Mark
         $xml = [xml] $response.Trim([char] 0xFEFF, [char] 0x200B)
 
         $xmlNameSpace = new-object System.Xml.XmlNamespaceManager($xml.NameTable)
-        $xmlNameSpace.AddNamespace("t", "http://schemas.tracker-software.com/trackerupdate/tb/v1")
+        # Use the namespace from the XML root element to stay compatible with schema URI changes.
+        $xmlNameSpace.AddNamespace("t", $xml.DocumentElement.NamespaceURI)
 
         # Need to pick the newest one. eg.
         # <update version="9.2.358.0" minVersionUpdate="5.5.308.0" type="msi" platform="x32" size="221208576" url="builds-archive/9.2.358.0/EditorV9.x86.msi" hash="66C2CFA622DE03EC82035E650BC7677A21D85EB8DE3BF6EC3B88CA2593D542B8" startMaintenance="2021-10-18" cmdLineSilent="/qb /norestart"/>
@@ -29,13 +30,16 @@ function global:au_GetLatest {
 
         $bundleId = "Editor.x32"
         $x32update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object @{expr={[version]$_.version}; desc=$true} | Select-Object -First 1
+        if (-not $x32update) { throw "Could not find updates for bundle '$bundleId' in namespace '$($xml.DocumentElement.NamespaceURI)'" }
         $version = $x32update.version
         $filename = $x32update.url
 
         $bundleId = "Editor.x64"
         $x64update = $xml.SelectNodes("//t:bundle[@id='$bundleId']/t:update", $xmlNameSpace) | Sort-Object @{expr={[version]$_.version}; desc=$true} | Select-Object -First 1
+        if (-not $x64update) { throw "Could not find updates for bundle '$bundleId' in namespace '$($xml.DocumentElement.NamespaceURI)'" }
         $filename64 = $x64update.url
 
+        # https://downloads.pdf-xchange.com/11.0.1.0/EditorV11.x64.msi
         $primaryDownloadUrl = "https://downloads.pdf-xchange.com/$version/$filename"
         $primaryDownloadUrl64 = "https://downloads.pdf-xchange.com/$version/$filename64"
 
