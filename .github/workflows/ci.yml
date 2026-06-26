@@ -27,7 +27,7 @@ jobs:
       # Install a customised version of Chocolatey-AU PowerShell module
       # If my PR (https://github.com/chocolatey-community/chocolatey-au/pull/53) ever gets merged,
       # then we can revert back to use the official module
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           repository: "flcdrg/chocolatey-au"
           path: "chocolatey-au"
@@ -50,7 +50,7 @@ jobs:
         shell: pwsh
         working-directory: chocolatey-au
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           path: "packages"
 
