@@ -17,7 +17,7 @@ $german = @(3079, 1031, 5127, 4103, 2055)
 $french = @(2060, 11276, 3084, 9228, 12300, 1036, 5132, 13324, 6156, 14348, 10252, 4108, 7180)
 $japanese = @(17, 1041)
 $chinese = @(2052)
-$version = '5.2.2.32209'
+$version = '5.2.3.32296'
 
 # Install for all users by default
 if ($pp["CurrentUser"]) {
@@ -36,11 +36,11 @@ $packageArgs = @{
     checksumType = 'sha256'
 }
 
-$checksumde = '2b8788efd579b4e1ce0b66a1a6efc161fda8beb4d90d157303edc3ff31881296'
-$checksumfr = 'e73049c094ed1836001070b52acbb2865f7f7c762ec2838607beaa72b6f68e63'
-$checksumjp = '5e35377a0e8849ebf542488f8b1e49532c49fa2b3178e32bb177779716403b5f'
-$checksumzh = '7d7f7dc17ee854ae64bcbc55bc7e2866ba180b305cc14b7499893d28b6db4b96'
-$checksum = '11cdb99770d2c8db50c68cf557db4641d1a162bd4362c9b18286ab7a405cf6a1'
+$checksumde = '1d24e5350e96883b7cf7440588dc8ab8aba86dcb831eaf2775ef8274ecc96b0a'
+$checksumfr = 'fac044075521df58b69f04665c43a1d3b315980dd8ddfffa772d84465f58bc91'
+$checksumjp = '83bf1dcca0706112ebb42589d3a37b4f41b81018785dee22f9583d6992f0ed85'
+$checksumzh = 'c9f01662402a0f2d6ab803fa8403e27366f838af50f35b82a2c438badd37b137'
+$checksum = 'a74239803aa1a1373735dc092365cca85c726178625aa51821f35aaf42559621'
 
 if ($german -contains $LCID) {
     $packageArgs.url = "$urlBase/BCompare-de-$version.exe"
