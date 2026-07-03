@@ -1,11 +1,9 @@
-#Import-Module chocolatey-au
-Import-Module "$PSScriptRoot\..\..\chocolatey-au\src\chocolatey-au.psd1"
+Import-Module chocolatey-au
+#Import-Module "$PSScriptRoot\..\..\chocolatey-au\src\chocolatey-au.psd1"
 
 function global:au_SearchReplace {
 	@{
 		'tools\chocolateyInstall.ps1' = @{
-			'(^\s*url\s*=\s*)(".*"|''.*'')'   = "`$1'$($Latest.Url32)'"
-			"(^\s*checksum\s*=\s*)('.*')"      = "`$1'$($Latest.Checksum32)'"
 			'(^\s*url64bit\s*=\s*)(".*"|''.*'')' = "`$1'$($Latest.Url64)'"
 			"(^\s*checksum64\s*=\s*)('.*')"    = "`$1'$($Latest.Checksum64)'"
 		}
@@ -25,20 +23,16 @@ function global:au_GetLatest {
 			throw 'Could not determine release version from versions.xml'
 		}
 
-		# https://www.sleepfiles.com/OSCAR/2.0/OSCAR-2.0.0-Win64.exe
-		$url32 = "https://www.sleepfiles.com/OSCAR/$version/OSCAR-$version-Win32-Qt5.exe"
-		$url64 = "https://www.sleepfiles.com/OSCAR/$version/OSCAR-$version-Win64-Qt5.exe"
+		# https://www.sleepfiles.com/OSCAR/2.0.1/OSCAR-2.0.1-Win64.exe
+		$url64 = "https://www.sleepfiles.com/OSCAR/$version/OSCAR-$version-Win64.exe"
 
-		foreach ($url in @($url32, $url64)) {
-			$head = Invoke-WebRequest -Uri $url -Method Head -UseBasicParsing
-			if ($head.StatusCode -ne 200) {
-				throw "Installer URL check failed: $url"
-			}
+		$head = Invoke-WebRequest -Uri $url64 -Method Head -UseBasicParsing
+		if ($head.StatusCode -ne 200) {
+			throw "Installer URL check failed: $url"
 		}
 
 		return @{
 			Version      = $version
-			Url32        = $url32
 			Url64        = $url64
 			ReleaseNotes = 'http://www.apneaboard.com/wiki/index.php/OSCAR_Release_Notes'
 		}
@@ -49,4 +43,4 @@ function global:au_GetLatest {
 	}
 }
 
-update -NoReadme
+update -NoReadme -ChecksumFor 64
