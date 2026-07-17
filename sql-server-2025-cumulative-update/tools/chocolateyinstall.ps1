@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://download.microsoft.com/download/69e0b8fc-1c50-41bd-a576-b9c66b2f302a/SQLServer2025-KB5093421-x64.exe'
-$checksum   = '1d91082726fd4331f7d48ff992ba3c7511599f881fbe3abe431148aa9ce74441'
-$softwareName = 'Hotfix 4055 for SQL Server 2025*(KB5093421)*'
+$url        = 'https://download.microsoft.com/download/69e0b8fc-1c50-41bd-a576-b9c66b2f302a/SQLServer2025-KB5096981-x64.exe'
+$checksum   = '5fb70451bef95b4a392b718b90c7a05ea389b2c0b29e07a3de9768f7f3b736b5'
+$softwareName = 'Hotfix 4065 for SQL Server 2025*(KB5096981)*'
 
 [bool] $runningAU = (Test-Path Function:\au_GetLatest)
 
