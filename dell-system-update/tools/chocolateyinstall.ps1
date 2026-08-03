@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url64 = 'https://downloads.dell.com/FOLDER14247161M/1/Systems-Management_Application_FKR69_WN64_2.2.1.0_A00.EXE'
-$checksum64 = '9e1bbc15f3589758db60da4963eab1bb'
+$url64 = 'https://downloads.dell.com/FOLDER14825293M/1/Systems-Management_Application_J9TK1_WN64_2.3.0.0_A00.EXE'
+$checksum64 = 'b6a695e7bc8bcd38495f10f865162061'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
