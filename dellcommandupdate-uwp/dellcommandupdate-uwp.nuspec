@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>dellcommandupdate-uwp</id>
-    <version>5.7.1</version>
+    <version>5.7.1.20260812</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dellcommandupdate-uwp</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Dell Command | Update Windows Universal Application</title>
@@ -37,8 +37,8 @@ If you notice a newer version is available but the package has not been updated,
  </description>
  <releaseNotes>https://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=P0P70</releaseNotes>
      <dependencies>
-      <!-- https://community.chocolatey.org/packages/dotnet-8.0-desktopruntime -->
-      <dependency id="dotnet-8.0-desktopruntime" version="8.0.15" />
+      <!-- https://community.chocolatey.org/packages/dotnet-10.0-desktopruntime -->
+      <dependency id="dotnet-10.0-desktopruntime" version="10.0.8" />
     </dependencies>
   </metadata>
   <files>
