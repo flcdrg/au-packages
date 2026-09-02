@@ -4,7 +4,7 @@
   <metadata>
     <id>sql-server-2025</id>
     <!-- https://www.sqlserverversions.com/2021/07/sql-server-2022-versions.html -->
-    <version>17.0.1000.7</version>
+    <version>17.0.1000.20260902</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-2025</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Microsoft SQL Server 2025 Developer Edition</title>
