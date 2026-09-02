@@ -75,8 +75,20 @@ if (!$pp['IsoPath']) {
 $packageArgs.silentArgs += ($pp.GetEnumerator() | ForEach-Object { "/$($_.name)=`"$($_.value)`"" }) -join " "
 
 try {
-  $MountResult = Mount-DiskImage -ImagePath $fileFullPath -StorageType ISO -PassThru
-  $MountVolume = $MountResult | Get-Volume
+  Mount-DiskImage -ImagePath $fileFullPath -StorageType ISO | Out-Null
+
+  # Re-query via Get-DiskImage rather than piping PassThru directly; on virtual machines
+  # the drive-letter assignment can lag behind the mount operation and leave DriveLetter empty.
+  $MountVolume = $null
+  for ($i = 0; $i -lt 5 -and -not $MountVolume; $i++) {
+    $MountVolume = Get-DiskImage -ImagePath $fileFullPath | Get-Volume -ErrorAction SilentlyContinue | Where-Object { $_.DriveLetter } | Select-Object -First 1
+    if (-not $MountVolume) { Start-Sleep -Seconds 2 }
+  }
+
+  if (-not $MountVolume.DriveLetter) {
+    throw "Failed to get drive letter for mounted ISO after 5 attempts: $fileFullPath"
+  }
+
   $MountLocation = "$($MountVolume.DriveLetter):"
 
   Install-ChocolateyInstallPackage @packageArgs -File "$($MountLocation)\setup.exe"
