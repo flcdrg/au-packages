@@ -15,7 +15,7 @@ function SearchReplace($MajorVersion, $Latest) {
 
 function GetCatalogFallbackUrl($KB, $MajorVersion) {
     try {
-        $searchResponse = Invoke-WebRequest -Uri "https://www.catalog.update.microsoft.com/Search.aspx?q=KB$KB SQL Server $MajorVersion" -ErrorAction Stop
+        $searchResponse = Invoke-WebRequest -Uri ("https://www.catalog.update.microsoft.com/Search.aspx?q={0}" -f [uri]::EscapeDataString("KB$KB SQL Server $MajorVersion")) -ErrorAction Stop
     } catch {
         return $null
     }
