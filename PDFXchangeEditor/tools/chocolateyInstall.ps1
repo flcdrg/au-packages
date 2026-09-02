@@ -65,6 +65,15 @@ if ($packageParameters) {
         }
     }
 
+    if ($packageParameters.ContainsKey("KeyData")) {
+        if ($packageParameters["KeyData"] -eq "") {
+          Throw 'KeyData needs a colon-separated argument; try something like this: --params ''/KeyData:PXP10-...l4Q=''.'
+        } else {
+          Write-Host "You want to use KeyData"
+          $customArguments.Add("KEYDATA", $packageParameters["KeyData"])
+        }
+    }
+
 } else {
     Write-Debug "No Package Parameters Passed in"
 }
