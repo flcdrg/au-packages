@@ -86,10 +86,9 @@ try {
   # Re-query via Get-DiskImage rather than piping PassThru directly; on virtual machines
   # the drive-letter assignment can lag behind the mount operation and leave DriveLetter empty.
   $MountVolume = $null
-  for ($i = 0; $i -lt 5; $i++) {
-    $MountVolume = Get-DiskImage -ImagePath $fileFullPath | Get-Volume
-    if ($MountVolume.DriveLetter) { break }
-    Start-Sleep -Seconds 2
+  for ($i = 0; $i -lt 5 -and -not $MountVolume; $i++) {
+    $MountVolume = Get-DiskImage -ImagePath $fileFullPath | Get-Volume -ErrorAction SilentlyContinue | Where-Object { $_.DriveLetter } | Select-Object -First 1
+    if (-not $MountVolume) { Start-Sleep -Seconds 2 }
   }
 
   if (-not $MountVolume.DriveLetter) {
