@@ -2,6 +2,7 @@
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $url        = 'https://download.microsoft.com/download/c/4/f/c4f908c9-98ed-4e5f-88d5-7d6a5004aebd/SQLServer2017-KB5050533-x64.exe'
+$urlFallback = ''
 $checksum   = 'b0e110ab2eb787fba5861874e50c6941a690c742e9143e3a54498dd2a289fe72'
 $softwareName = 'Hotfix 3490 for SQL Server 2017*(KB5050533)*'
 
@@ -27,7 +28,20 @@ $packageArgs = @{
   checksumType  = 'sha256'
 }
 
-$filePath = Get-ChocolateyWebFile @packageArgs
+$filePath = $null
+
+try {
+  $filePath = Get-ChocolateyWebFile @packageArgs
+} catch {
+  if ([string]::IsNullOrWhiteSpace($urlFallback)) {
+    throw
+  }
+
+  Write-Warning "Primary download URL failed. Retrying with Microsoft Update Catalog fallback URL."
+  $packageArgs.url = $urlFallback
+  $packageArgs.FileFullPath = Join-Path $tempDir ([IO.Path]::GetFileName($urlFallback))
+  $filePath = Get-ChocolateyWebFile @packageArgs
+}
 
 if (Test-Path Function:\au_GetLatest) {
   return

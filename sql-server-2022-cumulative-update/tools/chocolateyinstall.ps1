@@ -2,6 +2,7 @@
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $url        = 'https://download.microsoft.com/download/a89001cb-9c99-48d3-9f14-ded054b35fe4/SQLServer2022-KB5093420-x64.exe'
+$urlFallback = ''
 $checksum   = 'a0fa6a60779cfe4c2273bdb7a9aa68e8a3b74d482650b20f1544e03386b226bc'
 $softwareName = 'Hotfix 4265 for SQL Server 2022*(KB5093420)*'
 
@@ -40,7 +41,20 @@ $packageArgs = @{
   checksumType  = 'sha256'
 }
 
-$filePath = Get-ChocolateyWebFile @packageArgs
+$filePath = $null
+
+try {
+  $filePath = Get-ChocolateyWebFile @packageArgs
+} catch {
+  if ([string]::IsNullOrWhiteSpace($urlFallback)) {
+    throw
+  }
+
+  Write-Warning "Primary download URL failed. Retrying with Microsoft Update Catalog fallback URL."
+  $packageArgs.url = $urlFallback
+  $packageArgs.FileFullPath = Join-Path $tempDir ([IO.Path]::GetFileName($urlFallback))
+  $filePath = Get-ChocolateyWebFile @packageArgs
+}
 
 if (Test-Path Function:\au_GetLatest) {
   return

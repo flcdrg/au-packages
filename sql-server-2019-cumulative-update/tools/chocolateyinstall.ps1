@@ -2,8 +2,9 @@
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $url        = 'https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB5054833-x64.exe'
+$urlFallback = ''
 $checksum   = '864aa01854d124bd907920b26271f9f2ed3f5f82880adb746dbbc681ef32b371'
-$softwareName = 'Hotfix 4430 for SQL Server 2022*(KB5054833)*'
+$softwareName = 'Hotfix 4430 for SQL Server 2019*(KB5054833)*'
 
 [bool] $runningAU = (Test-Path Function:\au_GetLatest)
 
@@ -40,7 +41,20 @@ $packageArgs = @{
   checksumType  = 'sha256'
 }
 
-$filePath = Get-ChocolateyWebFile @packageArgs
+$filePath = $null
+
+try {
+  $filePath = Get-ChocolateyWebFile @packageArgs
+} catch {
+  if ([string]::IsNullOrWhiteSpace($urlFallback)) {
+    throw
+  }
+
+  Write-Warning "Primary download URL failed. Retrying with Microsoft Update Catalog fallback URL."
+  $packageArgs.url = $urlFallback
+  $packageArgs.FileFullPath = Join-Path $tempDir ([IO.Path]::GetFileName($urlFallback))
+  $filePath = Get-ChocolateyWebFile @packageArgs
+}
 
 if (Test-Path Function:\au_GetLatest) {
   return

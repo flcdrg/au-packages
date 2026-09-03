@@ -6,10 +6,65 @@ function SearchReplace($MajorVersion, $Latest) {
         #   softwareName  = 'Hotfix 3026 for Microsoft SQL Server*(KB4229789)*'
         'tools\chocolateyInstall.ps1' = @{
             "(^[$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
+            "(^[$]urlFallback\s*=\s*)('.*')" = "`$1'$($Latest.URL64Fallback)'"
             "(^[$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
             "(^[$]softwareName\s*=\s*)('.*')" = "`$1'Hotfix $($Latest.Build) for SQL Server $MajorVersion*(KB$($Latest.KB))*'"
         }
      }
+}
+
+function GetCatalogFallbackUrl($KB, $MajorVersion) {
+    try {
+        $searchResponse = Invoke-WebRequest -Uri ("https://www.catalog.update.microsoft.com/Search.aspx?q={0}" -f [uri]::EscapeDataString("KB$KB SQL Server $MajorVersion")) -ErrorAction Stop
+    } catch {
+        return $null
+    }
+
+    $availableIds = $searchResponse.InputFields |
+        Where-Object { $_.type -eq 'Button' -and $_.Value -eq 'Download' } |
+        Select-Object -ExpandProperty ID
+
+    if (-not $availableIds) {
+        return $null
+    }
+
+    $guids = $searchResponse.Links |
+        Where-Object ID -match '_link' |
+        ForEach-Object { $_.id.replace('_link', '') } |
+        Where-Object { $_ -in $availableIds } |
+        Select-Object -Unique
+
+    foreach ($guid in $guids) {
+        $post = @{ size = 0; updateID = $guid; uidInfo = $guid } | ConvertTo-Json -Compress
+        $postBody = @{ updateIDs = "[$post]" }
+
+        try {
+            $content = Invoke-WebRequest -Uri 'https://www.catalog.update.microsoft.com/DownloadDialog.aspx' -Method Post -Headers @{ "Accept-Language" = "en-US" } -Body $postBody -ErrorAction Stop |
+                Select-Object -ExpandProperty Content
+        } catch {
+            continue
+        }
+
+        $urls = [regex]::Matches($content, "(http[s]?)(:\/\/)([^\s,]+)(?=')") |
+            ForEach-Object { $_.Value } |
+            Select-Object -Unique
+
+        $fallback = $urls |
+            Where-Object { $_ -match "(?i)catalog\.s\.download\.windowsupdate\.com/.+sqlserver$MajorVersion-kb$KB-x64.*\.exe$" } |
+            Select-Object -First 1
+
+        if (-not $fallback) {
+            $fallback = $urls |
+                Where-Object { $_ -match "(?i)catalog\.s\.download\.windowsupdate\.com/.+kb$KB.+\.exe$" } |
+                Select-Object -First 1
+        }
+
+        if ($fallback) {
+            return $fallback
+        }
+    }
+
+    return $null
 }
 
 function GetLatest($downloadId, $MajorVersion) {
@@ -39,8 +94,11 @@ function GetLatest($downloadId, $MajorVersion) {
     }
     
     $v = [Version] $version
+    $fallbackUrl = GetCatalogFallbackUrl $kb $MajorVersion
+
     $Latest = @{ 
         URL64 = $url
+        URL64Fallback = $fallbackUrl
         Version = $version
         KB = $kb
         CU = $cu
