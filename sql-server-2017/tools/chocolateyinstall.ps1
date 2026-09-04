@@ -2,15 +2,23 @@
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url        = 'https://download.microsoft.com/download/E/F/2/EF23C21D-7860-4F05-88CE-39AA114B014B/SQLServer2017-x64-ENU-Dev.iso'
 
-# Inspired by @riezebosch's SQL Server packages at https://github.com/riezebosch/BoxstarterPackages/tree/master/sql-server
-
-. .\Get-PendingReboot.ps1
-
-if ((Get-PendingReboot).RebootPending) {
-  Write-Error "A system reboot is pending. You must restart Windows first before installing SQL Server"
-}
+. $toolsDir\Get-PendingReboot.ps1
 
 $pp = Get-PackageParameters
+
+if ( (!$pp['IGNOREPENDINGREBOOT']) -and (Get-PendingReboot).RebootPending) {
+  Write-Error "A system reboot is pending. You must restart Windows first before installing SQL Server"
+} else {
+  if ($pp['IGNOREPENDINGREBOOT']) {
+    $pp.Remove('IGNOREPENDINGREBOOT')
+    if(!$pp['ACTION']) {
+      $pp['ACTION']='Install'
+    }
+    if(!$pp['SkipRules']) {
+      $pp['SkipRules']='RebootRequiredCheck'
+    }
+  }
+}
 
 # Default to use supplied configuration file and current user as sysadmin
 if (!$pp['CONFIGURATIONFILE']) { 
@@ -75,6 +83,7 @@ try {
   }
 
   $MountLocation = "$($MountVolume.DriveLetter):"
+
   Install-ChocolateyInstallPackage @packageArgs -File "$($MountLocation)\setup.exe"
 }
 finally {
