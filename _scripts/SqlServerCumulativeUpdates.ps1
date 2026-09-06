@@ -60,6 +60,7 @@ function GetCatalogFallbackUrl($KB, $MajorVersion) {
         }
 
         if ($fallback) {
+            if ($fallback -match '^http://') { $fallback = $fallback -replace '^http://', 'https://' }
             return $fallback
         }
     }
