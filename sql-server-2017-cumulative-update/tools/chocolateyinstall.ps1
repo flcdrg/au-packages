@@ -10,10 +10,6 @@ $softwareName = 'Hotfix 3490 for SQL Server 2017*(KB5050533)*'
 
 . $toolsDir\Get-PendingReboot.ps1
 
-if (([Version] (Get-CimInstance Win32_OperatingSystem).Version -lt [version] "10.0.0.0") -and -not $runningAU) {
-  Write-Error "SQL Server 2019 requires a minimum of Windows 10 or Windows Server 2016"
-}
-
 $pp = Get-PackageParameters
 
 if ( (!$pp['IGNOREPENDINGREBOOT']) -and (Get-PendingReboot).RebootPending -and -not $runningAU) {
