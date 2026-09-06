@@ -2,7 +2,7 @@
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $url        = 'https://download.microsoft.com/download/69e0b8fc-1c50-41bd-a576-b9c66b2f302a/SQLServer2025-KB5096981-x64.exe'
-$urlFallback = ''
+$urlFallback = 'https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2026/07/sqlserver2025-kb5096981-x64_9fa0966b760db526baf7f1e33feb2a650efb21d3.exe'
 $checksum   = '5fb70451bef95b4a392b718b90c7a05ea389b2c0b29e07a3de9768f7f3b736b5'
 $softwareName = 'Hotfix 4065 for SQL Server 2025*(KB5096981)*'
 
@@ -18,6 +18,17 @@ $pp = Get-PackageParameters
 
 if ( (!$pp['IGNOREPENDINGREBOOT']) -and (Get-PendingReboot).RebootPending -and -not $runningAU) {
   Write-Error "A system reboot is pending. You must restart Windows first before installing SQL Server updates"
+}
+
+$useFallback = [bool] $pp['USEFALLBACK']
+
+if ($useFallback) {
+  if ([string]::IsNullOrWhiteSpace($urlFallback)) {
+    Write-Error "USEFALLBACK was specified but this package has no fallback URL"
+  }
+
+  Write-Host "USEFALLBACK specified. Downloading from the Microsoft Update Catalog fallback URL."
+  $url = $urlFallback
 }
 
 $filename = [IO.Path]::GetFileName($url)
@@ -46,7 +57,7 @@ $filePath = $null
 try {
   $filePath = Get-ChocolateyWebFile @packageArgs
 } catch {
-  if ([string]::IsNullOrWhiteSpace($urlFallback)) {
+  if ($useFallback -or [string]::IsNullOrWhiteSpace($urlFallback)) {
     throw
   }
 

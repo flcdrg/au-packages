@@ -3,10 +3,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-2017-cumulative-update</id>
-    <version>14.0.3490.10</version>
+    <version>14.0.3490.20260906</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-2017-cumulative-update</packageSourceUrl>
     <owners>flcdrg</owners>
-    <title>Microsoft SQL Server 2017 Cumulative Update 31</title>
+    <title>Microsoft SQL Server 2017 Cumulative Update Azure Connect Pack</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://www.microsoft.com/en-us/download/details.aspx?id=56128</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/ferventcoder/chocolatey-packages@59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
@@ -31,10 +31,28 @@
 Uninstalling with Chocolatey is known to not be reliable, as the uninstaller wants to locate `sql_engine_core_inst_loc.msi` from the original installation media.
 
 Should you need to uninstall this cumulative update, you may need to revert to manual uninstallation via Programs and Features, Installed Updates.
+
+### Package Specific
+
+#### Package Parameters
+
+The following package parameters can be set:
+
+ * `/IgnorePendingReboot` - don't check for pending reboot (*Warning, SQL Server installations may fail if reboots are pending*)
+ * `/UseFallback` - skip the primary download URL and download directly from the Microsoft Update Catalog
+
+ To pass parameters, use `--params "''"` (e.g. `choco install sql-server-2017-cumulative-update [other options] --params="'/ITEM:value /ITEM2:value2'"`).
+
+Example using /IgnorePendingReboot
+
+```
+choco install sql-server-2017-cumulative-update --params="'/UseFallback'"
+```
     </description>
     <releaseNotes>https://support.microsoft.com/help/5050533</releaseNotes>
   </metadata>
   <files>
     <file src="tools\*.ps1" target="tools" />
+    <file src="..\sql-server-2017\tools\Get-PendingReboot.ps1" target="tools" />
   </files>
 </package>

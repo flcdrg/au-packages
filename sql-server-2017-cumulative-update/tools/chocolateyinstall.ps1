@@ -2,11 +2,35 @@
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $url        = 'https://download.microsoft.com/download/c/4/f/c4f908c9-98ed-4e5f-88d5-7d6a5004aebd/SQLServer2017-KB5050533-x64.exe'
-$urlFallback = ''
+$urlFallback = 'https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2025/03/sqlserver2017-kb5050533-x64_79f01499da6cfdddd94de9d35835e7408e3cd462.exe'
 $checksum   = 'b0e110ab2eb787fba5861874e50c6941a690c742e9143e3a54498dd2a289fe72'
 $softwareName = 'Hotfix 3490 for SQL Server 2017*(KB5050533)*'
 
 [bool] $runningAU = (Test-Path Function:\au_GetLatest)
+
+. $toolsDir\Get-PendingReboot.ps1
+
+if (([Version] (Get-CimInstance Win32_OperatingSystem).Version -lt [version] "10.0.0.0") -and -not $runningAU) {
+  Write-Error "SQL Server 2019 requires a minimum of Windows 10 or Windows Server 2016"
+}
+
+$pp = Get-PackageParameters
+
+if ( (!$pp['IGNOREPENDINGREBOOT']) -and (Get-PendingReboot).RebootPending -and -not $runningAU) {
+  Write-Error "A system reboot is pending. You must restart Windows first before installing SQL Server updates"
+}
+
+$useFallback = [bool] $pp['USEFALLBACK']
+
+if ($useFallback) {
+  if ([string]::IsNullOrWhiteSpace($urlFallback)) {
+    Write-Error "USEFALLBACK was specified but this package has no fallback URL"
+  }
+
+  Write-Host "USEFALLBACK specified. Downloading from the Microsoft Update Catalog fallback URL."
+  $url = $urlFallback
+}
+
 $filename = [IO.Path]::GetFileName($url)
 
 # Download like Install-ChocolateyPackage (so we can restart from cached download)
@@ -33,7 +57,7 @@ $filePath = $null
 try {
   $filePath = Get-ChocolateyWebFile @packageArgs
 } catch {
-  if ([string]::IsNullOrWhiteSpace($urlFallback)) {
+  if ($useFallback -or [string]::IsNullOrWhiteSpace($urlFallback)) {
     throw
   }
 
