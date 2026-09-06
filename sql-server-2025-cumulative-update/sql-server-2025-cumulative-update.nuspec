@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sql-server-2025-cumulative-update</id>
-    <version>17.0.4065.4</version>
+    <version>17.0.4065.20260906</version>
     <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/sql-server-2025-cumulative-update</packageSourceUrl>
     <owners>flcdrg</owners>
     <title>Microsoft SQL Server 2025 Cumulative Update 7</title>
@@ -45,6 +45,7 @@ Should you need to uninstall this cumulative update, you may need to revert to m
 The following package parameters can be set:
 
  * `/IgnorePendingReboot` - don't check for pending reboot (*Warning, SQL Server installations may fail if reboots are pending*)
+ * `/UseFallback` - skip the primary download URL and download directly from the Microsoft Update Catalog
 
  To pass parameters, use `--params "''"` (e.g. `choco install sql-server-2025-cumulative-update [other options] --params="'/ITEM:value /ITEM2:value2'"`).
 
@@ -58,5 +59,6 @@ choco install sql-server-2025-cumulative-update --params="'/IgnorePendingReboot'
   </metadata>
   <files>
     <file src="tools\*.ps1" target="tools" />
+    <file src="..\sql-server-2017\tools\Get-PendingReboot.ps1" target="tools" />
   </files>
 </package>

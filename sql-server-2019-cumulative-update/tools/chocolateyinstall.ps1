@@ -2,8 +2,9 @@
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $url        = 'https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB5054833-x64.exe'
+$urlFallback = 'https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2025/02/sqlserver2019-kb5054833-x64_88b01079fe38ae7f7578653612e7974f85e21e79.exe'
 $checksum   = '864aa01854d124bd907920b26271f9f2ed3f5f82880adb746dbbc681ef32b371'
-$softwareName = 'Hotfix 4430 for SQL Server 2022*(KB5054833)*'
+$softwareName = 'Hotfix 4430 for SQL Server 2019*(KB5054833)*'
 
 [bool] $runningAU = (Test-Path Function:\au_GetLatest)
 
@@ -17,6 +18,17 @@ $pp = Get-PackageParameters
 
 if ( (!$pp['IGNOREPENDINGREBOOT']) -and (Get-PendingReboot).RebootPending -and -not $runningAU) {
   Write-Error "A system reboot is pending. You must restart Windows first before installing SQL Server updates"
+}
+
+$useFallback = [bool] $pp['USEFALLBACK']
+
+if ($useFallback) {
+  if ([string]::IsNullOrWhiteSpace($urlFallback)) {
+    Write-Error "USEFALLBACK was specified but this package has no fallback URL"
+  }
+
+  Write-Host "USEFALLBACK specified. Downloading from the Microsoft Update Catalog fallback URL."
+  $url = $urlFallback
 }
 
 $filename = [IO.Path]::GetFileName($url)
@@ -40,7 +52,20 @@ $packageArgs = @{
   checksumType  = 'sha256'
 }
 
-$filePath = Get-ChocolateyWebFile @packageArgs
+$filePath = $null
+
+try {
+  $filePath = Get-ChocolateyWebFile @packageArgs
+} catch {
+  if ($useFallback -or [string]::IsNullOrWhiteSpace($urlFallback)) {
+    throw
+  }
+
+  Write-Warning "Primary download URL failed. Retrying with Microsoft Update Catalog fallback URL."
+  $packageArgs.url = $urlFallback
+  $packageArgs.FileFullPath = Join-Path $tempDir ([IO.Path]::GetFileName($urlFallback))
+  $filePath = Get-ChocolateyWebFile @packageArgs
+}
 
 if (Test-Path Function:\au_GetLatest) {
   return
