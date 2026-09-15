@@ -49,6 +49,7 @@ The continuous testing mode can be switched on for any unit test session: this w
 The following package parameters can be set:
 
  * `/PerMachine` - install machine-wide (instead of per-user)
+ * `/VsVersion` (or `/VsVersions`) - set Visual Studio version target(s) for the installer (default: `*`)
     </description>
 
     <releaseNotes>https://www.jetbrains.com/dotcover/whatsnew/</releaseNotes>

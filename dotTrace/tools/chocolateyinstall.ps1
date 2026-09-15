@@ -9,7 +9,15 @@ $commonPath = $(Split-Path -parent $(Split-Path -parent $scriptPath))
 $installPath = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
 $packageParameters = Get-PackageParameters
 
-$silentArgs = "/Silent=True /SpecificProductNames=dotTrace /VsVersion=*"
+$vsVersion = $packageParameters["VsVersion"]
+if (-not $vsVersion) {
+  $vsVersion = $packageParameters["VsVersions"]
+}
+if (-not $vsVersion) {
+  $vsVersion = "*"
+}
+
+$silentArgs = "/Silent=True /SpecificProductNames=dotTrace /VsVersion=$vsVersion"
 
 if ($packageParameters["PerMachine"]) {
   $silentArgs += " /PerMachine=True"

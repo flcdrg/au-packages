@@ -47,6 +47,7 @@ You can even navigate to a method declaration from a hot spot in the call tree!
 The following package parameters can be set:
 
  * `/PerMachine` - install machine-wide (instead of per-user)
+ * `/VsVersion` (or `/VsVersions`) - set Visual Studio version target(s) for the installer (default: `*`)
 </description>
 
     <releaseNotes>https://www.jetbrains.com/profiler/whatsnew/</releaseNotes>

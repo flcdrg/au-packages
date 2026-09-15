@@ -57,6 +57,7 @@ dotPeek indexes all assemblies in your assembly list, as well as all assemblies 
 The following package parameters can be set:
 
  * `/PerMachine` - install machine-wide (instead of per-user)
+ * `/VsVersion` (or `/VsVersions`) - set Visual Studio version target(s) for the installer (default: `*`)
     </description>
     <releaseNotes>https://www.jetbrains.com/decompiler/whatsnew/</releaseNotes>
     <dependencies>

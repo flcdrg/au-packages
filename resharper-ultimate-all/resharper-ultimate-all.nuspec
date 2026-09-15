@@ -40,6 +40,7 @@ If you just want to install specific JetBrains applications then consider using 
 The following package parameters can be set:
 
  * `/PerMachine` - install machine-wide (instead of per-user)
+ * `/VsVersion` (or `/VsVersions`) - set Visual Studio version target(s) for the installer (default: `*`)
  * `/NoCpp` - don't install ReSharper C++
  * `/NoTeamCityAddin` - don't install TeamCity Addin
 

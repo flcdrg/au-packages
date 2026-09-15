@@ -48,6 +48,7 @@ Code style and formatting functionality with fine-grained, language-specific set
 The following package parameters can be set:
 
  * `/PerMachine` - install machine-wide (instead of per-user)
+ * `/VsVersion` (or `/VsVersions`) - set Visual Studio version target(s) for the installer (default: `*`)
     </description>
     <releaseNotes>https://www.jetbrains.com/resharper/whatsnew/</releaseNotes>
     <dependencies>
