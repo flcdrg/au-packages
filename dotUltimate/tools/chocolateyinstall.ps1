@@ -42,7 +42,15 @@ if ($null -eq $packageParameters["NoRider"]) {
   $products += "Rider"
 }
 
-$silentArgs = "/Silent=True /SpecificProductNames=$($products -join ';') /VsVersion=*"
+$vsVersion = $packageParameters["VsVersion"]
+if (-not $vsVersion) {
+  $vsVersion = $packageParameters["VsVersions"]
+}
+if (-not $vsVersion) {
+  $vsVersion = "*"
+}
+
+$silentArgs = "/Silent=True /SpecificProductNames=$($products -join ';') /VsVersion=$vsVersion"
 
 Write-Verbose $silentArgs
 

@@ -18,7 +18,15 @@ if ($null -eq $packageParameters["NoTeamCityAddin"]) {
   $products += ";teamCityAddin"
 }
 
-$silentArgs = "/Silent=True /SpecificProductNames=$products /VsVersion=*"
+$vsVersion = $packageParameters["VsVersion"]
+if (-not $vsVersion) {
+  $vsVersion = $packageParameters["VsVersions"]
+}
+if (-not $vsVersion) {
+  $vsVersion = "*"
+}
+
+$silentArgs = "/Silent=True /SpecificProductNames=$products /VsVersion=$vsVersion"
 
 if ($packageParameters["PerMachine"]) {
   $silentArgs += " /PerMachine=True"
