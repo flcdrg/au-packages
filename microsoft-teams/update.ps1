@@ -1,6 +1,14 @@
 Import-Module chocolatey-au
 
-$releases = 'https://teams.microsoft.com/downloads'
+function Test-DownloadUrl([string] $url) {
+    try {
+        $response = Invoke-WebRequest -Uri $url -Method Head -SkipHttpErrorCheck -ErrorAction Stop
+        return $response.StatusCode -ge 200 -and $response.StatusCode -lt 400
+    }
+    catch {
+        return $false
+    }
+}
 
 function global:au_SearchReplace {
     @{
@@ -28,6 +36,11 @@ function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri "https://teams.microsoft.com/downloads/DesktopUrl?env=production&plat=windows&arch=x64"
     
     $url64 = $download_page.Content.Trim()
+
+    if (-not (Test-DownloadUrl $url32) -or -not (Test-DownloadUrl $url64)) {
+        Write-Warning "Skipping update because Microsoft returned an unavailable download URL"
+        return 'ignore'
+    }
 
     $Latest = @{ URL32 = $url32; URL64 = $url64; Version = $version }
     return $Latest
