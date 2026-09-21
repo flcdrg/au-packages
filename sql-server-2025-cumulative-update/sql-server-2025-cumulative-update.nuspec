@@ -59,6 +59,5 @@ choco install sql-server-2025-cumulative-update --params="'/IgnorePendingReboot'
   </metadata>
   <files>
     <file src="tools\*.ps1" target="tools" />
-    <file src="..\sql-server-2017\tools\Get-PendingReboot.ps1" target="tools" />
   </files>
 </package>
