@@ -41,7 +41,17 @@ function GetJetbrainsReSharperPlatformLatestRelease($release) {
 
     #$filename = "JetBrains.dotUltimate.$($versionMarketingStringUpdated).exe"
     $url = $urls[$release].Hash -replace "VERSIONMARKETINGSTRING", $versionMarketingStringDotted
-    $data = Invoke-RestMethod -Uri $url
+    try {
+        $data = Invoke-RestMethod -Uri $url
+    }
+    catch {
+        if ($release -eq 'Release-EAP' -and [int]$_.Exception.Response.StatusCode -eq 404) {
+            Write-Warning "Skipping $release because its installer is not available: $url"
+            return $null
+        }
+
+        throw
+    }
     ($hashcode, $filename) = $data.Trim() -split "\s\*" #.Split(([string[]] ," *"), [System.StringSplitOptions]::RemoveEmptyEntries)
 
     $url = $urls[$release].Url -replace "VERSIONMARKETINGSTRING", $versionMarketingStringDotted
@@ -62,12 +72,17 @@ function GetJetbrainsReSharperPlatformLatestRelease($release) {
 }
 
 function GetJetbrainsReSharperPlatformLatest {
+    $release = GetJetbrainsReSharperPlatformLatestRelease "Release"
+    $releaseEap = GetJetbrainsReSharperPlatformLatestRelease "Release-EAP"
+
     $Latest = @{
         Streams = [ordered] @{
-            "Release" = (GetJetbrainsReSharperPlatformLatestRelease "Release")
-
-            "Release-Eap" = (GetJetbrainsReSharperPlatformLatestRelease "Release-EAP")
+            "Release" = $release
         }
+    }
+
+    if ($releaseEap) {
+        $Latest.Streams['Release-Eap'] = $releaseEap
     }
 
     return $Latest
