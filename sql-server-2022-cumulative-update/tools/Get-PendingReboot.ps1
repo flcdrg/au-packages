@@ -1,1 +1,1 @@
-./sql-server-2017/tools/Get-PendingReboot.ps1
+../../sql-server-2017/tools/Get-PendingReboot.ps1
