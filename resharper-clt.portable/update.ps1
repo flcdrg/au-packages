@@ -25,7 +25,7 @@ function global:au_GetLatest {
     $stream.Url32 = "https://download.jetbrains.com/resharper/dotUltimate.$versionMarketingStringDotted/JetBrains.ReSharper.CommandLineTools.$versionMarketingStringDotted.zip"
 
     # https://download.jetbrains.com/resharper/dotUltimate.2020.2.EAP7/JetBrains.ReSharper.CommandLineTools.2020.2.EAP7.Checked.zip
-    if ($latest.Streams.ContainsKey('Release-Eap')) {
+    if ($latest.Streams.Contains('Release-Eap')) {
         $stream = $latest.Streams['Release-Eap']
         $versionMarketingStringDotted = $stream.VersionMarketingStringDotted
         $url = "https://download.jetbrains.com/resharper/dotUltimate.$versionMarketingStringDotted/JetBrains.ReSharper.CommandLineTools.$versionMarketingStringDotted.Checked.zip.sha256"
