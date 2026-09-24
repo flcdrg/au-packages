@@ -38,6 +38,9 @@ jobs:
 
       - name: Install
         run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = true
+          
           $module_name = 'Chocolatey-AU'
 
           $module_dst  = "$Env:ProgramFiles\PowerShell\Modules\$module_name"
