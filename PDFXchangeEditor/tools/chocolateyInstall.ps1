@@ -2,10 +2,10 @@
 $packageName = 'PDFXchangeEditor' 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://downloads.pdf-xchange.com/11.1.0.0/EditorV11.x86.msi'
-$url64      = 'https://downloads.pdf-xchange.com/11.1.0.0/EditorV11.x64.msi'
-$checksum   = '51835900420bd16cce815a54dfb32867b3693dd7272bf2f5e70232bdfc772bb6'
-$checksum64 = 'c761e0843c345b1edeff421d10b66489de670f864e326ba9adee2798ba81868e'
+$url        = 'https://downloads.pdf-xchange.com/11.1.1.0/EditorV11.x86.msi'
+$url64      = 'https://downloads.pdf-xchange.com/11.1.1.0/EditorV11.x64.msi'
+$checksum   = '2662e02032049887bda1a7300b9d778653983ef3a7f2c4914afaf8c2526b25fe'
+$checksum64 = 'de3cf6ed0532991a571bc8c9dd2415e6fe52930e763afaf67dd55a796616decf'
 
 $packageArgs = @{
   packageName   = $packageName
