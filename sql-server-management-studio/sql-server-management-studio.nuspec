@@ -63,7 +63,7 @@ This package is automatically updated based on the same data source that SSMS it
 </description><releaseNotes><![CDATA[https://aka.ms/SSMSReleaseNotes-22#22.11.1]]></releaseNotes>
 
     <dependencies>
-      <dependency id="chocolatey-visualstudio.extension" version="1.11.3" />
+      <dependency id="chocolatey-visualstudio.extension" version="1.13.0" />
       <dependency id="dotnetfx" version="4.8.0.20220524" />
     </dependencies>
   </metadata>
