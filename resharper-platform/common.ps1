@@ -1,30 +1,31 @@
-$urls = @{
-    "Release" = @{
-        Version = "https://download-cf.jetbrains.com/resharper/resharper-version.json"
-        Updates = "https://download-cf.jetbrains.com/resharper/resharper-updates.json"
-        Hash = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.exe.sha256"
-
-        # https://download.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe.sha256
-        # https://download.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe
-        # https://download-cf.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe
-
-        Url = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.exe"
-    }
-    "Release-EAP" = @{
-        Version = "https://download.jetbrains.com/resharper/resharper-version-eap.json"
-        Updates = "https://download.jetbrains.com/resharper/resharper-updates-eap.json"
-
-        # https://download.jetbrains.com/resharper/dotUltimate.2020.2.EAP7/JetBrains.dotUltimate.2020.2.EAP7.Checked.exe.sha256
-        # https://download.jetbrains.com/resharper/dotUltimate.2020.2.EAP7/JetBrains.dotUltimate.2020.2.EAP7.Checked.exe
-        Hash = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.Checked.exe.sha256"
-        Url = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.Checked.exe"
-    }
-}
 
 function GetJetbrainsReSharperPlatformLatestRelease($release) {
+    $urls = @{
+        "Release" = @{
+            Version = "https://download.jetbrains.com/resharper/resharper-version.json"
+            Updates = "https://download.jetbrains.com/resharper/resharper-updates.json"
+            Hash = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.exe.sha256"
+
+            # https://download.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe.sha256
+            # https://download.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe
+            # https://download-cf.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe
+
+            Url = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.exe"
+        }
+        "Release-EAP" = @{
+            Version = "https://download.jetbrains.com/resharper/resharper-version-eap.json"
+            Updates = "https://download.jetbrains.com/resharper/resharper-updates-eap.json"
+
+            # https://download.jetbrains.com/resharper/dotUltimate.2020.2.EAP7/JetBrains.dotUltimate.2020.2.EAP7.Checked.exe.sha256
+            # https://download.jetbrains.com/resharper/dotUltimate.2020.2.EAP7/JetBrains.dotUltimate.2020.2.EAP7.Checked.exe
+            Hash = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.Checked.exe.sha256"
+            Url = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.Checked.exe"
+        }
+    }
+
     # Prefer version from here, rather than from PackageMetadata.Version
     # 222.0.20220727.110528-eap11
-    $version = (Invoke-RestMethod -Uri ($urls[$release].Version)) -replace "eap(\d)$", '-eap0$1' # "https://download-cf.jetbrains.com/resharper/resharper-version.json"
+    $version = (Invoke-RestMethod -Uri ($urls[$release].Version)) -replace "eap(\d)$", '-eap0$1' # "https://download.jetbrains.com/resharper/resharper-version.json"
     $updates = Invoke-RestMethod -Uri ($urls[$release].Updates) #"https://download-cf.jetbrains.com/resharper/resharper-updates.json"
 
     $package = $updates.AllPackages.InstallablePackage | Where-Object { $_.PackageMetadata.Id -eq "JetBrains.ReSharper.src" }
