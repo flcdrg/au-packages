@@ -19,7 +19,8 @@ function global:au_GetLatest {
     $version = Get-ReleaseVersion $release "Version " $release.name.Substring(1)
 
     if (-not $version) {
-        return @{}
+        Write-Warning "Couldn't find version number"
+        return 'Ignore'
     }
 
     # TODO - this package doens't publish downloads in GitHub!

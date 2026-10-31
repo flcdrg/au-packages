@@ -22,7 +22,8 @@ function global:au_GetLatest {
     }
 
     if ($i -ge 3) {
-        return @{}
+        Write-Warning "Couldn't resolve $url32 to an .msi download URL"
+        return 'Ignore'
     }
 
     #https://statics.teams.microsoft.com/production-windows-x64/1.1.00.7855/Teams_windows.msi
@@ -35,10 +36,11 @@ function global:au_GetLatest {
     }
 
     if ($i -ge 3) {
-        return @{}
+        Write-Warning "Couldn't resolve $url64 to an .msi download URL"
+        return 'Ignore'
     }
     
-    $url32 -match ".*\/(?<version>\d+\.\d+\.\d+\.\d+)\/Teams_windows\.msi"   
+    $url32 -match ".*\/(?<version>\d+\.\d+\.\d+\.\d+)\/Teams_windows\.msi"
 
     $version = $Matches.version
     
