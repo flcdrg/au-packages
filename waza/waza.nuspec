@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>waza</id>
+    <version>0.39.1</version>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/waza</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <title>Waza CLI</title>
+    <authors>Microsoft Corporation</authors>
+    <projectUrl>https://github.com/microsoft/waza</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/flcdrg/au-packages@master/waza/icons/waza.png</iconUrl>
+    <projectSourceUrl>https://github.com/microsoft/waza</projectSourceUrl>
+    <docsUrl>https://microsoft.github.io/waza/</docsUrl>
+    <bugTrackerUrl>https://github.com/microsoft/waza/issues</bugTrackerUrl>
+    <licenseUrl>https://github.com/microsoft/waza/blob/main/LICENSE</licenseUrl>
+    <copyright>Copyright (c) Microsoft Corporation.</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>waza microsoft cli agent skills workflow evaluation</tags>
+    <summary>A CLI for evaluating agent workflows, skills, and custom agents.</summary>
+    <description>Waza is a Go CLI for evaluating **agent workflows, skills and custom agents**. Define repository, CLI or MCP scenarios in YAML, run graded trials and inspect the recorded evidence. Existing skill suites remain supported.
+
+Perfect for skill authors, platform teams, and developers building AI-powered applications.
+    </description>
+    <releaseNotes>https://github.com/microsoft/waza/releases/tag/v0.39.1</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

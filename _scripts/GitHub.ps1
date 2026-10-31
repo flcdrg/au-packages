@@ -19,8 +19,7 @@ $headers = @{}
     Output (if any)
 
 #>
-function Get-GitHubLatestRelease($project, $tagPrefix, [switch] $newest) {
-
+function Initialize-GitHubHeaders {
     $token = $env:github_api_key
     $script:headers = @{
         'User-Agent' = 'flcdrg'
@@ -30,6 +29,11 @@ function Get-GitHubLatestRelease($project, $tagPrefix, [switch] $newest) {
     } else {
         Write-Warning "No auth token"
     }
+}
+
+function Get-GitHubLatestRelease($project, $tagPrefix, [switch] $newest) {
+
+    Initialize-GitHubHeaders
 
     $releasesUrl = "https://api.github.com/repos/$project/releases"
 
@@ -44,6 +48,46 @@ function Get-GitHubLatestRelease($project, $tagPrefix, [switch] $newest) {
     } else {
         Invoke-RestMethod -Method Get -Uri "$releasesUrl/latest" -Headers $script:headers
     }
+}
+
+<#
+.SYNOPSIS
+    Find the most recent release that satisfies a predicate, paging through the release list
+
+.PARAMETER project
+    GitHub project path (used to create URL for API)
+
+.PARAMETER predicate
+    Script block evaluated against each release ($_); the first release for which it returns true is returned
+
+.PARAMETER maxPages
+    Maximum number of 100-item pages to scan before giving up (default 5)
+
+.OUTPUTS
+    The matching release, or $null if none was found within maxPages
+
+.EXAMPLE
+    Find-GitHubRelease 'microsoft/waza' { -not $_.prerelease -and $_.tag_name -match '^v\d+\.\d+\.\d+$' }
+#>
+function Find-GitHubRelease($project, [scriptblock] $predicate, [int] $maxPages = 5) {
+
+    Initialize-GitHubHeaders
+
+    $releasesUrl = "https://api.github.com/repos/$project/releases"
+
+    for ($page = 1; $page -le $maxPages; $page++) {
+        $releases = Invoke-RestMethod -Method Get -Uri "${releasesUrl}?per_page=100&page=$page" -Headers $script:headers
+        if (-not $releases) {
+            return $null
+        }
+
+        $match = $releases | Where-Object $predicate | Select-Object -First 1
+        if ($match) {
+            return $match
+        }
+    }
+
+    return $null
 }
 
 function Get-GitHubReleaseAssets($release) {
