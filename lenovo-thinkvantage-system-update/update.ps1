@@ -33,7 +33,8 @@ function global:au_GetLatest {
         $version = $xml.LevelDescriptor.Version
         $buildDate = $xml.LevelDescriptor.BuildDate
     } else {
-        throw "Failed to get version info from Lenovo"
+        Write-Warning "Failed to get version info from Lenovo"
+        return 'Ignore'
     }
     
     $Latest = createLatest $version $buildDate

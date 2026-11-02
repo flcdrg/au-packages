@@ -25,7 +25,8 @@ function global:au_GetLatest {
     $version = Get-ReleaseVersion $release "v"
 
     if (-not $version) {
-        return @{}
+        Write-Warning "Couldn't find version number"
+        return 'Ignore'
     }
 
     $assets = Get-GitHubReleaseAssets $release

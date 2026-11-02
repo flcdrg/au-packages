@@ -25,7 +25,8 @@ function global:au_GetLatest {
     
     # Assume releases are named v1.2.3
     if (!$response.tag_name.StartsWith("v")) {
-        return @{}
+        Write-Warning "Unexpected release tag '$($response.tag_name)' (expected v1.2.3 format)"
+        return 'Ignore'
     }
 
     $version = $response.tag_name.Substring(1)

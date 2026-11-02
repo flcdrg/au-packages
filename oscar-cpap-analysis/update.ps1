@@ -28,7 +28,7 @@ function global:au_GetLatest {
 
 		$head = Invoke-WebRequest -Uri $url64 -Method Head -UseBasicParsing
 		if ($head.StatusCode -ne 200) {
-			throw "Installer URL check failed: $url"
+			throw "Installer URL check failed: $url64"
 		}
 
 		return @{
@@ -38,8 +38,8 @@ function global:au_GetLatest {
 		}
 	}
 	catch {
-		Write-Error $_
-		return @{}
+		Write-Warning $_
+		return 'Ignore'
 	}
 }
 
