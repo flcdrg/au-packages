@@ -20,7 +20,7 @@ Detailed rules and repository conventions live in the reference files; consult t
 Identify the package ID and application first. Before anything else, search <https://community.chocolatey.org/packages> (and Repology for open-source tools) so you do not duplicate an existing package and so the ID matches other ecosystems. Research the vendor's official website, download page, documentation, release feed, and license. Use those sources to establish:
 
 - The product's purpose, publisher/authors, latest version, official project and download URLs, documentation, support/issue tracker, and license terms.
-- Whether the package downloads an installer/archive at install time or embeds redistributable application files.
+- Whether the license permits redistribution and the finished `.nupkg`, including all embedded architectures, is likely to be under 200 MB. Prefer embedding the application when both conditions hold; otherwise download it at install time.
 - Supported architectures, installer file types, silent-install arguments, install scope, minimum Windows version, and whether the installer registers a usable uninstaller.
 - Prerequisites (runtimes, redistributables) that already exist as Chocolatey packages and should become nuspec dependencies.
 - Whether the software is commercial or trial (licence model, trial length, activation key), which must be disclosed in the description.
@@ -64,7 +64,7 @@ Do not add `tools\chocolateyUninstall.ps1` for a standard installer that registe
 - For a package that embeds the application files, confirm redistribution is permitted. Complete the generated license and verification files with the applicable license and verifiable source/checksum details; include them in the package. Add a package-level `.gitignore` for the binary file type and use the `au_BeforeUpdate` / `Get-RemoteFiles` pattern so AU refreshes the embedded files (see [au-update-patterns.md](./references/au-update-patterns.md)).
 - For a package that downloads the application during installation, delete the generated license and verification files because they are not needed for this distribution model.
 
-Do not embed binaries merely to simplify installation, and do not claim redistribution rights without evidence.
+Prefer embedding when redistribution is permitted and the finished `.nupkg` is likely to be under the Chocolatey Community Repository's 200 MB upload limit. Estimate the combined size of all embedded architectures and package contents, not just one download. Do not claim redistribution rights without evidence; if permission cannot be established or the package would reach or exceed the limit, download the application at install time instead.
 
 ## Add version updates and assets when practical
 
@@ -79,7 +79,7 @@ If an application icon can be extracted reliably from an official asset or the a
 Follow [validation.md](./references/validation.md):
 
 1. Static review for leftover template values, correct package ID/version/URLs, valid nuspec XML, appropriate Chocolatey helper and install behavior, correct license-file treatment, UTF-8 BOM on new scripts, and consistency between AU replacements and installer variables. For architecture-specific code, verify the selected URL and checksum for every supported architecture and ensure unsupported architectures fail clearly.
-2. Run `choco pack` in the package directory and inspect the resulting package contents for generated files that should not ship. The installed `chocolatey-community-validation.extension` applies Community Repository rules during pack: fix every Requirement failure (do not remove legitimate metadata just to satisfy a rule), address Guidelines where practical, and report remaining Notes.
+2. Run `choco pack` in the package directory and inspect the resulting package contents for generated files that should not ship. For embedded applications, verify that the finished `.nupkg` is under 200 MB; if it is not, switch to downloading the application at install time and repack. The installed `chocolatey-community-validation.extension` applies Community Repository rules during pack: fix every Requirement failure (do not remove legitimate metadata just to satisfy a rule), address Guidelines where practical, and report remaining Notes.
 3. When safe and not excluded by the user, install from the packed output with `choco install <id> --source <dir> --yes` (passing `--params` if documented) and uninstall again, checking the Chocolatey log.
 4. Run `.\_update.ps1` (the `chocolatey-au` module is installed locally and in CI) when `au_GetLatest` queries an official vendor API/feed over HTTPS and the user has not asked you to avoid network access; review the resulting diff to the nuspec and install script and keep the generated values. Then load the callbacks in isolation and drive each `'Ignore'` branch (missing release, missing asset, failed or malformed manifest) with overridden helpers, as shown in the reference. If the module cannot be imported, do not install dependencies for this check; use the same isolation technique and state that the AU workflow was not executed.
 
