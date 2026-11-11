@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dotnetup</id>
+    <title>dotnetup</title>
+    <version>0.3.0-preview1265543</version>
+    <authors>Microsoft</authors>
+    <owners>flcdrg</owners>
+    <projectUrl>https://learn.microsoft.com/en-us/dotnet/core/tools/dotnetup/</projectUrl>
+    <docsUrl>https://learn.microsoft.com/en-us/dotnet/core/tools/dotnetup/getting-started</docsUrl>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/dotnetup</packageSourceUrl>
+    <tags>dotnet dotnetup sdk runtime manager microsoft cli toolchain</tags>
+    <copyright>Copyright .NET Foundation and Contributors</copyright>
+    <licenseUrl>https://github.com/dotnet/sdk/blob/main/LICENSE.TXT</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Manage user-level .NET SDK and runtime installations with dotnetup.</summary>
+    <description>dotnetup is a cross-platform toolchain manager for user-level .NET SDK and runtime installations. This package installs the dotnetup command-line executable for Windows x64 and Arm64.
+
+## Per-user installation
+
+The executable is installed in `%USERPROFILE%\.dotnetup`, a writable directory required by dotnetup's self-update coordination. The package adds this directory to the installing account's user PATH. Open a new terminal after installation.
+
+This package is not an all-users installation. Run Chocolatey with your own account; if you elevate using another administrator's credentials, dotnetup is installed for that administrator instead. Use the same account for upgrades and uninstall.
+
+dotnetup is in public preview. The package installs the executable but does not run its interactive setup. Run `dotnetup init` to configure managed .NET installations. On Windows, the default setup mode changes the system PATH and requires elevation; choose the `none` or `shell` mode to avoid those system-wide changes.
+
+Uninstall removes the executable and its user PATH entry. Managed SDKs, runtimes, dotnetup data, and manually configured .NET environment settings are preserved. To remove those as well, follow Microsoft's [removal instructions](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnetup/usecases/manage-dotnetup#remove-dotnetup) before uninstalling this package.
+</description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
