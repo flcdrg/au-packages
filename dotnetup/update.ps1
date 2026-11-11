@@ -58,7 +58,12 @@ function global:au_GetLatest {
             }
 
             $response = Invoke-WebRequest -Uri $checksumUrl -UseBasicParsing
-            $checksum = (($response.Content -split '\s+')[0]).Trim()
+            $content = if ($response.Content -is [byte[]]) {
+                [System.Text.Encoding]::UTF8.GetString($response.Content)
+            } else {
+                $response.Content
+            }
+            $checksum = ($content.Trim() -split '\s+')[0]
             if ($checksum -notmatch '^[a-fA-F0-9]{128}$') {
                 throw "The SHA-512 checksum for $($architecture.Name) is missing or malformed."
             }
