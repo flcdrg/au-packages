@@ -1,22 +1,26 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$filename = 'JetBrains.dotUltimate.2026.2.4.1.exe'
-$checksum = 'ff05e1d8990410bc95dd747d3a0950ffe2c734c2e161ab2d855aeb60a1bc7a20'
+$filename = 'JetBrains.dotUltimate.2026.3.exe'
+$checksum = '0f0322b2e3a8cdca8a137a4c5d3eba093fa348bbfe36fa2d15cb01a088b587f4'
 
-$url = 'https://download.jetbrains.com/resharper/dotUltimate.2026.2.4.1/JetBrains.dotUltimate.2026.2.4.1.exe'
+$url = 'https://download.jetbrains.com/resharper/dotUltimate.2026.3/JetBrains.dotUltimate.2026.3.zip'
 $packagePath = $(Split-Path -parent $toolsDir)
 $installPath = Join-Path $packagePath $filename
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
-  fileFullPath  = $installPath
+  unzipLocation = $packagePath
   url           = $url
   checksum      = $checksum
   checksumType  = 'sha256'
 }
 
-Get-ChocolateyWebFile @packageArgs
+Install-ChocolateyZipPackage @packageArgs
+
+if (-not (Test-Path -LiteralPath $installPath -PathType Leaf)) {
+  throw "The offline archive did not contain the expected installer: $filename"
+}
 
 # Exclude from shimming
 $files = get-childitem $packagePath -include *.exe -recurse

@@ -4,22 +4,15 @@ function GetJetbrainsReSharperPlatformLatestRelease($release) {
         "Release" = @{
             Version = "https://download.jetbrains.com/resharper/resharper-version.json"
             Updates = "https://download.jetbrains.com/resharper/resharper-updates.json"
-            Hash = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.exe.sha256"
-
-            # https://download.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe.sha256
-            # https://download.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe
-            # https://download-cf.jetbrains.com/resharper/dotUltimate.2018.2/JetBrains.dotUltimate.2018.2.exe
-
-            Url = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.exe"
+            Hash = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.zip.sha256"
+            Url = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.zip"
         }
         "Release-EAP" = @{
             Version = "https://download.jetbrains.com/resharper/resharper-version-eap.json"
             Updates = "https://download.jetbrains.com/resharper/resharper-updates-eap.json"
 
-            # https://download.jetbrains.com/resharper/dotUltimate.2020.2.EAP7/JetBrains.dotUltimate.2020.2.EAP7.Checked.exe.sha256
-            # https://download.jetbrains.com/resharper/dotUltimate.2020.2.EAP7/JetBrains.dotUltimate.2020.2.EAP7.Checked.exe
-            Hash = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.Checked.exe.sha256"
-            Url = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.Checked.exe"
+            Hash = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.Checked.zip.sha256"
+            Url = "https://download.jetbrains.com/resharper/dotUltimate.VERSIONMARKETINGSTRING/JetBrains.dotUltimate.VERSIONMARKETINGSTRING.Checked.zip"
         }
     }
 
@@ -40,7 +33,6 @@ function GetJetbrainsReSharperPlatformLatestRelease($release) {
     # "2022.2.EAP11"
     $versionMarketingStringDotted = $versionMarketingString -replace " EAP ", ".EAP" -replace " RC ", ".RC"
 
-    #$filename = "JetBrains.dotUltimate.$($versionMarketingStringUpdated).exe"
     $url = $urls[$release].Hash -replace "VERSIONMARKETINGSTRING", $versionMarketingStringDotted
     try {
         $data = Invoke-RestMethod -Uri $url
@@ -58,7 +50,8 @@ function GetJetbrainsReSharperPlatformLatestRelease($release) {
     $url = $urls[$release].Url -replace "VERSIONMARKETINGSTRING", $versionMarketingStringDotted
 
     $Latest = @{
-        Filename = $filename.Trim()
+        # Dependent packages run the installer extracted from the offline ZIP.
+        Filename = [System.IO.Path]::ChangeExtension($filename.Trim(), '.exe')
         Checksum32 = $hashcode
         Version = $version
 
