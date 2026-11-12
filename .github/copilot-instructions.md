@@ -61,6 +61,7 @@ $au_Force = $true; ./update.ps1 # Force update even if version unchanged
 **Testing changes locally:**
 - `choco pack` in a package folder to build the .nupkg.
 - `choco install -s . <package>` to test locally with `--params` if documented in README.
+- For changed installers or updaters, supplement packing and mocked callback checks with a live AU run from the package directory and, when safe, a non-elevated application smoke test. Packing alone does not establish runtime correctness; explicitly report any behavior that was not tested.
 
 ## Critical Conventions
 
@@ -91,3 +92,4 @@ $au_Force = $true; ./update.ps1 # Force update even if version unchanged
 - **Regex in `au_SearchReplace`**: Must match variable assignment in `tools/chocolateyInstall.ps1` exactly (e.g., `(^\s*\$checksum\s*=\s*)('.*')`); test locally with `./update.ps1`.
 - **No secrets in repo**: Use `$env:*` variables or `.gitignore`-d `update_vars.ps1` for local API keys, credentials.
 - **Description sync**: Always call `Set-DescriptionFromReadme` if README.md exists to keep nuspec description in sync.
+- **Upstream HTTP failures**: Identify the exact failing request, including secondary release feeds and checksum manifests. Inspect redirects, compare HEAD with a bounded GET, and retry before concluding a download is unavailable or recommending package retirement; a single 404 is not sufficient evidence.

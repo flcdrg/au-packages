@@ -9,3 +9,4 @@ api_key
 /packages
 /Example
 *.exe
+.codegraph
