@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if "Ω" doesn't appear, the file has been saved with the wrong encoding. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>apm-cli</id>
+    <version>0.35.1</version>
+    <title>APM - Agent Package Manager</title>
+    <authors>Microsoft</authors>
+    <owners>flcdrg</owners>
+    <projectUrl>https://github.com/microsoft/apm</projectUrl>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/apm-cli</packageSourceUrl>
+    <projectSourceUrl>https://github.com/microsoft/apm</projectSourceUrl>
+    <docsUrl>https://microsoft.github.io/apm/</docsUrl>
+    <bugTrackerUrl>https://github.com/microsoft/apm/issues</bugTrackerUrl>
+    <licenseUrl>https://github.com/microsoft/apm/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright (c) Microsoft Corporation. Licensed under Apache License 2.0.</copyright>
+    <tags>apm agent package manager ai-agent cli microsoft</tags>
+    <summary>Manage and distribute dependencies for AI coding agents with the APM CLI.</summary>
+    <description>
+## APM - Agent Package Manager
+
+APM manages agent instructions, skills, prompts, plugins, and related configuration for AI coding agents. Declare dependencies in an `apm.yml` manifest and use the CLI to install and update them.
+
+This package installs the official Windows x86_64 release under `%LOCALAPPDATA%\Programs\apm` for the user running Chocolatey. When Chocolatey is elevated or runs as a service, that may be a different profile from the interactive user.
+    </description><releaseNotes><![CDATA[<!-- Release notes generated using configuration in .github/release.yml at v0.35.1 -->
+
+## What's Changed
+### 🔧 Other Changes
+* perf: consolidate six performance scan reports by @danielmeppiel in https://github.com/microsoft/apm/pull/3370
+* docs: consolidate maintainer roster and contributor credit by @danielmeppiel in https://github.com/microsoft/apm/pull/3489
+* chore(license): scope Apache-2.0 software and CC-BY-4.0 docs by @danielmeppiel in https://github.com/microsoft/apm/pull/3487
+* docs(concepts): Fix `what-is-apm` file extension by @TyMick in https://github.com/microsoft/apm/pull/3461
+* Fix YAML syntax error in `docs-grounding-verifier` frontmatter by @TyMick in https://github.com/microsoft/apm/pull/3285
+* fix(triage): drop inaccessible grok-4.7 pin from scheduled Triage Panel by @danielmeppiel in https://github.com/microsoft/apm/pull/3515
+* fix(perf-scan): emit noop instead of opening an issue on clean scans by @danielmeppiel in https://github.com/microsoft/apm/pull/3516
+* docs(pr): require closing keyword for delivered issues, Refs for partial by @danielmeppiel in https://github.com/microsoft/apm/pull/3518
+* docs(lockfile-spec): show sha256:<hex> hash form APM writes by @danielmeppiel in https://github.com/microsoft/apm/pull/3519
+* docs(devcontainer): stop advertising the unpublished GHCR feature by @danielmeppiel in https://github.com/microsoft/apm/pull/3526
+* fix(install): keep the locked commit as the cached source pin by @abhishekacharya200 in https://github.com/microsoft/apm/pull/3407
+* fix(receipts): preserve macOS identity across remounts with downgrade-safe migration by @TyceHerrman in https://github.com/microsoft/apm/pull/3439
+* fix(codex): admit Codex CLI 0.163.0 or later for native registration by @danielmeppiel in https://github.com/microsoft/apm/pull/3529
+* fix(install): retry transient Windows denials at staged activation (#3386) by @danielmeppiel in https://github.com/microsoft/apm/pull/3530
+* fix(install): keep files deployed to other Claude/Hermes profiles by @xronos-i-am in https://github.com/microsoft/apm/pull/3424
+* fix(install): replay locked Git-semver tag for cached subdirectory deps by @danielmeppiel in https://github.com/microsoft/apm/pull/3527
+* fix(install): refuse unmatched skills: selection before any primitive writes by @danielmeppiel in https://github.com/microsoft/apm/pull/3538
+* fix(install): reconcile a targeted package's dropped transitive dependencies by @danielmeppiel in https://github.com/microsoft/apm/pull/3528
+* fix(git): pin autocrlf=false on the uncached fallback clone and checkout by @abhishekacharya200 in https://github.com/microsoft/apm/pull/3409
+* fix(compile): ignore generated context outputs in placement counting by @danielmeppiel in https://github.com/microsoft/apm/pull/3539
+* fix(mcp): deploy MCP servers from local-path Claude plugin dependencies by @danielmeppiel in https://github.com/microsoft/apm/pull/3540
+* fix(mcp): keep v0.1 registry server version in search and show by @danielmeppiel in https://github.com/microsoft/apm/pull/3549
+* fix(lifecycle): close HTTP response published during deadline grace join by @danielmeppiel in https://github.com/microsoft/apm/pull/3548
+* fix(install.ps1): report the full staged-binary failure output by @danielmeppiel in https://github.com/microsoft/apm/pull/3533
+* docs(prompts): note Copilot harness and CLI do not load prompt files by @danielmeppiel in https://github.com/microsoft/apm/pull/3550
+* fix(audit): recognize Copilot sessionStart prompt hooks by @danielmeppiel in https://github.com/microsoft/apm/pull/3542
+* fix(lifecycle): treat non-positive script timeouts as invalid by @danielmeppiel in https://github.com/microsoft/apm/pull/3544
+* fix(plugins): read flat-shape Claude plugin .mcp.json files by @danielmeppiel in https://github.com/microsoft/apm/pull/3541
+* fix(marketplace): verify commit-SHA refs in marketplace check by @danielmeppiel in https://github.com/microsoft/apm/pull/3543
+* fix(audit): replay git deps over their declared transport by @danielmeppiel in https://github.com/microsoft/apm/pull/3531
+* fix(install): do not treat an empty skill directory as an unmanaged collision by @MohammedAlkindi in https://github.com/microsoft/apm/pull/3449
+* fix(install): keep lockfile_version in sync after carrying resolved_tag by @danielmeppiel in https://github.com/microsoft/apm/pull/3536
+* fix(lockfile,compile): create apm.lock.yaml and compiled outputs with umask-derived mode by @danielmeppiel in https://github.com/microsoft/apm/pull/3547
+* fix(deps): honor PROXY_REGISTRY_ONLY in ref and semver enumeration by @pearlatvg in https://github.com/microsoft/apm/pull/3471
+* fix(lockfile): fail closed when apm.lock.yaml is a symlink by @danielmeppiel in https://github.com/microsoft/apm/pull/3532
+* fix(adapters): prepend docker run for options-only OCI packages (#3404) by @abhishekacharya200 in https://github.com/microsoft/apm/pull/3405
+* fix(mcp): preserve declared self-defined server names containing slashes by @bodapatisaikrishna in https://github.com/microsoft/apm/pull/3493
+* fix(codex): forward ${VAR} stdio env values with env_vars instead of writing them by @abhishekacharya200 in https://github.com/microsoft/apm/pull/3406
+* docs: install APM from Scoop's default main bucket (dead scoop-apm link) by @danielmeppiel in https://github.com/microsoft/apm/pull/3517
+* fix(install): preserve skills during cold replay without deployment receipts by @sergio-sisternes-epam in https://github.com/microsoft/apm/pull/3490
+* fix(uninstall): remove packages only from the selected Claude profile by @danielmeppiel in https://github.com/microsoft/apm/pull/3555
+* fix(tests): pin LF line endings in cached Codex source-pin fixture by @danielmeppiel in https://github.com/microsoft/apm/pull/3561
+* fix(tests): allow retained lifecycle lock in generated state-machine write set by @danielmeppiel in https://github.com/microsoft/apm/pull/3566
+* fix(arch): scope lockfile-read guard to the read-only resolver by @danielmeppiel in https://github.com/microsoft/apm/pull/3568
+* fix(ci): bypass unresolvable Azure apt mirror when installing fish and zsh by @danielmeppiel in https://github.com/microsoft/apm/pull/3570
+* fix(deps): lock transitive setuptools 84.1.0 (GHSA-xmj3-9gf7-h52w) by @danielmeppiel in https://github.com/microsoft/apm/pull/3563
+* fix(antigravity): emit native rule frontmatter (string globs, always_on trigger) by @danielmeppiel in https://github.com/microsoft/apm/pull/3546
+* chore: release v0.35.1 by @danielmeppiel in https://github.com/microsoft/apm/pull/3558
+
+## New Contributors
+* @TyMick made their first contribution in https://github.com/microsoft/apm/pull/3461
+* @TyceHerrman made their first contribution in https://github.com/microsoft/apm/pull/3439
+* @xronos-i-am made their first contribution in https://github.com/microsoft/apm/pull/3424
+* @pearlatvg made their first contribution in https://github.com/microsoft/apm/pull/3471
+
+**Full Changelog**: https://github.com/microsoft/apm/compare/v0.35.0...v0.35.1]]></releaseNotes>
+    
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

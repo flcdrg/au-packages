@@ -1,0 +1,6 @@
+The embedded Windows x64 archive is distributed under the Apache License, Version 2.0. See LICENSE.txt.
+
+Download URL: https://github.com/microsoft/apm/releases/download/v0.35.1/apm-windows-x86_64.zip
+SHA256: 5725CA5C817C5D0B68A3093DBDD2C64C119EA85B5B588D6D4103801680809177
+
+Compare the SHA256 hash of the downloaded archive with the value above.
