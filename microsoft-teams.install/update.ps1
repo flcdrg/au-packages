@@ -13,7 +13,7 @@ function global:au_SearchReplace {
 
 function global:au_GetLatest {
     # 32bit
-    
+    # https://statics.teams.cdn.office.net/production-windows/1.8.00.27654/Teams_windows.msi
     $url32 = "http://aka.ms/teams32bitmsi"
     for ($i = 0; ($i -lt 4) -and (-not ($url32.EndsWith(".msi"))); $i++) {
         $response = Invoke-WebRequest -Uri $url32 -Method Head -MaximumRedirection 0 -SkipHttpErrorCheck -ErrorAction Ignore
@@ -26,7 +26,7 @@ function global:au_GetLatest {
         return 'Ignore'
     }
 
-    #https://statics.teams.microsoft.com/production-windows-x64/1.1.00.7855/Teams_windows.msi
+    # https://statics.teams.cdn.office.net/production-windows-x64/1.8.00.27654/Teams_windows_x64.msi
 
     $url64 = "http://aka.ms/teams64bitmsi"
     for ($i = 0; ($i -lt 4) -and (-not ($url64.EndsWith(".msi"))); $i++) {
