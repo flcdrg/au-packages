@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
-$urlX64 = 'https://github.com/colbymchenry/codegraph/releases/download/v1.6.3/codegraph-win32-x64.zip'
-$urlArm64 = 'https://github.com/colbymchenry/codegraph/releases/download/v1.6.3/codegraph-win32-arm64.zip'
-$checksumX64 = 'cc1ab45c49a8b0897ea22f458c2905701e73d072d4875177cfca3e9c2fc36fb3'
-$checksumArm64 = '3a7e3ada67070c0afbbc8edbcd530cf34478b40fd03481eed8a7ce97eed1e26a'
+$urlX64 = 'https://github.com/colbymchenry/codegraph/releases/download/v1.6.4/codegraph-win32-x64.zip'
+$urlArm64 = 'https://github.com/colbymchenry/codegraph/releases/download/v1.6.4/codegraph-win32-arm64.zip'
+$checksumX64 = '44bc9b5a386b535e2eb8970e9ba8e13e0dd931a357b4adfba8147207e680d5da'
+$checksumArm64 = 'be5546b17934a2d57a5e1843da13960a7b84ac85ea51d7cd19c84d8d7759edd0'
 $version = $env:ChocolateyPackageVersion
 
 switch ([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString()) {

@@ -4,7 +4,7 @@
   <metadata>
     <id>codegraph</id>
     <title>CodeGraph</title>
-    <version>1.6.3</version>
+    <version>1.6.4</version>
     <authors>Colby Mchenry</authors>
     <owners>flcdrg</owners>
     <projectUrl>https://colbymchenry.github.io/codegraph/</projectUrl>
@@ -17,7 +17,7 @@
     <licenseUrl>https://github.com/colbymchenry/codegraph/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>Build a local code knowledge graph for semantic code intelligence.</summary>
-    <description>CodeGraph builds a local, queryable knowledge graph of a codebase to provide semantic code intelligence to AI coding agents. It parses code across 20+ languages, exposes an MCP server, and supports symbol impact analysis. The Windows bundle includes its own Node.js runtime; Node.js is not required separately.</description><releaseNotes><![CDATA[https://github.com/colbymchenry/codegraph/releases/tag/v1.6.3]]></releaseNotes>
+    <description>CodeGraph builds a local, queryable knowledge graph of a codebase to provide semantic code intelligence to AI coding agents. It parses code across 20+ languages, exposes an MCP server, and supports symbol impact analysis. The Windows bundle includes its own Node.js runtime; Node.js is not required separately.</description><releaseNotes><![CDATA[https://github.com/colbymchenry/codegraph/releases/tag/v1.6.4]]></releaseNotes>
     
   </metadata>
   <files>
