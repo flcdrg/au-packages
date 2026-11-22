@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'
 $toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
-$releaseTag = 'v0.41.0'
-$checksum64 = '1c4e61f53e2db782f403f1ef566ab4f112282c71ddc3640d3ffe8cba503d02f4'
-$checksumArm64 = '5a26c9da90a32cf9c0600dc6ad66859e3fd8f4f6420f26b35cd0edc5e19b2f99'
+$releaseTag = 'v0.42.0'
+$checksum64 = '33bba90738e82fd7bfdc707ee8cfbf1f078b861c4d9488f8e972a6f4de4d9844'
+$checksumArm64 = 'aa0ee85296cdd864a57b271dd3f82933bd1238a012f2c64bd6cf18f547dc53d9'
 
 # OSArchitecture reports the native OS architecture even when PowerShell itself runs emulated (e.g. x64 on ARM64)
 $osArchitecture = [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture
