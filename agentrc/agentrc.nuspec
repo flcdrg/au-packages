@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if "Ω" doesn't appear, the file has been saved with the wrong encoding. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>agentrc</id>
+    <version>2.0.1-103</version>
+    <title>AgentRC</title>
+    <authors>Microsoft</authors>
+    <owners>flcdrg</owners>
+    <projectUrl>https://github.com/microsoft/agentrc</projectUrl>
+    <packageSourceUrl>https://github.com/flcdrg/au-packages/tree/master/agentrc</packageSourceUrl>
+    <projectSourceUrl>https://github.com/microsoft/agentrc</projectSourceUrl>
+    <docsUrl>https://github.com/microsoft/agentrc/blob/main/docs/getting-started.md</docsUrl>
+    <bugTrackerUrl>https://github.com/microsoft/agentrc/issues</bugTrackerUrl>
+    <licenseUrl>https://github.com/microsoft/agentrc/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright (c) Microsoft Corporation.</copyright>
+    <tags>agentrc context-engineering ai coding-agent cli microsoft</tags>
+    <summary>Prepare repositories for AI-assisted development with the AgentRC CLI.</summary>
+    <description>
+## AgentRC
+
+AgentRC is an experimental context-engineering CLI for AI coding agents. It evaluates a repository's AI-readiness and generates tailored instruction files, evaluations, and development configurations.
+
+This package installs the `@microsoft/agentrc` npm package globally in the npm prefix of the user running Chocolatey. It requires Node.js 22+ (provided by the `nodejs-lts` dependency). Some AgentRC workflows also require GitHub Copilot CLI and GitHub or Azure DevOps authentication. The upstream project is experimental and may introduce breaking changes.
+
+### Package details
+
+If you already have Node.js 22+ installed, you can skip the `nodejs-lts` dependency by using `--ignore-dependencies`
+    </description><releaseNotes><![CDATA[https://www.npmjs.com/package/@microsoft/agentrc/v/2.0.1-103]]></releaseNotes>
+    
+    <dependencies>
+      <dependency id="nodejs-lts" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
