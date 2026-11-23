@@ -36,8 +36,21 @@ $packageArgs = @{
   unzipLocation = $installDir
 }
 
+. (Join-Path $toolsDir 'helpers.ps1')
+
+# Older package versions have no beforeModify script, so stop processes using the previous version here too.
+Stop-CodeGraphProcess
+
 Install-ChocolateyZipPackage @packageArgs
 
 # Keep the bundled runtime off PATH and expose the nested CLI command explicitly.
 New-Item -ItemType File -Path "$nodePath.ignore" -Force | Out-Null
+
+$shimPath = Join-Path $env:ChocolateyInstall 'bin\codegraph.exe'
+$shimStart = Get-Date
 Install-BinFile -Name 'codegraph' -Path $codegraphCommand
+
+# Shimgen does not report failure when the existing shim is locked, leaving it pointing at a removed version.
+if (-not (Test-Path $shimPath) -or (Get-Item $shimPath).LastWriteTime -lt $shimStart.AddSeconds(-2)) {
+  throw "Failed to update the codegraph shim at '$shimPath'. Close any programs using CodeGraph (such as MCP servers) and retry."
+}
