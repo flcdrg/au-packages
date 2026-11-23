@@ -13,6 +13,10 @@ function global:au_SearchReplace {
     }
 }
 
+function global:au_BeforeUpdate {
+    Get-RemoteFiles -Purge -NoSuffix
+}
+
 . ../_scripts/GitHub.ps1
 
 function global:au_GetLatest {
